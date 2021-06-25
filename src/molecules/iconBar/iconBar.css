@@ -1,0 +1,25 @@
+:root {
+    --IconBar-border-color: #727B9B;
+    --IconBar-background-color: #424e79;
+    --IconBar-width: 72px;
+    --IconBar-height: 100%;
+}
+.IconBar {
+    height: var(--IconBar-height);
+    width: var(--IconBar-width);
+    background-color: var(--IconBar-background-color);
+    border-right: 1px solid var(--IconBar-border-color);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow-x: hidden;
+    align-content: center;
+    text-align: center;
+}
+
+.IconBar > img,
+.IconBar > .Icon {
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}

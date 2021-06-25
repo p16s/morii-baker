@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Morii</title>
+    <!--    This needs to be removed once react is updated and by May 2021 -->
+    <script> if (!crossOriginIsolated) SharedArrayBuffer = ArrayBuffer </script>
+    <!--    End remove-->
+
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<script src="%PUBLIC_URL%/js/morii-api-sdk.js"></script>
+<script>
+    window.moriiSdk = new MoriiSdk(
+        // FE token
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJhcHBsaWNhdGlvbiIsInRva2VuTmFtZSI6ImF0IiwidG9rZW5EYXRhIjp7ImF1dGhvcmlzZWQiOiJmcm9udGVuZCIsImhvc3RuYW1lcyI6WyJhcGkubW9yaWkuaW8iLCJtb3JpaWFwaS1lbnYuZWJhLWZpdnNtcnZoLmV1LXdlc3QtMi5lbGFzdGljYmVhbnN0YWxrLmNvbSJdfSwidG9rZW5FeHBpcmVzIjoxNjIxNTA1Njg2LjkyOCwiaWF0IjoxNjE4OTEzNjg2fQ.xQMEIP_sQ-6FgWzpsy3TmQWQ_xF-3gijYOzAjNp_Who",
+        "userToken",
+        "https://api.morii.io"
+    );
+</script>
+<div id="root"></div>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</body>
+</html>

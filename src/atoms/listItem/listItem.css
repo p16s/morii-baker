@@ -1,0 +1,22 @@
+:root {
+    --ListItem-color: #ffffff;
+    --ListItem-activeBackgroundColor: #5a648a;
+    --ListItem-activeColor: #ffffff;
+}
+
+.ListItem {
+    color: var(--ListItem-color);
+    text-decoration: none;
+    padding: 6px 16px 6px 16px;
+    margin-top: 6px;
+}
+
+.ListItem.clickable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.ListItem.active {
+    background-color: var(--ListItem-activeBackgroundColor);
+    color: var(--ListItem-activeColor);
+}
