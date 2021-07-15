@@ -59,7 +59,12 @@ class BasicAtom extends React.Component {
         return this.padIfString(this.props.className);
     }
 
-
+    /**
+     * Adds a space (or pad variable) to the start of a string, if the value passed is a string
+     * @param str
+     * @param pad
+     * @returns {string|string}
+     */
     padIfString(str, pad) {
         pad = pad ?? ' ';
         return (typeof str === 'string') ? (pad + str) : '';

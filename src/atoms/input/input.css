@@ -1,0 +1,73 @@
+/*  title:  input
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Input-border: 1px solid var(--Global-border-color, #AAB0C3);
+    --Input-border-radius: var(--Global-border-radius, 5px);
+    --Input-font-size: 16px;
+    --Input-color-error: var(--Global-color-error, red);
+    --Input-color-success: var(--Global-color-success, green);
+    --Input-padding: 0 8px;
+}
+
+
+/* base
+===================================================================================================================== */
+Input {
+    border: var(--Input-border);
+    border-radius: var(--Input-border-radius);
+    font-size: var(--Input-font-size);
+    height: 48px;
+    line-height: 1;
+    outline: none;      /* poor accessability */
+    padding: var(--Input-padding);
+    transition: .3s;
+}
+
+    /* states
+    ================================================================================================================= */
+    Input:hover,
+    Input:focus,
+    Input:focus-visible,
+    Input:focus-within,
+    Input:active {
+        box-shadow: inset 0 0 0 2px #424E79;
+        border-color: transparent;
+        transition: .2s;
+    }
+
+    /* error
+    ================================================================================================================= */
+    .Input.error {
+        background: url('./error.png') 95% 50% no-repeat;
+        border-color:  var(--Input-color-error);
+    }
+
+    /* success
+    ================================================================================================================= */
+    .Input.success {
+        background: url('./success.png') 95% 50% no-repeat;
+        border-color: var(--Input-color-success);
+    }
+
+    /* disabled
+    ================================================================================================================= */
+    .Input:disabled {
+        background-color: #EFEFEF;
+        border: 1px solid #AAB0C3;
+        box-shadow: none;
+        cursor: not-allowed;
+    }
+
+    /* large
+    ================================================================================================================= */
+    .Input.large {
+        font-size: 22px;
+
+    }

@@ -6,7 +6,7 @@ import ListHeader from "../listHeader";
 class ListHeaderExample extends React.Component {
     render() {
         return (
-            <div className={"examples"}>
+            <section className={"examples"}>
                 <h1>ListHeader</h1>
                 <h2>Overview</h2>
                 <p>The ListHeader is a header for a list</p>
@@ -16,7 +16,7 @@ class ListHeaderExample extends React.Component {
                     <ListHeader>header 2</ListHeader>
                 </div>
 
-            </div>
+            </section>
         );
     }
 }

@@ -1,0 +1,103 @@
+/*  title:  index
+    notes:  application global resets/styles
+            NOTE:   rough styling, not intended for production/live but as a developer/designer guide
+                    sizes would normally be scaled from the root, but for speed are set from figma
+ ==================================================================================================================== */
+
+
+
+
+/*  import fonts
+===================================================================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap');
+
+
+
+
+/*  global application vars
+===================================================================================================================== */
+:root {
+    --Global-base-font-size: 16px;
+
+    --Global-border-color: #AAB0C3;
+    --Global-border-radius: 5px;
+
+    --Global-color-1: purple;
+    --Global-color-error: #CF0057;
+    --Global-color-success: #05C496;
+}
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+
+
+
+/* main body
+===================================================================================================================== */
+body {
+    background-color: #E5E5E5;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+    #root {
+        background-color: #eeeeee;
+        margin: 0 auto;
+        padding: 30px;
+        width: 1040px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #202B37;
+        font-family: 'Roboto', sans-serif;
+    }
+    h1 {
+        font-size: 32px;
+        margin-bottom: 1em;
+    }
+        /*  link to documentation   */
+        h1 a {
+            border: 1px solid #4E32FB;
+            border-radius: var(--Global-border-radius, 5px);
+            float: right;
+            font-size: var(--Global-base-font-size, 16px);
+            padding: 8px 12px;
+        }
+    h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    p {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 20px;
+        line-height: 27px;
+        padding-bottom: 30px;
+    }

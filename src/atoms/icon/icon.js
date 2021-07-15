@@ -54,6 +54,11 @@ class Icon extends BasicAtom {
         );
     }
 
+    /**
+     * Render the image icon
+     *
+     * @returns {JSX.Element|string}
+     */
     render_element_img() {
         return (typeof this.props.src === "string")
             ? (
@@ -62,7 +67,11 @@ class Icon extends BasicAtom {
             : '';
     }
 
-
+    /**
+     * Render the icon with a letter
+     *
+     * @returns {JSX.Element|string}
+     */
     render_element_letter() {
         return (typeof this.props.letter === 'string')
             ? (
