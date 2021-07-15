@@ -26,6 +26,7 @@ class InputExample extends BakerExample {
                 {this.render_error()}
                 {this.render_success()}
                 {this.render_disabled()}
+                {this.render_large()}
             </section>
         );
     }
@@ -83,6 +84,19 @@ class InputExample extends BakerExample {
                 />
             </form>,
             "The input field is disabled.  Set the disabled property to true or disabled"
+        );
+    }
+
+    render_large() {
+        return this.render_exampleComponent(
+            "Input/Large",
+            <form>
+                <Input
+                    className={"large"}
+                    placeholder={"Large text"}
+                />
+            </form>,
+            "Modifier class of `large`"
         );
     }
 }

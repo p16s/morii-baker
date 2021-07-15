@@ -13,7 +13,7 @@
     --Input-font-size: 16px;
     --Input-color-error: var(--Global-color-error, red);
     --Input-color-success: var(--Global-color-success, green);
-    --Input-padding: 14px 8px;
+    --Input-padding: 0 8px;
 }
 
 
@@ -23,6 +23,7 @@ Input {
     border: var(--Input-border);
     border-radius: var(--Input-border-radius);
     font-size: var(--Input-font-size);
+    height: 48px;
     line-height: 1;
     outline: none;      /* poor accessability */
     padding: var(--Input-padding);
@@ -62,4 +63,11 @@ Input {
         border: 1px solid #AAB0C3;
         box-shadow: none;
         cursor: not-allowed;
+    }
+
+    /* large
+    ================================================================================================================= */
+    .Input.large {
+        font-size: 22px;
+
     }

@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
-import InputExample from "./atoms/input/example/inputExample";
-import IconExample from "./atoms/icon/example/iconExample";
 import LabelExample from "./atoms/label/example/labelExample";
+import InputExample from "./atoms/input/example/inputExample";
+import TextareaExample from "./atoms/textarea/example/textareaExample";
+import IconExample from "./atoms/icon/example/iconExample";
 import ListHeaderExample from "./atoms/listHeader/example/listHeaderExample";
 import ListItemExample from "./atoms/listItem/example/listItemExample";
 
@@ -20,6 +21,7 @@ ReactDOM.render(
         <div>
             <LabelExample />
             <InputExample />
+            <TextareaExample />
             <IconExample />
             <IconBarExample />
             <ListHeaderExample />

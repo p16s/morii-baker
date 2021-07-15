@@ -1,0 +1,70 @@
+/*  title:  textarea
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Textarea-border: 1px solid var(--Global-border-color, #AAB0C3);
+    --Textarea-border-radius: var(--Global-border-radius, 5px);
+    --Textarea-font-size: 16px;
+    --Textarea-color-error: var(--Global-color-error, red);
+    --Textarea-color-success: var(--Global-color-success, green);
+    --Textarea-padding: 16px 8px;
+}
+
+
+/* base
+===================================================================================================================== */
+.Textarea {
+    border: var(--Textarea-border);
+    border-radius: var(--Textarea-border-radius);
+    font-size: var(--Textarea-font-size);
+    line-height: 1;
+    min-height: 80px;
+    outline: none;      /* poor accessability */
+    padding: var(--Textarea-padding);
+    transition: .3s;
+}
+
+    /* states
+    ================================================================================================================= */
+    .Textarea:hover,
+    .Textarea:focus,
+    .Textarea:focus-visible,
+    .Textarea:focus-within,
+    .Textarea:active {
+        box-shadow: inset 0 0 0 2px #424E79;
+        border-color: transparent;
+        transition: .2s;
+    }
+
+    /* error
+    ================================================================================================================= */
+    .Textarea.error {
+        border-color:  var(--Textarea-color-error);
+    }
+
+    /* success
+    ================================================================================================================= */
+    .Textarea.success {
+        border-color: var(--Textarea-color-success);
+    }
+
+    /* disabled
+    ================================================================================================================= */
+    .Textarea:disabled {
+        background-color: #EFEFEF;
+        border: 1px solid #AAB0C3;
+        box-shadow: none;
+        cursor: not-allowed;
+    }
+
+    /* large
+    ================================================================================================================= */
+    .Textarea.large {
+        font-size: 22px;
+    }

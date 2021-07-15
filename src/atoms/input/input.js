@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
+import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
 import "./input.css";
-import PropTypes from 'prop-types';
+
 
 class Input extends BasicAtom {
 

@@ -17,13 +17,14 @@
 /*  global application vars
 ===================================================================================================================== */
 :root {
-    --Global-color-1: purple;
-    --Global-color-error: #CF0057;
-    --Global-color-success: #05C496;
+    --Global-base-font-size: 16px;
 
     --Global-border-color: #AAB0C3;
     --Global-border-radius: 5px;
 
+    --Global-color-1: purple;
+    --Global-color-error: #CF0057;
+    --Global-color-success: #05C496;
 }
 
 
@@ -87,8 +88,7 @@ body {
             border: 1px solid #4E32FB;
             border-radius: var(--Global-border-radius, 5px);
             float: right;
-            font-size: 14px;
-            font-weight: 400;
+            font-size: var(--Global-base-font-size, 16px);
             padding: 8px 12px;
         }
     h2 {
