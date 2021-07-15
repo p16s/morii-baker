@@ -9,7 +9,7 @@
 ===================================================================================================================== */
 :root {
     --Input-border: 1px solid var(--Global-border-color, #AAB0C3);
-    --Input-border-radius: 5px;
+    --Input-border-radius: var(--Global-border-radius, 5px);
     --Input-font-size: 16px;
     --Input-color-error: var(--Global-color-error, red);
     --Input-color-success: var(--Global-color-success, green);
@@ -45,14 +45,14 @@ Input {
     ================================================================================================================= */
     .Input.error {
         background: url('./error.png') 95% 50% no-repeat;
-        border-color:  var(--Input-color-error, --color-error);
+        border-color:  var(--Input-color-error);
     }
 
     /* success
     ================================================================================================================= */
     .Input.success {
         background: url('./success.png') 95% 50% no-repeat;
-        border-color: var(--Input-color-success, --color-success);
+        border-color: var(--Input-color-success);
     }
 
     /* disabled

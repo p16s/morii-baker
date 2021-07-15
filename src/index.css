@@ -22,6 +22,7 @@
     --Global-color-success: #05C496;
 
     --Global-border-color: #AAB0C3;
+    --Global-border-radius: 5px;
 
 }
 
@@ -81,6 +82,15 @@ body {
         font-size: 32px;
         margin-bottom: 1em;
     }
+        /*  link to documentation   */
+        h1 a {
+            border: 1px solid #4E32FB;
+            border-radius: var(--Global-border-radius, 5px);
+            float: right;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 8px 12px;
+        }
     h2 {
         font-size: 20px;
         margin-bottom: 12px;

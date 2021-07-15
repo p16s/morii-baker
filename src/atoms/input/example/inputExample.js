@@ -11,7 +11,16 @@ class InputExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Input fields</h1>
+                <h1>
+                    Input fields
+
+                    <a
+                        href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=4%3A604"}
+                        target={"_blank"}
+                    >
+                        Documentation
+                    </a>
+                </h1>
 
                 {this.render_normal()}
                 {this.render_error()}
@@ -40,7 +49,7 @@ class InputExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "Input / Error",
+            "Input/Error",
             <form>
                 <Input
                     error={true}
@@ -53,7 +62,7 @@ class InputExample extends BakerExample {
 
     render_success() {
         return this.render_exampleComponent(
-            "Input / Success",
+            "Input/Success",
             <form>
                 <Input
                     success={true}
@@ -66,7 +75,7 @@ class InputExample extends BakerExample {
 
     render_disabled() {
         return this.render_exampleComponent(
-            "Input / Disabled",
+            "Input/Disabled",
             <form>
                 <Input
                     disabled={true}
