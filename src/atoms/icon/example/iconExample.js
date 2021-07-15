@@ -4,7 +4,7 @@ import BakerExample from "../../../helpers/bakerExample";
 class IconExample extends BakerExample {
     render() {
         return (
-            <div className={"examples"}>
+            <section className={"examples"}>
                 <h1>Icon</h1>
                 <h2>Overview</h2>
                 <p>The Icon supports the onClick property and has the following uses...</p>
@@ -15,7 +15,7 @@ class IconExample extends BakerExample {
                 {this.render_activeColour()}
                 {this.render_letter()}
                 {this.render_image()}
-            </div>
+            </section>
         );
     }
 

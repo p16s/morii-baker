@@ -64,8 +64,9 @@ class Input extends BasicAtom {
     render_element(className, props) {
         return React.cloneElement(
             <input
-                type={this.props.type ?? 'text'}
                 className={"Input" + this.padIfString(className) + this.getClassNameString()}
+                type={this.props.type ?? 'text'}
+                placeholder={this.props.placeholder}
                 onClick={(e) => {
                     this.handleClick(e)
                 }}

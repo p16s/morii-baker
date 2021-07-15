@@ -4,7 +4,7 @@ import ListItem from "../listItem";
 class ListItemExample extends React.Component {
     render() {
         return (
-            <div className={"examples"}>
+            <section className={"examples"}>
                 <h1>ListItem</h1>
                 <h2>Overview</h2>
                 <p>The ListItem has active and onclick. The active prop is set to true on 1 and 3. The property onClick is on 4.</p>
@@ -16,7 +16,7 @@ class ListItemExample extends React.Component {
                     <ListItem onClick={()=>{alert('Clicked!');}}>Item 4</ListItem>
                 </div>
 
-            </div>
+            </section>
         );
     }
 }

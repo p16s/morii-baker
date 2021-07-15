@@ -1,4 +1,5 @@
 import React from 'react';
+import './bakerExample.css';
 
 
 class BakerExample extends React.Component {
@@ -19,11 +20,14 @@ class BakerExample extends React.Component {
      */
     render_exampleComponent(title, what, about) {
         return (
-            <div className={"BakerExample"}>
+            <section className={"BakerExample"}>
                 <h2>{title}</h2>
-                {what}
                 <p className={"about"}>{about}</p>
-            </div>
+
+                <div className={"component-wrapper"}>
+                    {what}
+                </div>
+            </section>
         )
     }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './index.css';
+
 import InputExample from "./atoms/input/example/inputExample";
 import IconExample from "./atoms/icon/example/iconExample";
 import LabelExample from "./atoms/label/example/labelExample";
