@@ -14,8 +14,8 @@ class InputExample extends BakerExample {
                 <h1>Input fields</h1>
 
                 {this.render_normal()}
-                {this.render_success()}
                 {this.render_error()}
+                {this.render_success()}
                 {this.render_disabled()}
             </section>
         );
@@ -38,23 +38,29 @@ class InputExample extends BakerExample {
         );
     }
 
-    render_success() {
-        return this.render_exampleComponent(
-            "Input / Success",
-            <form>
-                <Input success={true} />
-            </form>,
-            "The content of the input field is valid and worth showing it.  Set the success property to true"
-        );
-    }
-
     render_error() {
         return this.render_exampleComponent(
             "Input / Error",
             <form>
-                <Input error={true} />
+                <Input
+                    error={true}
+                    placeholder={"Error"}
+                />
             </form>,
             "The content of the form is not valid. Set the error property to true"
+        );
+    }
+
+    render_success() {
+        return this.render_exampleComponent(
+            "Input / Success",
+            <form>
+                <Input
+                    success={true}
+                    placeholder={"Success"}
+                />
+            </form>,
+            "The content of the input field is valid and worth showing it.  Set the success property to true"
         );
     }
 
@@ -62,7 +68,10 @@ class InputExample extends BakerExample {
         return this.render_exampleComponent(
             "Input / Disabled",
             <form>
-                <Input disabled={true} />
+                <Input
+                    disabled={true}
+                    placeholder={"Disabled"}
+                />
             </form>,
             "The input field is disabled.  Set the disabled property to true or disabled"
         );

@@ -1,5 +1,6 @@
 import BasicAtom from "../basicAtom";
 import PropTypes from "prop-types";
+import './label.css';
 
 
 class Label extends BasicAtom {
