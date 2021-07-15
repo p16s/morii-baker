@@ -28,12 +28,15 @@ class IconBar extends BasicAtom {
                     active={(this.props.activeIcon ?? -1) === index}
                 />);
             }
-            return (<Icon
-                src={value} alt={''}
-                key={index}
-                onClick={(e) => {this.handleClick(e, index)}}
-                active={(this.props.activeIcon ?? -1) === index}
-            />);
+            return (
+                <Icon
+                    src={value}
+                    alt={''}
+                    key={index}
+                    onClick={(e) => {this.handleClick(e, index)}}
+                    active={(this.props.activeIcon ?? -1) === index}
+                />
+            );
         }
 
         return <Icon
