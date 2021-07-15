@@ -1,7 +1,21 @@
-/*:root {*/
-/*    --Icon-height: 40px;*/
-/*    --Icon-width: 40px;*/
-/*    --Icon-active-color: #28D8AD;*/
-/*    --Icon-background-color: #424e79;*/
-/*    --Icon-color: #FFFFFF;*/
-/*}*/
+:root {
+    --Input-border: 1px solid #ccc;
+    --Input-success-color: green;
+    --Input-error-color: red;
+}
+
+.Input {
+    border: var(--Input-border);
+}
+
+.Input.error {
+    border-color:  var(--Input-error-color);
+}
+
+.Input.success {
+    border-color: var(--Input-success-color);
+}
+
+.Input:disabled {
+
+}

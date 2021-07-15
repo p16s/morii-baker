@@ -1,5 +1,7 @@
+import React from "react"
 import BasicAtom from "../basicAtom";
 import "./input.css";
+import PropTypes from 'prop-types';
 
 class Input extends BasicAtom {
 
@@ -13,24 +15,44 @@ class Input extends BasicAtom {
      * @return {*}
      */
     render() {
-        return this.isActive()
-            ? this.render_active() : this.render_inactive();
+        return (this.isDisabled())
+            ? this.render_disabled()
+            : (
+                (this.hasError())
+                    ? this.render_error()
+                    : (
+                        this.hasSuccess()
+                            ? this.render_success()
+                            : this.render_element()
+                    )
+            );
     }
 
     /**
-     * Render active element
-     * @return {*}
+     * Render the error component
+     *
+     * @returns {JSX.Element}
      */
-    render_active() {
-        return this.render_element('active');
+    render_error() {
+        return this.render_element('error');
     }
 
     /**
-     * Render inactive element
-     * @return {*}
+     * Render the success component
+     *
+     * @returns {JSX.Element}
      */
-    render_inactive() {
-        return this.render_element();
+    render_success() {
+        return this.render_element('success');
+    }
+
+    /**
+     * Render disabled
+     *
+     * @returns {JSX.Element}
+     */
+    render_disabled() {
+        return this.render_element('', {disabled: "disabled"});
     }
 
     /**
@@ -39,36 +61,47 @@ class Input extends BasicAtom {
      * @param className
      * @return {JSX.Element}
      */
-    render_element(className) {
-        return (
-            <div
-                className={"Icon" + this.padIfString(className) + this.getClassNameString()}
+    render_element(className, props) {
+        return React.cloneElement(
+            <input
+                type={this.props.type ?? 'text'}
+                className={"Input" + this.padIfString(className) + this.getClassNameString()}
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
-            >
-                {this.render_element_img()}
-                {this.render_element_letter()}
-                {this.props.children}
-            </div>
+            />,
+            props ?? {}
         );
     }
 
-    render_element_img() {
-        return (typeof this.props.src === "string")
-            ? (
-                <img src={this.props.src} alt={this.props.alt ?? ''} />
-            )
-            : '';
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // States
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * Does the input have an error?
+     *
+     * @returns {boolean}
+     */
+    hasError() {
+        return (this.props.error !== false);
     }
 
+    /**
+     * Great success?
+     *
+     * @returns {boolean}
+     */
+    hasSuccess() {
+        return (this.props.success !== false);
+    }
 
-    render_element_letter() {
-        return (typeof this.props.letter === 'string')
-            ? (
-                <div className={"letter"}>{this.props.letter.substring(0, 1).toUpperCase()}</div>
-            )
-            : '';
+    /**
+     * Is it disabled?
+     *
+     * @returns {boolean}
+     */
+    isDisabled() {
+        return (this.props.disabled === "disabled" || this.props.disabled === true);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,6 +116,17 @@ class Input extends BasicAtom {
     handleClick(e) {
         this.callbackOr(this.props.onClick)(e);
     }
+}
+
+Input.defaultProps = {
+    error: false,
+    success: false,
+}
+
+Input.propTypes = {
+    error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    success: PropTypes.bool,
+    disabled: PropTypes.oneOf(["disabled", true, "", false])
 }
 
 export default Input;

@@ -1,7 +1,7 @@
-import React from 'react';
 import Icon from "../icon";
+import BakerExample from "../../../helpers/bakerExample";
 
-class IconExample extends React.Component {
+class IconExample extends BakerExample {
     render() {
         return (
             <div className={"examples"}>
@@ -20,7 +20,7 @@ class IconExample extends React.Component {
     }
 
     render_image() {
-        return this.render_icon(
+        return this.render_exampleComponent(
             "Render Image",
             <Icon src={'https://app.morii.io/favicon.png'} alt={""} />,
             "Use the 'src' property and 'alt'"
@@ -28,7 +28,7 @@ class IconExample extends React.Component {
     }
 
     render_letter() {
-        return this.render_icon(
+        return this.render_exampleComponent(
             "Render letter",
             <Icon letter={'P'} />,
             "Use the 'letter' property"
@@ -36,7 +36,7 @@ class IconExample extends React.Component {
     }
 
     render_backgroundColour() {
-        return this.render_icon(
+        return this.render_exampleComponent(
             "Change Background Colour",
             <div style={{'--Icon-background-color' : '#ff0000'}}>
                 <Icon active={true} />
@@ -47,7 +47,7 @@ class IconExample extends React.Component {
 
 
     render_activeColour() {
-        return this.render_icon(
+        return this.render_exampleComponent(
             "Change Active Colour",
             <div style={{'--Icon-active-color' : '#ff0000'}}>
                 <Icon active={true} />
@@ -57,7 +57,7 @@ class IconExample extends React.Component {
     }
 
     render_active() {
-        return this.render_icon(
+        return this.render_exampleComponent(
             "Active",
             <Icon active={true}/>,
             "Set the 'active' property to true"
@@ -65,20 +65,10 @@ class IconExample extends React.Component {
     }
 
     render_basic() {
-        return this.render_icon(
+        return this.render_exampleComponent(
             "Basic",
             <Icon />
         );
-    }
-
-    render_icon(title, what, about) {
-        return (
-            <div className={"example"}>
-                <h2>{title}</h2>
-                {what}
-                <p className={"about"}>{about}</p>
-            </div>
-        )
     }
 }
 

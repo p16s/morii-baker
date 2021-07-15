@@ -1,85 +1,70 @@
-import React from 'react';
+import BakerExample from "../../../helpers/bakerExample";
 import Input from "../input";
 
-class InputExample extends React.Component {
+
+class InputExample extends BakerExample {
+
+    /**
+     * Render the Baker Example
+     * @returns {JSX.Element}
+     */
     render() {
         return (
             <div className={"examples"}>
                 <h1>Input</h1>
                 <h2>Overview</h2>
-                {/*<p>The input supports the onClick property and has the following uses...</p>*/}
-
-                {/*{this.render_basic()}*/}
-                {/*{this.render_active()}*/}
-                {/*{this.render_backgroundColour()}*/}
-                {/*{this.render_activeColour()}*/}
-                {/*{this.render_letter()}*/}
-                {/*{this.render_image()}*/}
+                <p>The input has the following states...</p>
+                {this.render_normal()}
+                {this.render_success()}
+                {this.render_error()}
+                {this.render_disabled()}
             </div>
         );
     }
 
-    // render_image() {
-    //     return this.render_icon(
-    //         "Render Image",
-    //         <Icon src={'https://app.morii.io/favicon.png'} alt={""} />,
-    //         "Use the 'src' property and 'alt'"
-    //     );
-    // }
+    /**
+     * Render the basic input example
+     * @returns {JSX.Element}
+     */
+    render_normal() {
+        return this.render_exampleComponent(
+            "Normal",
+            <form>
+                <Input onClick={() => {console.log('click');}} />
+            </form>,
+            "This is the basic input component the onClick property can be used (click the input to console log"
+        );
+    }
 
-    // render_letter() {
-    //     return this.render_icon(
-    //         "Render letter",
-    //         <Icon letter={'P'} />,
-    //         "Use the 'letter' property"
-    //     );
-    // }
-    //
-    // render_backgroundColour() {
-    //     return this.render_icon(
-    //         "Change Background Colour",
-    //         <div style={{'--Icon-background-color' : '#ff0000'}}>
-    //             <Icon active={true} />
-    //         </div>,
-    //         "Use the '--Icon-background-color' css var to change background colour"
-    //     );
-    // }
+    render_success() {
+        return this.render_exampleComponent(
+            "Success",
+            <form>
+                <Input success={true} />
+            </form>,
+            "Set the success property to true"
+        );
+    }
 
+    render_error() {
+        return this.render_exampleComponent(
+            "Error",
+            <form>
+                <Input error={true} />
+            </form>,
+            "Set the error property to true"
+        );
+    }
 
-    // render_activeColour() {
-    //     return this.render_icon(
-    //         "Change Active Colour",
-    //         <div style={{'--Icon-active-color' : '#ff0000'}}>
-    //             <Icon active={true} />
-    //         </div>,
-    //         "Use the '--Icon-active-color' css var to change background colour"
-    //     );
-    // }
-    //
-    // render_active() {
-    //     return this.render_icon(
-    //         "Active",
-    //         <Icon active={true}/>,
-    //         "Set the 'active' property to true"
-    //     );
-    // }
-
-    // render_basic() {
-    //     return this.render_icon(
-    //         "Basic",
-    //         <Icon />
-    //     );
-    // }
-
-    // render_icon(title, what, about) {
-    //     return (
-    //         <div className={"example"}>
-    //             <h2>{title}</h2>
-    //             {what}
-    //             <p className={"about"}>{about}</p>
-    //         </div>
-    //     )
-    // }
+    render_disabled() {
+        return this.render_exampleComponent(
+            "Disabled",
+            <form>
+                <Input disabled={true} />
+            </form>,
+            "Set the disabled property to true or disabled"
+        );
+    }
 }
 
 export default InputExample;
