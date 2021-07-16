@@ -9,7 +9,8 @@
 ===================================================================================================================== */
 :root {
     --Button-border-radius: 100px;
-    --Button-color-primary: var(--Global-color-1, red);
+    --Button-color-primary: var(--Global-color-1, blue);
+    --Button-color-secondary: var(--Global-color-2, green);
     --Button-font-size: 14px;
     --Button-padding: 12px 24px;
 }
@@ -117,4 +118,24 @@
     }
     .Button.minimal:disabled {
         color: rgba(var(--Button-color-primary), .3);
+    }
+
+
+
+
+    /*  secondary
+    ================================================================================================================= */
+    .Button.secondary {
+        background-color: rgb(var(--Button-color-secondary));
+        border: none;       /* only add to outline */
+    }
+    .Button:not(:disabled).secondary:hover,
+    .Button.secondary:not(.outline):focus,
+    .Button.secondary:not(.outline):focus-visible,
+    .Button.secondary:not(.outline):focus-within,
+    .Button.secondary:not(.outline):active {
+        background-color: #05C396;      /*  TODO we might want some pure css to modify global branding colours but beyond the scope here */
+    }
+    .Button.secondary:disabled {
+        background-color: rgba(var(--Button-color-secondary), .3);
     }

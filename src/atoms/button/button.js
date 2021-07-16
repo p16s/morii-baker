@@ -24,10 +24,10 @@ class Button extends BasicAtom {
 
     render_element(className, props) {
         return React.cloneElement(
-            <button
-                className={"Button" + this.padIfString(className) + this.getClassNameString()}
-            >
+            <button className={"Button" + this.padIfString(className) + this.getClassNameString()}>
                 {this.props.text}
+
+                {this.props.children}
             </button>,
             props ?? {}
         );

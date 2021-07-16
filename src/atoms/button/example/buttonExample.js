@@ -24,6 +24,8 @@ class ButtonExample extends BakerExample {
                 {this.render_outline_disabled()}
                 {this.render_minimal()}
                 {this.render_minimal_disabled()}
+                {this.render_icon()}
+                {this.render_icon_disabled()}
             </section>
         )
     };
@@ -99,8 +101,36 @@ class ButtonExample extends BakerExample {
             'Button without lines or background.'
         )
     }
-}
 
+
+    render_icon() {
+        return this.render_exampleComponent(
+            'As icon',
+            <Button className={"secondary"}>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
+                </svg>
+            </Button>,
+            'Button with just an icon'
+        )
+    }
+
+
+    render_icon_disabled() {
+        return this.render_exampleComponent(
+            'As icon / Disabled',
+            <Button
+                className={"secondary"}
+                disabled={true}
+            >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
+                </svg>
+            </Button>,
+            'Button, disabled, with icon and secondary class'
+        )
+    }
+}
 
 
 export default ButtonExample;
