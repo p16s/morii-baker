@@ -56,19 +56,19 @@
 
     /*  default
     ================================================================================================================= */
-    .Button:not(.outline) {
+    .Button {
         background-color: rgb(var(--Button-color-primary));
         border: none;       /* only add to outline */
         color: #fff;    /* TODO might have to revisit this, would normally run a contrast function on the background */
     }
-    .Button:not(:disabled):not(.outline):hover,
+    .Button:not(:disabled):hover,
     .Button:not(.outline):focus,
     .Button:not(.outline):focus-visible,
     .Button:not(.outline):focus-within,
     .Button:not(.outline):active {
         background-color: #1C00CA;      /*  TODO we might want some pure css to modify global branding colours but beyond the scope here */
     }
-    .Button:not(.outline):disabled {
+    .Button:disabled {
         background-color: rgba(var(--Button-color-primary), .3);
     }
 
@@ -102,13 +102,19 @@
     /*  minimal
     ================================================================================================================= */
     .Button.minimal {
-        
+        background-color: transparent;
+        border: none;
+        color: rgba(var(--Button-color-primary), 1);
     }
     .Button:not(:disabled).minimal:hover,
     .Button.minimal:focus,
     .Button.minimal:focus-visible,
     .Button.minimal:focus-within,
     .Button.minimal:active {
+        background-color: transparent;
+        border-color: transparent;
+        color: #1C00CA;      /*  TODO we might want some pure css to modify global branding colours but beyond the scope here */
     }
     .Button.minimal:disabled {
+        color: rgba(var(--Button-color-primary), .3);
     }

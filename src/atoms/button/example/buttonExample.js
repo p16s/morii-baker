@@ -23,6 +23,7 @@ class ButtonExample extends BakerExample {
                 {this.render_outline()}
                 {this.render_outline_disabled()}
                 {this.render_minimal()}
+                {this.render_minimal_disabled()}
             </section>
         )
     };
@@ -30,7 +31,7 @@ class ButtonExample extends BakerExample {
 
     render_basic() {
         return this.render_exampleComponent(
-            'Primary / Default / Idle',
+            'Primary / Default',
             <Button text={'Normal button'} />,
              'Default button.'
         )
@@ -51,7 +52,7 @@ class ButtonExample extends BakerExample {
 
     render_outline() {
         return this.render_exampleComponent(
-            'Primary / Outline / Idle',
+            'Primary / Outline',
             <Button
                 className={"outline"}
                 text={'Outline button'}
@@ -77,10 +78,23 @@ class ButtonExample extends BakerExample {
 
     render_minimal() {
         return this.render_exampleComponent(
-            'Primary / Minimal / Disabled',
+            'Primary / Minimal',
             <Button
                 text={'Minimal button'}
                 className={"minimal"}
+            />,
+            'Button without lines or background.'
+        )
+    }
+
+
+    render_minimal_disabled() {
+        return this.render_exampleComponent(
+            'Primary / Minimal / Disabled',
+            <Button
+                text={'Minimal disbaled button'}
+                className={"minimal"}
+                disabled={true}
             />,
             'Button without lines or background.'
         )
