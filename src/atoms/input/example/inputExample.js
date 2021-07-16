@@ -37,7 +37,7 @@ class InputExample extends BakerExample {
      */
     render_normal() {
         return this.render_exampleComponent(
-            "Input / Normal",
+            "Input/Normal",
             <form>
                 <Input
                     placeholder={"Placeholder"}
