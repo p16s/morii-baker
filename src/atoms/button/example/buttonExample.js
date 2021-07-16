@@ -1,6 +1,5 @@
 import Button from "../button";
 import BakerExample from "../../../helpers/bakerExample";
-import Label from "../../label/label";
 
 
 class ButtonExample extends BakerExample {
