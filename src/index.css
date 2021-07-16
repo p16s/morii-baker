@@ -80,8 +80,10 @@ body {
         font-family: 'Roboto', sans-serif;
     }
     h1 {
+        border-bottom: 1px solid #AAB0C3;
         font-size: 32px;
         margin-bottom: 1em;
+        padding-bottom: 14px;
     }
         /*  link to documentation   */
         h1 a {
