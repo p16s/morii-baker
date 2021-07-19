@@ -10,6 +10,7 @@ import ButtonExample from "./atoms/button/example/buttonExample";
 import AlertExample from "./atoms/alert/example/alertExample";
 import CheckboxExample from "./atoms/checkbox/example/checkboxExample";
 import ToggleExample from "./atoms/toggle/example/toggleExample";
+import RobTest from "./robTest";
 
 // import IconExample from "./atoms/icon/example/iconExample";
 // import ListHeaderExample from "./atoms/listHeader/example/listHeaderExample";
@@ -24,6 +25,8 @@ import ToggleExample from "./atoms/toggle/example/toggleExample";
 ReactDOM.render(
     <React.StrictMode>
         <div>
+            <RobTest />
+
             <LabelExample />
             <InputExample />
             <TextareaExample />
