@@ -35,6 +35,7 @@
             color: #fff;
             content: "\2713";
             display: inline-flex;
+            font-size: 12px;
             inset: 0;
             justify-content: center;
             position: absolute;
@@ -47,3 +48,6 @@
         height: 26px;
         width: 26px;
     }
+        .Checkbox.large:before {
+            font-size: 1rem;
+        }

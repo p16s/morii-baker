@@ -10,10 +10,10 @@ class ButtonExample extends BakerExample {
                     Buttons
 
                     <a
-                        href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=4%3A604"}
+                        href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=4%3A745"}
                         target={"_blank"}
                     >
-                        [Documentation]
+                        Documentation
                     </a>
                 </h1>
 
@@ -26,8 +26,8 @@ class ButtonExample extends BakerExample {
                 {this.render_icon()}
                 {this.render_icon_disabled()}
             </section>
-        )
-    };
+        );
+    }
 
 
     render_basic() {
@@ -35,7 +35,7 @@ class ButtonExample extends BakerExample {
             'Primary / Default',
             <Button text={'Normal button'} />,
              'Default button.'
-        )
+        );
     }
 
 
@@ -47,7 +47,7 @@ class ButtonExample extends BakerExample {
                 disabled={true}
             />,
             'Disabled button.'
-        )
+        );
     }
 
 
@@ -60,7 +60,7 @@ class ButtonExample extends BakerExample {
             />,
 
             'For less important actions.'
-        )
+        );
     }
 
 
@@ -85,7 +85,7 @@ class ButtonExample extends BakerExample {
                 className={"minimal"}
             />,
             'Button without lines or background.'
-        )
+        );
     }
 
 
@@ -98,7 +98,7 @@ class ButtonExample extends BakerExample {
                 disabled={true}
             />,
             'Button without lines or background.'
-        )
+        );
     }
 
 
@@ -111,7 +111,7 @@ class ButtonExample extends BakerExample {
                 </svg>
             </Button>,
             'Button with just an icon'
-        )
+        );
     }
 
 
