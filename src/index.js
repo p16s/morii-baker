@@ -8,6 +8,7 @@ import InputExample from "./atoms/input/example/inputExample";
 import TextareaExample from "./atoms/textarea/example/textareaExample";
 import ButtonExample from "./atoms/button/example/buttonExample";
 import AlertExample from "./atoms/alert/example/alertExample";
+import CheckboxExample from "./atoms/checkbox/example/checkboxExample";
 
 import IconExample from "./atoms/icon/example/iconExample";
 import ListHeaderExample from "./atoms/listHeader/example/listHeaderExample";
@@ -27,13 +28,15 @@ ReactDOM.render(
             <TextareaExample />
             <ButtonExample />
             <AlertExample />
+            <CheckboxExample />
 
-            <IconExample />
-            <IconBarExample />
-            <ListHeaderExample />
-            <ListItemExample />
-            <ListExample />
-            <SideBarExample />
+
+            {/*<IconExample />*/}
+            {/*<IconBarExample />*/}
+            {/*<ListHeaderExample />*/}
+            {/*<ListItemExample />*/}
+            {/*<ListExample />*/}
+            {/*<SideBarExample />*/}
         </div>
     </React.StrictMode>,
     document.getElementById('root')

@@ -1,0 +1,49 @@
+/*  title:  checkbox
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Checkbox-color: var(--Global-color-1, 70 50 251);
+    --Checkbox-border-radius: 5px;
+}
+
+
+
+
+/*  base
+===================================================================================================================== */
+.Checkbox {
+    appearance: none;
+    border: 1px solid rgb(var(--Checkbox-color));
+    height: 18px;
+    width: 18px;
+}
+
+    /*  selected
+    ================================================================================================================= */
+    .Checkbox.selected {
+        background-color: rgb(var(--Checkbox-color));
+        position: relative;
+    }
+        .Checkbox.selected:before {
+            align-items: center;
+            color: #fff;
+            content: "\2713";
+            display: inline-flex;
+            inset: 0;
+            justify-content: center;
+            position: absolute;
+        }
+
+
+    /*  large/big
+    ================================================================================================================= */
+    .Checkbox.large {
+        height: 26px;
+        width: 26px;
+    }

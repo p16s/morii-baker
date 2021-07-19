@@ -22,7 +22,7 @@
     --Global-border-color: #AAB0C3;
     --Global-border-radius: 5px;
 
-    --Global-color-1: 70, 50, 251;      /*  TODO setting alpha not desirable as will cause fade-through */
+    --Global-color-1: 70, 50, 251;
     --Global-color-2: 40, 216, 173;
     --Global-color-error: 207, 0, 87;
     --Global-color-success: 5, 195, 150

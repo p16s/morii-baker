@@ -9,11 +9,9 @@
 ===================================================================================================================== */
 :root {
     --Alert-border-radius: 10px;
-    --Alert-color-default: var(--Global-color-1, blue);
-    --Alert-color-error: var(--Global-color-error, var(--Alert-color-error-backup));
-    --Alert-color-error-backup: 255, 0, 0;      /*  TODO try to find better solution */
-    --Alert-color-success: var(--Global-color-success, var(--Alert-color-success-backup));
-    --Alert-color-success-backup: 0, 255, 0;      /*  TODO try to find better solution */
+    --Alert-color-default: var(--Global-color-1, 70 50 251);
+    --Alert-color-error: var(--Global-color-error, 255 0 0);
+    --Alert-color-success: var(--Global-color-success, 0 255 0);
     --Alert-font-size: 14px;
     --Alert-padding: 1rem 1.5rem;
 }
