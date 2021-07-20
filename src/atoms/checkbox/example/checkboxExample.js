@@ -31,7 +31,7 @@ class CheckboxExample extends BakerExample {
             'Checkbox / Normal / Normal',
             <form>
                 <Checkbox
-                    onClick={() => {console.log('clicked Alert');}}
+                    onClick={() => {console.log('clicked Checkbox');}}
                 />
             </form>,
             'Default checkbox.  With click event.'
@@ -44,9 +44,9 @@ class CheckboxExample extends BakerExample {
             'Checkbox / Normal / Checked',
             <form>
                 <Checkbox
-                    className={'selected'}
+                    selected={true}
                     onClick={(e) => {
-                           console.log('clicked Checkbox')
+                        console.log('clicked Checkbox')
                     }}
                 />
             </form>,
@@ -61,7 +61,8 @@ class CheckboxExample extends BakerExample {
             <form>
                 <Checkbox
                     className={'large'}
-                    onClick={() => {console.log('clicked Alert');}}
+                    selected={false}
+                    onClick={() => {console.log('clicked Checkbox');}}
                 />
             </form>,
             'Default checkbox.  With click event.'
@@ -74,8 +75,9 @@ class CheckboxExample extends BakerExample {
             'Checkbox / Big / Checked',
             <form>
                 <Checkbox
-                    className={'large selected'}
-                    onClick={() => {console.log('clicked Alert');}}
+                    selected={true}
+                    className={'large'}
+                    onClick={() => {console.log('clicked Checkbox');}}
                 />
             </form>,
             'Default checkbox.  With click event.'

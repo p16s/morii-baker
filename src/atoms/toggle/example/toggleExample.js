@@ -81,13 +81,13 @@ class ToggleExample extends BakerExample {
      */
     handleToggleChange() {
         this.setState({
-            firstIsOn: this.firstIsOn = !this.firstIsOn,
+            firstIsOn: this.state.firstIsOn = !this.state.firstIsOn,
         });
     }
 
     handleSecondToggleChange() {
         this.setState({
-            secondIsOn: this.secondIsOn = !this.secondIsOn,
+            secondIsOn: this.state.secondIsOn = !this.state.secondIsOn,
         });
     }
 }

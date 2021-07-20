@@ -1,28 +1,16 @@
 import React from "react";
-import BasicAtom from "../basicAtom";
 import './toggle.css';
+import OnOff from "../fundamentals/onOff";
 
 
-class Toggle extends BasicAtom {
-    render(text, className) {
-        return (
-            this.render_standard()
-        )
-    }
-
-
-    render_standard() {
-        return this.render_element();
-    }
-
-
+class Toggle extends OnOff {
     render_element(className, props) {
         return React.cloneElement(
             <div
                 className={
                     "Toggle "
-                    + ((this.props.value ?? this.state.value) ? 'on' : 'off')
-                    + (this.props.label && this.props.label.length ? ' has-label' : '')
+                    + (this.isOn ? 'on' : 'off')
+                    + (this.hasLabel ? ' has-label' : '')
                     + this.padIfString(className) + this.getClassNameString()
                 }
                 onClick={(e)=>{this.handleChange(e)}}
@@ -35,27 +23,15 @@ class Toggle extends BasicAtom {
             props ?? {}
         );
     }
-
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Handlers
+    // States
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Handle click
-     *
-     * @param {MouseEvent} e
+     * @returns {boolean}
      */
-    handleChange(e) {
-        let newState = !this.props.value ?? !this.state.value;
-
-        this.callbackOr(this.props.onChange)(e, newState);
-
-        this.setState(
-            {
-                value: newState,
-            }
-        );
+    get hasLabel() {
+        return (this.props.label && this.props.label.length);
     }
 }
 

@@ -1,47 +1,31 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import BasicAtom from "../basicAtom";
+import OnOff from "../fundamentals/onOff";
 import './checkbox.css';
 
 
-class Checkbox extends BasicAtom {
-    render(text, className) {
-        return (
-            this.render_standard()
-        )
-    };
-
-
-    render_standard() {
-        return this.render_element();
+class Checkbox extends OnOff {
+    constructor(props, context) {
+        super(props, context, 'selected');
     }
 
 
     render_element(className, props) {
         return React.cloneElement(
             <input
-                className={"Checkbox" + this.padIfString(className) + this.getClassNameString()}
+                className={
+                    "Checkbox"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                    + (this.isOn ? ' selected' : '')
+                }
                 type="checkbox"
                 onClick={(e) => {
-                    this.handleClick(e)
+                    this.handleChange(e);
+                    this.callbackOr(this.props.onClick)();
                 }}
             />,
             props ?? {}
         );
-    }
-
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Handlers
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * Handle click
-     *
-     * @param {MouseEvent} e
-     */
-    handleClick(e) {
-        this.callbackOr(this.props.onClick)(e);
     }
 }
 
