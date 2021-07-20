@@ -22,7 +22,7 @@ class Toggle extends BasicAtom {
                 className={
                     "Toggle "
                     + ((this.props.value ?? this.state.value) ? 'on' : 'off')
-                    + (this.props.label && this.props.label.length ? ' has-label': '')
+                    + (this.props.label && this.props.label.length ? ' has-label' : '')
                     + this.padIfString(className) + this.getClassNameString()
                 }
                 onClick={(e)=>{this.handleChange(e)}}

@@ -28,7 +28,7 @@ class ToggleExample extends BakerExample {
         return this.render_exampleComponent(
             'Primary / Basic',
             <Toggle
-                value={this.state.isOn}
+                value={this.state.firstIsOn}
                 onChange={() => {
                     this.handleToggleChange()
                 }}
@@ -42,11 +42,11 @@ class ToggleExample extends BakerExample {
         return this.render_exampleComponent(
             'Primary / With Label',
             <Toggle
-                value={this.state.isOn}
+                value={this.state.secondIsOn}
                 onChange={() => {
-                    this.handleToggleChange()
+                    this.handleSecondToggleChange()
                 }}
-                label={(this.state.isOn ? "On" : "Off")}
+                label={(this.state.secondIsOn ? "On" : "Off")}
             />,
             'Toggle with label'
         );
@@ -57,7 +57,7 @@ class ToggleExample extends BakerExample {
     // States
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Is it on or off?
+     * Is it on || off?
      *
      * @returns {boolean}
      */
@@ -65,7 +65,8 @@ class ToggleExample extends BakerExample {
         super(props);
 
         this.state = {
-            isOn: true
+            firstIsOn: true,
+            secondIsOn: false,
         }
     }
 
@@ -80,11 +81,15 @@ class ToggleExample extends BakerExample {
      */
     handleToggleChange() {
         this.setState({
-            isOn: this.isOn = !this.isOn
-        })
+            firstIsOn: this.firstIsOn = !this.firstIsOn,
+        });
     }
 
-
+    handleSecondToggleChange() {
+        this.setState({
+            secondIsOn: this.secondIsOn = !this.secondIsOn,
+        });
+    }
 }
 
 
