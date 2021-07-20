@@ -20,7 +20,7 @@ class Toggle extends BasicAtom {
         return React.cloneElement(
             <div
                 className={
-                    "Switch "
+                    "Toggle "
                     + ((this.props.value ?? this.state.value) ? 'on' : 'off')
                     + (this.props.label && this.props.label.length ? ' has-label': '')
                     + this.padIfString(className) + this.getClassNameString()

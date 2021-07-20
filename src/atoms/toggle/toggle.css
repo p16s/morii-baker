@@ -8,24 +8,24 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --Switch-border-color: var(--Global-border-color, 170, 176, 19);
+    --Toggle-border-color: var(--Global-border-color, 170, 176, 19);
 
-    --Switch-label-on: var(--Global-base-font-color, 66 78 121);
-    --Switch-label-off: rgba(var(--Switch-label-on), .3);
+    --Toggle-label-on: var(--Global-base-font-color, 66 78 121);
+    --Toggle-label-off: rgba(var(--Toggle-label-on), .3);
 
-    --Switch-on-background-color: var(--Global-color-1, 70 50 251);
-    --Switch-off-background-color: rgba(var(--Switch-on-background-color), .3);
+    --Toggle-on-background-color: var(--Global-color-1, 70 50 251);
+    --Toggle-off-background-color: rgba(var(--Toggle-on-background-color), .3);
 
-    --Switch-handle-color: #fff;
+    --Toggle-handle-color: #fff;
 }
 
 
 /*  base
 ===================================================================================================================== */
-.Switch {
+.Toggle {
     box-sizing: border-box;
     border-radius: 10px;
-    color: rgb(var(--Switch-label-on));
+    color: rgb(var(--Toggle-label-on));
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -38,25 +38,25 @@
 }
     /*  has-label, needs border
     ================================================================================================================= */
-    .Switch.has-label {
-        border: 1px solid rgb(var(--Switch-border-color));
+    .Toggle.has-label {
+        border: 1px solid rgb(var(--Toggle-border-color));
     }
 
-    .Switch.off {
-        color: var(--Switch-label-off);
+    .Toggle.off {
+        color: var(--Toggle-label-off);
     }
 
-        .Switch.off .switcher {
-            background-color: var(--Switch-off-background-color);
+        .Toggle.off .switcher {
+            background-color: var(--Toggle-off-background-color);
         }
 
-            .Switch.off .widget {
+            .Toggle.off .widget {
                 margin-left: 2px;
             }
 
 
-    .Switch .switcher {
-        background-color: rgb(var(--Switch-on-background-color));
+    .Toggle .switcher {
+        background-color: rgb(var(--Toggle-on-background-color));
         border-radius: 16px;
         display: inline-block;
         height: 16px;
@@ -67,8 +67,8 @@
         width: 29px;
     }
 
-            .Switch .widget {
-                background: var(--Switch-handle-color);
+            .Toggle .widget {
+                background: var(--Toggle-handle-color);
                 border-radius: 12px;
                 height: 12px;
                 margin-left: 15px;
@@ -76,6 +76,6 @@
                 width: 12px;
             }
 
-    .Switch .label {
+    .Toggle .label {
         margin-left: 10px;
     }
