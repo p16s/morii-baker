@@ -19,7 +19,12 @@ class Toggle extends BasicAtom {
     render_element(className, props) {
         return React.cloneElement(
             <div
-                className={"Switch " + ((this.props.value ?? this.state.value) ? 'on' : 'off')}
+                className={
+                    "Switch "
+                    + ((this.props.value ?? this.state.value) ? 'on' : 'off')
+                    + (this.props.label && this.props.label.length ? ' has-label': '')
+                    + this.padIfString(className) + this.getClassNameString()
+                }
                 onClick={(e)=>{this.handleChange(e)}}
             >
                 <div className={"switcher"}>

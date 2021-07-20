@@ -23,7 +23,6 @@
 /*  base
 ===================================================================================================================== */
 .Switch {
-    border: 1px solid rgb(var(--Switch-border-color));
     box-sizing: border-box;
     border-radius: 10px;
     color: rgb(var(--Switch-label-on));
@@ -37,6 +36,12 @@
     position: relative;
     user-select: none;
 }
+    /*  has-label, needs border
+    ================================================================================================================= */
+    .Switch.has-label {
+        border: 1px solid rgb(var(--Switch-border-color));
+    }
+
     .Switch.off {
         color: var(--Switch-label-off);
     }
