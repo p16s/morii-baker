@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
+import RobTest from "./robTest";
+
 import LabelExample from "./atoms/label/example/labelExample";
 import InputExample from "./atoms/input/example/inputExample";
 import TextareaExample from "./atoms/textarea/example/textareaExample";
@@ -10,7 +12,7 @@ import ButtonExample from "./atoms/button/example/buttonExample";
 import AlertExample from "./atoms/alert/example/alertExample";
 import CheckboxExample from "./atoms/checkbox/example/checkboxExample";
 import ToggleExample from "./atoms/toggle/example/toggleExample";
-import RobTest from "./robTest";
+import TabExample from "./atoms/tab/example/tabExample";
 
 // import IconExample from "./atoms/icon/example/iconExample";
 // import ListHeaderExample from "./atoms/listHeader/example/listHeaderExample";
@@ -34,6 +36,7 @@ ReactDOM.render(
             <AlertExample />
             <CheckboxExample />
             <ToggleExample />
+            <TabExample />
 
             {/*<IconExample />*/}
             {/*<IconBarExample />*/}
