@@ -1,0 +1,74 @@
+/*  title:  toggle
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --switch-toggle-color: #FFFFFF;
+
+    --Switch-color-on: #424E79;
+    --Switch-color-off: #727B9B;
+
+    --switch-on-background-color: #4E32FB;
+    --switch-off-background-color: #CAC2FE;
+
+    --switch-border-color: #AAB0C3;
+}
+
+
+/*  base
+===================================================================================================================== */
+.Switch {
+    border: 1px solid var(--switch-border-color);
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: var(--Switch-color-on);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    padding: 12px 19px 12px 48px;
+    position: relative;
+    user-select: none;
+}
+    .Switch.off {
+        color: var(--Switch-color-off);
+    }
+
+    .Switch .switcher {
+        background-color: var(--switch-on-background-color);
+        border-radius: 16px;
+        display: inline-block;
+        height: 16px;
+        left: 19px;
+        padding-top: 2px;
+        position: absolute;
+        transition: background-color 200ms;
+        width: 29px;
+    }
+
+    .Switch.off .switcher {
+        background-color: var(--switch-off-background-color);
+    }
+
+    .Switch .switcher .widget {
+        background: var(--switch-toggle-color);
+        border-radius: 12px;
+        height: 12px;
+        margin-left: 15px;
+        transition: margin 200ms;
+        width: 12px;
+    }
+    .Switch.off .switcher .widget {
+        margin-left: 2px;
+    }
+
+    .Switch .label {
+        margin-left: 10px;
+    }

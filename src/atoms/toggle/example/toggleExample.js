@@ -18,16 +18,73 @@ class ToggleExample extends BakerExample {
                 </h1>
 
                 {this.render_basic()}
+                {this.render_label()}
             </section>
         );
     }
 
 
     render_basic() {
-        return (
-            <Toggle />
+        return this.render_exampleComponent(
+            'Primary / Basic',
+            <Toggle
+                value={this.state.isOn}
+                onChange={() => {
+                    this.handleToggleChange()
+                }}
+            />,
+            'Basic toggle'
         );
     }
+
+
+    render_label() {
+        return this.render_exampleComponent(
+            'Primary / With Label',
+            <Toggle
+                value={this.state.isOn}
+                onChange={() => {
+                    this.handleToggleChange()
+                }}
+                label={(this.state.isOn ? "On" : "Off")}
+            />,
+            'Toggle with label'
+        );
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // States
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * Is it on or off?
+     *
+     * @returns {boolean}
+     */
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isOn: true
+        }
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * Handle click
+     *
+     * @param {MouseEvent} e
+     */
+    handleToggleChange() {
+        this.setState({
+            isOn: this.isOn = !this.isOn
+        })
+    }
+
+
 }
 
 

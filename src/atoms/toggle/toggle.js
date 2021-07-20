@@ -1,5 +1,6 @@
 import React from "react";
 import BasicAtom from "../basicAtom";
+import './toggle.css';
 
 
 class Toggle extends BasicAtom {
