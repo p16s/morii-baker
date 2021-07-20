@@ -8,11 +8,11 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --Textarea-border: 1px solid var(--Global-border-color, #AAB0C3);
+    --Textarea-border: 1px solid rgb(var(--Global-border-color, 170 176 195));
     --Textarea-border-radius: var(--Global-border-radius, 5px);
     --Textarea-font-size: 16px;
-    --Textarea-color-error: var(--Global-color-error, red);
-    --Textarea-color-success: var(--Global-color-success, green);
+    --Textarea-color-error: var(--Global-color-error, 255 0 0);
+    --Textarea-color-success: var(--Global-color-success, 0 255 0);
     --Textarea-padding: 16px 8px;
 }
 
@@ -45,13 +45,13 @@
     /* error
     ================================================================================================================= */
     .Textarea.error {
-        border-color:  var(--Textarea-color-error);
+        border-color: rgb(var(--Textarea-color-error));
     }
 
     /* success
     ================================================================================================================= */
     .Textarea.success {
-        border-color: var(--Textarea-color-success);
+        border-color: rgb(var(--Textarea-color-success));
     }
 
     /* disabled

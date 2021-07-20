@@ -8,7 +8,7 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --Input-border: 1px solid var(--Global-border-color, 170 176 195);
+    --Input-border: 1px solid rgb(var(--Global-border-color, 170 176 195));
     --Input-border-radius: var(--Global-border-radius, 5px);
     --Input-font-size: 16px;
     --Input-color-error: var(--Global-color-error, 255 0 0);
