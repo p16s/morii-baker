@@ -8,18 +8,18 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --Input-border: 1px solid var(--Global-border-color, #AAB0C3);
+    --Input-border: 1px solid var(--Global-border-color, 170 176 195);
     --Input-border-radius: var(--Global-border-radius, 5px);
     --Input-font-size: 16px;
-    --Input-color-error: var(--Global-color-error, red);
-    --Input-color-success: var(--Global-color-success, green);
+    --Input-color-error: var(--Global-color-error, 255 0 0);
+    --Input-color-success: var(--Global-color-success, 0 255 0);
     --Input-padding: 0 8px;
 }
 
 
 /* base
 ===================================================================================================================== */
-Input {
+.Input {
     border: var(--Input-border);
     border-radius: var(--Input-border-radius);
     font-size: var(--Input-font-size);
@@ -32,12 +32,12 @@ Input {
 
     /* states
     ================================================================================================================= */
-    Input:hover,
-    Input:focus,
-    Input:focus-visible,
-    Input:focus-within,
-    Input:active {
-        box-shadow: inset 0 0 0 2px #424E79;
+    .Input:hover,
+    .Input:focus,
+    .Input:focus-visible,
+    .Input:focus-within,
+    .Input:active {
+        box-shadow: inset 0 0 0 2px #424E79;    /* TODO change hex */
         border-color: transparent;
         transition: .2s;
     }
@@ -46,14 +46,14 @@ Input {
     ================================================================================================================= */
     .Input.error {
         background: url('./error.png') 95% 50% no-repeat;
-        border-color:  var(--Input-color-error);
+        border-color:  rgb(var(--Input-color-error));
     }
 
     /* success
     ================================================================================================================= */
     .Input.success {
         background: url('./success.png') 95% 50% no-repeat;
-        border-color: var(--Input-color-success);
+        border-color: rgb(var(--Input-color-success));
     }
 
     /* disabled
