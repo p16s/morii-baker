@@ -12,6 +12,7 @@ import ButtonExample from "./atoms/button/example/buttonExample";
 import AlertExample from "./atoms/alert/example/alertExample";
 import CheckboxExample from "./atoms/checkbox/example/checkboxExample";
 import ToggleExample from "./atoms/toggle/example/toggleExample";
+import ListExample from "./atoms/list/example/listExample";
 import TabExample from "./atoms/tab/example/tabExample";
 
 // import IconExample from "./atoms/icon/example/iconExample";
@@ -36,6 +37,7 @@ ReactDOM.render(
             <AlertExample />
             <CheckboxExample />
             <ToggleExample />
+            <ListExample />
             <TabExample />
 
             {/*<IconExample />*/}

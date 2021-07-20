@@ -1,14 +1,13 @@
 import BakerExample from "../../../helpers/bakerExample";
-import Tab from "../tab";
-import Toggle from "../../toggle/toggle";
+import List from "../list";
 
 
-class TabExample extends BakerExample {
+class ListExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
                 <h1>
-                    Tabs
+                    List
 
                     {/*<a*/}
                     {/*    href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=32%3A0"}*/}
@@ -27,16 +26,31 @@ class TabExample extends BakerExample {
     render_basic() {
         return this.render_exampleComponent(
             'Primary / Basic',
-            <Tab
+            <List
                 text={"Content"}
-                onClick={() => {
-                    alert('clicked Tab');
-                }}
+                lists={[
+                    {
+                        "id": 0,
+                        "title": "first link",
+                        "slug": "/nowhere",
+                        "open_new": true
+                    },
+                    {
+                        "id": 1,
+                        "title": "second link",
+                        "slug": "/"
+                    },
+                    {
+                        "id": 2,
+                        "title": "third link",
+                        "slug": "/"
+                    }
+                ]}
             />,
-            'Basic tab'
+            'Basic list'
         );
     }
 }
 
 
-export default TabExample;
+export default ListExample;

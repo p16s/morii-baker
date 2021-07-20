@@ -18,25 +18,33 @@ class Tab extends BasicAtom {
 
     render_element(className, props) {
         return React.cloneElement(
-            <>
-                {this.props.lists.map((list) => (
-                    <a
-                        className={
-                            "Tab "
-                            + this.padIfString(className) + this.getClassNameString()
-                        }
-                        href={list.slug}
-                        title={"Link to " + list.title}
-                        target={(list.open_new ? '_blank' : '')}
-                        rel={(list.open_new ? 'noopener nofollow' : '')}
-                        key={list.id}
-                    >
-                        {list.title}
-                    </a>
-                ))}
-            </>,
+            <span
+                className={
+                    "Tab "
+                    + this.padIfString(className) + this.getClassNameString()
+                }
+                onClick={(e) => {
+                    this.handleClick(e)
+                }}
+            >
+                {this.props.text}
+            </span>,
             props ?? {}
         );
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Handle click
+     *
+     * @param {MouseEvent} e
+     */
+    handleClick(e) {
+        this.callbackOr(this.props.onClick)(e);
     }
 }
 

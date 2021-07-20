@@ -119,7 +119,7 @@ class AlertExample extends BakerExample {
                 text={"Error icon"}
                 className={'success'}
                 onClick={() => {
-                    console.log('clicked Alert');
+                    alert('clicked Alert');
                 }}
             >
                 {/* this icon would come from a package/component and is only used here as an example   */}
