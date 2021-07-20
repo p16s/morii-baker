@@ -8,25 +8,25 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --switch-toggle-color: #FFFFFF;
+    --Switch-border-color: var(--Global-border-color, 170, 176, 19);
 
-    --Switch-color-on: #424E79;
-    --Switch-color-off: #727B9B;
+    --Switch-label-on: var(--Global-base-font-color, 66 78 121);
+    --Switch-label-off: rgba(var(--Switch-label-on), .3);
 
-    --switch-on-background-color: #4E32FB;
-    --switch-off-background-color: #CAC2FE;
+    --Switch-on-background-color: var(--Global-color-1, 70 50 251);
+    --Switch-off-background-color: rgba(var(--Switch-on-background-color), .3);
 
-    --switch-border-color: #AAB0C3;
+    --Switch-handle-color: #fff;
 }
 
 
 /*  base
 ===================================================================================================================== */
 .Switch {
-    border: 1px solid var(--switch-border-color);
+    border: 1px solid rgb(var(--Switch-border-color));
     box-sizing: border-box;
     border-radius: 10px;
-    color: var(--Switch-color-on);
+    color: rgb(var(--Switch-label-on));
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -38,11 +38,20 @@
     user-select: none;
 }
     .Switch.off {
-        color: var(--Switch-color-off);
+        color: var(--Switch-label-off);
     }
 
+        .Switch.off .switcher {
+            background-color: var(--Switch-off-background-color);
+        }
+
+            .Switch.off .widget {
+                margin-left: 2px;
+            }
+
+
     .Switch .switcher {
-        background-color: var(--switch-on-background-color);
+        background-color: rgb(var(--Switch-on-background-color));
         border-radius: 16px;
         display: inline-block;
         height: 16px;
@@ -53,21 +62,14 @@
         width: 29px;
     }
 
-    .Switch.off .switcher {
-        background-color: var(--switch-off-background-color);
-    }
-
-    .Switch .switcher .widget {
-        background: var(--switch-toggle-color);
-        border-radius: 12px;
-        height: 12px;
-        margin-left: 15px;
-        transition: margin 200ms;
-        width: 12px;
-    }
-    .Switch.off .switcher .widget {
-        margin-left: 2px;
-    }
+            .Switch .widget {
+                background: var(--Switch-handle-color);
+                border-radius: 12px;
+                height: 12px;
+                margin-left: 15px;
+                transition: margin 200ms;
+                width: 12px;
+            }
 
     .Switch .label {
         margin-left: 10px;

@@ -18,8 +18,9 @@
 ===================================================================================================================== */
 :root {
     --Global-base-font-size: 16px;
+    --Global-base-font-color: 66, 78, 121;
 
-    --Global-border-color: #AAB0C3;
+    --Global-border-color: 170, 176, 195;
     --Global-border-radius: 5px;
 
     --Global-color-1: 70, 50, 251;
