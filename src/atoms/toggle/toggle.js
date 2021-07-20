@@ -17,12 +17,35 @@ class Toggle extends BasicAtom {
 
     render_element(className, props) {
         return React.cloneElement(
-            <span
-                className={"Toggle" + this.padIfString(className) + this.getClassNameString()}
-            >
-                [TOGGLE]
-            </span>,
+            <div className={"Switch " + ((this.props.value ?? this.state.value) ? 'on' : 'off')} onClick={(e)=>{this.handleChange(e)}}>
+                <div className={"switcher"}>
+                    <div className={"widget"} />
+                </div>
+                <span className={"label"}>{this.props.label}</span>
+            </div>,
             props ?? {}
+        );
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Handle click
+     *
+     * @param {MouseEvent} e
+     */
+    handleChange(e) {
+        let newState = !this.props.value ?? !this.state.value;
+
+        this.callbackOr(this.props.onChange)(e, newState);
+
+        this.setState(
+            {
+                value: newState,
+            }
         );
     }
 }

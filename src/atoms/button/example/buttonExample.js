@@ -33,7 +33,10 @@ class ButtonExample extends BakerExample {
     render_basic() {
         return this.render_exampleComponent(
             'Primary / Default',
-            <Button text={'Normal button'} />,
+            <Button
+                text={'Normal button'}
+                onClick={() => {alert('button clicked');}}
+            />,
              'Default button.'
         );
     }
@@ -44,6 +47,7 @@ class ButtonExample extends BakerExample {
             'Primary / Default / Disabled',
             <Button
                 text={'Disabled button'}
+                onClick={() => {alert('button clicked');}}
                 disabled={true}
             />,
             'Disabled button.'
@@ -55,8 +59,9 @@ class ButtonExample extends BakerExample {
         return this.render_exampleComponent(
             'Primary / Outline',
             <Button
-                className={"outline"}
                 text={'Outline button'}
+                className={"outline"}
+                onClick={() => {alert('button clicked');}}
             />,
 
             'For less important actions.'
@@ -70,6 +75,7 @@ class ButtonExample extends BakerExample {
             <Button
                 text={'Disabled outline button'}
                 className={"outline"}
+                onClick={() => {alert('button clicked');}}
                 disabled={true}
             />,
             'Disabled button.'
@@ -83,6 +89,7 @@ class ButtonExample extends BakerExample {
             <Button
                 text={'Minimal button'}
                 className={"minimal"}
+                onClick={() => {alert('button clicked');}}
             />,
             'Button without lines or background.'
         );
@@ -95,6 +102,7 @@ class ButtonExample extends BakerExample {
             <Button
                 text={'Minimal disbaled button'}
                 className={"minimal"}
+                onClick={() => {alert('button clicked');}}
                 disabled={true}
             />,
             'Button without lines or background.'
@@ -105,7 +113,10 @@ class ButtonExample extends BakerExample {
     render_icon() {
         return this.render_exampleComponent(
             'As icon',
-            <Button className={"secondary"}>
+            <Button
+                className={"secondary"}
+                onClick={() => {alert('button clicked');}}
+            >
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
                 </svg>
@@ -120,6 +131,7 @@ class ButtonExample extends BakerExample {
             'As icon / Disabled',
             <Button
                 className={"secondary"}
+                onClick={() => {alert('button clicked');}}
                 disabled={true}
             >
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">

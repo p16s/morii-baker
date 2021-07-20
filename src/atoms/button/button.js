@@ -24,7 +24,12 @@ class Button extends BasicAtom {
 
     render_element(className, props) {
         return React.cloneElement(
-            <button className={"Button" + this.padIfString(className) + this.getClassNameString()}>
+            <button
+                className={"Button" + this.padIfString(className) + this.getClassNameString()}
+                onClick={(e) => {
+                    this.handleClick(e)
+                }}
+            >
                 {this.props.text}
 
                 {this.props.children}
@@ -44,6 +49,20 @@ class Button extends BasicAtom {
      */
     isDisabled() {
         return (this.props.disabled === "disabled" || this.props.disabled === true);
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Handle click
+     *
+     * @param {MouseEvent} e
+     */
+    handleClick(e) {
+        this.callbackOr(this.props.onClick)(e);
     }
 }
 
