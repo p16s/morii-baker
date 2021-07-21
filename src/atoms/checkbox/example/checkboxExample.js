@@ -22,8 +22,8 @@ class CheckboxExample extends BakerExample {
                 {this.render_large()}
                 {this.render_large_checked()}
             </section>
-        )
-    };
+        );
+    }
 
 
     render_basic() {
@@ -35,8 +35,8 @@ class CheckboxExample extends BakerExample {
                 />
             </form>,
             'Default checkbox.  With click event.'
-        )
-    };
+        );
+    }
 
 
     render_basic_checked() {
@@ -51,8 +51,8 @@ class CheckboxExample extends BakerExample {
                 />
             </form>,
             'Default checkbox.  With click event.'
-        )
-    };
+        );
+    }
 
 
     render_large() {
@@ -66,8 +66,8 @@ class CheckboxExample extends BakerExample {
                 />
             </form>,
             'Default checkbox.  With click event.'
-        )
-    };
+        );
+    }
 
 
     render_large_checked() {
@@ -77,12 +77,14 @@ class CheckboxExample extends BakerExample {
                 <Checkbox
                     selected={true}
                     className={'large'}
-                    onClick={() => {console.log('clicked Checkbox');}}
+                    onClick={() => {
+                        console.log('clicked Checkbox');
+                    }}
                 />
             </form>,
             'Default checkbox.  With click event.'
-        )
-    };
+        );
+    }
 }
 
 

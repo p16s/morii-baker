@@ -7,6 +7,7 @@ import RobTest from "./robTest";
 
 import LabelExample from "./atoms/label/example/labelExample";
 import InputExample from "./atoms/input/example/inputExample";
+import PinExample from "./atoms/pin/example/pinExample";
 import TextareaExample from "./atoms/textarea/example/textareaExample";
 import ButtonExample from "./atoms/button/example/buttonExample";
 import AlertExample from "./atoms/alert/example/alertExample";
@@ -32,6 +33,7 @@ ReactDOM.render(
 
             <LabelExample />
             <InputExample />
+            <PinExample />
             <TextareaExample />
             <ButtonExample />
             <AlertExample />

@@ -8,12 +8,13 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --Input-border: 1px solid rgb(var(--Global-border-color, 170 176 195));
+    --Input-border: 1px solid var(--Input-border-color);
+    --Input-border-color: rgb(var(--Global-border-color, 170 176 195));
     --Input-border-radius: var(--Global-border-radius, 5px);
-    --Input-font-size: 16px;
+    --Input-font-size: var(--Global-base-font-size, 16px);
     --Input-color-error: var(--Global-color-error, 255 0 0);
     --Input-color-success: var(--Global-color-success, 0 255 0);
-    --Input-padding: 0 8px;
+    --Input-padding: 0 .5rem;
 }
 
 

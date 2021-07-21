@@ -1,0 +1,86 @@
+/*  title:  pin
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Pin-border: 1px solid var(--Pin-border-color);
+    --Pin-border-color: rgb(var(--Global-border-color, 170 176 195));
+    --Pin-border-radius: var(--Global-border-radius, 5px);
+    --Pin-font-size: var(--Global-base-font-size, 16px);
+    --Pin-color-error: var(--Global-color-error, 255 0 0);
+    --Pin-color-success: var(--Global-color-success, 0 255 0);
+    --Pin-padding: 0 .5rem;
+}
+
+
+
+
+/*  base
+===================================================================================================================== */
+/*.Pin {*/
+/*}*/
+
+    /*  pin input
+    ================================================================================================================= */
+    .Pin .pin-input {
+        -moz-appearance: textfield;
+        border: var(--Pin-border);
+        border-radius: 5px;
+        color: #000;
+        font-size: 1.5rem;
+        height: 48px;
+        line-height: 1;
+        outline: none;      /* poor accessability */
+        margin-right: .5rem;
+        padding: var(--Pin-padding);
+        text-align: center;
+        transition: .3s;
+        width: 48px;
+    }
+
+    /* states
+    ================================================================================================================= */
+    .Pin input:hover,
+    .Pin input:focus,
+    .Pin input:focus-visible,
+    .Pin input:focus-within,
+    .Pin input:active {
+        box-shadow: inset 0 0 0 2px #424E79;    /* TODO change hex */
+        border-color: transparent;
+        transition: .2s;
+    }
+
+    /*  show/hide toggle
+    ================================================================================================================= */
+    .Pin .toggleShow {
+        cursor: pointer;
+    }
+
+
+
+
+    /*  firefox help
+    ================================================================================================================= */
+    .Pin .pin-input::-webkit-outer-spin-button,
+    .Pin .pin-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .Pin .hiddenInput {
+        -webkit-text-security: disc;
+    }
+
+    @-moz-document url-prefix() {
+        input:required {
+            box-shadow: none;
+        }
+        .Pin .hiddenInput:valid {
+            background-color: #000;
+        }
+    }
