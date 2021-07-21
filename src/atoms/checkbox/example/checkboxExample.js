@@ -1,5 +1,5 @@
-import Checkbox from "../checkbox";
 import BakerExample from "../../../helpers/bakerExample";
+import Checkbox from "../checkbox";
 
 
 class CheckboxExample extends BakerExample {

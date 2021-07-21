@@ -1,24 +1,27 @@
-import './listItem.css';
 import BasicAtom from "../basicAtom";
+import './listItem.css';
+
 
 class ListItem extends BasicAtom {
-    render() {
+    render(className, props) {
         return (
-            <div
+            <li
                 className={
                     "ListItem"
-                    + (this.isActive() ? ' active' : '')
-                    + (this.isClickable() ? ' clickable' : '')
+                    + this.padIfString(className)
                     + this.getClassNameString()
+                    + (this.isActive() ? ' active' : '')
+                    + (this.isClickable() ? ' clickable' : ' disabled')
                 }
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
             >
                 {this.props.children}
-            </div>
+            </li>
         );
     }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
@@ -33,5 +36,6 @@ class ListItem extends BasicAtom {
         this.callbackOr(this.props.onClick)(e);
     }
 }
+
 
 export default ListItem;

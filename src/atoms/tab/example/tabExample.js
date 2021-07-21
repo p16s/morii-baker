@@ -1,6 +1,5 @@
 import BakerExample from "../../../helpers/bakerExample";
 import Tab from "../tab";
-import Toggle from "../../toggle/toggle";
 
 
 class TabExample extends BakerExample {
@@ -33,7 +32,7 @@ class TabExample extends BakerExample {
                     alert('clicked Tab');
                 }}
             />,
-            'Basic tab'
+            'Basic tab.  WIth click event'
         );
     }
 }
