@@ -49,11 +49,9 @@ class OnOff extends BasicAtom {
      * @param {MouseEvent} e
      */
     handleChange(e) {
-        let newState = (!this.props[this.valuePropName]) ?? (!this.state[this.valuePropName]);
-        console.log('-', !this.state[this.valuePropName]);
+        let newState = !(this.props[this.valuePropName] ?? this.state[this.valuePropName]);
         let newStateObj = {};
         newStateObj[this.valuePropName] = newState;
-        console.log("newState", newState);
         this.callbackOr(this.props.onChange)(e, newState);
         this.setState(newStateObj);
     }
