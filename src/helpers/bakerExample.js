@@ -21,8 +21,8 @@ class BakerExample extends React.Component {
     render_exampleComponent(title, what, about) {
         return (
             <section className={"BakerExample"}>
-                <h2>{title}</h2>
-                <p className={"about"}>{about}</p>
+                <h2 className={'baker-example-title'}>{title}</h2>
+                <p className={"baker-example-about"}>{about}</p>
 
                 <div className={"component-wrapper"}>
                     {what}

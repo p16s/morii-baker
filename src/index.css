@@ -62,7 +62,7 @@ time, mark, audio, video {
 
 
 
-/* main body
+/*  set a basic container/style that wraps these examples
 ===================================================================================================================== */
 body {
     background-color: #E5E5E5;
@@ -77,31 +77,18 @@ body {
         width: 1040px;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        color: #202B37;
-        font-family: 'Roboto', sans-serif;
-    }
-    h1 {
-        border-bottom: 1px solid #AAB0C3;
-        font-size: 32px;
-        margin-bottom: 1em;
-        padding-bottom: 14px;
-    }
-        /*  link to documentation   */
-        h1 a {
-            border: 1px solid #4E32FB;
-            border-radius: var(--Global-border-radius, 5px);
-            float: right;
-            font-size: var(--Global-base-font-size, 16px);
-            padding: 8px 12px;
-        }
-    h2 {
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
-    p {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 20px;
-        line-height: 27px;
-        padding-bottom: 30px;
-    }
+
+
+
+/*  site nav (to toggle between the atoms/molecules/organisms
+===================================================================================================================== */
+.site-nav {
+    background-color: #424E79;
+    box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, .25);
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: 1rem 0;
+    position: fixed;
+    top: 3rem;
+}
