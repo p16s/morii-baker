@@ -61,8 +61,9 @@ class CheckboxExample extends BakerExample {
             <form>
                 <Checkbox
                     className={'large'}
-                    selected={false}
-                    onClick={() => {console.log('clicked Checkbox');}}
+                    onClick={() => {
+                        console.log('clicked Checkbox');
+                    }}
                 />
             </form>,
             'Default checkbox.  With click event.'

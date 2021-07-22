@@ -13,7 +13,7 @@ class OnOff extends BasicAtom {
     render() {
         return (
             this.render_element()
-        )
+        );
     }
 
 
@@ -36,6 +36,7 @@ class OnOff extends BasicAtom {
             'prop':this.props[this.valuePropName],
             'state': this.state[this.valuePropName],
         });
+
         return (this.props[this.valuePropName] ?? this.state[this.valuePropName] ?? false);
     }
 
@@ -51,7 +52,9 @@ class OnOff extends BasicAtom {
     handleChange(e) {
         let newState = !(this.props[this.valuePropName] ?? this.state[this.valuePropName]);
         let newStateObj = {};
+
         newStateObj[this.valuePropName] = newState;
+
         this.callbackOr(this.props.onChange)(e, newState);
         this.setState(newStateObj);
     }

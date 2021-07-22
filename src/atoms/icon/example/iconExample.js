@@ -1,13 +1,21 @@
 import Icon from "../icon";
 import BakerExample from "../../../helpers/bakerExample";
 
+
 class IconExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Icon</h1>
-                <h2>Overview</h2>
-                <p>The Icon supports the onClick property and has the following uses...</p>
+                <h1>
+                    Icon
+
+                    <a
+                        href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=223%3A1112"}
+                        target={"_blank"}
+                    >
+                        Documentation
+                    </a>
+                </h1>
 
                 {this.render_basic()}
                 {this.render_active()}
@@ -18,6 +26,7 @@ class IconExample extends BakerExample {
             </section>
         );
     }
+
 
     render_image() {
         return this.render_exampleComponent(
@@ -34,6 +43,7 @@ class IconExample extends BakerExample {
             "Use the 'letter' property"
         );
     }
+
 
     render_backgroundColour() {
         return this.render_exampleComponent(
@@ -56,6 +66,7 @@ class IconExample extends BakerExample {
         );
     }
 
+
     render_active() {
         return this.render_exampleComponent(
             "Active",
@@ -64,6 +75,7 @@ class IconExample extends BakerExample {
         );
     }
 
+
     render_basic() {
         return this.render_exampleComponent(
             "Basic",
@@ -71,5 +83,6 @@ class IconExample extends BakerExample {
         );
     }
 }
+
 
 export default IconExample;

@@ -18,6 +18,7 @@ import IconBarExample from "./molecules/iconBar/example/IconBarExample";
 import ListExample from "./molecules/list/example/listExample";
 
 import SideBarExample from "./organisms/SideBar/example/sideBarExample";
+import InputsExample from "./molecules/Inputs/example/inputsExample";
 
 
 
@@ -27,7 +28,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            isShowing: 'atoms'
+            isShowing: 'molecules'
         }
     }
 
@@ -68,8 +69,9 @@ class App extends React.Component {
                 <>
                     {this.render_nav()}
 
-                    <IconBarExample />
-                    <ListExample />
+                    <InputsExample />
+                    {/*<IconBarExample />*/}
+                    {/*<ListExample />*/}
                 </>
             );
         }
@@ -96,9 +98,24 @@ class App extends React.Component {
         return (
             <nav>
                 <ul className={'site-nav'}>
-                    <ListItem onClick={() => this.handleClick('atoms')}>View: Atoms</ListItem>
-                    <ListItem onClick={() => this.handleClick('molecules')}>View: Molecules</ListItem>
-                    <ListItem onClick={() => this.handleClick('organisms')}>View: Organisms</ListItem>
+                    <ListItem
+                        active={(this.state.isShowing === 'atoms')}
+                        onClick={() => this.handleClick('atoms')}
+                    >
+                        View: Atoms
+                    </ListItem>
+                    <ListItem
+                        active={(this.state.isShowing === 'molecules')}
+                        onClick={() => this.handleClick('molecules')}
+                    >
+                        View: Molecules
+                    </ListItem>
+                    <ListItem
+                        active={(this.state.isShowing === 'organisms')}
+                        onClick={() => this.handleClick('organisms')}
+                    >
+                        View: Organisms
+                    </ListItem>
                 </ul>
             </nav>
         );

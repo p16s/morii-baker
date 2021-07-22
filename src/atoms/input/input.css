@@ -18,7 +18,7 @@
 }
 
 
-/* base
+/*  base
 ===================================================================================================================== */
 .Input {
     border: var(--Input-border);
@@ -31,7 +31,7 @@
     transition: .3s;
 }
 
-    /* states
+    /*  states
     ================================================================================================================= */
     .Input:hover,
     .Input:focus,
@@ -43,21 +43,27 @@
         transition: .2s;
     }
 
-    /* error
+    /*  error
     ================================================================================================================= */
     .Input.error {
         background: url('./error.png') 95% 50% no-repeat;
         border-color:  rgb(var(--Input-color-error));
     }
+        .Input.error:hover {
+            border-color: transparent;
+        }
 
-    /* success
+    /*  success
     ================================================================================================================= */
     .Input.success {
         background: url('./success.png') 95% 50% no-repeat;
         border-color: rgb(var(--Input-color-success));
     }
+        .Input.success:hover {
+            border-color: transparent;
+        }
 
-    /* disabled
+    /*  disabled
     ================================================================================================================= */
     .Input:disabled {
         background-color: #EFEFEF;
@@ -66,9 +72,8 @@
         cursor: not-allowed;
     }
 
-    /* large
+    /*  large
     ================================================================================================================= */
     .Input.large {
         font-size: 22px;
-
     }
