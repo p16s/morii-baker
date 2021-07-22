@@ -1,17 +1,16 @@
 import BakerExample from "../../../helpers/bakerExample";
-import Inputs from "../inputs";
-import Input from "../../../atoms/input/input";
+import Textareas from "../textareas";
 
 
-class InputsExample extends BakerExample {
+class TextareasExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
                 <h1>
-                    Form Elements - Inputs
+                    Form Elements - Textareas
 
                     <a
-                        href={"https://www.figma.com/file/TyaSwVfNEDdQcodIuFs8DR/Baskerville-2.0?node-id=10%3A306"}
+                        href={"https://www.figma.com/file/TyaSwVfNEDdQcodIuFs8DR/Baskerville-2.0?node-id=31%3A0"}
                         target={"_blank"}
                     >
                         Components
@@ -28,14 +27,13 @@ class InputsExample extends BakerExample {
 
     render_normal() {
         return this.render_exampleComponent(
-            "Inputs/Normal",
+            "Textareas/Normal",
             <form>
-                <Inputs
+                <Textareas
                     for={"basic"}
                     labelText={"Label"}
 
                     id={"basic"}
-                    value={"Value passed"}
                     placeholder={"Placeholder"}
                 />
             </form>,
@@ -46,17 +44,15 @@ class InputsExample extends BakerExample {
 
     render_success() {
         return this.render_exampleComponent(
-            "Inputs/Success",
+            "Textareas/Success",
             <form>
-                <Inputs
+                <Textareas
                     for={"success"}
                     labelText={"Label with success"}
 
                     id={"success"}
                     success={true}
                     placeholder={"Success"}
-
-                    message={"Success message"}
                 />
             </form>,
             "Success"
@@ -66,17 +62,15 @@ class InputsExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "Inputs/Error",
+            "Textareas/Error",
             <form>
-                <Inputs
+                <Textareas
                     for={"error"}
                     labelText={"Label with error"}
 
                     id={"error"}
                     error={true}
                     placeholder={"Error"}
-
-                    message={"Error message"}
                 />
             </form>,
             "Error"
@@ -85,4 +79,4 @@ class InputsExample extends BakerExample {
 }
 
 
-export default InputsExample;
+export default TextareasExample;

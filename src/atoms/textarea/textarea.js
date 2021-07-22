@@ -6,6 +6,21 @@ import Label from "../label/label";
 
 
 class Textarea extends BasicAtom {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: ""
+        }
+    }
+
+    /**
+     * Sets state to prop value
+     */
+    componentDidMount() {
+        this.updateValue((this.props.value ? this.props.value : ''));
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -66,9 +81,14 @@ class Textarea extends BasicAtom {
     render_element(className, props) {
         return React.cloneElement(
             <textarea
+                id={this.props.id}
                 className={"Textarea" + this.padIfString(className) + this.getClassNameString()}
+                value={this.state.value}
                 onClick={(e) => {
                     this.handleClick(e)
+                }}
+                onChange={(e) => {
+                    this.updateValue(e.target.value)
                 }}
             />,
             props ?? {}
@@ -116,6 +136,17 @@ class Textarea extends BasicAtom {
      */
     handleClick(e) {
         this.callbackOr(this.props.onClick)(e);
+    }
+
+    /**
+     * Update state
+     *
+     * @param {KeyboardEvent} e
+     */
+    updateValue(e) {
+        this.setState({
+            value: this.value = e
+        })
     }
 }
 

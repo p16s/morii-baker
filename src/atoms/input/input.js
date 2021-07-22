@@ -5,6 +5,21 @@ import "./input.css";
 
 
 class Input extends BasicAtom {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: ""
+        }
+    }
+
+    /**
+     * Sets state to prop value
+     */
+    componentDidMount() {
+        this.updateValue((this.props.value ? this.props.value : ''));
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -69,8 +84,12 @@ class Input extends BasicAtom {
                 className={"Input" + this.padIfString(className) + this.getClassNameString()}
                 type={this.props.type ?? 'text'}
                 placeholder={this.props.placeholder}
+                value={this.state.value}
                 onClick={(e) => {
                     this.handleClick(e)
+                }}
+                onChange={(e) => {
+                    this.updateValue(e.target.value)
                 }}
             />,
             props ?? {}
@@ -118,6 +137,17 @@ class Input extends BasicAtom {
      */
     handleClick(e) {
         this.callbackOr(this.props.onClick)(e);
+    }
+
+    /**
+     * Update state
+     *
+     * @param {KeyboardEvent} e
+     */
+    updateValue(e) {
+        this.setState({
+            value: this.value = e
+        })
     }
 }
 

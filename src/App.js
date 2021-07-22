@@ -14,11 +14,12 @@ import ListItem from "./atoms/listItem/listItem";
 import ListItemExample from "./atoms/listItem/example/listItemExample";
 import IconExample from "./atoms/icon/example/iconExample";
 
-import IconBarExample from "./molecules/iconBar/example/IconBarExample";
-import ListExample from "./molecules/list/example/listExample";
+import InputsExample from "./molecules/Inputs/example/inputsExample";
+import TextareasExample from "./molecules/textareas/example/textareasExample";
+// import IconBarExample from "./molecules/iconBar/example/IconBarExample";
+// import ListExample from "./molecules/list/example/listExample";
 
 import SideBarExample from "./organisms/SideBar/example/sideBarExample";
-import InputsExample from "./molecules/Inputs/example/inputsExample";
 
 
 
@@ -70,6 +71,8 @@ class App extends React.Component {
                     {this.render_nav()}
 
                     <InputsExample />
+                    <TextareasExample />
+
                     {/*<IconBarExample />*/}
                     {/*<ListExample />*/}
                 </>
@@ -102,19 +105,19 @@ class App extends React.Component {
                         active={(this.state.isShowing === 'atoms')}
                         onClick={() => this.handleClick('atoms')}
                     >
-                        View: Atoms
+                        Atoms
                     </ListItem>
                     <ListItem
                         active={(this.state.isShowing === 'molecules')}
                         onClick={() => this.handleClick('molecules')}
                     >
-                        View: Molecules
+                        Molecules
                     </ListItem>
                     <ListItem
                         active={(this.state.isShowing === 'organisms')}
                         onClick={() => this.handleClick('organisms')}
                     >
-                        View: Organisms
+                        Organisms
                     </ListItem>
                 </ul>
             </nav>

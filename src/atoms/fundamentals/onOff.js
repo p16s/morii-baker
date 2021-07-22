@@ -31,11 +31,11 @@ class OnOff extends BasicAtom {
      * @returns {*|boolean}
      */
     get isOn() {
-        console.log({
-            'isOn': (this.props[this.valuePropName] ?? this.state[this.valuePropName] ?? false),
-            'prop':this.props[this.valuePropName],
-            'state': this.state[this.valuePropName],
-        });
+        // console.log({
+        //     'isOn': (this.props[this.valuePropName] ?? this.state[this.valuePropName] ?? false),
+        //     'prop':this.props[this.valuePropName],
+        //     'state': this.state[this.valuePropName],
+        // });
 
         return (this.props[this.valuePropName] ?? this.state[this.valuePropName] ?? false);
     }

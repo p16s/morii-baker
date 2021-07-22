@@ -24,6 +24,8 @@
 
     /*  when followed by input, give some margin (NOTE: could potentially do this on the molecule but would require a wrapper class)
     ================================================================================================================= */
-    .Label ~ input {
+    .Label ~ input,
+    .Label ~ textarea,
+    .Label ~ select {
         margin-top: 1rem;
     }
