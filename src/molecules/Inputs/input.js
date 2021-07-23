@@ -24,6 +24,7 @@ class Input extends BasicAtom {
                 >
                     {this.props.labelText}
                 </Label>
+
                 <FormInput
                     id={this.props.id}
                     value={this.props.value}
