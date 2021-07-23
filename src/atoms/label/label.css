@@ -22,7 +22,7 @@
     font-weight: 700;
 }
 
-    /*  when followed by input, give some margin (NOTE: could potentially do this on the molecule but would require a wrapper class)
+    /*  when followed by formInput, give some margin (NOTE: could potentially do this on the molecule but would require a wrapper class)
     ================================================================================================================= */
     .Label ~ input,
     .Label ~ textarea,

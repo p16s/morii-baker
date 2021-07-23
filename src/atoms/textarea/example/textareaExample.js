@@ -33,7 +33,7 @@ class TextareaExample extends BakerExample {
 
 
     /**
-     * Render the basic input example
+     * Render the basic formInput example
      * @returns {JSX.Element}
      */
     render_normal() {
@@ -44,7 +44,7 @@ class TextareaExample extends BakerExample {
                     onClick={() => {console.log('click');}}
                 />
             </form>,
-            "The basic textarea field. Out of focus and empty. (click the input to console log)"
+            "The basic textarea field. Out of focus and empty. (click the formInput to console log)"
         );
     }
 

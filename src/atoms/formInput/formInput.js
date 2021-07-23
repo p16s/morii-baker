@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
-import "./input.css";
+import "./formInput.css";
 
 
-class Input extends BasicAtom {
+class FormInput extends BasicAtom {
     constructor(props) {
         super(props);
 
@@ -81,7 +81,7 @@ class Input extends BasicAtom {
         return React.cloneElement(
             <input
                 id={this.props.id}
-                className={"Input" + this.padIfString(className) + this.getClassNameString()}
+                className={"Form-input" + this.padIfString(className) + this.getClassNameString()}
                 type={this.props.type ?? 'text'}
                 placeholder={this.props.placeholder}
                 value={this.state.value}
@@ -100,7 +100,7 @@ class Input extends BasicAtom {
     // States
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Does the input have an error?
+     * Does the formInput have an error?
      *
      * @returns {boolean}
      */
@@ -151,15 +151,15 @@ class Input extends BasicAtom {
     }
 }
 
-Input.defaultProps = {
+FormInput.defaultProps = {
     error: false,
     success: false,
 }
 
-Input.propTypes = {
+FormInput.propTypes = {
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     success: PropTypes.bool,
     disabled: PropTypes.oneOf(["disabled", true, "", false])
 }
 
-export default Input;
+export default FormInput;

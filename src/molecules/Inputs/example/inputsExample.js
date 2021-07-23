@@ -1,6 +1,5 @@
 import BakerExample from "../../../helpers/bakerExample";
 import Inputs from "../inputs";
-import Input from "../../../atoms/input/input";
 
 
 class InputsExample extends BakerExample {

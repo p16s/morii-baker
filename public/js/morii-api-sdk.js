@@ -44,9 +44,9 @@
 
 					/** Error messages */
 					errors = {
-						'overflow': 'Overflow: input needs wider integers to process',
-						'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
-						'invalid-input': 'Invalid input'
+						'overflow': 'Overflow: formInput needs wider integers to process',
+						'not-basic': 'Illegal formInput >= 0x80 (not a basic code point)',
+						'invalid-input': 'Invalid formInput'
 					},
 
 					/** Convenience shortcuts */
@@ -122,7 +122,7 @@
 				 * @see <https://mathiasbynens.be/notes/javascript-encoding>
 				 * @memberOf punycode.ucs2
 				 * @name decode
-				 * @param {String} string The Unicode input string (UCS-2).
+				 * @param {String} string The Unicode formInput string (UCS-2).
 				 * @returns {Array} The new array of code points.
 				 */
 				function ucs2decode(string) {
@@ -252,7 +252,7 @@
 						/** Cached calculation results */
 						baseMinusT;
 
-					// Handle the basic code points: let `basic` be the number of input code
+					// Handle the basic code points: let `basic` be the number of formInput code
 					// points before the last delimiter, or `0` if there is none, then copy
 					// the first basic code points to the output.
 
@@ -347,14 +347,14 @@
 						t,
 						currentValue,
 						output = [],
-						/** `inputLength` will hold the number of code points in `input`. */
+						/** `inputLength` will hold the number of code points in `formInput`. */
 						inputLength,
 						/** Cached calculation results */
 						handledCPCountPlusOne,
 						baseMinusT,
 						qMinusT;
 
-					// Convert the input in UCS-2 to Unicode
+					// Convert the formInput in UCS-2 to Unicode
 					input = ucs2decode(input);
 
 					// Cache the length
@@ -443,7 +443,7 @@
 
 				/**
 				 * Converts a Punycode string representing a domain name or an email address
-				 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
+				 * to Unicode. Only the Punycoded parts of the formInput will be converted, i.e.
 				 * it doesn't matter if you call it on a string that has already been
 				 * converted to Unicode.
 				 * @memberOf punycode

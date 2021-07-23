@@ -99,7 +99,7 @@ class Textarea extends BasicAtom {
     // States
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Does the input have an error?
+     * Does the formInput have an error?
      *
      * @returns {boolean}
      */

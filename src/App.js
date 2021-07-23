@@ -1,7 +1,7 @@
 import React from "react";
 
 import LabelExample from "./atoms/label/example/labelExample";
-import InputExample from "./atoms/input/example/inputExample";
+import FormInputExample from "./atoms/formInput/example/formInputExample";
 import PinExample from "./atoms/pin/example/pinExample";
 import TextareaExample from "./atoms/textarea/example/textareaExample";
 import ButtonExample from "./atoms/button/example/buttonExample";
@@ -49,7 +49,7 @@ class App extends React.Component {
                     {this.render_nav()}
 
                     <LabelExample />
-                    <InputExample />
+                    <FormInputExample />
                     <PinExample />
                     <TextareaExample />
                     <ButtonExample />

@@ -1,9 +1,8 @@
 import React from "react";
 import BasicAtom from "../../atoms/basicAtom";
 import Label from "../../atoms/label/label";
-import Input from "../../atoms/input/input";
+import FormInput from "../../atoms/formInput/formInput";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
-// import "./input.css";
 
 
 class Inputs extends BasicAtom {
@@ -25,7 +24,7 @@ class Inputs extends BasicAtom {
                 >
                     {this.props.labelText}
                 </Label>
-                <Input
+                <FormInput
                     id={this.props.id}
                     value={this.props.value}
                     placeholder={this.props.placeholder}

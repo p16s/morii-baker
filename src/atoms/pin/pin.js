@@ -121,7 +121,7 @@ class Pin extends BasicAtom {
         for(let i = 0; i < this.length; i++) {
             inputs.push(
                 <input
-                    className={'pin-input' + ((this.state.show) ? "" : " hiddenInput")}
+                    className={'pin-formInput' + ((this.state.show) ? "" : " hiddenInput")}
                     type={"number"}
                     name={"pinNumber" + i}
                     ref={(input) => {this["input" + i] = input}}

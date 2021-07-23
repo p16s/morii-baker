@@ -1,6 +1,6 @@
 import BakerExample from "../../../helpers/bakerExample";
 import Label from "../label";
-import Input from "../../input/input";
+import formInput from "../../formInput/formInput";
 
 
 class LabelExample extends BakerExample {

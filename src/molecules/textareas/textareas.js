@@ -2,7 +2,7 @@ import React from "react";
 import BasicAtom from "../../atoms/basicAtom";
 import Label from "../../atoms/label/label";
 import Textarea from "../../atoms/textarea/textarea";
-// import "./input.css";
+// import "./formInput.css";
 
 
 class Textareas extends BasicAtom {
