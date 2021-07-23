@@ -1,8 +1,8 @@
 import BakerExample from "../../../helpers/bakerExample";
-import Inputs from "../inputs";
+import Input from "../input";
 
 
-class InputsExample extends BakerExample {
+class InputExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
@@ -27,9 +27,9 @@ class InputsExample extends BakerExample {
 
     render_normal() {
         return this.render_exampleComponent(
-            "Inputs/Normal",
+            "Input/Normal",
             <form>
-                <Inputs
+                <Input
                     for={"basic"}
                     labelText={"Label"}
 
@@ -45,9 +45,9 @@ class InputsExample extends BakerExample {
 
     render_success() {
         return this.render_exampleComponent(
-            "Inputs/Success",
+            "Input/Success",
             <form>
-                <Inputs
+                <Input
                     for={"success"}
                     labelText={"Label with success"}
 
@@ -65,9 +65,9 @@ class InputsExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "Inputs/Error",
+            "Input/Error",
             <form>
-                <Inputs
+                <Input
                     for={"error"}
                     labelText={"Label with error"}
 
@@ -84,4 +84,4 @@ class InputsExample extends BakerExample {
 }
 
 
-export default InputsExample;
+export default InputExample;

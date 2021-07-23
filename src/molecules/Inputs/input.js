@@ -5,7 +5,7 @@ import FormInput from "../../atoms/formInput/formInput";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 
 
-class Inputs extends BasicAtom {
+class Input extends BasicAtom {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -48,4 +48,4 @@ class Inputs extends BasicAtom {
 }
 
 
-export default Inputs;
+export default Input;

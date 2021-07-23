@@ -14,7 +14,7 @@ import ListItem from "./atoms/listItem/listItem";
 import ListItemExample from "./atoms/listItem/example/listItemExample";
 import IconExample from "./atoms/icon/example/iconExample";
 
-import InputsExample from "./molecules/Inputs/example/inputsExample";
+import InputExample from "./molecules/Inputs/example/inputExample";
 import TextareasExample from "./molecules/textareas/example/textareasExample";
 // import IconBarExample from "./molecules/iconBar/example/IconBarExample";
 // import ListExample from "./molecules/list/example/listExample";
@@ -61,7 +61,7 @@ class App extends React.Component {
                     <ListItemExample />
                     <IconExample />
                 </>
-            );
+            ); 
         }
 
 
@@ -70,7 +70,7 @@ class App extends React.Component {
                 <>
                     {this.render_nav()}
 
-                    <InputsExample />
+                    <InputExample />
                     <TextareasExample />
 
                     {/*<IconBarExample />*/}
