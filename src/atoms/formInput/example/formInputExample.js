@@ -1,8 +1,8 @@
 import BakerExample from "../../../helpers/bakerExample";
-import Input from "../input";
+import FormInput from "../formInput";
 
 
-class InputExample extends BakerExample {
+class FormInputExample extends BakerExample {
 
     /**
      * Render the Baker Example
@@ -32,19 +32,19 @@ class InputExample extends BakerExample {
     }
 
     /**
-     * Render the basic input example
+     * Render the basic formInput example
      * @returns {JSX.Element}
      */
     render_normal() {
         return this.render_exampleComponent(
-            "Input / Normal",
+            "Input/Normal",
             <form>
-                <Input
+                <FormInput
                     placeholder={"Placeholder"}
                     onClick={() => {console.log('click');}}
                 />
             </form>,
-            "The basic input field. Out of focus and empty. (click the input to console log)"
+            "The basic formInput field. Out of focus and empty. (click the formInput to console log)"
         );
     }
 
@@ -52,7 +52,7 @@ class InputExample extends BakerExample {
         return this.render_exampleComponent(
             "Input/Error",
             <form>
-                <Input
+                <FormInput
                     error={true}
                     placeholder={"Error"}
                 />
@@ -65,12 +65,12 @@ class InputExample extends BakerExample {
         return this.render_exampleComponent(
             "Input/Success",
             <form>
-                <Input
+                <FormInput
                     success={true}
                     placeholder={"Success"}
                 />
             </form>,
-            "The content of the input field is valid and worth showing it.  Set the success property to true"
+            "The content of the formInput field is valid and worth showing it.  Set the success property to true"
         );
     }
 
@@ -78,12 +78,12 @@ class InputExample extends BakerExample {
         return this.render_exampleComponent(
             "Input/Disabled",
             <form>
-                <Input
+                <FormInput
                     disabled={true}
                     placeholder={"Disabled"}
                 />
             </form>,
-            "The input field is disabled.  Set the disabled property to true or disabled"
+            "The formInput field is disabled.  Set the disabled property to true or disabled"
         );
     }
 
@@ -91,7 +91,7 @@ class InputExample extends BakerExample {
         return this.render_exampleComponent(
             "Input/Large",
             <form>
-                <Input
+                <FormInput
                     className={"large"}
                     placeholder={"Large text"}
                 />
@@ -101,4 +101,4 @@ class InputExample extends BakerExample {
     }
 }
 
-export default InputExample;
+export default FormInputExample;

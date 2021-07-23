@@ -1,47 +1,61 @@
+/*  title:  formInput
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
 :root {
-    --Icon-height: 40px;
-    --Icon-width: 40px;
     --Icon-active-color: #28D8AD;
     --Icon-background-color: #424e79;
-    --Icon-color: #FFFFFF;
+    --Icon-color: #fff;
+    --Icon-height: 40px;
+    --Icon-width: 40px;
 }
 
+
+/*  base
+===================================================================================================================== */
 .Icon {
-    height: var(--Icon-height);
-    width: var(--Icon-width);
-    cursor: pointer;
-    display: block;
     background-color: var(--Icon-background-color);
     border-radius: 5px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    cursor: pointer;
+    display: block;
     font-size: var(--Icon-height);
+    height: var(--Icon-height);
     position: relative;
+    width: var(--Icon-width);
 }
 
+    /*  active
+    ================================================================================================================= */
+    .Icon.active {
+        border: 2px solid var(--Icon-active-color);
+    }
+        .Icon.active > .letter {
+            line-height: 1.1em;
+        }
 
-.Icon.active {
-    border: 2px solid var(--Icon-active-color);
-}
+    /*  letter
+    ================================================================================================================= */
+    .Icon > .letter {
+        color: var(--Icon-color);
+        float: left;
+        font-size: 0.8em;
+        height: 100%;
+        line-height: 1.25em;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
 
-.Icon.active > .letter {
-    line-height: 1.1em;
-}
-.Icon > .letter {
-    color: var(--Icon-color);
-    font-size: 0.8em;
-    text-align: center;
-    float: left;
-    width: 100%;
-    height: 100%;
-    line-height: 1.25em;
-    position: absolute;
-}
-
-.Icon > img {
-    height: 100%;
-    width: 100%;
-    float: right;
-    position: absolute;
-}
+    /*  img
+    ================================================================================================================= */
+    .Icon > img {
+        float: right;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }

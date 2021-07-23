@@ -1,11 +1,26 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
-import "./textarea.css";
+import "./formTextarea.css";
 import Label from "../label/label";
 
 
-class Textarea extends BasicAtom {
+class FormTextarea extends BasicAtom {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: ""
+        }
+    }
+
+    /**
+     * Sets state to prop value
+     */
+    componentDidMount() {
+        this.updateValue((this.props.value ? this.props.value : ''));
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -66,9 +81,14 @@ class Textarea extends BasicAtom {
     render_element(className, props) {
         return React.cloneElement(
             <textarea
-                className={"Textarea" + this.padIfString(className) + this.getClassNameString()}
+                id={this.props.id}
+                className={"Form-textarea" + this.padIfString(className) + this.getClassNameString()}
+                value={this.state.value}
                 onClick={(e) => {
                     this.handleClick(e)
+                }}
+                onChange={(e) => {
+                    this.updateValue(e.target.value)
                 }}
             />,
             props ?? {}
@@ -79,7 +99,7 @@ class Textarea extends BasicAtom {
     // States
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Does the input have an error?
+     * Does the formInput have an error?
      *
      * @returns {boolean}
      */
@@ -117,18 +137,29 @@ class Textarea extends BasicAtom {
     handleClick(e) {
         this.callbackOr(this.props.onClick)(e);
     }
+
+    /**
+     * Update state
+     *
+     * @param {KeyboardEvent} e
+     */
+    updateValue(e) {
+        this.setState({
+            value: this.value = e
+        })
+    }
 }
 
-Textarea.defaultProps = {
+FormTextarea.defaultProps = {
     error: false,
     success: false,
 }
 
-Textarea.propTypes = {
+FormTextarea.propTypes = {
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     success: PropTypes.bool,
     disabled: PropTypes.oneOf(["disabled", true, "", false])
 }
 
 
-export default Textarea;
+export default FormTextarea;

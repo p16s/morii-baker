@@ -1,0 +1,37 @@
+/*  title:  list
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --List-border-color: var(--Global-base-font-color, 66, 78, 121);
+    --List-border-color-active: var(--Global-color-1, 70, 50, 251);
+    --List-padding: .5rem 1.25rem;
+}
+
+
+/* default
+===================================================================================================================== */
+.List {
+    color: rgb(114, 123, 155);
+    cursor: pointer;
+    list-style-type: none;
+    padding: var(--List-padding);
+    text-decoration: none;
+    transition: .2s;
+}
+
+    /*  default states
+    ================================================================================================================= */
+    .List:not(:disabled):hover,
+    .List:focus,
+    .List:focus-visible,
+    .List:focus-within,
+    .List:active {
+        background-color: rgba(var(--Global-color-1), .05);
+        color: rgb(32, 43, 55);
+    }

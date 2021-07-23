@@ -1,0 +1,42 @@
+/*  title:  tab
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Tab-border-color: var(--Global-base-font-color, 66, 78, 121);
+    --Tab-border-color-active: var(--Global-color-1, 70, 50, 251);
+    --Tab-padding: 0 1.25rem .5rem;
+}
+
+
+/* default
+===================================================================================================================== */
+.Tab {
+    border-bottom: 1px solid rgb(var(--Tab-border-color));
+    color: rgb(114, 123, 155);
+    cursor: pointer;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-right: 2px;
+    padding: var(--Tab-padding);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+    /*  default states
+    ================================================================================================================= */
+    .Tab:not(:disabled):hover,
+    .Tab:focus,
+    .Tab:focus-visible,
+    .Tab:focus-within,
+    .Tab:active {
+        border-bottom: 2px solid rgb(var(--Tab-border-color-active));
+        color: rgb(32, 43, 55);
+    }

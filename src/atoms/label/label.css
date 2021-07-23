@@ -14,9 +14,18 @@
 
 
 
-/* base
+/*  base
 ===================================================================================================================== */
 .Label {
     color: var(--Label-color);
+    display: block;
     font-weight: 700;
 }
+
+    /*  when followed by formInput, give some margin (NOTE: could potentially do this on the molecule but would require a wrapper class)
+    ================================================================================================================= */
+    .Label ~ input,
+    .Label ~ textarea,
+    .Label ~ select {
+        margin-top: 1rem;
+    }

@@ -1,0 +1,81 @@
+/*  title:  toggle
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Toggle-border-color: var(--Global-border-color, 170, 176, 19);
+
+    --Toggle-label-on: var(--Global-base-font-color, 66 78 121);
+    --Toggle-label-off: rgba(var(--Toggle-label-on), .3);
+
+    --Toggle-on-background-color: var(--Global-color-1, 70 50 251);
+    --Toggle-off-background-color: rgba(var(--Toggle-on-background-color), .3);
+
+    --Toggle-handle-color: #fff;
+}
+
+
+/*  base
+===================================================================================================================== */
+.Toggle {
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: rgb(var(--Toggle-label-on));
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    padding: 12px 19px 12px 48px;
+    position: relative;
+    user-select: none;
+}
+    /*  has-label, needs border
+    ================================================================================================================= */
+    .Toggle.has-label {
+        border: 1px solid rgb(var(--Toggle-border-color));
+    }
+
+    .Toggle.off {
+        color: var(--Toggle-label-off);
+    }
+
+        .Toggle.off .switcher {
+            background-color: var(--Toggle-off-background-color);
+        }
+
+            .Toggle.off .widget {
+                margin-left: 2px;
+            }
+
+
+    .Toggle .switcher {
+        background-color: rgb(var(--Toggle-on-background-color));
+        border-radius: 16px;
+        display: inline-block;
+        height: 16px;
+        left: 19px;
+        padding-top: 2px;
+        position: absolute;
+        transition: background-color 200ms;
+        width: 29px;
+    }
+
+            .Toggle .widget {
+                background: var(--Toggle-handle-color);
+                border-radius: 12px;
+                height: 12px;
+                margin-left: 15px;
+                transition: margin 200ms;
+                width: 12px;
+            }
+
+    .Toggle .label {
+        margin-left: 10px;
+    }

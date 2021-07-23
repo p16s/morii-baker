@@ -18,13 +18,15 @@
 ===================================================================================================================== */
 :root {
     --Global-base-font-size: 16px;
+    --Global-base-font-color: 66, 78, 121;
 
-    --Global-border-color: #AAB0C3;
+    --Global-border-color: 170, 176, 195;
     --Global-border-radius: 5px;
 
-    --Global-color-1: purple;
-    --Global-color-error: #CF0057;
-    --Global-color-success: #05C496;
+    --Global-color-1: 70, 50, 251;
+    --Global-color-2: 40, 216, 173;
+    --Global-color-error: 207, 0, 87;
+    --Global-color-success: 5, 195, 150
 }
 
 
@@ -60,7 +62,7 @@ time, mark, audio, video {
 
 
 
-/* main body
+/*  set a basic container/style that wraps these examples
 ===================================================================================================================== */
 body {
     background-color: #E5E5E5;
@@ -75,29 +77,18 @@ body {
         width: 1040px;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        color: #202B37;
-        font-family: 'Roboto', sans-serif;
-    }
-    h1 {
-        font-size: 32px;
-        margin-bottom: 1em;
-    }
-        /*  link to documentation   */
-        h1 a {
-            border: 1px solid #4E32FB;
-            border-radius: var(--Global-border-radius, 5px);
-            float: right;
-            font-size: var(--Global-base-font-size, 16px);
-            padding: 8px 12px;
-        }
-    h2 {
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
-    p {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 20px;
-        line-height: 27px;
-        padding-bottom: 30px;
-    }
+
+
+
+/*  site nav (to toggle between the atoms/molecules/organisms
+===================================================================================================================== */
+.site-nav {
+    background-color: #424E79;
+    box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, .25);
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: 1rem 0;
+    position: fixed;
+    top: 3rem;
+}

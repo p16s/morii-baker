@@ -1,22 +1,52 @@
+/*  title:  ListItem
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
 :root {
-    --ListItem-color: #ffffff;
-    --ListItem-activeBackgroundColor: #5a648a;
-    --ListItem-activeColor: #ffffff;
+    --ListItem-bg-color: none;
+    --ListItem-bg-color-active: 255, 255, 255;
+    --ListItem-color: 255 255 255;
+    --ListItem-padding: .5rem 1.25rem;
 }
 
+
+/*  base
+===================================================================================================================== */
 .ListItem {
-    color: var(--ListItem-color);
-    text-decoration: none;
-    padding: 6px 16px 6px 16px;
-    margin-top: 6px;
-}
-
-.ListItem.clickable {
+    background-color: rgb(var(--ListItem-bg-color));
+    color: rgb(var(--ListItem-color));
     cursor: pointer;
-    user-select: none;
+    display: inline-block;
+    font-size: .875rem;
+    font-weight: 700;
+    list-style-type: none;
+    margin-bottom: 1rem;    /* TODO this going to be global?  Move to a lists constrctor  */
+    padding: var(--ListItem-padding);
+    text-decoration: none;
+    transition: .2s;
 }
+    .ListItem:last-of-type {
+        margin-bottom: 0;
+    }
 
-.ListItem.active {
-    background-color: var(--ListItem-activeBackgroundColor);
-    color: var(--ListItem-activeColor);
-}
+    /*  default states
+    ================================================================================================================= */
+    .ListItem:not(.disabled):hover,
+    .ListItem:not(.disabled):active,
+    .ListItem:not(.disabled).active {
+        background-color: rgba(var(--ListItem-bg-color-active), .3);
+        /*color: rgb(32, 43, 55);*/
+    }
+
+    /* disabled
+    ================================================================================================================= */
+    .ListItem.disabled {
+        background-color: rgba(var(--ListItem-bg-color-active), .5);    /* TODO not sure if same yet */
+        cursor: not-allowed;
+        user-select: none;
+    }

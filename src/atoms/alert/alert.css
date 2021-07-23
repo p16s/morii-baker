@@ -1,0 +1,63 @@
+/*  title:  alert
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Alert-border-radius: 10px;
+    --Alert-color-default: var(--Global-color-1, 70 50 251);
+    --Alert-color-error: var(--Global-color-error, 255 0 0);
+    --Alert-color-success: var(--Global-color-success, 0 255 0);
+    --Alert-font-size: 14px;
+    --Alert-padding: 1rem 1.5rem;
+}
+
+
+
+
+/*  base
+===================================================================================================================== */
+.Alert {
+    align-items: center;
+    background-color: rgba(var(--Alert-color-default), .1);   /*  overwritten with modifier classes */
+    border: 1px solid rgb(var(--Alert-color-default));   /*  overwritten with modifier classes */
+    border-radius:  var(--Alert-border-radius);
+    color: rgb(var(--Alert-color-default));   /*  overwritten with modifier classes */
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 600;
+    padding: var(--Alert-padding);
+}
+
+    /*  icon - make sure any added icons are spaced
+    ================================================================================================================= */
+    .Alert svg {
+        margin-right: .5em;
+    }
+
+
+    /*  error
+    ================================================================================================================= */
+    .Alert.error {
+        background-color: rgba(var(--Alert-color-error), .1);
+        border: 1px solid rgb(var(--Alert-color-error));
+        color: rgb(var(--Alert-color-error));
+    }
+        .Alert.error svg {
+            /*TODO */
+        }
+
+    /*  success
+    ================================================================================================================= */
+    .Alert.success {
+        background-color: rgba(var(--Alert-color-success), .1);
+        border: 1px solid rgb(var(--Alert-color-success));
+        color: rgb(var(--Alert-color-success));
+    }
+    .Alert.success svg {
+        /*TODO */
+    }

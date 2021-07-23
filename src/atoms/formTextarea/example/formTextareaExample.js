@@ -1,8 +1,8 @@
 import BakerExample from "../../../helpers/bakerExample";
-import Textarea from "../textarea";
+import FormTextarea from "../formTextarea";
 
 
-class TextareaExample extends BakerExample {
+class FormTextareaExample extends BakerExample {
 
     /**
      * Render the Baker Example
@@ -33,62 +33,62 @@ class TextareaExample extends BakerExample {
 
 
     /**
-     * Render the basic input example
+     * Render the basic formInput example
      * @returns {JSX.Element}
      */
     render_normal() {
         return this.render_exampleComponent(
-            "Textarea/Normal",
+            "FormTextarea/Normal",
             <form>
-                <Textarea
+                <FormTextarea
                     onClick={() => {console.log('click');}}
                 />
             </form>,
-            "The basic textarea field. Out of focus and empty. (click the input to console log)"
+            "The basic formTextarea field. Out of focus and empty. (click the formInput to console log)"
         );
     }
 
     render_error() {
         return this.render_exampleComponent(
-            "Textarea/Error",
+            "FormTextarea/Error",
             <form>
-                <Textarea
+                <FormTextarea
                     error={true}
                 />
             </form>,
-            "The content of the textarea is not valid. Set the error property to true"
+            "The content of the formTextarea is not valid. Set the error property to true"
         );
     }
 
     render_success() {
         return this.render_exampleComponent(
-            "Textarea/Success",
+            "FormTextarea/Success",
             <form>
-                <Textarea
+                <FormTextarea
                     success={true}
                 />
             </form>,
-            "The content of the textarea is valid and worth showing it.  Set the success property to true"
+            "The content of the formTextarea is valid and worth showing it.  Set the success property to true"
         );
     }
 
     render_disabled() {
         return this.render_exampleComponent(
-            "Textarea/Disabled",
+            "FormTextarea/Disabled",
             <form>
-                <Textarea
+                <FormTextarea
                     disabled={true}
                 />
             </form>,
-            "The textarea field is disabled.  Set the disabled property to true or disabled"
+            "The formTextarea field is disabled.  Set the disabled property to true or disabled"
         );
     }
 
     render_large() {
         return this.render_exampleComponent(
-            "Textarea/Large",
+            "FormTextarea/Large",
             <form>
-                <Textarea
+                <FormTextarea
                     className={"large"}
                 />
             </form>,
@@ -98,4 +98,4 @@ class TextareaExample extends BakerExample {
 }
 
 
-export default TextareaExample;
+export default FormTextareaExample;

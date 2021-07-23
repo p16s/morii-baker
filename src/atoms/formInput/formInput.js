@@ -1,10 +1,25 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
-import "./input.css";
+import "./formInput.css";
 
 
-class Input extends BasicAtom {
+class FormInput extends BasicAtom {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: ""
+        }
+    }
+
+    /**
+     * Sets state to prop value
+     */
+    componentDidMount() {
+        this.updateValue((this.props.value ? this.props.value : ''));
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -65,11 +80,16 @@ class Input extends BasicAtom {
     render_element(className, props) {
         return React.cloneElement(
             <input
-                className={"Input" + this.padIfString(className) + this.getClassNameString()}
+                id={this.props.id}
+                className={"Form-input" + this.padIfString(className) + this.getClassNameString()}
                 type={this.props.type ?? 'text'}
                 placeholder={this.props.placeholder}
+                value={this.state.value}
                 onClick={(e) => {
                     this.handleClick(e)
+                }}
+                onChange={(e) => {
+                    this.updateValue(e.target.value)
                 }}
             />,
             props ?? {}
@@ -80,7 +100,7 @@ class Input extends BasicAtom {
     // States
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Does the input have an error?
+     * Does the formInput have an error?
      *
      * @returns {boolean}
      */
@@ -118,17 +138,28 @@ class Input extends BasicAtom {
     handleClick(e) {
         this.callbackOr(this.props.onClick)(e);
     }
+
+    /**
+     * Update state
+     *
+     * @param {KeyboardEvent} e
+     */
+    updateValue(e) {
+        this.setState({
+            value: this.value = e
+        })
+    }
 }
 
-Input.defaultProps = {
+FormInput.defaultProps = {
     error: false,
     success: false,
 }
 
-Input.propTypes = {
+FormInput.propTypes = {
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     success: PropTypes.bool,
     disabled: PropTypes.oneOf(["disabled", true, "", false])
 }
 
-export default Input;
+export default FormInput;

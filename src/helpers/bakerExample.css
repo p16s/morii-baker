@@ -7,13 +7,47 @@
 
 /* each component example
  ==================================================================================================================== */
-.examples {
+.examples {;
 }
+    .examples h1,
+    .examples h2 {
+        color: #202B37;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .examples h1 {
+        border-bottom: 1px solid #AAB0C3;
+        font-size: 32px;
+        margin-bottom: 1em;
+        padding-bottom: 14px;
+    }
+        /*  link to documentation   */
+        .examples h1 a {
+            border: 1px solid #4E32FB;
+            border-radius: var(--Global-border-radius, 5px);
+            float: right;
+            font-size: var(--Global-base-font-size, 16px);
+            padding: 8px 12px;
+        }
+
+    /*  h2, used for each component  */
+    .baker-example-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    /*  paragraph text  */
+    .baker-example-about {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 20px;
+        line-height: 27px;
+        padding-bottom: 30px;
+    }
+
     /* component
-     ==================================================================================================================== */
+     ================================================================================================================ */
     .component-wrapper {
         background-color: #fff;
         margin-bottom: 60px;
         padding: 30px;
-
     }
