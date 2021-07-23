@@ -3,7 +3,7 @@ import React from "react";
 import LabelExample from "./atoms/label/example/labelExample";
 import FormInputExample from "./atoms/formInput/example/formInputExample";
 import PinExample from "./atoms/pin/example/pinExample";
-import TextareaExample from "./atoms/textarea/example/textareaExample";
+import FormTextareaExample from "./atoms/formTextarea/example/formTextareaExample";
 import ButtonExample from "./atoms/button/example/buttonExample";
 import AlertExample from "./atoms/alert/example/alertExample";
 import CheckboxExample from "./atoms/checkbox/example/checkboxExample";
@@ -15,7 +15,7 @@ import ListItemExample from "./atoms/listItem/example/listItemExample";
 import IconExample from "./atoms/icon/example/iconExample";
 
 import InputExample from "./molecules/Inputs/example/inputExample";
-import TextareasExample from "./molecules/textareas/example/textareasExample";
+import TextareaExample from "./molecules/textarea/example/textareaExample";
 // import IconBarExample from "./molecules/iconBar/example/IconBarExample";
 // import ListExample from "./molecules/list/example/listExample";
 
@@ -51,7 +51,7 @@ class App extends React.Component {
                     <LabelExample />
                     <FormInputExample />
                     <PinExample />
-                    <TextareaExample />
+                    <FormTextareaExample />
                     <ButtonExample />
                     <AlertExample />
                     <CheckboxExample />
@@ -71,7 +71,7 @@ class App extends React.Component {
                     {this.render_nav()}
 
                     <InputExample />
-                    <TextareasExample />
+                    <TextareaExample />
 
                     {/*<IconBarExample />*/}
                     {/*<ListExample />*/}

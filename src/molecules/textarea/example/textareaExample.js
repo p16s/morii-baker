@@ -1,8 +1,8 @@
 import BakerExample from "../../../helpers/bakerExample";
-import Textareas from "../textareas";
+import Textarea from "../textarea";
 
 
-class TextareasExample extends BakerExample {
+class TextareaExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
@@ -27,9 +27,9 @@ class TextareasExample extends BakerExample {
 
     render_normal() {
         return this.render_exampleComponent(
-            "Textareas/Normal",
+            "Textarea/Normal",
             <form>
-                <Textareas
+                <Textarea
                     for={"basic"}
                     labelText={"Label"}
 
@@ -44,9 +44,9 @@ class TextareasExample extends BakerExample {
 
     render_success() {
         return this.render_exampleComponent(
-            "Textareas/Success",
+            "Textarea/Success",
             <form>
-                <Textareas
+                <Textarea
                     for={"success"}
                     labelText={"Label with success"}
 
@@ -62,9 +62,9 @@ class TextareasExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "Textareas/Error",
+            "Textarea/Error",
             <form>
-                <Textareas
+                <Textarea
                     for={"error"}
                     labelText={"Label with error"}
 
@@ -79,4 +79,4 @@ class TextareasExample extends BakerExample {
 }
 
 
-export default TextareasExample;
+export default TextareaExample;

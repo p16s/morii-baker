@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
-import "./textarea.css";
+import "./formTextarea.css";
 import Label from "../label/label";
 
 
-class Textarea extends BasicAtom {
+class FormTextarea extends BasicAtom {
     constructor(props) {
         super(props);
 
@@ -82,7 +82,7 @@ class Textarea extends BasicAtom {
         return React.cloneElement(
             <textarea
                 id={this.props.id}
-                className={"Textarea" + this.padIfString(className) + this.getClassNameString()}
+                className={"Form-textarea" + this.padIfString(className) + this.getClassNameString()}
                 value={this.state.value}
                 onClick={(e) => {
                     this.handleClick(e)
@@ -150,16 +150,16 @@ class Textarea extends BasicAtom {
     }
 }
 
-Textarea.defaultProps = {
+FormTextarea.defaultProps = {
     error: false,
     success: false,
 }
 
-Textarea.propTypes = {
+FormTextarea.propTypes = {
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     success: PropTypes.bool,
     disabled: PropTypes.oneOf(["disabled", true, "", false])
 }
 
 
-export default Textarea;
+export default FormTextarea;

@@ -1,11 +1,11 @@
 import React from "react";
 import BasicAtom from "../../atoms/basicAtom";
 import Label from "../../atoms/label/label";
-import Textarea from "../../atoms/textarea/textarea";
+import FormTextarea from "../../atoms/formTextarea/formTextarea";
 // import "./formInput.css";
 
 
-class Textareas extends BasicAtom {
+class Textarea extends BasicAtom {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -24,7 +24,7 @@ class Textareas extends BasicAtom {
                 >
                     {this.props.labelText}
                 </Label>
-                <Textarea
+                <FormTextarea
                     id={this.props.id}
                     placeholder={this.props.placeholder}
                     error={this.props.error}
@@ -36,4 +36,4 @@ class Textareas extends BasicAtom {
 }
 
 
-export default Textareas;
+export default Textarea;
