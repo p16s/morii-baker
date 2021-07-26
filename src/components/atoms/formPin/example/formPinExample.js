@@ -1,8 +1,8 @@
-import Pin from '../pin';
+import FormPin from '../formPin';
 import BakerExample from "../../../../helpers/bakerExample";
 
 
-class PinExample extends BakerExample {
+class FormPinExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
@@ -25,12 +25,12 @@ class PinExample extends BakerExample {
 
     render_basic() {
         return this.render_exampleComponent(
-            'Pin / Normal',
-            <Pin />,
-            'Default Pin.'
+            'FormPin / Normal',
+            <FormPin />,
+            'Default FormPin.'
         );
     }
 }
 
 
-export default PinExample;
+export default FormPinExample;

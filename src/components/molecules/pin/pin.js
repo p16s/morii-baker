@@ -1,11 +1,11 @@
 import React from "react";
 import BasicAtom from "../../atoms/basicAtom";
 import Label from "../../atoms/label/label";
-import FormInput from "../../atoms/formInput/formInput";
+import FormPin from "../../atoms/formPin/formPin";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 
 
-class Input extends BasicAtom {
+class Pin extends BasicAtom {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -25,13 +25,7 @@ class Input extends BasicAtom {
                     {this.props.labelText}
                 </Label>
 
-                <FormInput
-                    id={this.props.id}
-                    value={this.props.value}
-                    placeholder={this.props.placeholder}
-                    error={this.props.error}
-                    success={this.props.success}
-                />
+                <FormPin />
 
                 <ValidationMessage
                     className={
@@ -47,4 +41,4 @@ class Input extends BasicAtom {
 }
 
 
-export default Input;
+export default Pin;

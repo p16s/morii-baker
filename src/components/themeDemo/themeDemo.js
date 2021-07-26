@@ -2,6 +2,10 @@ import React from "react";
 import './themeDemo.css';
 
 import Button from "../atoms/button/button";
+import Input from "../molecules/input/input";
+import Textarea from "../molecules/textarea/textarea";
+import Pin from "../molecules/pin/pin";
+
 
 
 class ThemeDemo extends React.Component {
@@ -76,6 +80,31 @@ class ThemeDemo extends React.Component {
                         <Button className={"secondary outline"}>Secondary Outline Button</Button>
                         <Button className={"secondary"} disabled={true}>Standard disabled Button</Button>
                     </div>
+                </section>
+
+                <section>
+                    <h1 className={"section-heading"}>Form elements</h1>
+
+                    <form>
+                        <Input
+                            for={"basic"}
+                            labelText={"Label"}
+
+                            id={"basic"}
+                            value={"Value passed"}
+                            placeholder={"Placeholder"}
+                        />
+
+                        <Textarea
+                            for={"basic"}
+                            labelText={"Label"}
+
+                            id={"basic"}
+                            placeholder={"Placeholder"}
+                        />
+
+                        <Pin labelText={"Label"} />
+                    </form>
                 </section>
             </div>
         );

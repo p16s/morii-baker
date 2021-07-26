@@ -37,7 +37,7 @@ class FormInputExample extends BakerExample {
      */
     render_normal() {
         return this.render_exampleComponent(
-            "Input/Normal",
+            "Pin/Normal",
             <form>
                 <FormInput
                     placeholder={"Placeholder"}
@@ -50,7 +50,7 @@ class FormInputExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "Input/Error",
+            "Pin/Error",
             <form>
                 <FormInput
                     error={true}
@@ -63,7 +63,7 @@ class FormInputExample extends BakerExample {
 
     render_success() {
         return this.render_exampleComponent(
-            "Input/Success",
+            "Pin/Success",
             <form>
                 <FormInput
                     success={true}
@@ -76,7 +76,7 @@ class FormInputExample extends BakerExample {
 
     render_disabled() {
         return this.render_exampleComponent(
-            "Input/Disabled",
+            "Pin/Disabled",
             <form>
                 <FormInput
                     disabled={true}
@@ -89,7 +89,7 @@ class FormInputExample extends BakerExample {
 
     render_large() {
         return this.render_exampleComponent(
-            "Input/Large",
+            "Pin/Large",
             <form>
                 <FormInput
                     className={"large"}

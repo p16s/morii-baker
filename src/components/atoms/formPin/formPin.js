@@ -1,8 +1,8 @@
 import BasicAtom from "../basicAtom";
-import "./pin.css";
+import "./formPin.css";
 
 
-class Pin extends BasicAtom {
+class FormPin extends BasicAtom {
     componentDidMount() {
         super.componentDidMount();
 
@@ -136,7 +136,7 @@ class Pin extends BasicAtom {
                 />
             );
         }
-
+ 
         return inputs;
     }
 
@@ -145,4 +145,4 @@ class Pin extends BasicAtom {
     }
 }
 
-export default Pin;
+export default FormPin;

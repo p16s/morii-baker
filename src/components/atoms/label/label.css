@@ -12,8 +12,6 @@
 }
 
 
-
-
 /*  base
 ===================================================================================================================== */
 .Label {
@@ -21,11 +19,17 @@
     display: block;
     font-weight: 700;
 }
+    /*  when used in a form there will be more than 1 "group" of inputs, so will need margin
+    ================================================================================================================= */
+    form .Label:not(:first-of-type) {
+        margin-top: 2rem;
+    }
 
-    /*  when followed by formInput, give some margin (NOTE: could potentially do this on the molecule but would require a wrapper class)
+    /*  when followed by some form element, give some margin (NOTE: could potentially do this on the molecule but would require a wrapper class)
     ================================================================================================================= */
     .Label ~ input,
     .Label ~ textarea,
+    .Label ~ .Pin,
     .Label ~ select {
         margin-top: 1rem;
     }

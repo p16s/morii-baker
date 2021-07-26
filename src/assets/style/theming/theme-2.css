@@ -22,8 +22,8 @@
     --Global-color-error: 207, 0, 87;
     --Global-color-success: 5, 195, 150;
 
-    --Global-border-color: 170, 176, 195;
-    --Global-border-radius: 5px;
+    --Global-border-color: 1 10 25;
+    --Global-border-radius: 15px;
 }
 
 
@@ -43,6 +43,11 @@
     --Global-heading-color: 32, 43, 55;
     --Global-heading-font-family: 'Roboto Condensed', sans-serif;
     --Global-heading-font-weight: 900;
+
+    --Global-h1-size: 3.5rem;
+    --Global-h2-size: 2.125rem;
+    --Global-h3-size: 1.25rem;
+    --Global-h4-size: 1rem;
 }
 
 
@@ -58,6 +63,15 @@
     --Global-button-color-2: var(--Global-color-2);
 
     --Global-button-border-radius: 2px;
+    --Global-button-padding: 1.75rem 2.5rem;
 }
 
 
+
+
+/*  forms
+ ==================================================================================================================== */
+:root {
+    --Global-form-border-color: var(--Global-border-color);
+    --Global-form-border-radius: var(--Global-border-radius, 5px);
+}

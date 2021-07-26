@@ -24,6 +24,7 @@
 
     --Global-border-color: 170, 176, 195;
     --Global-border-radius: 5px;
+
 }
 
 
@@ -43,6 +44,11 @@
     --Global-heading-color: 32, 43, 55;
     --Global-heading-font-family: 'Roboto', sans-serif;
     --Global-heading-font-weight: 700;
+
+    --Global-h1-size: 1.25rem;
+    --Global-h2-size: 1.0625rem;
+    --Global-h3-size: 1rem;
+    --Global-h4-size: .875rem;
 }
 
 
@@ -60,4 +66,13 @@
     --Global-button-border-radius: 100px;
 }
 
+
+
+
+/*  forms
+ ==================================================================================================================== */
+:root {
+    --Global-form-border-color: var(--Global-border-color);
+    --Global-form-border-radius: var(--Global-border-radius, 5px);
+}
 

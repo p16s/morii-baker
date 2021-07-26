@@ -37,7 +37,7 @@ class TextareaExample extends BakerExample {
                     placeholder={"Placeholder"}
                 />
             </form>,
-            "Label and Input atoms used together."
+            "Label and Pin atoms used together."
         );
     }
 

@@ -9,8 +9,8 @@
 ===================================================================================================================== */
 :root {
     --Form-input-border: 1px solid var(--Form-input-border-color);
-    --Form-input-border-color: rgb(var(--Global-border-color, 170 176 195));
-    --Form-input-border-radius: var(--Global-border-radius, 5px);
+    --Form-input-border-color: rgb(var(--Global-form-border-color, 170 176 195));
+    --Form-input-border-radius: var(--Global-form-border-radius, 5px);
     --Form-input-font-size: var(--Global-base-font-size, 16px);
     --Form-input-color-error: var(--Global-color-error, 255 0 0);
     --Form-input-color-success: var(--Global-color-success, 0 255 0);

@@ -14,7 +14,7 @@
     --Button-color-1-darker: var(--Global-button-color-1-darker, 0 0 220);
     --Button-color-2-darker: var(--Global-button-color-2-darker, 0 220 0);
     --Button-font-size: 14px;
-    --Button-padding: 12px 24px;
+    --Button-padding: var(--Global-button-padding, 12px 24px);
 }
 
 

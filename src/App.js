@@ -4,7 +4,7 @@ import ThemeDemo from "./components/themeDemo/themeDemo";
 
 import LabelExample from "./components/atoms/label/example/labelExample";
 import FormInputExample from "./components/atoms/formInput/example/formInputExample";
-import PinExample from "./components/atoms/pin/example/pinExample";
+import FormPinExample from "./components/atoms/formPin/example/formPinExample";
 import FormTextareaExample from "./components/atoms/formTextarea/example/formTextareaExample";
 import ButtonExample from "./components/atoms/button/example/buttonExample";
 import AlertExample from "./components/atoms/alert/example/alertExample";
@@ -18,6 +18,7 @@ import IconExample from "./components/atoms/icon/example/iconExample";
 
 import InputExample from "./components/molecules/input/example/inputExample";
 import TextareaExample from "./components/molecules/textarea/example/textareaExample";
+import PinExample from "./components/molecules/pin/example/pinExample";
 import ListExample from "./components/molecules/list/example/listExample";
 // import IconBarExample from "./molecules/iconBar/example/IconBarExample";
 
@@ -63,7 +64,7 @@ class App extends React.Component {
 
                     <LabelExample />
                     <FormInputExample />
-                    <PinExample />
+                    <FormPinExample />
                     <FormTextareaExample />
                     <ButtonExample />
                     <AlertExample />
@@ -85,6 +86,7 @@ class App extends React.Component {
 
                     <InputExample />
                     <TextareaExample />
+                    <PinExample />
                     <ListExample />
 
                     {/*<IconBarExample />*/}
