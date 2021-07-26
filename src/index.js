@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './index.css';
+import './assets/style/index.css';
 
 import App from "./App";
-import RobTest from "./robTest";
+import RobTest from "./components/robTest";
 
 
 ReactDOM.render(

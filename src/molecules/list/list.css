@@ -1,7 +1,0 @@
-:root {
-    --List-background-color: #424e79;
-}
-
-.List {
-    background-color: var(--List-background-color);
-}

@@ -1,25 +1,27 @@
 import React from "react";
 
-import LabelExample from "./atoms/label/example/labelExample";
-import FormInputExample from "./atoms/formInput/example/formInputExample";
-import PinExample from "./atoms/pin/example/pinExample";
-import FormTextareaExample from "./atoms/formTextarea/example/formTextareaExample";
-import ButtonExample from "./atoms/button/example/buttonExample";
-import AlertExample from "./atoms/alert/example/alertExample";
-import CheckboxExample from "./atoms/checkbox/example/checkboxExample";
-import ToggleExample from "./atoms/toggle/example/toggleExample";
-import TabExample from "./atoms/tab/example/tabExample";
-import ListItem from "./atoms/listItem/listItem";
+import ThemeDemo from "./components/themeDemo/themeDemo";
+
+import LabelExample from "./components/atoms/label/example/labelExample";
+import FormInputExample from "./components/atoms/formInput/example/formInputExample";
+import PinExample from "./components/atoms/pin/example/pinExample";
+import FormTextareaExample from "./components/atoms/formTextarea/example/formTextareaExample";
+import ButtonExample from "./components/atoms/button/example/buttonExample";
+import AlertExample from "./components/atoms/alert/example/alertExample";
+import CheckboxExample from "./components/atoms/checkbox/example/checkboxExample";
+import ToggleExample from "./components/atoms/toggle/example/toggleExample";
+import TabExample from "./components/atoms/tab/example/tabExample";
+import ListItem from "./components/atoms/listItem/listItem";
 // import ListHeaderExample from "./atoms/listHeader/example/listHeaderExample";
-import ListItemExample from "./atoms/listItem/example/listItemExample";
-import IconExample from "./atoms/icon/example/iconExample";
+import ListItemExample from "./components/atoms/listItem/example/listItemExample";
+import IconExample from "./components/atoms/icon/example/iconExample";
 
-import InputExample from "./molecules/Inputs/example/inputExample";
-import TextareaExample from "./molecules/textarea/example/textareaExample";
+import InputExample from "./components/molecules/input/example/inputExample";
+import TextareaExample from "./components/molecules/textarea/example/textareaExample";
+import ListExample from "./components/molecules/list/example/listExample";
 // import IconBarExample from "./molecules/iconBar/example/IconBarExample";
-// import ListExample from "./molecules/list/example/listExample";
 
-import SideBarExample from "./organisms/SideBar/example/sideBarExample";
+import SideBarExample from "./components/organisms/SideBar/example/sideBarExample";
 
 
 
@@ -43,6 +45,17 @@ class App extends React.Component {
      * @return {*}
      */
     render(props) {
+        if (this.state.isShowing === 'theme') {
+            return (
+                <>
+                    {this.render_nav()}
+
+                    <ThemeDemo />
+                </>
+            );
+        }
+
+
         if (this.state.isShowing === 'atoms') {
             return (
                 <>
@@ -72,9 +85,9 @@ class App extends React.Component {
 
                     <InputExample />
                     <TextareaExample />
+                    <ListExample />
 
                     {/*<IconBarExample />*/}
-                    {/*<ListExample />*/}
                 </>
             );
         }
@@ -101,6 +114,12 @@ class App extends React.Component {
         return (
             <nav>
                 <ul className={'site-nav'}>
+                    <ListItem
+                        active={(this.state.isShowing === 'theme')}
+                        onClick={() => this.handleClick('theme')}
+                    >
+                        Theme
+                    </ListItem>
                     <ListItem
                         active={(this.state.isShowing === 'atoms')}
                         onClick={() => this.handleClick('atoms')}

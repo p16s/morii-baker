@@ -1,0 +1,63 @@
+/*  title:  theming
+    notes:  set global variables available for all atomic components
+ ==================================================================================================================== */
+
+
+
+/*  branding colours
+ ==================================================================================================================== */
+:root {
+    --Global-color-1-darker: 28, 0, 202;
+    --Global-color-2-darker: 5, 195, 150;
+    --Global-color-3-darker: 195, 74, 6;
+    --Global-color-4-darker:207, 0, 87;
+    --Global-color-5-darker: 66, 78, 121;
+
+    --Global-color-1: 70, 50, 251;      /*  Blue       */
+    --Global-color-2: 40, 216, 173;     /*  Green      */
+    --Global-color-3: 250, 143, 45;     /*  Orange     */
+    --Global-color-4: 235, 29, 116;     /*  Pink       */
+    --Global-color-5: 235, 29, 116;     /*  Greyish    */
+
+    --Global-color-error: 207, 0, 87;
+    --Global-color-success: 5, 195, 150;
+
+    --Global-border-color: 170, 176, 195;
+    --Global-border-radius: 5px;
+}
+
+
+
+
+/*  typography
+ ==================================================================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap');
+
+:root {
+    --Global-base-font-color: 66, 78, 121;
+    --Global-base-font-family: 'Nunito', sans-serif;
+    --Global-base-font-padding: .75rem 0;
+    --Global-base-font-size: 16px;
+    --Global-base-font-weight: 400;
+
+    --Global-heading-color: 32, 43, 55;
+    --Global-heading-font-family: 'Roboto', sans-serif;
+    --Global-heading-font-weight: 700;
+}
+
+
+
+
+/*  buttons
+ ==================================================================================================================== */
+:root {
+    --Global-button-color-1-darker: var(--Global-color-1-darker);
+    --Global-button-color-2-darker: var(--Global-color-2-darker);
+
+    --Global-button-color-1: var(--Global-color-1);
+    --Global-button-color-2: var(--Global-color-2);
+
+    --Global-button-border-radius: 100px;
+}
+
+

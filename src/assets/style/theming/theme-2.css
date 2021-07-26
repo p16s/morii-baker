@@ -1,0 +1,63 @@
+/*  title:  theming
+    notes:  set global variables available for all atomic components
+ ==================================================================================================================== */
+
+
+
+/*  branding colours
+ ==================================================================================================================== */
+:root {
+    --Global-color-1-darker: 149, 134, 59;
+    --Global-color-2-darker: 60, 4, 31;
+    --Global-color-3-darker: 141, 157, 102;
+    --Global-color-4-darker:207, 0, 87;
+    --Global-color-5-darker: 66, 78, 121;
+
+    --Global-color-1: 216,195,88;
+    --Global-color-2: 109,8,57;
+    --Global-color-3: 208,231,153;
+    --Global-color-4: 235, 29, 116;
+    --Global-color-5: 235, 29, 116;
+
+    --Global-color-error: 207, 0, 87;
+    --Global-color-success: 5, 195, 150;
+
+    --Global-border-color: 170, 176, 195;
+    --Global-border-radius: 5px;
+}
+
+
+
+
+/*  typography
+ ==================================================================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed:wght@400;900&display=swap');
+
+:root {
+    --Global-base-font-color: 66, 78, 121;
+    --Global-base-font-family: 'Open Sans', sans-serif;
+    --Global-base-font-size: 14px;
+    --Global-base-font-padding: .5rem 0;
+    --Global-base-font-weight: 400;
+
+    --Global-heading-color: 32, 43, 55;
+    --Global-heading-font-family: 'Roboto Condensed', sans-serif;
+    --Global-heading-font-weight: 900;
+}
+
+
+
+
+/*  buttons
+ ==================================================================================================================== */
+:root {
+    --Global-button-color-1-darker: var(--Global-color-1-darker);
+    --Global-button-color-2-darker: var(--Global-color-2-darker);
+
+    --Global-button-color-1: var(--Global-color-1);
+    --Global-button-color-2: var(--Global-color-2);
+
+    --Global-button-border-radius: 2px;
+}
+
+

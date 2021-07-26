@@ -1,0 +1,110 @@
+/*  title:  theme-demo
+    notes:  page to show the main UI elements themed up
+            NOTE: no backup vars used here
+ ==================================================================================================================== */
+
+
+
+/*  main container/layout
+ ==================================================================================================================== */
+.theme-demo section {
+    margin-bottom: 3rem;
+}
+
+.theme-demo .section-heading {
+    border-bottom: 1px solid rgb(var(--Global-border-color));
+    margin-bottom: 1em;
+    padding-bottom: .5em;
+}
+
+
+/*  branding colours
+ ==================================================================================================================== */
+.branding {
+    column-count: 3;
+}
+    .branding-color-col {
+        /*align-items: center;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: space-between;*/
+
+    }
+        .brand-color {
+            /*flex-grow: 1;*/
+            min-height: 100px;
+        }
+            .brand-color.one-darker {
+                background-color: rgba(var(--Global-color-1-darker), 1);
+            }
+            .brand-color.one {
+                background-color: rgba(var(--Global-color-1), 1);
+            }
+            .brand-color.one-b {
+                background-color: rgba(var(--Global-color-1), .8);
+            }
+            .brand-color.one-c {
+                background-color: rgba(var(--Global-color-1), .5);
+            }
+            .brand-color.one-d {
+                background-color: rgba(var(--Global-color-1), .3);
+            }
+            .brand-color.one-e {
+                background-color: rgba(var(--Global-color-1), .1);
+            }
+
+            .brand-color.two-darker {
+                background-color: rgba(var(--Global-color-2-darker), 1);
+            }
+            .brand-color.two {
+                background-color: rgba(var(--Global-color-2), 1);
+            }
+            .brand-color.two-b {
+                background-color: rgba(var(--Global-color-2), .8);
+            }
+            .brand-color.two-c {
+                background-color: rgba(var(--Global-color-2), .5);
+            }
+            .brand-color.two-d {
+                background-color: rgba(var(--Global-color-2), .3);
+            }
+            .brand-color.two-e {
+                background-color: rgba(var(--Global-color-2), .1);
+            }
+
+            .brand-color.three-darker {
+                background-color: rgba(var(--Global-color-3-darker), 1);
+            }
+            .brand-color.three {
+                background-color: rgba(var(--Global-color-3), 1);
+            }
+            .brand-color.three-b {
+                background-color: rgba(var(--Global-color-3), .8);
+            }
+            .brand-color.three-c {
+                background-color: rgba(var(--Global-color-3), .5);
+            }
+            .brand-color.three-d {
+                background-color: rgba(var(--Global-color-3), .3);
+            }
+            .brand-color.three-e {
+                background-color: rgba(var(--Global-color-3), .1);
+            }
+
+            .brand-color.four {
+                background-color: rgba(var(--Global-color-4), 1);
+            }
+            .brand-color.five {
+                background-color: rgba(var(--Global-color-5), 1);
+            }
+
+
+/*  buttons
+ ==================================================================================================================== */
+.buttons {
+    margin-bottom: 1rem;
+}
+    .buttons button {
+        margin: 3px;
+    }
+

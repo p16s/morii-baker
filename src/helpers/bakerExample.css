@@ -11,8 +11,8 @@
 }
     .examples h1,
     .examples h2 {
-        color: #202B37;
-        font-family: 'Roboto', sans-serif;
+        color: rgb(var(--Global-heading-color, 32 43 55 1));
+        font-family: var(--Global-heading-font-family, sans-serif);
     }
 
     .examples h1 {

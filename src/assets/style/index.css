@@ -1,0 +1,47 @@
+/*  title:  index
+    notes:  application global resets/styles
+            NOTE:   rough styling, not intended for production/live but as a developer/designer guide
+ ==================================================================================================================== */
+
+
+
+
+/*  import theming
+===================================================================================================================== */
+@import url(./theming/resets.css);
+@import url(theming/theme.css);
+@import url(./theming/typography.css);
+
+
+
+
+/*  set a basic container/style that wraps these examples
+===================================================================================================================== */
+body {
+    background-color: #E5E5E5;
+    color: rgb(var(--Global-base-font-color: 66 78 121));
+    font-family: var(--Global-base-font-family, sans-serif);
+    font-size: var(--Global-base-font-size), 16px;
+}
+    #root {
+        background-color: #eeeeee;
+        margin: 0 auto;
+        padding: 30px;
+        width: 1040px;
+    }
+
+
+
+
+/*  site nav (to toggle between the atoms/molecules/organisms)  TODO should be its own component
+===================================================================================================================== */
+.site-nav {
+    background-color: #424E79;
+    box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, .25);
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: 1rem 0;
+    position: fixed;
+    top: 3rem;
+}
