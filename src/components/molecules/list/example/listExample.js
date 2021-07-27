@@ -28,14 +28,14 @@ class ListExample extends BakerExample {
             'List / Normal / Normal',
             <div style={{"backgroundColor":'#424E79'}}>
                 <List
-                    header={'List'}
+                    header={'List header'}
                     items={
                         [
-                            'List item example',
-                            'List item example',
-                            'List item example',
-                            'List item example',
-                            'List item example',
+                            'List item titleBar.js',
+                            'List item titleBar.js',
+                            'List item titleBar.js',
+                            'List item titleBar.js',
+                            'List item titleBar.js',
                         ]
                     }
                     activeItem={0}
@@ -44,7 +44,7 @@ class ListExample extends BakerExample {
                     }}
                 />
             </div>,
-            'Default single list.  With click event.'
+            'Default single list with listHeader.  With click event.'
         );
     }
 }

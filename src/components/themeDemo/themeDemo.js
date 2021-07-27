@@ -86,6 +86,7 @@ class ThemeDemo extends React.Component {
                     <h1 className={"section-heading"}>Form elements</h1>
 
                     <form>
+                            <img src="https://www.countryflags.io/gb/flat/24.png" />
                         <Input
                             for={"basic"}
                             labelText={"Label"}

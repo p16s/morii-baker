@@ -5,19 +5,20 @@
 
 
 
-/* each component example
+/* each component titleBar.js
  ==================================================================================================================== */
 .examples {;
 }
-    .examples h1,
-    .examples h2 {
+    .examples > h1,
+    .examples > h2 {
         color: rgb(var(--Global-heading-color, 32 43 55 1));
         font-family: var(--Global-heading-font-family, sans-serif);
     }
 
-    .examples h1 {
+    .examples > h1 {
         border-bottom: 1px solid #AAB0C3;
         font-size: 32px;
+        line-height: initial;
         margin-bottom: 1em;
         padding-bottom: 14px;
     }

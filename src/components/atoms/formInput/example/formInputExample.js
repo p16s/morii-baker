@@ -32,7 +32,7 @@ class FormInputExample extends BakerExample {
     }
 
     /**
-     * Render the basic formInput example
+     * Render the basic formInput titleBar.js
      * @returns {JSX.Element}
      */
     render_normal() {

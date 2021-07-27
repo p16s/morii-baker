@@ -21,6 +21,7 @@ import TextareaExample from "./components/molecules/textarea/example/textareaExa
 import PinExample from "./components/molecules/pin/example/pinExample";
 import ListExample from "./components/molecules/list/example/listExample";
 // import IconBarExample from "./molecules/iconBar/example/IconBarExample";
+import TitleBarExample from "./components/molecules/titleBar/example/titleBarExample";
 
 import SideBarExample from "./components/organisms/SideBar/example/sideBarExample";
 
@@ -88,6 +89,7 @@ class App extends React.Component {
                     <TextareaExample />
                     <PinExample />
                     <ListExample />
+                    <TitleBarExample />
 
                     {/*<IconBarExample />*/}
                 </>
