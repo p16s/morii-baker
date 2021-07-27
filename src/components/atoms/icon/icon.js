@@ -1,6 +1,7 @@
 import BasicAtom from "../basicAtom";
 import "./icon.css";
 
+
 class Icon extends BasicAtom {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15,7 +16,7 @@ class Icon extends BasicAtom {
     render() {
         return this.isActive()
             ? this.render_active() : this.render_inactive();
-    }
+    };
 
     /**
      * Render active element
@@ -23,7 +24,7 @@ class Icon extends BasicAtom {
      */
     render_active() {
         return this.render_element('active');
-    }
+    };
 
     /**
      * Render inactive element
@@ -31,7 +32,7 @@ class Icon extends BasicAtom {
      */
     render_inactive() {
         return this.render_element();
-    }
+    };
 
     /**
      * Render element
@@ -42,7 +43,11 @@ class Icon extends BasicAtom {
     render_element(className) {
         return (
             <div
-                className={"Icon" + this.padIfString(className) + this.getClassNameString()}
+                className={
+                    "Icon"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
@@ -51,8 +56,8 @@ class Icon extends BasicAtom {
                 {this.render_element_letter()}
                 {this.props.children}
             </div>
-        );
-    }
+        )
+    };
 
     /**
      * Render the image icon
@@ -64,8 +69,8 @@ class Icon extends BasicAtom {
             ? (
                 <img src={this.props.src} alt={this.props.alt ?? ''} />
             )
-            : '';
-    }
+            : ''
+    };
 
     /**
      * Render the icon with a letter
@@ -75,10 +80,10 @@ class Icon extends BasicAtom {
     render_element_letter() {
         return (typeof this.props.letter === 'string')
             ? (
-                <div className={"letter"}>{this.props.letter.substring(0, 1).toUpperCase()}</div>
+                <span className={"letter"}>{this.props.letter.substring(0, 1).toUpperCase()}</span>
             )
-            : '';
-    }
+            : ''
+    };
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
@@ -93,5 +98,6 @@ class Icon extends BasicAtom {
         this.callbackOr(this.props.onClick)(e);
     }
 }
+
 
 export default Icon;

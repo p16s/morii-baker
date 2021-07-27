@@ -12,11 +12,11 @@
 }
 
 
-/*  basic - mobile
+/*  basic - mobile first
 ===================================================================================================================== */
 .Title-bar {
     align-items: center;
-    background: rgb(255, 0, 0, .15);
+    /*background: rgb(255, 0, 0, .15);*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -32,13 +32,12 @@
 
 
 
-
 /*  basic - desktop
 ===================================================================================================================== */
 /*@media screen and (min-width: var(--Title-bar-break)) {*/
 @media screen and (min-width: 767px) {
     .Title-bar {
-        background: rgb(0, 255, 0, .15);
+        /*background: rgb(0, 255, 0, .15);*/
     }
 
         .Title-bar h1,

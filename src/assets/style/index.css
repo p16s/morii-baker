@@ -37,7 +37,7 @@ body {
 /*  site nav (to toggle between the atoms/molecules/organisms)  TODO should be its own component
 ===================================================================================================================== */
 .site-nav {
-    background-color: #424E79;
+    background-color: rgb(var(--Global-color-5-darker));
     box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, .25);
     display: flex;
     flex-direction: column;

@@ -1,25 +1,37 @@
+/*  title:  iconBar
+    notes:  molecule styles
+ ==================================================================================================================== */
+
+
+
+/*  variables
+ ==================================================================================================================== */
 :root {
-    --IconBar-border-color: #727B9B;
-    --IconBar-background-color: #424e79;
-    --IconBar-width: 72px;
-    --IconBar-height: 100%;
-}
-.IconBar {
-    height: var(--IconBar-height);
-    width: var(--IconBar-width);
-    background-color: var(--IconBar-background-color);
-    border-right: 1px solid var(--IconBar-border-color);
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    overflow-x: hidden;
-    align-content: center;
-    text-align: center;
+    --Icon-bar-background-color: var(--Global-color-5-darker, 66 78 121);
+    --Icon-bar-border-color: var(--Global-color-5, 114 123 155);
 }
 
-.IconBar > img,
-.IconBar > .Icon {
-    margin-top: 8px;
-    margin-left: auto;
-    margin-right: auto;
+
+/*  base
+===================================================================================================================== */
+.Icon-bar {
+    align-items: center;
+    background-color: rgb(var(--Icon-bar-background-color));
+    border-right: 1px solid rgba(var(--Icon-bar-border-color), .6);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: .75rem 1rem 2rem;
 }
+
+    /*  with image/icon
+    ================================================================================================================= */
+    .Icon-bar > img,
+    .Icon-bar > .Icon {
+        margin: .5rem;
+    }
+
+    /*  TODO dev to align bottom */
+    .Icon-bar .round {
+        margin-top: auto;
+    }

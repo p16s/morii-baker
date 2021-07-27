@@ -5,7 +5,7 @@ import Icon from "../../atoms/icon/icon";
 class IconBar extends BasicAtom {
     render() {
         return (
-            <div className={"IconBar" + this.getClassNameString()}>
+            <div className={"Icon-bar" + this.getClassNameString()}>
                 {this.render_icons()}
                 {this.props.children}
             </div>

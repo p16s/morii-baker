@@ -12,7 +12,7 @@ import CheckboxExample from "./components/atoms/checkbox/example/checkboxExample
 import ToggleExample from "./components/atoms/toggle/example/toggleExample";
 import TabExample from "./components/atoms/tab/example/tabExample";
 import ListItem from "./components/atoms/listItem/listItem";
-// import ListHeaderExample from "./atoms/listHeader/example/listHeaderExample";
+// import ListHeaderExample from "./components/atoms/listHeader/example/listHeaderExample";
 import ListItemExample from "./components/atoms/listItem/example/listItemExample";
 import IconExample from "./components/atoms/icon/example/iconExample";
 
@@ -20,7 +20,7 @@ import InputExample from "./components/molecules/input/example/inputExample";
 import TextareaExample from "./components/molecules/textarea/example/textareaExample";
 import PinExample from "./components/molecules/pin/example/pinExample";
 import ListExample from "./components/molecules/list/example/listExample";
-// import IconBarExample from "./molecules/iconBar/example/IconBarExample";
+import IconBarExample from "./components/molecules/iconBar/example/IconBarExample";
 import TitleBarExample from "./components/molecules/titleBar/example/titleBarExample";
 
 import SideBarExample from "./components/organisms/SideBar/example/sideBarExample";
@@ -91,7 +91,7 @@ class App extends React.Component {
                     <ListExample />
                     <TitleBarExample />
 
-                    {/*<IconBarExample />*/}
+                    <IconBarExample />
                 </>
             );
         }

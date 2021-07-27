@@ -21,21 +21,20 @@
     --Global-color-1-darker: 28, 0, 202;
     --Global-color-2-darker: 5, 195, 150;
     --Global-color-3-darker: 195, 74, 6;
-    --Global-color-4-darker:207, 0, 87;
+    --Global-color-4-darker: 207, 0, 87;
     --Global-color-5-darker: 66, 78, 121;
 
     --Global-color-1: 70, 50, 251;      /*  Blue       */
     --Global-color-2: 40, 216, 173;     /*  Green      */
     --Global-color-3: 250, 143, 45;     /*  Orange     */
     --Global-color-4: 235, 29, 116;     /*  Pink       */
-    --Global-color-5: 235, 29, 116;     /*  Greyish    */
+    --Global-color-5: 114, 123, 155;    /*  Greyish    */
 
     --Global-color-error: 207, 0, 87;
     --Global-color-success: 5, 195, 150;
 
     --Global-border-color: 170, 176, 195;
     --Global-border-radius: 5px;
-
 }
 
 

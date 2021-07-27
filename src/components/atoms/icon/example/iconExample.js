@@ -31,10 +31,14 @@ class IconExample extends BakerExample {
     render_image() {
         return this.render_exampleComponent(
             "Render Image",
-            <Icon src={'https://app.morii.io/favicon.png'} alt={""} />,
+            <Icon
+                src={'https://app.morii.io/favicon.png'}
+                alt={""}
+            />,
             "Use the 'src' property and 'alt'"
         );
     }
+
 
     render_letter() {
         return this.render_exampleComponent(

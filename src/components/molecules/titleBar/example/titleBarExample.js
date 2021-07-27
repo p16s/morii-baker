@@ -44,7 +44,7 @@ class TitleBarExample extends BakerExample {
 
                 <Button>Dummy button</Button>
             </TitleBar>,
-            'Basic title with no CTA'
+            'Basic title with CTA example'
         )
     };
 }
