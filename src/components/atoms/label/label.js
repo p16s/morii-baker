@@ -22,7 +22,7 @@ class Label extends BasicAtom {
 }
 
 Label.propTypes = {
-    for: PropTypes.string.isRequired
+    for: PropTypes.string
 }
 
 

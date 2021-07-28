@@ -1,0 +1,60 @@
+/*  title:  table
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Table-th-color: var(--Global-color-5, 114, 123, 155);
+    --Table-td-color: var(--Global-color-5, 114, 123, 155);
+    --Table-td-hover-color: var(--Global-color-5, 114, 123, 155);
+}
+
+
+/*  default
+===================================================================================================================== */
+.Table {
+    border-collapse: collapse;
+    padding: 0 2rem;
+    width: 100%;
+}
+    .Table strong {
+        color: rgb(32, 43, 55);
+        font-weight: 700;
+    }
+
+    /*  head
+    ================================================================================================================= */
+    .Table th {
+        color: rba(var(--Table-th-color));
+        font-weight: 600;
+        font-size: .625rem;
+        line-height: .875rem;
+        padding-bottom: 10px;
+        text-align: left;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    /*  tr
+    ================================================================================================================= */
+    .Table tr {
+        border-bottom: 1px solid var(--Global-border-color);
+    }
+        .Table tbody tr:hover {
+            background-color: rgba(var(--Table-td-hover-color), .1);
+            cursor: pointer;
+        }
+
+        /*  td
+        ============================================================================================================= */
+        .Table td {
+            color: rba(var(--Table-td-color));
+            font-family: Nunito Sans, sans-serif;
+            font-size: .875rem;
+            line-height: 1.4;
+            padding: 1rem  .5rem;
+        }

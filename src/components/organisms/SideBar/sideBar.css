@@ -8,10 +8,6 @@
  ==================================================================================================================== */
 :root {
     --Side-bar-global-bg-color: var(--Global-color-5-darker, 66 78 121);
-    /*--Side-bar-background-color: #424e79;*/
-    /*--Side-bar-width: 300px;*/
-    /*--Side-bar-height: 100%;*/
-    /*--Side-bar-color: #FFFFFF;*/
 }
 
 
@@ -21,12 +17,6 @@
     align-items: stretch;
     display: inline-flex;       /*  TODO might need to rethink positioning */
     height: 100%;
-
-    /*height: var(--Side-bar-height);*/
-    /*width: var(--Side-bar-width);*/
-    /*position: relative;*/
-    /*--IconBar-background-color: var(--Side-bar-background-color);*/
-    /*color: var(--Side-bar-color);*/
 }
 
 
@@ -53,27 +43,3 @@
         .Side-bar .footer {
             margin-top: auto;
         }
-
-
-
-/*.Side-bar > .IconBar {*/
-/*    position: absolute;*/
-/*}*/
-
-/*.Side-bar > .options {*/
-/*    left: var(--IconBar-width);*/
-/*    right: 0;*/
-/*    height: 100%;*/
-/*    position: absolute;*/
-/*    background-color: var(--Side-bar-background-color);*/
-/*}*/
-
-
-
-/*.Side-bar > .options > .footer {*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    bottom: 0;*/
-/*    right: 0;*/
-/*    padding-bottom: 6px;*/
-/*}*/

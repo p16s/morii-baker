@@ -1,9 +1,6 @@
 import BakerExample from "../../../../helpers/bakerExample";
 import SideBar from "../sideBar";
 import List from "../../../molecules/list/list";
-import IconBar from "../../../molecules/iconBar/iconBar";
-import Icon from "../../../atoms/icon/icon";
-import Button from "../../../atoms/button/button";
 
 
 class SideBarExample extends BakerExample {
@@ -18,7 +15,7 @@ class SideBarExample extends BakerExample {
             activeIcon: 0,
             activeList: 0,
             activeItem: 0,
-        })
+        });
     }
 
 

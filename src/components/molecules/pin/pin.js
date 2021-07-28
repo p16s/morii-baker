@@ -19,9 +19,7 @@ class Pin extends BasicAtom {
     render(props) {
         return (
             <>
-                <Label
-                    for={this.props.for}
-                >
+                <Label for={this.props.for}>
                     {this.props.labelText}
                 </Label>
 

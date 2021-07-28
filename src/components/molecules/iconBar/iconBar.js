@@ -2,6 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import './iconBar.css';
 import Icon from "../../atoms/icon/icon";
 
+
 class IconBar extends BasicAtom {
     render() {
         return (
@@ -16,11 +17,13 @@ class IconBar extends BasicAtom {
         );
     }
 
+
     render_icons() {
         return (this.props.icons ?? []).map((value, index)=>{
             return this.render_icons_icon(value, index);
         });
     }
+
 
     render_icons_icon(value, index) {
         if (typeof value === "string") {

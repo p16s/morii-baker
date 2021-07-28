@@ -23,8 +23,9 @@ import ListExample from "./components/molecules/list/example/listExample";
 import IconBarExample from "./components/molecules/iconBar/example/IconBarExample";
 import TitleBarExample from "./components/molecules/titleBar/example/titleBarExample";
 import BreadcrumbsExample from "./components/molecules/breadcrumbs/example/breadcrumbsExample";
+import TableExample from "./components/molecules/table/example/tableExample";
 
-import SideBarExample from "./components/organisms/SideBar/example/sideBarExample";
+import SideBarExample from "./components/organisms/sideBar/example/sideBarExample";
 
 
 
@@ -34,7 +35,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            isShowing: 'organisms'
+            isShowing: 'molecules'
         }
     }
 
@@ -93,6 +94,7 @@ class App extends React.Component {
                     <TitleBarExample />
                     <IconBarExample />
                     <BreadcrumbsExample />
+                    <TableExample />
                 </>
             );
         }
