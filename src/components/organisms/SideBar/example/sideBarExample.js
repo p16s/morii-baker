@@ -27,12 +27,12 @@ class SideBarExample extends BakerExample {
                 <h1>
                     [SideBar]
 
-                    {/*<a*/}
-                    {/*    href={"https://www.figma.com/file/TyaSwVfNEDdQcodIuFs8DR/Baskerville-2.0?node-id=31%3A0"}*/}
-                    {/*    target={"_blank"}*/}
-                    {/*>*/}
-                    {/*    Components*/}
-                    {/*</a>*/}
+                    <a
+                        href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=216%3A909"}
+                        target={"_blank"}
+                    >
+                        Documentation
+                    </a>
                 </h1>
 
                 {this.render_normal()}

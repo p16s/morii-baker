@@ -24,6 +24,7 @@ import IconBarExample from "./components/molecules/iconBar/example/IconBarExampl
 import TitleBarExample from "./components/molecules/titleBar/example/titleBarExample";
 
 import SideBarExample from "./components/organisms/SideBar/example/sideBarExample";
+import BreadcrumbsExample from "./components/organisms/breadcrumbs/example/breadcrumbsExample";
 
 
 
@@ -103,6 +104,7 @@ class App extends React.Component {
                     {this.render_nav()}
 
                     <SideBarExample />
+                    <BreadcrumbsExample />
                 </>
             );
         }

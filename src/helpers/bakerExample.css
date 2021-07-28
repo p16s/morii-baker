@@ -12,7 +12,8 @@
     .examples > h1,
     .examples > h2 {
         color: rgb(var(--Global-heading-color, 32 43 55 1));
-        font-family: var(--Global-heading-font-family, sans-serif);
+        /*font-family: var(--Global-heading-font-family, sans-serif);*/
+        font-family: 'Roboto', sans-serif;
     }
 
     .examples > h1 {
@@ -34,6 +35,7 @@
     /*  h2, used for each component  */
     .baker-example-title {
         font-size: 20px;
+        letter-spacing: 0;
         margin-bottom: 12px;
     }
 

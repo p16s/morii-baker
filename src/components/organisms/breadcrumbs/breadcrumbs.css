@@ -1,0 +1,68 @@
+/*  title:  breadcrumbs
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+ ==================================================================================================================== */
+:root {
+    --Breadcrumbs-color: var(--Global-color-5, 114 123 155);
+    --Breadcrumbs-color-active: 32 43 55;
+}
+
+
+/*  base
+===================================================================================================================== */
+.Breadcrumbs {
+    border-bottom: 1px solid rgb(var(--Global-border-color, 70 176 195));
+    align-items: center;
+    display: flex;
+    padding: 1rem 2rem;
+}
+
+    /*  individual breadcrumb
+    ================================================================================================================= */
+    .Breadcrumbs .breadcrumb {
+        color: rgb(var(--Breadcrumbs-color));
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 100%;
+        text-decoration: none;
+        transition: .3s;
+    }
+        /*  states: active
+        ============================================================================================================= */
+        .Breadcrumbs .breadcrumb:hover,
+        .Breadcrumbs .breadcrumb.active,
+        .Breadcrumbs .breadcrumb:last-of-type{
+            color: rgb(var(--Breadcrumbs-color-active));
+            transition: .2s;
+        }
+
+        /*  >
+        ============================================================================================================= */
+        .Breadcrumbs .breadcrumb:not(:first-of-type)::before {
+            color: rgb(var(--Global-color-1, 70 50 251));
+            content: ">";
+            margin: 0 .5rem;
+        }
+
+        /*  last "active"
+        ============================================================================================================= */
+        .Breadcrumbs .breadcrumb:last-of-type {
+            cursor: auto;
+            pointer-events: none;   /*  prevent a click to the same page (incase the slug present) */
+        }
+
+    /*  if a logo added
+    ================================================================================================================= */
+    .Breadcrumbs .logo {
+        border: 1px solid 1px solid rgb(var(--Global-border-color, 70 176 195));
+        border-radius: 2px;
+        height: 22px;
+        margin-right: .5rem;
+        /*width: 16px;*/
+    }
