@@ -1,42 +1,79 @@
+/*  title:  iconBar
+    notes:  organism styles
+ ==================================================================================================================== */
+
+
+
+/*  variables
+ ==================================================================================================================== */
 :root {
-    --SideBar-background-color: #424e79;
-    --SideBar-width: 300px;
-    --SideBar-height: 100%;
-    --SideBar-color: #FFFFFF;
+    --Side-bar-global-bg-color: var(--Global-color-5-darker, 66 78 121);
+    /*--Side-bar-background-color: #424e79;*/
+    /*--Side-bar-width: 300px;*/
+    /*--Side-bar-height: 100%;*/
+    /*--Side-bar-color: #FFFFFF;*/
 }
 
-.SideBar {
-    height: var(--SideBar-height);
-    width: var(--SideBar-width);
-    position: relative;
-    --IconBar-background-color: var(--SideBar-background-color);
-    color: var(--SideBar-color);
-}
-.SideBar > .IconBar {
-    position: absolute;
-}
 
-.SideBar > .options {
-    left: var(--IconBar-width);
-    right: 0;
+/*  base
+ ==================================================================================================================== */
+.Side-bar {
+    align-items: stretch;
+    display: inline-flex;       /*  TODO might need to rethink positioning */
     height: 100%;
-    position: absolute;
-    background-color: var(--SideBar-background-color);
+
+    /*height: var(--Side-bar-height);*/
+    /*width: var(--Side-bar-width);*/
+    /*position: relative;*/
+    /*--IconBar-background-color: var(--Side-bar-background-color);*/
+    /*color: var(--Side-bar-color);*/
 }
 
-.SideBar > .options > h1 {
-    font-size: 14px;
-    margin: 16px 16px 0 16px;
-    display: block;
-    padding-bottom: 16px;
-    font-weight: bold;
-    border-bottom: 1px solid #727B9B;
-}
 
-.SideBar > .options > .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding-bottom: 6px;
-}
+    /*  main container for the lists/footer
+     ================================================================================================================ */
+    .Side-bar .options {
+        background-color: rgb(var(--Side-bar-global-bg-color));
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2rem;       /*  make this match on the Icon-bar */
+        width: 200px;
+    }
+        /*  TODO not sure if this is a requirement with new bar */
+        .Side-bar > .options > h1 {
+            border-bottom: 1px solid #727B9B;
+            color: #fff;
+            font-size: .875rem;
+            margin: 1rem 1rem 0 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /*  footer
+         ============================================================================================================ */
+        .Side-bar .footer {
+            margin-top: auto;
+        }
+
+
+
+/*.Side-bar > .IconBar {*/
+/*    position: absolute;*/
+/*}*/
+
+/*.Side-bar > .options {*/
+/*    left: var(--IconBar-width);*/
+/*    right: 0;*/
+/*    height: 100%;*/
+/*    position: absolute;*/
+/*    background-color: var(--Side-bar-background-color);*/
+/*}*/
+
+
+
+/*.Side-bar > .options > .footer {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    right: 0;*/
+/*    padding-bottom: 6px;*/
+/*}*/

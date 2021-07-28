@@ -33,6 +33,14 @@ class IconBarExample extends BakerExample {
                     icons={["1","2","3"]}
                     activeIcon={0}
                     onClick={(e, key) => { alert('Clicked ' + key); }}
+
+                    footer={(
+                        <Button className={"secondary round"}>
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
+                            </svg>
+                        </Button>
+                    )}
                 >
                     <Icon
                         src={'https://app.morii.io/favicon.png'}
@@ -48,13 +56,6 @@ class IconBarExample extends BakerExample {
                         letter={"P"}
                         active={true}
                     />
-
-                    {/*TODO some working out best method to align bottom and mobile, but want to work as organism first so parked*/}
-                    <Button className={"secondary round"}>
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
-                        </svg>
-                    </Button>
                 </IconBar>
             </div>,
             "Iconbar, with use-case examples."

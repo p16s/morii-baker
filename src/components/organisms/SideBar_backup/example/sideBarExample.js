@@ -1,16 +1,12 @@
-import BakerExample from "../../../../helpers/bakerExample";
+import React from "react";
 import SideBar from "../sideBar";
 import List from "../../../molecules/list/list";
-import IconBar from "../../../molecules/iconBar/iconBar";
-import Icon from "../../../atoms/icon/icon";
-import Button from "../../../atoms/button/button";
 
-class SideBarExample extends BakerExample {
+class SideBarExample extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {};
-    };
-
+    }
 
     componentDidMount() {
         this.setState({
@@ -18,36 +14,18 @@ class SideBarExample extends BakerExample {
             activeList: 0,
             activeItem: 0,
         })
-    };
-
+    }
 
     render() {
         return (
-            <section className={"examples"}>
-                <h1>
-                    [SideBar]
-
-                    {/*<a*/}
-                    {/*    href={"https://www.figma.com/file/TyaSwVfNEDdQcodIuFs8DR/Baskerville-2.0?node-id=31%3A0"}*/}
-                    {/*    target={"_blank"}*/}
-                    {/*>*/}
-                    {/*    Components*/}
-                    {/*</a>*/}
-                </h1>
-
-                {this.render_normal()}
-            </section>
-        )
-    };
-
-
-    render_normal() {
-        return this.render_exampleComponent(
-            "SideBar",
-                <div style={{height: "800px"}}>
+            <div className={"examples"}>
+                <h1>SideBar</h1>
+                <h2>Overview</h2>
+                <p>The SideBar</p>
+                <h2>Example</h2>
+                <div style={{height: "800px", width: '700px', "backgroundColor":'#700000'}}>
                     <SideBar
-                        header={'header'}
-
+                        header={'dd'}
                         icons={['a', 'b']}
                         options={
                             [
@@ -57,13 +35,7 @@ class SideBarExample extends BakerExample {
                                 },
                             ]
                         }
-
-                        footer={(
-                            <List
-                                header={"Account"}
-                                items={['Settings', 'Logout']}
-                            />
-                        )}
+                        footer={(<List header={"Account"} items={['Settings', 'Logout']} />)}
 
                         activeIcon={this.state.activeIcon}
                         activeList={this.state.activeList}
@@ -82,10 +54,10 @@ class SideBarExample extends BakerExample {
                             }
                         }
                     />
-                </div>,
-            ""
-        )
-    };
+                </div>
+            </div>
+        );
+    }
 }
 
 export default SideBarExample;

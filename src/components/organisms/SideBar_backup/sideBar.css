@@ -1,0 +1,42 @@
+:root {
+    --SideBar-background-color: #424e79;
+    --SideBar-width: 300px;
+    --SideBar-height: 100%;
+    --SideBar-color: #FFFFFF;
+}
+
+.SideBar {
+    height: var(--SideBar-height);
+    width: var(--SideBar-width);
+    position: relative;
+    --IconBar-background-color: var(--SideBar-background-color);
+    color: var(--SideBar-color);
+}
+.SideBar > .IconBar {
+    position: absolute;
+}
+
+.SideBar > .options {
+    left: var(--IconBar-width);
+    right: 0;
+    height: 100%;
+    position: absolute;
+    background-color: var(--SideBar-background-color);
+}
+
+.SideBar > .options > h1 {
+    font-size: 14px;
+    margin: 16px 16px 0 16px;
+    display: block;
+    padding-bottom: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #727B9B;
+}
+
+.SideBar > .options > .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 6px;
+}

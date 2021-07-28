@@ -3,31 +3,26 @@ import IconBar from "../../molecules/iconBar/iconBar";
 import List from "../../molecules/list/list";
 import './sideBar.css';
 
-
 class SideBar extends BasicAtom {
     render() {
         return (
-            <div className={"Side-bar" + this.getClassNameString()}>
+            <div className={"SideBar" + this.getClassNameString()}>
                 <IconBar
                     icons={this.props.icons}
                     activeIcon={this.props.activeIcon ?? null}
                     onClick={(e, key) => {this.handleIconClick(e, key);}}
                 />
-
-
                 <div className={"options"}>
                     {this.render_header()}
                     {this.render_lists()}
                     {this.props.children}
-
                     <div className={"footer"}>
                         {this.props.footer}
                     </div>
                 </div>
             </div>
         )
-    };
-
+    }
 
     render_header() {
         return (typeof this.props.header !== 'undefined')
@@ -37,16 +32,13 @@ class SideBar extends BasicAtom {
                     : this.props.header
             )
             : ('');
-    };
-
+    }
 
     render_lists() {
         return (this.props.lists ?? this.props.options ?? []).map(
             (list, index) => {return this.render_list(list, index)}
         )
-    };
-
-
+    }
     render_list(list, index) {
         return (
             <List
@@ -57,17 +49,15 @@ class SideBar extends BasicAtom {
                 onClick={(e, key) => {this.handleItemClick(e, index, key);}}
             />
         )
-    };
-
+    }
 
     handleItemClick(e, list, item) {
         this.callbackOr(this.props.onItemClick)(e, list, item);
-    };
-
+    }
 
     handleIconClick(e, index) {
         this.callbackOr(this.props.onIconClick)(e, index);
-    };
+    }
 }
 
 export default SideBar;
