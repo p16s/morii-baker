@@ -14,6 +14,7 @@ class FormTextarea extends BasicAtom {
         }
     }
 
+
     /**
      * Sets state to prop value
      */
@@ -45,6 +46,7 @@ class FormTextarea extends BasicAtom {
             );
     }
 
+
     /**
      * Render the error component
      *
@@ -53,6 +55,7 @@ class FormTextarea extends BasicAtom {
     render_error() {
         return this.render_element('error');
     }
+
 
     /**
      * Render the success component
@@ -63,6 +66,7 @@ class FormTextarea extends BasicAtom {
         return this.render_element('success');
     }
 
+
     /**
      * Render disabled
      *
@@ -71,6 +75,7 @@ class FormTextarea extends BasicAtom {
     render_disabled() {
         return this.render_element('', {disabled: "disabled"});
     }
+
 
     /**
      * Render element
@@ -95,6 +100,7 @@ class FormTextarea extends BasicAtom {
         );
     }
 
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // States
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,6 +113,7 @@ class FormTextarea extends BasicAtom {
         return (this.props.error !== false);
     }
 
+
     /**
      * Great success?
      *
@@ -116,6 +123,7 @@ class FormTextarea extends BasicAtom {
         return (this.props.success !== false);
     }
 
+
     /**
      * Is it disabled?
      *
@@ -124,6 +132,7 @@ class FormTextarea extends BasicAtom {
     isDisabled() {
         return (this.props.disabled === "disabled" || this.props.disabled === true);
     }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
@@ -138,6 +147,7 @@ class FormTextarea extends BasicAtom {
         this.callbackOr(this.props.onClick)(e);
     }
 
+
     /**
      * Update state
      *
@@ -149,6 +159,7 @@ class FormTextarea extends BasicAtom {
         })
     }
 }
+
 
 FormTextarea.defaultProps = {
     error: false,

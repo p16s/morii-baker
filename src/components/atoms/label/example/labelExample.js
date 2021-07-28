@@ -11,8 +11,9 @@ class LabelExample extends BakerExample {
 
                 {this.render_normal()}
             </section>
-        )
-    };
+        );
+    }
+
 
     /**
      * Render the basic label titleBar.js

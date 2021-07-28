@@ -31,6 +31,7 @@ class FormInputExample extends BakerExample {
         );
     }
 
+
     /**
      * Render the basic formInput titleBar.js
      * @returns {JSX.Element}
@@ -48,6 +49,7 @@ class FormInputExample extends BakerExample {
         );
     }
 
+
     render_error() {
         return this.render_exampleComponent(
             "Pin/Error",
@@ -60,6 +62,7 @@ class FormInputExample extends BakerExample {
             "The content of the form is not valid. Set the error property to true"
         );
     }
+
 
     render_success() {
         return this.render_exampleComponent(
@@ -74,6 +77,7 @@ class FormInputExample extends BakerExample {
         );
     }
 
+
     render_disabled() {
         return this.render_exampleComponent(
             "Pin/Disabled",
@@ -86,6 +90,7 @@ class FormInputExample extends BakerExample {
             "The formInput field is disabled.  Set the disabled property to true or disabled"
         );
     }
+
 
     render_large() {
         return this.render_exampleComponent(
@@ -100,5 +105,6 @@ class FormInputExample extends BakerExample {
         );
     }
 }
+
 
 export default FormInputExample;

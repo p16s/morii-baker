@@ -17,9 +17,11 @@ class FormPin extends BasicAtom {
         });
     }
 
+
     get keysAllowed() {
         return ["1","2","3","4","5","6","7","8","9","0", "Backspace", ''];
     }
+
 
     handleKeyPress(e, key) {
         let value = e.key ?? e.target.value;
@@ -52,8 +54,6 @@ class FormPin extends BasicAtom {
             }
         }
 
-
-
         this.setState({
             "pins": pins,
         });
@@ -62,10 +62,12 @@ class FormPin extends BasicAtom {
         e.preventDefault();
     }
 
+
     handlePaste(e, key) {
         //@todo: handle paste
         e.preventDefault();
         let data = e.clipboardData.getData('Text').trim();
+
         if (data.length === 1) {
             e.key = data;
             this.handleKeyPress(e, key);
@@ -91,9 +93,11 @@ class FormPin extends BasicAtom {
         }
     }
 
+
     handleToggleShow() {
         this.setState({show: !this.state.show})
     }
+
 
     render() {
         return (
@@ -103,6 +107,7 @@ class FormPin extends BasicAtom {
             </span>
         );
     }
+
 
     render_hide() {
         return (
@@ -114,6 +119,7 @@ class FormPin extends BasicAtom {
             </span>
         );
     }
+
 
     render_inputs() {
         let inputs = [];
@@ -139,6 +145,7 @@ class FormPin extends BasicAtom {
  
         return inputs;
     }
+
 
     get length() {
         return (this.props.length ?? 4);

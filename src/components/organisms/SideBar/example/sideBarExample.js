@@ -5,11 +5,12 @@ import IconBar from "../../../molecules/iconBar/iconBar";
 import Icon from "../../../atoms/icon/icon";
 import Button from "../../../atoms/button/button";
 
+
 class SideBarExample extends BakerExample {
     constructor(props, context) {
         super(props, context);
         this.state = {};
-    };
+    }
 
 
     componentDidMount() {
@@ -18,7 +19,7 @@ class SideBarExample extends BakerExample {
             activeList: 0,
             activeItem: 0,
         })
-    };
+    }
 
 
     render() {
@@ -37,8 +38,8 @@ class SideBarExample extends BakerExample {
 
                 {this.render_normal()}
             </section>
-        )
-    };
+        );
+    }
 
 
     render_normal() {
@@ -84,8 +85,9 @@ class SideBarExample extends BakerExample {
                     />
                 </div>,
             ""
-        )
-    };
+        );
+    }
 }
+
 
 export default SideBarExample;

@@ -9,8 +9,8 @@ class Breadcrumbs extends BasicAtom {
                 {this.render_logo()}
                 {this.render_crumbs()}
             </div>
-        )
-    };
+        );
+    }
 
 
     render_logo() {
@@ -31,8 +31,8 @@ class Breadcrumbs extends BasicAtom {
     render_crumbs() {
         return (this.props.breadcrumbs ?? []).map((breadcrumb, key) => {
             return this.render_crumb(breadcrumb, key);
-        })
-    };
+        });
+    }
 
 
     render_crumb(breadcrumb, key) {
@@ -45,8 +45,8 @@ class Breadcrumbs extends BasicAtom {
             >
                 {breadcrumb.title}
             </a>
-        )
-    };
+        );
+    }
 }
 
 

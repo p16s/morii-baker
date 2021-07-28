@@ -21,8 +21,8 @@ class TitleBarExample extends BakerExample {
                 {this.render_basic()}
                 {this.render_icon()}
             </section>
-        )
-    };
+        );
+    }
 
 
     render_basic() {
@@ -32,8 +32,8 @@ class TitleBarExample extends BakerExample {
                 <h1>Heading as a h1</h1>
             </TitleBar>,
             'Basic title with no CTA'
-        )
-    };
+        );
+    }
 
 
     render_icon() {
@@ -45,8 +45,8 @@ class TitleBarExample extends BakerExample {
                 <Button>Dummy button</Button>
             </TitleBar>,
             'Basic title with CTA example'
-        )
-    };
+        );
+    }
 }
 
 

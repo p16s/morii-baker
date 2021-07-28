@@ -8,8 +8,8 @@ class Alert extends BasicAtom {
     render(text, className) {
         return (
             this.render_standard()
-        )
-    };
+        );
+    }
 
 
     render_standard() {

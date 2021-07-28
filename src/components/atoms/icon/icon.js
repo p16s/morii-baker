@@ -16,7 +16,8 @@ class Icon extends BasicAtom {
     render() {
         return this.isActive()
             ? this.render_active() : this.render_inactive();
-    };
+    }
+
 
     /**
      * Render active element
@@ -24,7 +25,8 @@ class Icon extends BasicAtom {
      */
     render_active() {
         return this.render_element('active');
-    };
+    }
+
 
     /**
      * Render inactive element
@@ -32,7 +34,8 @@ class Icon extends BasicAtom {
      */
     render_inactive() {
         return this.render_element();
-    };
+    }
+
 
     /**
      * Render element
@@ -56,8 +59,9 @@ class Icon extends BasicAtom {
                 {this.render_element_letter()}
                 {this.props.children}
             </div>
-        )
-    };
+        );
+    }
+
 
     /**
      * Render the image icon
@@ -70,7 +74,8 @@ class Icon extends BasicAtom {
                 <img src={this.props.src} alt={this.props.alt ?? ''} />
             )
             : ''
-    };
+    }
+
 
     /**
      * Render the icon with a letter
@@ -83,7 +88,8 @@ class Icon extends BasicAtom {
                 <span className={"letter"}>{this.props.letter.substring(0, 1).toUpperCase()}</span>
             )
             : ''
-    };
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers

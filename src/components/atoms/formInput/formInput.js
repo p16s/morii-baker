@@ -13,6 +13,7 @@ class FormInput extends BasicAtom {
         }
     }
 
+
     /**
      * Sets state to prop value
      */
@@ -44,6 +45,7 @@ class FormInput extends BasicAtom {
             );
     }
 
+
     /**
      * Render the error component
      *
@@ -52,6 +54,7 @@ class FormInput extends BasicAtom {
     render_error() {
         return this.render_element('error');
     }
+
 
     /**
      * Render the success component
@@ -62,6 +65,7 @@ class FormInput extends BasicAtom {
         return this.render_element('success');
     }
 
+
     /**
      * Render disabled
      *
@@ -70,6 +74,7 @@ class FormInput extends BasicAtom {
     render_disabled() {
         return this.render_element('', {disabled: "disabled"});
     }
+
 
     /**
      * Render element

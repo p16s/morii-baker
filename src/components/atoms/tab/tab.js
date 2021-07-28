@@ -7,7 +7,7 @@ class Tab extends BasicAtom {
     render(text, className) {
         return (
             this.render_standard()
-        )
+        );
     }
 
 

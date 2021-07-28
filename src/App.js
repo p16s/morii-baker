@@ -22,9 +22,9 @@ import PinExample from "./components/molecules/pin/example/pinExample";
 import ListExample from "./components/molecules/list/example/listExample";
 import IconBarExample from "./components/molecules/iconBar/example/IconBarExample";
 import TitleBarExample from "./components/molecules/titleBar/example/titleBarExample";
+import BreadcrumbsExample from "./components/molecules/breadcrumbs/example/breadcrumbsExample";
 
 import SideBarExample from "./components/organisms/SideBar/example/sideBarExample";
-import BreadcrumbsExample from "./components/organisms/breadcrumbs/example/breadcrumbsExample";
 
 
 
@@ -91,8 +91,8 @@ class App extends React.Component {
                     <PinExample />
                     <ListExample />
                     <TitleBarExample />
-
                     <IconBarExample />
+                    <BreadcrumbsExample />
                 </>
             );
         }
@@ -104,7 +104,6 @@ class App extends React.Component {
                     {this.render_nav()}
 
                     <SideBarExample />
-                    <BreadcrumbsExample />
                 </>
             );
         }

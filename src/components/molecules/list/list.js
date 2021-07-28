@@ -35,7 +35,7 @@ class List extends BasicAtom {
                     {value}
                 </ListItem>
             );
-        })
+        });
     }
 
 
@@ -65,5 +65,6 @@ class List extends BasicAtom {
         this.callbackOr(this.props.onClick)(e, index);
     }
 }
+
 
 export default List;

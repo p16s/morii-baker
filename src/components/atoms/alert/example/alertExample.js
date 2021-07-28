@@ -24,8 +24,8 @@ class AlertExample extends BakerExample {
                 {this.render_success()}
                 {this.render_success_icon()}
             </section>
-        )
-    };
+        );
+    }
 
 
     render_basic() {
@@ -36,7 +36,7 @@ class AlertExample extends BakerExample {
                 onClick={() => {console.log('clicked Alert');}}
             />,
             'Default alert.  With click event.'
-        )
+        );
     }
 
 
@@ -58,7 +58,7 @@ class AlertExample extends BakerExample {
                 </svg>
             </Alert>,
             'Default with icon passed in. With click event.'
-        )
+        );
     }
 
 
@@ -73,7 +73,7 @@ class AlertExample extends BakerExample {
                 }}
             />,
             'Default error. With click event.'
-        )
+        );
     }
 
 
@@ -93,7 +93,7 @@ class AlertExample extends BakerExample {
                 </svg>
             </Alert>,
             'Default error with icon passed in. With click event.'
-        )
+        );
     }
 
 
@@ -108,7 +108,7 @@ class AlertExample extends BakerExample {
                 }}
             />,
             'Default success. With click event.'
-        )
+        );
     }
 
 
@@ -128,7 +128,7 @@ class AlertExample extends BakerExample {
                 </svg>
             </Alert>,
             'Default success with icon passed in. With click event.'
-        )
+        );
     }
 }
 

@@ -74,26 +74,26 @@ class ListItemExample extends BakerExample {
     }
 
 
-    render_group() {
-        return this.render_exampleComponent(
-            'Lists / Example',
-            <ul
-                style={{
-                    "backgroundColor":'#424E79',
-                    display: 'flex',
-                    'flexDirection': 'column',
-                    width: '50%',
-                }}
-            >
-                <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-                <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-                <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-                <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-                <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-            </ul>,
-            'Quick titleBar.js of a group of lists (Note: this will move to molecules when done)'
-        );
-    }
+    // render_group() {
+    //     return this.render_exampleComponent(
+    //         'Lists / Example',
+    //         <ul
+    //             style={{
+    //                 "backgroundColor":'#424E79',
+    //                 display: 'flex',
+    //                 'flexDirection': 'column',
+    //                 width: '50%',
+    //             }}
+    //         >
+    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
+    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
+    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
+    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
+    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
+    //         </ul>,
+    //         'Quick titleBar.js of a group of lists (Note: this will move to molecules when done)'
+    //     );
+    // }
 
 }
 

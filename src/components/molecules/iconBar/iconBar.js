@@ -13,7 +13,7 @@ class IconBar extends BasicAtom {
                     {this.props.footer}
                 </aside>
             </div>
-        )
+        );
     }
 
     render_icons() {
@@ -45,14 +45,17 @@ class IconBar extends BasicAtom {
             );
         }
 
-        return <Icon
-            key={index}
-            active={(this.props.activeIcon ?? -1) === index}
-            onClick={(e) => {this.handleClick(e, index)}}
-        >
-            {value}
-        </Icon>;
+        return (
+            <Icon
+                key={index}
+                active={(this.props.activeIcon ?? -1) === index}
+                onClick={(e) => {this.handleClick(e, index)}}
+            >
+                {value}
+            </Icon>
+        );
     }
+
 
     /**
      * Handle click
@@ -64,5 +67,6 @@ class IconBar extends BasicAtom {
         this.callbackOr(this.props.onClick)(e, index);
     }
 }
+
 
 export default IconBar;

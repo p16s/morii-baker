@@ -8,8 +8,8 @@ class Button extends BasicAtom {
     render(text, className) {
         return (
             this.isDisabled() ? this.render_disabled() : this.render_standard()
-        )
-    };
+        );
+    }
 
 
     render_standard() {

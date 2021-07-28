@@ -25,8 +25,8 @@ class SideBar extends BasicAtom {
                     </div>
                 </div>
             </div>
-        )
-    };
+        );
+    }
 
 
     render_header() {
@@ -37,14 +37,14 @@ class SideBar extends BasicAtom {
                     : this.props.header
             )
             : ('');
-    };
+    }
 
 
     render_lists() {
         return (this.props.lists ?? this.props.options ?? []).map(
             (list, index) => {return this.render_list(list, index)}
-        )
-    };
+        );
+    }
 
 
     render_list(list, index) {
@@ -56,18 +56,19 @@ class SideBar extends BasicAtom {
                 key={index}
                 onClick={(e, key) => {this.handleItemClick(e, index, key);}}
             />
-        )
-    };
+        );
+    }
 
 
     handleItemClick(e, list, item) {
         this.callbackOr(this.props.onItemClick)(e, list, item);
-    };
+    }
 
 
     handleIconClick(e, index) {
         this.callbackOr(this.props.onIconClick)(e, index);
-    };
+    }
 }
+
 
 export default SideBar;

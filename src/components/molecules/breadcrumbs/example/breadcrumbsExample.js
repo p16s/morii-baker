@@ -7,7 +7,7 @@ class BreadcrumbsExample extends BakerExample {
         return (
             <section className={"examples"}>
                 <h1>
-                    [Breadcrumbs]
+                    Breadcrumbs
 
                     <a
                         href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=22%3A723"}
@@ -20,8 +20,8 @@ class BreadcrumbsExample extends BakerExample {
                 {this.render_normal()}
                 {this.render_with_logo()}
             </section>
-        )
-    };
+        );
+    }
 
 
     render_normal() {
@@ -45,8 +45,8 @@ class BreadcrumbsExample extends BakerExample {
                 }
             />,
             ""
-        )
-    };
+        );
+    }
 
 
     render_with_logo() {
@@ -56,23 +56,23 @@ class BreadcrumbsExample extends BakerExample {
                 breadcrumbs={
                     [
                         {
-                            "title": "Crumb 1",
+                            "title": "Purposeful Ventures",
                             "slug": "https://p16s.co/morii/"
                         },
                         {
-                            "title": "Crumb 2",
+                            "title": "Stakeholders",
                             "slug": "https://p16s.co/morii/"
                         },
                         {
-                            "title": "Crumb 3",
+                            "title": "Add",
                         }
                     ]
                 }
                 logo={'https://app.morii.io/favicon.png'}
             />,
             "With logo"
-        )
-    };
+        );
+    }
 }
 
 

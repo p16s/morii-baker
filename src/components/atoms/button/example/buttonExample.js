@@ -79,7 +79,7 @@ class ButtonExample extends BakerExample {
                 disabled={true}
             />,
             'Disabled button.'
-        )
+        );
     }
 
 
@@ -139,7 +139,7 @@ class ButtonExample extends BakerExample {
                 </svg>
             </Button>,
             'Button, disabled, with icon and secondary class'
-        )
+        );
     }
 }
 

@@ -7,8 +7,8 @@ class TitleBar extends BasicAtom {
     render(className, props) {
         return (
             this.render_h1()
-        )
-    };
+        );
+    }
 
 
     render_h1(className, props) {
@@ -22,8 +22,8 @@ class TitleBar extends BasicAtom {
             >
                 {this.props.children}
             </div>
-        )
-    };
+        );
+    }
 
 }
 

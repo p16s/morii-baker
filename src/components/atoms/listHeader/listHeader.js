@@ -1,6 +1,7 @@
 import BasicAtom from "../basicAtom";
 import './listHeader.css';
 
+
 class ListHeader extends BasicAtom {
     render() {
         return (
@@ -10,5 +11,6 @@ class ListHeader extends BasicAtom {
         );
     }
 }
+
 
 export default ListHeader;

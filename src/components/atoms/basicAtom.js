@@ -7,6 +7,7 @@ class BasicAtom extends React.Component {
         this.state = {};
     }
 
+
     /**
      * Sets this._isMounted when components mount
      */
@@ -14,12 +15,14 @@ class BasicAtom extends React.Component {
         this._isMounted = true;
     }
 
+
     /**
      * Sets this._isMounted when components unmount
      */
     componentWillUnmount() {
         this._isMounted = false;
     }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // States
@@ -35,9 +38,11 @@ class BasicAtom extends React.Component {
             ? this.props.active : false;
     }
 
+
     isClickable() {
         return (typeof this.props.onClick !== 'undefined');
     }
+
 
     /**
      * Is the component mounted
@@ -47,6 +52,7 @@ class BasicAtom extends React.Component {
     isMounted() {
         return this._isMounted ?? false;
     }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Utility
@@ -59,6 +65,7 @@ class BasicAtom extends React.Component {
         return this.padIfString(this.props.className);
     }
 
+
     /**
      * Adds a space (or pad variable) to the start of a string, if the value passed is a string
      * @param str
@@ -69,6 +76,7 @@ class BasicAtom extends React.Component {
         pad = pad ?? ' ';
         return (typeof str === 'string') ? (pad + str) : '';
     }
+
 
     /**
      * Use the callback or the or function
