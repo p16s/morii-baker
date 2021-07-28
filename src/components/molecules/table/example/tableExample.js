@@ -1,5 +1,7 @@
 import BakerExample from "../../../../helpers/bakerExample";
 import Table from "../table";
+import Tag from "../../../atoms/tag/tag";
+
 
 class TableExample extends BakerExample {
     render() {
@@ -33,10 +35,18 @@ class TableExample extends BakerExample {
                     "Status",
                 ]}
                 tbody={[
-                    <strong>Test message</strong>,
-                    '7/14/2021, 11:10:04 AM',
-                    '100%',
-                    <span className="Tag sent">Sent</span>
+                    [
+                        <strong>Test message</strong>,
+                        '7/14/2021, 11:10:04 AM',
+                        '100%',
+                        <Tag className="sent">Sent</Tag>
+                    ],
+                    [
+                        <strong>Second message</strong>,
+                        '7/14/2021, 11:10:04 AM',
+                        '100%',
+                        <Tag className="draft">Draft</Tag>
+                    ]
                 ]}
             />,
             "Table example"

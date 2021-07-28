@@ -19,9 +19,7 @@ class Table extends BasicAtom {
                 </thead>
 
                 <tbody>
-                    <tr>
-                        {this.render_tbody()}
-                    </tr>
+                    {this.render_tbody()}
                 </tbody>
             </table>
         );
@@ -40,8 +38,21 @@ class Table extends BasicAtom {
     render_tbody() {
         return (this.props.tbody ?? []).map((value, index) => {
             return (
-                <td key={index}>{value}</td>
+                <tr key={index}>
+                    {this.render_tbody_td(value)}
+                </tr>
             );
+        });
+    }
+
+
+    render_tbody_td(value) {
+        return value.map((content, index) => {
+            return (
+                <td key={index}>
+                    {content}
+                </td>
+            )
         });
     }
 }
