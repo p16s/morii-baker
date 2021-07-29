@@ -3,7 +3,6 @@ import './nonMembers.css';
 import SlideOut from "../../molecules/slideOut/slideOut";
 import TitleBar from "../../molecules/titleBar/titleBar";
 import Input from "../../molecules/input/input";
-import Tag from "../../atoms/tag/tag";
 import Table from "../../molecules/table/table";
 import Button from "../../atoms/button/button";
 
@@ -19,7 +18,7 @@ class NonMembers extends BasicAtom {
 
 
     componentDidMount() {
-        // fake an api response/data
+        // fake an api response/data TODO unlikely it will come back like this
         this.setState({
             users: this.state.users = [
                 [
@@ -37,8 +36,8 @@ class NonMembers extends BasicAtom {
                 ],
                 [
                     <strong>Ann Curtis</strong>,
-                        'anncurtis@gmail.com',
-                        '355-298-0908%',
+                    'anncurtis@gmail.com',
+                    '355-298-0908%',
                     <Button
                         className={"minimal"}
                         onClick={() => {
@@ -83,6 +82,7 @@ class NonMembers extends BasicAtom {
 
                 <form>
                     <Input
+                        inputClass={"search"}
                         placeholder={"E.g. John Smith"}
                     />
                 </form>
@@ -106,7 +106,18 @@ class NonMembers extends BasicAtom {
             );
         } else {
             return (
-                this.render_no_members()
+                <>
+                    <Table
+                        thead={[
+                            "Name",
+                            "Email",
+                            "Phone number",
+                            "Add to group",
+                        ]}
+                    />
+
+                    {this.render_no_members()}
+                </>
             );
         }
     }

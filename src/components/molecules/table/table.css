@@ -29,6 +29,7 @@
     /*  head
     ================================================================================================================= */
     .Table th {
+        border-bottom: 1px solid rgb(var(--Global-border-color, 170 176 195));
         color: rba(var(--Table-th-color));
         font-weight: 600;
         font-size: .625rem;
@@ -42,7 +43,6 @@
     /*  tr
     ================================================================================================================= */
     .Table tr {
-        /*border-bottom: 1px solid rgb(var(--Global-border-color, 170 176 195));*/
         transition: .3s;
     }
         .Table tbody tr:hover {

@@ -23,6 +23,7 @@ class Input extends BasicAtom {
 
                 <FormInput
                     id={this.props.id}
+                    className={this.props.inputClass}
                     value={this.props.value}
                     placeholder={this.props.placeholder}
                     error={this.props.error}

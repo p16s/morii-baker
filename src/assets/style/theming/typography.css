@@ -9,7 +9,7 @@
 /*  headings
  ==================================================================================================================== */
 h1, h2, h3, h4, h5, h6 {
-    color: rgb(var(--Global-heading-color), 0 0 0);
+    color: rgb(var(--Global-heading-color, 32 43 55));
     font-weight: var(--Global-heading-font-weight, 700);
     margin-bottom: 3rem;    /* TODO think this is just demo  */
 }
@@ -41,14 +41,17 @@ h4 {
 
 /*  body/main
  ==================================================================================================================== */
-p {
-    color: rgb(var(--Global-base-color), 0 0 0);
-    font-weight: var(--Global-base-font-weight, 400);
-    font-size: var(--Global-base-font-size);
-    line-height: 1.4375rem;
-    padding: var(--Global-base-font-padding, .75rem 0);
+body {
+    color: rgb(var(--Global-base-font-color), 66, 78, 121);
 }
+    p {
+        color: rgb(var(--Global-base-font-color), 66, 78, 121);
+        font-weight: var(--Global-base-font-weight, 400);
+        font-size: var(--Global-base-font-size);
+        line-height: 1.4375rem;
+        padding: var(--Global-base-font-padding, .75rem 0);
+    }
 
-small {
-    font-size: .875rem;
-}
+    small {
+        font-size: .875rem;
+    }

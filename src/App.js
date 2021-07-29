@@ -30,8 +30,6 @@ import SideBarExample from "./components/organisms/sideBar/example/sideBarExampl
 import NonMembersExample from "./components/organisms/nonMembers/example/nonMembersExample";
 
 
-
-
 class App extends React.Component {
     constructor(props) {
         super(props);

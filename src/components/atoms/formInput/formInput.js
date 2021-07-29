@@ -86,7 +86,11 @@ class FormInput extends BasicAtom {
         return React.cloneElement(
             <input
                 id={this.props.id}
-                className={"Form-input" + this.padIfString(className) + this.getClassNameString()}
+                className={
+                    "Form-input"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
                 type={this.props.type ?? 'text'}
                 placeholder={this.props.placeholder}
                 value={this.state.value}
