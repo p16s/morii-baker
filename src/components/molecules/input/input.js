@@ -19,9 +19,7 @@ class Input extends BasicAtom {
     render(props) {
         return (
             <>
-                <Label for={this.props.for}>
-                    {this.props.labelText}
-                </Label>
+                {this.render_label()}
 
                 <FormInput
                     id={this.props.id}
@@ -31,6 +29,26 @@ class Input extends BasicAtom {
                     success={this.props.success}
                 />
 
+                {this.render_validation()}
+            </>
+        );
+    }
+
+
+    render_label() {
+        if (this.props.for && this.props.for.length) {
+            return (
+                <Label for={this.props.for}>
+                    {this.props.labelText}
+                </Label>
+            );
+        }
+    }
+
+
+    render_validation() {
+        if (this.props.message && this.props.message.length) {
+            return (
                 <ValidationMessage
                     className={
                         (this.props.error ? ' error' : '')
@@ -39,8 +57,8 @@ class Input extends BasicAtom {
                     }
                     message={this.props.message}
                 />
-            </>
-        );
+            );
+        }
     }
 }
 

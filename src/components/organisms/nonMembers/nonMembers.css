@@ -1,0 +1,46 @@
+/*  title:  nonMembers
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+/*  variables
+ ==================================================================================================================== */
+:root {
+}
+
+
+/*  component wrapper
+===================================================================================================================== */
+.Non-members {
+    color: var(--Global-base-font-color);
+}
+
+    /*  Title-bar (and children) overrides
+    ================================================================================================================= */
+    .Non-members .Title-bar {
+        padding: 0 0 1rem 0;
+    }
+        .Non-members .Title-bar .Form-input {
+            margin: 0 0 0 1rem;
+        }
+
+    /*  member table
+    ================================================================================================================= */
+    .Non-members .Table {
+        margin-top: 1.5rem;
+    }
+
+
+    /*  no users message (empty table)
+    ================================================================================================================= */
+    .Non-members .no-users {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 90px 0;
+    }
+        .Non-members .no-users .icon {
+            margin-bottom: 1rem;
+        }

@@ -42,7 +42,7 @@
     /*  tr
     ================================================================================================================= */
     .Table tr {
-        border-bottom: 1px solid var(--Global-border-color);
+        /*border-bottom: 1px solid rgb(var(--Global-border-color, 170 176 195));*/
         transition: .3s;
     }
         .Table tbody tr:hover {

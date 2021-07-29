@@ -27,6 +27,7 @@ import TableExample from "./components/molecules/table/example/tableExample";
 import SlideOutExample from "./components/molecules/slideOut/example/slideOutExample";
 
 import SideBarExample from "./components/organisms/sideBar/example/sideBarExample";
+import NonMembersExample from "./components/organisms/nonMembers/example/nonMembersExample";
 
 
 
@@ -36,7 +37,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            isShowing: 'molecules'
+            isShowing: 'organisms'
         }
     }
 
@@ -108,6 +109,7 @@ class App extends React.Component {
                     {this.render_nav()}
 
                     <SideBarExample />
+                    <NonMembersExample />
                 </>
             );
         }

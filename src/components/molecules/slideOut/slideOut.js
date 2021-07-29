@@ -47,25 +47,9 @@ class SlideOut extends BasicAtom {
                 <div className={"content"}>
                     {this.props.children}
                 </div>
-
-                {/*{this.render_content()}*/}
             </section>
         );
     }
-
-
-    // render_content(props) {
-    //     if (this.isActive) {
-    //         return (
-    //             <div className={
-    //                 "content "
-    //                 + (this.isActive ? 'active' : '')
-    //             }>
-    //                 some content goes here
-    //             </div>
-    //         );
-    //     }
-    // }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
