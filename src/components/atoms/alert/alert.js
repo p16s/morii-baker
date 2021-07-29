@@ -20,7 +20,11 @@ class Alert extends BasicAtom {
     render_element(className, props) {
         return React.cloneElement(
             <span
-                className={"Alert" + this.padIfString(className) + this.getClassNameString()}
+                className={
+                    "Alert"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
                 onClick={(e) => {
                     this.handleClick(e)
                 }}

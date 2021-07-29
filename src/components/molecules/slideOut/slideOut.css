@@ -1,0 +1,76 @@
+/*  title:  slideOut
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+/*  variables
+ ==================================================================================================================== */
+:root {
+    --Slide-out-bg-color: rgb(241, 242, 245);
+    --Slide-out-border-color: rgb(233, 233, 233);
+}
+
+
+/*  base
+===================================================================================================================== */
+.Slide-out {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    /*position: relative;*/
+    transform: translateY(calc(100% - 20px));
+    transition: .3s;
+    right: 0;
+    z-index: 99;
+}
+    /*  animate the whole drawer to show the content    */
+    .Slide-out.active {
+        transform: translateY(0);
+        transition: .2s;
+    }
+
+    /*  toggle handle
+    ================================================================================================================= */
+    .Slide-out .toggle-handle {
+        display: flex;
+        left: 0;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+        /*  actual "tab" */
+        .Slide-out .toggle-handle span {
+            background-color: var(--Slide-out-bg-color);
+            border-top: 1px solid var(--Slide-out-border-color);
+            border-radius:  5px;
+            color: rgb(var(--Global-color-5-darker, 66 78 121));
+            cursor: pointer;
+            font-size: .625rem;
+            font-weight: 700;
+            padding: .5rem .75rem;
+            text-transform: uppercase;
+            transform: translateY(-50%);
+        }
+            /*  active, rotate the icon    */
+            .Slide-out .toggle-handle span.active .icon {
+                transform: rotate(0deg);
+                transition: .1s;
+            }
+
+            /*  icon    */
+            .Slide-out .toggle-handle .icon {
+                margin-left: .25rem;
+                transform: rotate(180deg);
+                transition: .1s;
+            }
+
+    /*  content
+    ================================================================================================================= */
+    .Slide-out .content {
+        background-color: var(--Slide-out-bg-color);
+        border: 1px solid var(--Slide-out-border-color);
+        border-radius: 5px;
+        padding: 1.5rem;
+    }

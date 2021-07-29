@@ -24,6 +24,7 @@ import IconBarExample from "./components/molecules/iconBar/example/IconBarExampl
 import TitleBarExample from "./components/molecules/titleBar/example/titleBarExample";
 import BreadcrumbsExample from "./components/molecules/breadcrumbs/example/breadcrumbsExample";
 import TableExample from "./components/molecules/table/example/tableExample";
+import SlideOutExample from "./components/molecules/slideOut/example/slideOutExample";
 
 import SideBarExample from "./components/organisms/sideBar/example/sideBarExample";
 
@@ -95,6 +96,7 @@ class App extends React.Component {
                     <IconBarExample />
                     <BreadcrumbsExample />
                     <TableExample />
+                    <SlideOutExample />
                 </>
             );
         }
