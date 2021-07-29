@@ -28,6 +28,7 @@ class TableExample extends BakerExample {
         return this.render_exampleComponent(
             "Table/Normal",
             <Table
+                className={"example"}
                 thead={[
                     "Name",
                     "Sent",
@@ -46,6 +47,12 @@ class TableExample extends BakerExample {
                         '7/14/2021, 11:10:04 AM',
                         '100%',
                         <Tag className="draft">Draft</Tag>
+                    ],
+                    [
+                        <strong>David von Dadelszen</strong>,
+                        '7/14/2021, 11:10:04 AM',
+                        '100%',
+                        <Tag className="pending">Pending</Tag>
                     ]
                 ]}
             />,
