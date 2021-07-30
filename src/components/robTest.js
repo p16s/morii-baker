@@ -1,4 +1,5 @@
 import React from "react";
+import DayJS from 'react-dayjs';
 
 
 class RobTest extends React.Component {
@@ -14,9 +15,18 @@ class RobTest extends React.Component {
         }
 
 
+        const date = "2000-01-31T12:59-0500";
+        
         return (
             <section>
                 <h1>Rob Test</h1>
+
+
+                <p>Date original: { date }</p>
+                <p>Date formatted (DD-MM-YYYY): <DayJS format="DD-MM-YYYY">{ date }</DayJS></p>
+
+
+                <hr />
 
 
                 {renderAuthButton()}

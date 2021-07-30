@@ -10,7 +10,7 @@ import RobTest from "./components/robTest";
 ReactDOM.render(
     <React.StrictMode>
         <div>
-            {/*<RobTest />*/}
+            <RobTest />
 
             <App  />
         </div>
