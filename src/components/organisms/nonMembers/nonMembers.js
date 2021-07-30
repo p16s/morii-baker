@@ -2,7 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import './nonMembers.css';
 import SlideOut from "../../molecules/slideOut/slideOut";
 import TitleBar from "../../molecules/titleBar/titleBar";
-import Input from "../../molecules/input/input";
+import FormInput from "../../molecules/input/input";
 import Table from "../../molecules/table/table";
 import Button from "../../atoms/button/button";
 
@@ -81,7 +81,7 @@ class NonMembers extends BasicAtom {
                 </Button>
 
                 <form>
-                    <Input
+                    <FormInput
                         inputClass={"search"}
                         placeholder={"E.g. John Smith"}
                     />
