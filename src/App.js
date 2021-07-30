@@ -4,6 +4,7 @@ import ThemeDemo from "./components/themeDemo/themeDemo";
 
 import LabelExample from "./components/atoms/label/example/labelExample";
 import FormInputExample from "./components/atoms/formInput/example/formInputExample";
+import FormInputPhoneExample from "./components/atoms/formInputPhone/example/formInputPhoneExample";
 import FormPinExample from "./components/atoms/formPin/example/formPinExample";
 import FormTextareaExample from "./components/atoms/formTextarea/example/formTextareaExample";
 import ButtonExample from "./components/atoms/button/example/buttonExample";
@@ -17,6 +18,7 @@ import ListItemExample from "./components/atoms/listItem/example/listItemExample
 import IconExample from "./components/atoms/icon/example/iconExample";
 
 import InputExample from "./components/molecules/input/example/inputExample";
+import InputPhoneExample from "./components/molecules/inputPhone/example/inputPhoneExample";
 import TextareaExample from "./components/molecules/textarea/example/textareaExample";
 import PinExample from "./components/molecules/pin/example/pinExample";
 import ListExample from "./components/molecules/list/example/listExample";
@@ -67,6 +69,7 @@ class App extends React.Component {
 
                     <LabelExample />
                     <FormInputExample />
+                    <FormInputPhoneExample />
                     <FormPinExample />
                     <FormTextareaExample />
                     <ButtonExample />
@@ -88,6 +91,7 @@ class App extends React.Component {
                     {this.render_nav()}
 
                     <InputExample />
+                    <InputPhoneExample />
                     <TextareaExample />
                     <PinExample />
                     <ListExample />

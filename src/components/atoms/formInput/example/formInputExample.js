@@ -38,7 +38,7 @@ class FormInputExample extends BakerExample {
      */
     render_normal() {
         return this.render_exampleComponent(
-            "Pin/Normal",
+            "InputPhone/Normal",
             <form>
                 <FormInput
                     placeholder={"Placeholder"}
@@ -52,21 +52,21 @@ class FormInputExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "Pin/Error",
+            "InputPhone/Error",
             <form>
                 <FormInput
                     error={true}
                     placeholder={"Error"}
                 />
             </form>,
-            "The content of the form is not valid. Set the error property to true"
+            "The content of the formInput is not valid. Set the error property to true"
         );
     }
 
 
     render_success() {
         return this.render_exampleComponent(
-            "Pin/Success",
+            "InputPhone/Success",
             <form>
                 <FormInput
                     success={true}
@@ -80,7 +80,7 @@ class FormInputExample extends BakerExample {
 
     render_disabled() {
         return this.render_exampleComponent(
-            "Pin/Disabled",
+            "InputPhone/Disabled",
             <form>
                 <FormInput
                     disabled={true}
@@ -94,7 +94,7 @@ class FormInputExample extends BakerExample {
 
     render_large() {
         return this.render_exampleComponent(
-            "Pin/Large",
+            "InputPhone/Large",
             <form>
                 <FormInput
                     className={"large"}

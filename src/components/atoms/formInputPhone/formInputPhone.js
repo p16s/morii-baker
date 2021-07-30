@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
-import "./formInput.css";
+import "./formInputPhone.css";
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import flags from 'react-phone-number-input/flags';
 
 
-class FormInput extends BasicAtom {
+class FormInputPhone extends BasicAtom {
     constructor(props) {
         super(props);
 
@@ -84,26 +87,28 @@ class FormInput extends BasicAtom {
      */
     render_element(className, props) {
         return React.cloneElement(
-            <input
+            <PhoneInput
                 id={this.props.id}
                 className={
-                    "Form-input"
+                    "Form-input-phone"
                     + this.padIfString(className)
                     + this.getClassNameString()
                 }
-                type={this.props.type ?? 'text'}
                 placeholder={this.props.placeholder}
-                value={this.state.value}
+                defaultCountry={'GB'}
+                flags={flags}
+                value={this.props.value}
                 onClick={(e) => {
                     this.handleClick(e);
                 }}
-                onChange={(e) => {
-                    this.updateValue(e.target.value);
+                onChange={(val) => {
+                    this.updateValue(val);
                 }}
             />,
             props ?? {}
         );
     }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // States
@@ -160,15 +165,15 @@ class FormInput extends BasicAtom {
     }
 }
 
-FormInput.defaultProps = {
+FormInputPhone.defaultProps = {
     error: false,
     success: false,
 }
 
-FormInput.propTypes = {
+FormInputPhone.propTypes = {
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     success: PropTypes.bool,
     disabled: PropTypes.oneOf(["disabled", true, "", false])
 }
 
-export default FormInput;
+export default FormInputPhone;
