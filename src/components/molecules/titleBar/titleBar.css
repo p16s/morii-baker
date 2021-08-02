@@ -16,11 +16,10 @@
 ===================================================================================================================== */
 .Title-bar {
     align-items: center;
-    /*background: rgb(255, 0, 0, .15);*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2rem;
+    /*padding: 2rem;*/
 }
     .Title-bar h1,
     .Title-bar h2 {
@@ -34,8 +33,7 @@
 
 /*  basic - desktop
 ===================================================================================================================== */
-/*@media screen and (min-width: var(--Title-bar-break)) {*/
-@media screen and (min-width: 767px) {
+/*@media screen and (min-width: 767px) {*/
     .Title-bar {
         /*background: rgb(0, 255, 0, .15);*/
     }
@@ -47,4 +45,4 @@
             padding: 0;
             width: auto;
         }
-}
+/*}*/

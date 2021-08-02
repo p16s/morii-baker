@@ -8,12 +8,12 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --Button-border-radius: var(--Global-button-border-radius, 100px);
+    --Button-border-radius: var(--Global-button-border-radius, 5px);
     --Button-color-1: var(--Global-button-color-1, 0 0 255);
     --Button-color-2: var(--Global-button-color-2, 0 255 0);
     --Button-color-1-darker: var(--Global-button-color-1-darker, 0 0 220);
     --Button-color-2-darker: var(--Global-button-color-2-darker, 0 220 0);
-    --Button-font-size: 14px;
+    --Button-font-size: 1rem;
     --Button-padding: var(--Global-button-padding, 12px 24px);
 }
 

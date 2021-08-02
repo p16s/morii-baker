@@ -73,7 +73,9 @@
     --Global-button-color-1: var(--Global-color-1);
     --Global-button-color-2: var(--Global-color-2);
 
-    --Global-button-border-radius: 100px;
+    --Global-button-border-radius: var(--Global-border-radius, 5px);
+
+    --Global-button-padding: .875rem 1.5rem;
 }
 
 

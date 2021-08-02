@@ -114,7 +114,7 @@ class ButtonExample extends BakerExample {
         return this.render_exampleComponent(
             'As icon',
             <Button
-                className={"secondary"}
+                className={"secondary round"}
                 onClick={() => {alert('button clicked');}}
             >
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,7 +130,7 @@ class ButtonExample extends BakerExample {
         return this.render_exampleComponent(
             'As icon / Disabled',
             <Button
-                className={"secondary"}
+                className={"secondary round"}
                 onClick={() => {alert('button clicked');}}
                 disabled={true}
             >
