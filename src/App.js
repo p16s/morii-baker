@@ -16,6 +16,7 @@ import ListItem from "./components/atoms/listItem/listItem";
 import ListHeaderExample from "./components/atoms/listHeader/example/listHeaderExample";
 import ListItemExample from "./components/atoms/listItem/example/listItemExample";
 import IconExample from "./components/atoms/icon/example/iconExample";
+import IconsExample from "./components/atoms/icons/example/iconsExample";
 
 import InputExample from "./components/molecules/input/example/inputExample";
 import InputPhoneExample from "./components/molecules/inputPhone/example/inputPhoneExample";
@@ -80,6 +81,7 @@ class App extends React.Component {
                     {/*<ListHeaderExample />*/}
                     <ListItemExample />
                     <IconExample />
+                    <IconsExample />
                 </>
             );
         }

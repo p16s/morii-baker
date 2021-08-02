@@ -1,12 +1,13 @@
 import React from "react";
 import DayJS from 'react-dayjs';
+import IconSearch from "./atoms/icons/search";
 
 
 class RobTest extends React.Component {
     render() {
         let isShowing = this.state.isShowing;
 
-        const renderAuthButton = () => {
+        const renderButton = () => {
             if (isShowing) {
                 return <h2>Is showing</h2>;
             } else {
@@ -21,6 +22,13 @@ class RobTest extends React.Component {
             <section>
                 <h1>Rob Test</h1>
 
+                <div>
+                    <h2>Icons:</h2>
+
+                    <IconSearch />
+                </div>
+
+                <hr />
 
                 <p>Date original: { date }</p>
                 <p>Date formatted (DD-MM-YYYY): <DayJS format="DD-MM-YYYY">{ date }</DayJS></p>
@@ -29,7 +37,7 @@ class RobTest extends React.Component {
                 <hr />
 
 
-                {renderAuthButton()}
+                {renderButton()}
                 <button onClick={() => this.toggleVisibility()}>Toggle visibility</button>
 
 

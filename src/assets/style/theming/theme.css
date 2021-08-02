@@ -88,3 +88,10 @@
     --Global-form-border-radius: var(--Global-border-radius, 5px);
 }
 
+
+/*  TODO move to icons.css  */
+.icon {
+    fill: rgb(var(--Global-base-font-color));
+    height: auto;
+    width: 100px;
+}
