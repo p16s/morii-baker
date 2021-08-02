@@ -116,7 +116,7 @@ class AlertExample extends BakerExample {
         return this.render_exampleComponent(
             'Alert / Success / Icon',
             <Alert
-                text={"Error icon"}
+                text={"Success icon"}
                 className={'success'}
                 onClick={() => {
                     alert('clicked Alert');
