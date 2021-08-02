@@ -14,7 +14,7 @@
     --Form-input-font-size: var(--Global-base-font-size, 16px);
     --Form-input-color-error: var(--Global-color-error, 255 0 0);
     --Form-input-color-success: var(--Global-color-success, 0 255 0);
-    --Form-input-padding: 0 .5rem;
+    --Form-input-padding: 0 1rem;
 }
 
 
@@ -24,7 +24,7 @@
     border: var(--Form-input-border);
     border-radius: var(--Form-input-border-radius);
     font-size: var(--Form-input-font-size);
-    height: 48px;
+    height: 44px;
     line-height: 1;
     outline: none;      /* poor accessability */
     padding: var(--Form-input-padding);

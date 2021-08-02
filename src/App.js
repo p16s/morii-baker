@@ -37,7 +37,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            isShowing: 'organisms'
+            isShowing: 'atoms'
         }
     }
 
