@@ -1,4 +1,4 @@
-/*  title:  ListItem
+/*  title:  List-item
     notes:  atom styles
  ==================================================================================================================== */
 
@@ -8,45 +8,53 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --ListItem-bg-color: none;
-    --ListItem-bg-color-active: 255, 255, 255;
-    --ListItem-color: 255 255 255;
-    --ListItem-padding: .5rem 1.25rem;
+    --List-item-bg-color: none;
+    --List-item-bg-color-active: 255, 255, 255;
+    --List-item-color: 255 255 255;
+    --List-item-padding: .5rem 1.25rem;
 }
 
 
 /*  base
 ===================================================================================================================== */
-.ListItem {
-    background-color: rgb(var(--ListItem-bg-color));
-    color: rgb(var(--ListItem-color));
+.List-item {
+    background-color: rgb(var(--List-item-bg-color));
+    color: rgb(var(--List-item-color));
     cursor: pointer;
     display: inline-block;
     font-size: .875rem;
     font-weight: 700;
     list-style-type: none;
     margin-bottom: 1rem;    /* TODO this going to be global?  Move to a lists constrctor  */
-    padding: var(--ListItem-padding);
+    padding: var(--List-item-padding);
     text-decoration: none;
     transition: .2s;
+    width: 100%;
 }
-    .ListItem:last-of-type {
+    .List-item:last-of-type {
         margin-bottom: 0;
     }
 
     /*  default states
     ================================================================================================================= */
-    .ListItem:not(.disabled):hover,
-    .ListItem:not(.disabled):active,
-    .ListItem:not(.disabled).active {
-        background-color: rgba(var(--ListItem-bg-color-active), .3);
+    .List-item:not(.disabled):hover,
+    .List-item:not(.disabled):active,
+    .List-item:not(.disabled).active {
+        background-color: rgba(var(--List-item-bg-color-active), .3);
         /*color: rgb(32, 43, 55);*/
     }
 
-    /* disabled
+    /*  disabled
     ================================================================================================================= */
-    .ListItem.disabled {
-        background-color: rgba(var(--ListItem-bg-color-active), .5);    /* TODO not sure if same yet */
+    .List-item.disabled {
+        background-color: rgba(var(--List-item-bg-color-active), .5);    /* TODO not sure if same yet */
         cursor: not-allowed;
         user-select: none;
     }
+
+    /*!*  likely will be an <a*/
+    /*================================================================================================================= *!*/
+    /*.List-item a {*/
+    /*    background-color: red;*/
+    /*    color: inherit;*/
+    /*}*/

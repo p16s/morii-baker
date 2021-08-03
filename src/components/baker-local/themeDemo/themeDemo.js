@@ -1,17 +1,16 @@
 import React from "react";
 import './themeDemo.css';
 
-import Button from "../atoms/button/button";
-import Input from "../molecules/input/input";
-import Textarea from "../molecules/textarea/textarea";
-import Pin from "../molecules/pin/pin";
-
+import Button from "../../atoms/button/button";
+import Input from "../../molecules/input/input";
+import Textarea from "../../molecules/textarea/textarea";
+import Pin from "../../molecules/pin/pin";
 
 
 class ThemeDemo extends React.Component {
     render() {
         return (
-            <div className={"theme-demo"}>
+            <div className="figma-like theme-demo">
                 <section>
                     <h1 className={"section-heading"}>Main branding</h1>
 

@@ -1,181 +1,188 @@
-import React from "react";
-
-import ThemeDemo from "./components/themeDemo/themeDemo";
-
-import LabelExample from "./components/atoms/label/example/labelExample";
-import FormInputExample from "./components/atoms/formInput/example/formInputExample";
-import FormInputPhoneExample from "./components/atoms/formInputPhone/example/formInputPhoneExample";
-import FormPinExample from "./components/atoms/formPin/example/formPinExample";
-import FormTextareaExample from "./components/atoms/formTextarea/example/formTextareaExample";
-import ButtonExample from "./components/atoms/button/example/buttonExample";
-import AlertExample from "./components/atoms/alert/example/alertExample";
-import CheckboxExample from "./components/atoms/checkbox/example/checkboxExample";
-import ToggleExample from "./components/atoms/toggle/example/toggleExample";
-import TabExample from "./components/atoms/tab/example/tabExample";
-import ListItem from "./components/atoms/listItem/listItem";
-import ListHeaderExample from "./components/atoms/listHeader/example/listHeaderExample";
-import ListItemExample from "./components/atoms/listItem/example/listItemExample";
-import IconExample from "./components/atoms/icon/example/iconExample";
-import IconsExample from "./components/atoms/icons/example/iconsExample";
-
-import InputExample from "./components/molecules/input/example/inputExample";
-import InputPhoneExample from "./components/molecules/inputPhone/example/inputPhoneExample";
-import TextareaExample from "./components/molecules/textarea/example/textareaExample";
-import PinExample from "./components/molecules/pin/example/pinExample";
-import ListExample from "./components/molecules/list/example/listExample";
-import IconBarExample from "./components/molecules/iconBar/example/IconBarExample";
-import TitleBarExample from "./components/molecules/titleBar/example/titleBarExample";
-import BreadcrumbsExample from "./components/molecules/breadcrumbs/example/breadcrumbsExample";
-import TableExample from "./components/molecules/table/example/tableExample";
-import SlideOutExample from "./components/molecules/slideOut/example/slideOutExample";
-
-import SideBarExample from "./components/organisms/sideBar/example/sideBarExample";
-import NonMembersExample from "./components/organisms/nonMembers/example/nonMembersExample";
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Link,
+    NavLink,
+    useLocation
+} from "react-router-dom";
+import Nav from "./components/baker-local/nav/nav";
+import ThemeDemo from "./components/baker-local/themeDemo/themeDemo";
+import PageAtoms from "./pages/atoms";
+import PageMolecules from "./pages/molecules";
+import PageOrganisms from "./pages/organisms";
+import PageTemplates from "./pages/templates";
 
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
+const App = () => {
+    return (
+        <>
+            <Router>
+                <Nav />
 
-        this.state = {
-            isShowing: 'atoms'
-        }
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Render
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * Conditional render depending on the state
-     *
-     * @return {*}
-     */
-    render(props) {
-        if (this.state.isShowing === 'theme') {
-            return (
-                <>
-                    {this.render_nav()}
-
-                    <ThemeDemo />
-                </>
-            );
-        }
-
-
-        if (this.state.isShowing === 'atoms') {
-            return (
-                <>
-                    {this.render_nav()}
-
-                    <LabelExample />
-                    <FormInputExample />
-                    <FormInputPhoneExample />
-                    <FormPinExample />
-                    <FormTextareaExample />
-                    <ButtonExample />
-                    <AlertExample />
-                    <CheckboxExample />
-                    <ToggleExample />
-                    <TabExample />
-                    {/*<ListHeaderExample />*/}
-                    <ListItemExample />
-                    <IconExample />
-                    <IconsExample />
-                </>
-            );
-        }
-
-
-        if (this.state.isShowing === 'molecules') {
-            return (
-                <>
-                    {this.render_nav()}
-
-                    <InputExample />
-                    <InputPhoneExample />
-                    <TextareaExample />
-                    <PinExample />
-                    <ListExample />
-                    <TitleBarExample />
-                    <IconBarExample />
-                    <BreadcrumbsExample />
-                    <TableExample />
-                    <SlideOutExample />
-                </>
-            );
-        }
-
-
-        if (this.state.isShowing === 'organisms') {
-            return (
-                <>
-                    {this.render_nav()}
-
-                    <SideBarExample />
-                    <NonMembersExample />
-                </>
-            );
-        }
-    }
-
-
-    /**
-     * Render a nav to toggle the state
-     *
-     * @return {*}
-     */
-    render_nav() {
-        return (
-            <nav>
-                <ul className={'site-nav'}>
-                    <ListItem
-                        active={(this.state.isShowing === 'theme')}
-                        onClick={() => this.handleClick('theme')}
+                <Switch>
+                    <Route
+                        path="/"
+                        exact
                     >
-                        Theme
-                    </ListItem>
-                    <ListItem
-                        active={(this.state.isShowing === 'atoms')}
-                        onClick={() => this.handleClick('atoms')}
-                    >
-                        Atoms
-                    </ListItem>
-                    <ListItem
-                        active={(this.state.isShowing === 'molecules')}
-                        onClick={() => this.handleClick('molecules')}
-                    >
-                        Molecules
-                    </ListItem>
-                    <ListItem
-                        active={(this.state.isShowing === 'organisms')}
-                        onClick={() => this.handleClick('organisms')}
-                    >
-                        Organisms
-                    </ListItem>
-                </ul>
-            </nav>
-        );
-    }
+                        <ThemeDemo />
+                    </Route>
 
+                    <Route path="/atoms">
+                        <PageAtoms />
+                    </Route>
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Handlers
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    <Route path="/molecules">
+                        <PageMolecules />
+                    </Route>
 
-    /**
-     * Handle click
-     *
-     * @param {MouseEvent} e
-     */
-    handleClick(changeTo) {
-        this.setState({
-            isShowing: this.state.isShowing = changeTo
-        });
+                    <Route path="/organisms">
+                        <PageOrganisms />
+                    </Route>
 
-        window.scrollTo(0, 0);
-    }
+                    <Route path="/templates">
+                        <PageTemplates />
+                    </Route>
+                </Switch>
+            </Router>
+        </>
+    );
 }
 
 
 export default App;
+
+
+
+
+
+
+
+
+// import React from "react";
+// import {
+//     BrowserRouter as Router,
+//     Route,
+//     Switch,
+//     Link,
+//     NavLink,
+//     useLocation
+// } from "react-router-dom";
+//
+// import ThemeDemo from "./components/themeDemo/themeDemo";
+// import ListItem from "./components/atoms/listItem/listItem";
+//
+// import PageAtoms from "./pages/atoms";
+// import PageMolecules from "./pages/molecules";
+// import PageOrganisms from "./pages/organisms";
+//
+//
+//
+//
+// class App extends React.Component {
+//
+//     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//     // Render
+//     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//     /**
+//      * Conditional render page using router
+//      *
+//      * @return {*}
+//      */
+//     render(props) {
+//         return (
+//             <Router>
+//                 {this.render_nav()}
+//                 <Switch>
+//                     <Route
+//                         path="/"
+//                         exact
+//                     >
+//                         <ThemeDemo />
+//                     </Route>
+//
+//
+//                     <Route path="/atoms">
+//                         <PageAtoms />
+//                     </Route>
+//
+//                     <Route path="/molecules">
+//                         <PageMolecules />
+//                     </Route>
+//
+//                     <Route path="/organisms">
+//                         <PageOrganisms />
+//                     </Route>
+//                 </Switch>
+//             </Router>
+//         );
+//     }
+//
+//
+//     /**
+//      * Render a nav to change the route
+//      *
+//      * @return {*}
+//      */
+//     render_nav() {
+//         console.log("render_nav");
+//
+//         return (
+//             <nav>
+//                 <h1>LOCATION:
+//                     {/*<MousePosition />*/}
+//                 </h1>
+//
+//
+//                 <ul className={'site-nav'}>
+//                     <ListItem
+//                         // active={(this.state.isShowing === 'theme')}
+//                         // onClick={() => this.handleClick('theme')}
+//                     >
+//                         <Link to="/">
+//                             Theme
+//                         </Link>
+//                     </ListItem>
+//
+//
+//                     <ListItem
+//                         // active={(this.location.pathname === '/atoms')}
+//                     >
+//                         <Link to="/atoms">
+//                             Atoms
+//                         </Link>
+//                         {/*<NavLink*/}
+//                         {/*    to="/atoms"*/}
+//                         {/*    activeClassName="nav-link-active"*/}
+//                         {/*>*/}
+//                         {/*    Atoms*/}
+//                         {/*</NavLink>*/}
+//                     </ListItem>
+//                     {/*<ListItem*/}
+//                     {/*    active={(this.state.isShowing === 'atoms')}*/}
+//                     {/*    onClick={() => this.handleClick('atoms')}*/}
+//                     {/*>*/}
+//                     {/*    Atoms*/}
+//                     {/*</ListItem>*/}
+//                     {/*<ListItem*/}
+//                     {/*    active={(this.state.isShowing === 'molecules')}*/}
+//                     {/*    onClick={() => this.handleClick('molecules')}*/}
+//                     {/*>*/}
+//                     {/*    Molecules*/}
+//                     {/*</ListItem>*/}
+//                     {/*<ListItem*/}
+//                     {/*    active={(this.state.isShowing === 'organisms')}*/}
+//                     {/*    onClick={() => this.handleClick('organisms')}*/}
+//                     {/*>*/}
+//                     {/*    Organisms*/}
+//                     {/*</ListItem>*/}
+//                 </ul>
+//             </nav>
+//         );
+//     }
+//
+// }
+//
+//
+// export default App;

@@ -7,11 +7,11 @@ class ListItem extends BasicAtom {
         return (
             <li
                 className={
-                    "ListItem"
+                    "List-item"
                     + this.padIfString(className)
                     + this.getClassNameString()
                     + (this.isActive() ? ' active' : '')
-                    + (this.isClickable() ? ' clickable' : ' disabled')
+                    // + (this.isClickable() ? ' clickable' : ' disabled')
                 }
                 onClick={(e) => {
                     this.handleClick(e)

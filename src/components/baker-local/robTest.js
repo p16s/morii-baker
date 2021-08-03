@@ -1,6 +1,6 @@
 import React from "react";
 import DayJS from 'react-dayjs';
-import IconSearch from "./atoms/icons/search";
+import IconSearch from "../atoms/icons/search";
 
 
 class RobTest extends React.Component {

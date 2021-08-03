@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './assets/style/index.css';
 
 import App from "./App";
-import RobTest from "./components/robTest";
+// import RobTest from "./components/baker-local/robTest";
 
 
 ReactDOM.render(
