@@ -11,10 +11,11 @@ import TagExample from "../components/atoms/tag/example/tagExample";
 import CheckboxExample from "../components/atoms/checkbox/example/checkboxExample";
 import ToggleExample from "../components/atoms/toggle/example/toggleExample";
 import TabExample from "../components/atoms/tab/example/tabExample";
-import ListHeaderExample from "../components/atoms/listHeader/example/listHeaderExample";
+// import ListHeaderExample from "../components/atoms/listHeader/example/listHeaderExample";
 import ListItemExample from "../components/atoms/listItem/example/listItemExample";
 import IconExample from "../components/atoms/icon/example/iconExample";
 import IconsExample from "../components/atoms/icons/example/iconsExample";
+import UploadedFileExample from "../components/atoms/uploadedFile/example/uploadedFileExample";
 
 
 const PageAtoms = () => {
@@ -35,6 +36,7 @@ const PageAtoms = () => {
                 <ListItemExample />
                 <IconExample />
                 <IconsExample />
+                <UploadedFileExample />
         </div>
     );
 }

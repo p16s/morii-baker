@@ -5,6 +5,8 @@ import IconTick from "../tick";
 import IconError from "../error";
 import IconInfo from "../info";
 import IconMinus from "../minus";
+import IconClose from "../close";
+import IconFile from "../file";
 
 
 class IconsExample extends BakerExample {
@@ -32,12 +34,14 @@ class IconsExample extends BakerExample {
         return this.render_exampleComponent(
             "Icons as atoms",
             <>
-                <IconSearch />
                 <IconAdd />
-                <IconTick />
+                <IconClose />
                 <IconError />
+                <IconFile />
                 <IconInfo />
                 <IconMinus />
+                <IconSearch />
+                <IconTick />
             </>,
             "Icons added as simple atoms so we can globally and individually update their style."
         );

@@ -1,0 +1,68 @@
+/*  title:  UploadedFile
+    notes:  atom styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Uploaded-file-background-color: var(--Global-color-5, 114 123 155);
+    --Uploaded-file-border-radius: var(--Global-border-radius, 5px);
+    --Uploaded-file-font-size: 1rem;
+    --Uploaded-file-padding: 12px 24px;
+}
+
+
+/* base
+===================================================================================================================== */
+.Uploaded-file {
+    align-items: center;
+    background-color: rgba(var(--Uploaded-file-background-color), .1);
+    border: none;
+    border-radius: var(--Uploaded-file-border-radius);
+    display: inline-flex;
+    font-size: var(--Uploaded-file-font-size);
+    font-weight: 400;
+    line-height: 1;
+    padding: var(--Uploaded-file-padding);
+    transition: .3s;
+}
+
+    /*  default states
+    ================================================================================================================= */
+    .Uploaded-file:not(:disabled):hover,
+    .Uploaded-file:focus,
+    .Uploaded-file:focus-visible,
+    .Uploaded-file:focus-within,
+    .Uploaded-file:active {
+        background-color: rgba(var(--Uploaded-file-background-color), .2);
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    /*  disabled
+    ================================================================================================================= */
+    .Uploaded-file:disabled {
+        cursor: not-allowed;
+    }
+
+    /*  space the icons
+    ================================================================================================================= */
+    .Uploaded-file .icon-file {
+        margin-right: .875rem;
+    }
+    .Uploaded-file .icon-close {
+        fill: rgb(var(--Global-color-1, 28 0 202));
+        margin-left: .875rem;
+        transform: rotate(0deg);
+        transition: .3s;
+    }
+
+    /*  basic animation
+    ================================================================================================================= */
+    .Uploaded-file:not(:disabled):hover .icon-close {
+        transform: rotate(-90deg);
+        transition: .2s;
+    }

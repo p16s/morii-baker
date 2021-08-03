@@ -25,7 +25,11 @@ class Button extends BasicAtom {
     render_element(className, props) {
         return React.cloneElement(
             <button
-                className={"Button" + this.padIfString(className) + this.getClassNameString()}
+                className={
+                    "Button"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
