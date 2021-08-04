@@ -4,6 +4,7 @@ import InputExample from "../components/molecules/input/example/inputExample";
 import InputPhoneExample from "../components/molecules/inputPhone/example/inputPhoneExample";
 import TextareaExample from "../components/molecules/textarea/example/textareaExample";
 import PinExample from "../components/molecules/pin/example/pinExample";
+import InputFileUploadExample from "../components/molecules/inputFileUpload/example/inputFileUploadExample";
 import ListExample from "../components/molecules/list/example/listExample";
 import IconBarExample from "../components/molecules/iconBar/example/IconBarExample";
 import TitleBarExample from "../components/molecules/titleBar/example/titleBarExample";
@@ -19,6 +20,7 @@ const PageMolecules = () => {
             <InputPhoneExample />
             <TextareaExample />
             <PinExample />
+            <InputFileUploadExample />
             <ListExample />
             <TitleBarExample />
             <IconBarExample />

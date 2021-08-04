@@ -33,10 +33,10 @@
     /*  default states
     ================================================================================================================= */
     .Uploaded-file:not(:disabled):hover,
-    .Uploaded-file:focus,
-    .Uploaded-file:focus-visible,
-    .Uploaded-file:focus-within,
-    .Uploaded-file:active {
+    .Uploaded-file:not(:disabled):focus,
+    .Uploaded-file:not(:disabled):focus-visible,
+    .Uploaded-file:not(:disabled):focus-within,
+    .Uploaded-file:not(:disabled):active {
         background-color: rgba(var(--Uploaded-file-background-color), .2);
         cursor: pointer;
         transition: .2s;

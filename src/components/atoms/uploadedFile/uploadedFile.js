@@ -21,9 +21,11 @@ class UploadedFile extends BasicAtom {
                     + this.padIfString(className)
                     + this.getClassNameString()
                 }
+                type="button"
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
+                disabled={this.props.disabled}
             >
                 <IconFile />
 
