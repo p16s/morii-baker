@@ -9,13 +9,11 @@ import IconSpinner from "../../atoms/icons/spinner";
 
 
 class InputFileUpload extends BasicAtom {
-    constructor(props) {
-        super(props);
-
-        this.state = {
+    constructor(props, context) {
+        super(props, context, {
             isLoading: false,
             fileList: []
-        }
+        });
     }
 
 
@@ -35,7 +33,6 @@ class InputFileUpload extends BasicAtom {
                     {this.render_icon()}
 
                     {this.props.name}
-
                 </label>
 
                 <input
@@ -122,7 +119,7 @@ class InputFileUpload extends BasicAtom {
         // TODO not sure how this is handled properly yet
 
         this.setState({
-            isLoading: this.isLoading = true
+            isLoading: true
         });
 
         //  then call api

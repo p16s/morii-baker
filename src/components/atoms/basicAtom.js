@@ -3,9 +3,9 @@ import React from 'react';
 
 class BasicAtom extends React.Component {
 
-    constructor(props, context) {
+    constructor(props, context, state) {
         super(props, context);
-        this.state = {};
+        this.state = state ?? {};
     }
 
 
