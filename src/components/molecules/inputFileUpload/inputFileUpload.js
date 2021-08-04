@@ -5,6 +5,7 @@ import IconAttachment from "../../atoms/icons/attachment";
 import UploadedFile from "../../atoms/uploadedFile/uploadedFile";
 import ListItem from "../../atoms/listItem/listItem";
 import IconSpinner from "../../atoms/icons/spinner";
+import file from "../../atoms/icons/file";
 // import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 
 
@@ -38,7 +39,6 @@ class InputFileUpload extends BasicAtom {
                 <input
                     id={(this.props.forId ? this.props.forId : 'file-upload')}
                     type="file"
-                    multiple
                     onChange={(e) => {
                         this.processFiles(e.target.files);
                     }}
@@ -72,11 +72,11 @@ class InputFileUpload extends BasicAtom {
     render_icon() {
         if (this.state.isLoading) {
             return (
-                <IconAttachment />
+                <IconSpinner />
             );
         } else {
             return (
-                <IconSpinner />
+                <IconAttachment />
             );
         }
     }
@@ -116,15 +116,55 @@ class InputFileUpload extends BasicAtom {
 
 
     updateAPI() {
-        // TODO not sure how this is handled properly yet
+        let filename = this.state.fileList[this.state.fileList.length - 1];
+        //@todo: Get the real file
+        let file = 'THE FILE!!!';
+        //let file = this.state.file[this.state.file.length - 1];
 
         this.setState({
             isLoading: true
         });
 
-        //  then call api
-        //  update isLoading in response
+        this.callbackOr(this.props.urlGenerator, 'https://127.0.0.1', true)(filename)
+            .catch((error) => {
+                // handle error in UI
+                this.callbackOr(this.props.onError)(error);
+                // no longer loading
+                this.setState({
+                    isLoading: false
+                });
+            })
+            .then(
+            (url) => {
+                let promise = (typeof this.props.uploadHandler !== 'undefined')
+                    ? this.props.uploadHandler(filename, url, file, this.props.uploadMethod)
+                    : this.fallbackUploadHandler(filename, url, file, this.props.uploadMethod)
+
+                promise.catch((error)=>{
+                    // handle error in UI
+                    this.callbackOr(this.props.onError)(error);
+                }).then((fileUrl)=>{
+                    // handle success in UI
+                    this.callbackOr(this.props.onSuccess)(filename, fileUrl);
+                }).finally(
+                    () => {
+                        // no longer loading
+                        this.setState({
+                            isLoading: false
+                        });
+                    }
+                );
+            }
+        );
     }
+
+    fallbackUploadHandler(filename, url, file, method) {
+        let formData = new FormData();
+        formData.append(filename, file);
+
+        return fetch(url, {method: method ?? "PUT", body: formData});
+    }
+
 
 
     // render_validation() {
@@ -141,8 +181,6 @@ class InputFileUpload extends BasicAtom {
     //         );
     //     }
     // }
-
-
 }
 
 
