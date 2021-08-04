@@ -18,6 +18,7 @@ class InputFileUpload extends BasicAtom {
     }
 
 
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +31,10 @@ class InputFileUpload extends BasicAtom {
     render(className, props) {
         return (
             <div className="Input-file-upload">
-                <label htmlFor={(this.props.forId ? this.props.forId : 'file-upload')}>
+                <label
+                    className={(this.state.isLoading ? 'disabled' : '')}
+                    htmlFor={(this.props.forId ? this.props.forId : 'file-upload')}
+                >
                     {this.render_icon()}
 
                     {this.props.name}
@@ -55,7 +59,7 @@ class InputFileUpload extends BasicAtom {
             return (this.state.fileList ?? []).map((value, index) => {
                 return (
                     <UploadedFile
-                        fileName={value}
+                        fileName={value.name}
                         onClick={() => {
                             this.removeUpload(index);
                         }}
@@ -86,18 +90,18 @@ class InputFileUpload extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     processFiles(files) {
-        const newList = [...this.state.fileList];
+        const newList = [];
 
         for (let i = 0; i < files.length; i++) {
-            newList.push(files[i].name);
+            newList.push(files[i]);
         }
 
         this.setState({
             fileList: newList
+        }, () => {
+            //  send files
+            this.updateAPI();
         });
-
-        //  send files
-        this.updateAPI();
     }
 
 
@@ -109,16 +113,12 @@ class InputFileUpload extends BasicAtom {
         this.setState({
             fileList: updatedList
         });
-
-        // this.updateAPI();
     }
 
 
     updateAPI() {
-        let filename = this.state.fileList[this.state.fileList.length - 1];
-        //@todo: Get the real file
-        let file = 'THE FILE!!!';
-        //let file = this.state.file[this.state.file.length - 1];
+        let file = this.state.fileList[0];
+        let filename = file.name;
 
         this.setState({
             isLoading: true
@@ -126,7 +126,8 @@ class InputFileUpload extends BasicAtom {
 
         this.callbackOr(this.props.urlGenerator, 'https://127.0.0.1', true)(filename)
             .catch((error) => {
-                console.log("Error");
+                console.log("Error", error);
+
                 // handle error in UI
                 this.callbackOr(this.props.onError)(error);
 
@@ -142,6 +143,8 @@ class InputFileUpload extends BasicAtom {
                     : this.fallbackUploadHandler(filename, url, file, this.props.uploadMethod)
 
                 promise.catch((error)=>{
+                    console.log("Error", error);
+
                     // handle error in UI
                     this.callbackOr(this.props.onError)(error);
                 }).then((fileUrl)=>{
@@ -163,25 +166,8 @@ class InputFileUpload extends BasicAtom {
         let formData = new FormData();
         formData.append(filename, file);
 
-        return fetch(url, {method: method ?? "PUT", body: formData});
+        return fetch(url, { method: method ?? "PUT", body: formData });
     }
-
-
-
-    // render_validation() {
-    //     if (this.props.message && this.props.message.length) {
-    //         return (
-    //             <ValidationMessage
-    //                 className={
-    //                     (this.props.error ? ' error' : '')
-    //                     +
-    //                     (this.props.success ? ' success' : '')
-    //                 }
-    //                 message={this.props.message}
-    //             />
-    //         );
-    //     }
-    // }
 }
 
 

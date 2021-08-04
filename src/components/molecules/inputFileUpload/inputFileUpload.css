@@ -32,6 +32,10 @@
         padding: var(--Input-file-upload-padding);
         transition: .3s;
     }
+        .Input-file-upload label.disabled {
+            pointer-events: none;
+        }
+
         /*  sort the icon */
         .Input-file-upload .icon-attachment,
         .Input-file-upload .icon-spinner{
