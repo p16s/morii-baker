@@ -45,8 +45,6 @@ class InputFileUpload extends BasicAtom {
                 />
 
                 {this.render_files()}
-
-                {/*TODO progressively enhance with a loader/progress*/}
             </div>
         );
     }
@@ -62,7 +60,7 @@ class InputFileUpload extends BasicAtom {
                             this.removeUpload(index);
                         }}
                         disabled={this.state.isLoading}
-                        key={"value" + index}
+                        key={"value-" + index}
                     />
                 );
             });
@@ -95,9 +93,10 @@ class InputFileUpload extends BasicAtom {
         }
 
         this.setState({
-            newList: this.state.fileList = newList
+            fileList: newList
         });
 
+        //  send files
         this.updateAPI();
     }
 
@@ -108,10 +107,10 @@ class InputFileUpload extends BasicAtom {
         updatedList.splice(toRemove, 1);
 
         this.setState({
-            newList: this.state.fileList = updatedList
+            fileList: updatedList
         });
 
-        this.updateAPI();
+        // this.updateAPI();
     }
 
 
@@ -127,8 +126,10 @@ class InputFileUpload extends BasicAtom {
 
         this.callbackOr(this.props.urlGenerator, 'https://127.0.0.1', true)(filename)
             .catch((error) => {
+                console.log("Error");
                 // handle error in UI
                 this.callbackOr(this.props.onError)(error);
+
                 // no longer loading
                 this.setState({
                     isLoading: false
