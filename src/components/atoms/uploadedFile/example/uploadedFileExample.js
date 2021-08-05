@@ -18,10 +18,10 @@ class UploadedFileExample extends BakerExample {
                 </h1>
 
                 {this.render_basic()}
+                {this.render_no_remove()}
             </section>
         );
     }
-
 
 
     render_basic() {
@@ -34,6 +34,18 @@ class UploadedFileExample extends BakerExample {
                 }}
             />,
             'Basic file uploaded.  WIth click event'
+        );
+    }
+
+
+    render_no_remove() {
+        return this.render_exampleComponent(
+            'Primary / Basic',
+            <UploadedFile
+                fileName="dummy_file.pdf"
+                noRemove={true}
+            />,
+            'Basic file uploaded.  WIth no remove'
         );
     }
 }

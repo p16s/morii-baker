@@ -32,11 +32,11 @@
 
     /*  default states
     ================================================================================================================= */
-    .Uploaded-file:not(:disabled):hover,
-    .Uploaded-file:not(:disabled):focus,
-    .Uploaded-file:not(:disabled):focus-visible,
-    .Uploaded-file:not(:disabled):focus-within,
-    .Uploaded-file:not(:disabled):active {
+    .Uploaded-file:not(:disabled):not(.no-remove):hover,
+    .Uploaded-file:not(:disabled):not(.no-remove):focus,
+    .Uploaded-file:not(:disabled):not(.no-remove):focus-visible,
+    .Uploaded-file:not(:disabled):not(.no-remove):focus-within,
+    .Uploaded-file:not(:disabled):not(.no-remove):active {
         background-color: rgba(var(--Uploaded-file-background-color), .2);
         cursor: pointer;
         transition: .2s;

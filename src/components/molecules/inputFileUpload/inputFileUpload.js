@@ -49,6 +49,8 @@ class InputFileUpload extends BasicAtom {
                 />
 
                 {this.render_files()}
+
+
             </div>
         );
     }

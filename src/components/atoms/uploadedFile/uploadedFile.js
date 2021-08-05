@@ -20,6 +20,7 @@ class UploadedFile extends BasicAtom {
                     "Uploaded-file"
                     + this.padIfString(className)
                     + this.getClassNameString()
+                    + (this.props.noRemove ? ' no-remove' : '')
                 }
                 type="button"
                 onClick={(e) => {
@@ -31,12 +32,20 @@ class UploadedFile extends BasicAtom {
 
                 {this.props.fileName}
 
-                <IconClose />
+                {this.render_remove()}
             </button>,
             props ?? {}
         );
     }
 
+
+    render_remove() {
+        if (!this.props.noRemove) {
+            return (
+                <IconClose/>
+            );
+        }
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
