@@ -33,21 +33,16 @@
 
     /*  default states
     ================================================================================================================= */
-    .File:not(:disabled):not(.no-remove):hover,
-    .File:not(:disabled):not(.no-remove):focus,
-    .File:not(:disabled):not(.no-remove):focus-visible,
-    .File:not(:disabled):not(.no-remove):focus-within,
-    .File:not(:disabled):not(.no-remove):active {
+    .File:not(:disabled):hover,
+    .File:not(:disabled):focus,
+    .File:not(:disabled):focus-visible,
+    .File:not(:disabled):focus-within,
+    .File:not(:disabled):active {
         background-color: rgba(var(--File-background-color), .2);
         cursor: pointer;
         transition: .2s;
     }
 
-    /*  disabled
-    ================================================================================================================= */
-    .File:disabled {
-        cursor: not-allowed;
-    }
 
     /*  space the icons
     ================================================================================================================= */

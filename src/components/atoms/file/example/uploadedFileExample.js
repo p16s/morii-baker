@@ -44,6 +44,9 @@ class UploadedFileExample extends BakerExample {
             <File
                 fileName="dummy_file.pdf"
                 noRemove={true}
+                onClick={() => {
+                    alert("Click event (remove etc)");
+                }}
             />,
             'Basic file.  With no remove'
         );

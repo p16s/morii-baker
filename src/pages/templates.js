@@ -1,12 +1,12 @@
 import React from "react";
-
+import Default from "../components/templates/default/default";
 
 
 const PageTemplates = () => {
     return (
-        <div>
-            <h1>Templates to go here</h1>
-        </div>
+        <>
+            <Default />
+        </>
     );
 }
 

@@ -31,11 +31,18 @@ class FileList extends BasicAtom {
     render_list() {
         return (this.props.files ?? []).map((value, index) => {
             return (
-                <File
-                    fileName={value.name}
-                    noRemove={true}
-                    key={"file-" + index}
-                />
+                <a
+                    href={(value.url ? value.url : '#')}
+                    title={"Click to download " + value.name}
+                    target="_blank"
+                    rel="nofollow noopener"
+                >
+                    <File
+                        fileName={value.name}
+                        noRemove={true}
+                        key={"file-" + index}
+                    />
+                </a>
             );
         });
     }

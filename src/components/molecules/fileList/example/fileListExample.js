@@ -30,13 +30,16 @@ class FileListExample extends BakerExample {
                 heading="Heading passed"
                 files={[
                     {
-                        "name": "filename1.jpg"
+                        "name": "filename1.jpg",
+                        "url": "http://download.inspire.net.nz/data/5MB.zip"
                     },
                     {
-                        "name": "filename2.jpg"
+                        "name": "filename2.jpg",
+                        "url": "/"
                     },
                     {
-                        "name": "filename3.jpg"
+                        "name": "filename3.jpg",
+                        "url": "/"
                     }
                 ]}
             />,

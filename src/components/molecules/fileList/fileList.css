@@ -11,6 +11,10 @@
     margin-bottom: .5rem;       /*  should be 1rem but going to put margin on the file  */
 }
 
-    .File-list .File {
-        margin-top: .5rem;
+    .File-list a {
+        color: inherit;
+        text-decoration: none;
     }
+        .File-list .File {
+            margin-top: .5rem;
+        }
