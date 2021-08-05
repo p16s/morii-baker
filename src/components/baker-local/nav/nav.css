@@ -12,11 +12,19 @@
     box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, .25);
     display: flex;
     flex-direction: column;
-    left: 0;
+    opacity: .2;
     padding: 1rem 0;
     position: fixed;
-    top: 3rem;
+    right: 1rem;
+    top: 1rem;
+    transition: .3s;
+    width: 180px;
+    z-index: 999;
 }
+    .site-nav:hover {
+        opacity: 1;
+        transition: .2s;
+    }
 
     .site-nav a {
     }

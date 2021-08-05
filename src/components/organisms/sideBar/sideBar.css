@@ -16,7 +16,7 @@
 .Side-bar {
     align-items: stretch;
     display: inline-flex;       /*  TODO might need to rethink positioning */
-    height: 100%;
+    min-height: 100vh;
 }
 
 

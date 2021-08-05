@@ -2,12 +2,14 @@ import BasicAtom from "../../atoms/basicAtom";
 import './default.css';
 import List from "../../molecules/list/list";
 import SideBar from "../../organisms/sideBar/sideBar";
+import TitleBar from "../../molecules/titleBar/titleBar";
+import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
 
 
 class Default extends BasicAtom {
     render(className, props) {
         return (
-            <main className="Default-template">
+            <div className="page Default-template">
                 <SideBar
                     header={'header'}
 
@@ -45,7 +47,33 @@ class Default extends BasicAtom {
                         }
                     }
                 />
-            </main>
+
+                <main>
+                    <Breadcrumbs
+                        breadcrumbs={
+                            [
+                                {
+                                    "title": "Purposeful Ventures",
+                                    "slug": "https://p16s.co/morii/"
+                                },
+                                {
+                                    "title": "Stakeholders",
+                                    "slug": "https://p16s.co/morii/"
+                                },
+                                {
+                                    "title": "Add",
+                                }
+                            ]
+                        }
+                        logo={'https://app.morii.io/favicon.png'}
+                    />
+
+
+                    <TitleBar>
+                        <h1>Heading as a h1</h1>
+                    </TitleBar>
+                </main>
+            </div>
         );
     }
 }

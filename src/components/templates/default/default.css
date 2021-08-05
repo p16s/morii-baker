@@ -14,5 +14,11 @@
 /*  base
  ==================================================================================================================== */
 .Default-template {
-    background-color: red;
+    align-items: stretch;       /*  only two main parents, side-col & main  */
+    display: flex;
+    justify-content: flex-start;
 }
+
+    .Default-template main {
+        width: 100%;
+    }

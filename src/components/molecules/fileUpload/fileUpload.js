@@ -26,7 +26,7 @@ class FileUpload extends BasicAtom {
      */
     render(className, props) {
         return (
-            <div className="File-list">
+            <div className="File-upload">
                 <label
                     className={(this.isLoading ? 'disabled' : '')}
                     htmlFor={(this.props.forId ? this.props.forId : 'file-upload')}

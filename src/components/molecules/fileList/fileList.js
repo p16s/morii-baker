@@ -36,11 +36,11 @@ class FileList extends BasicAtom {
                     title={"Click to download " + value.name}
                     target="_blank"
                     rel="nofollow noopener"
+                    key={"file-" + index}
                 >
                     <File
                         fileName={value.name}
                         noRemove={true}
-                        key={"file-" + index}
                     />
                 </a>
             );

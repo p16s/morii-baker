@@ -25,7 +25,11 @@ html {
 body {
     min-height: 100%;
 }
-
+#root,
+#app-container,
+.page {
+    min-height: 100vh;
+}
 
 
 

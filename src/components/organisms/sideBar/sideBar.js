@@ -14,8 +14,7 @@ class SideBar extends BasicAtom {
                     onClick={(e, key) => {this.handleIconClick(e, key);}}
                 />
 
-
-                <div className={"options"}>
+                <nav className={"options"}>
                     {this.render_header()}
                     {this.render_lists()}
                     {this.props.children}
@@ -23,7 +22,7 @@ class SideBar extends BasicAtom {
                     <div className={"footer"}>
                         {this.props.footer}
                     </div>
-                </div>
+                </nav>
             </div>
         );
     }
