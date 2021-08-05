@@ -1,0 +1,16 @@
+/*  title:  DownloadedFile
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+
+/*  basic
+ ==================================================================================================================== */
+.Downloaded-files .heading {
+    margin-bottom: .5rem;       /*  should be 1rem but going to put margin on the uploadedFile  */
+}
+
+    .Downloaded-files .Uploaded-file {
+        margin-top: .5rem;
+    }

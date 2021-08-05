@@ -11,7 +11,6 @@
 h1, h2, h3, h4, h5, h6 {
     color: rgb(var(--Global-heading-color, 32 43 55));
     font-weight: var(--Global-heading-font-weight, 700);
-    margin-bottom: 3rem;    /* TODO think this is just demo  */
 }
 
 h1 {
@@ -34,6 +33,15 @@ h4 {
     font-size: var(--Global-h24-size, .875rem);
     letter-spacing: .5px;
     line-height: 1.1875rem;
+}
+
+/*  use h5 for the capitalised "Titles/Overtitle" style */
+h5 {
+    color: rgb(var(--Global-color-5, 114 123 155));
+    font-size: .625rem;
+    line-height: 1em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
 }
 
 

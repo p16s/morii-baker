@@ -3,9 +3,15 @@ import "./breadcrumbs.css";
 
 
 class Breadcrumbs extends BasicAtom {
-    render() {
+    render(className, props) {
         return (
-            <div className={"Breadcrumbs"}>
+            <div
+                className={
+                    "Breadcrumbs"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
+            >
                 {this.render_logo()}
                 {this.render_crumbs()}
             </div>

@@ -5,6 +5,19 @@
 
 
 
+
+/*  space headings for demo
+ ==================================================================================================================== */
+.theme-demo h1,
+.theme-demo h2,
+.theme-demo h3,
+.theme-demo h4,
+.theme-demo h5,
+.theme-demo h6 {
+    margin-bottom: 3rem;
+}
+
+
 /*  main container/layout
  ==================================================================================================================== */
 .theme-demo section {

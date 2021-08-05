@@ -11,6 +11,7 @@ import TitleBarExample from "../components/molecules/titleBar/example/titleBarEx
 import BreadcrumbsExample from "../components/molecules/breadcrumbs/example/breadcrumbsExample";
 import TableExample from "../components/molecules/table/example/tableExample";
 import SlideOutExample from "../components/molecules/slideOut/example/slideOutExample";
+import DownloadedFilesExample from "../components/molecules/downloadedFiles/example/downloadedFilesExample";
 
 
 const PageMolecules = () => {
@@ -27,6 +28,7 @@ const PageMolecules = () => {
             <BreadcrumbsExample />
             <TableExample />
             <SlideOutExample />
+            <DownloadedFilesExample />
         </div>
     );
 }
