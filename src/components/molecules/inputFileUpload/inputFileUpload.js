@@ -12,7 +12,6 @@ import file from "../../atoms/icons/file";
 class InputFileUpload extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
-            isLoading: false,
             fileList: []
         });
     }
@@ -32,7 +31,7 @@ class InputFileUpload extends BasicAtom {
         return (
             <div className="Input-file-upload">
                 <label
-                    className={(this.state.isLoading ? 'disabled' : '')}
+                    className={(this.isLoading ? 'disabled' : '')}
                     htmlFor={(this.props.forId ? this.props.forId : 'file-upload')}
                 >
                     {this.render_icon()}
@@ -46,11 +45,10 @@ class InputFileUpload extends BasicAtom {
                     onChange={(e) => {
                         this.processFiles(e.target.files);
                     }}
+                    multiple
                 />
 
                 {this.render_files()}
-
-
             </div>
         );
     }
@@ -65,7 +63,7 @@ class InputFileUpload extends BasicAtom {
                         onClick={() => {
                             this.removeUpload(index);
                         }}
-                        disabled={this.state.isLoading}
+                        disabled={this.isLoading}
                         key={"value-" + index}
                     />
                 );
@@ -74,7 +72,7 @@ class InputFileUpload extends BasicAtom {
     }
 
     render_icon() {
-        if (this.state.isLoading) {
+        if (this.isLoading) {
             return (
                 <IconSpinner />
             );
@@ -91,19 +89,96 @@ class InputFileUpload extends BasicAtom {
     // methods
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    processFiles(files) {
-        const newList = [];
+    /**
+     *
+     * @param files
+     * @returns {Promise<void>}
+     */
+    async processFiles(files) {
+        const newList = [...this.state.fileList];
+        this.isLoading = true;
 
         for (let i = 0; i < files.length; i++) {
-            newList.push(files[i]);
+            let newFile = this.processFiles_reName(newList, files[i]);
+
+            await this.updateAPI(newFile)
+                .then((response) => {
+                    newList.push(newFile);
+                    this.callbackOr(this.props.onSuccess)(response);
+
+                    // UI update?
+                })
+                .catch((error) => {
+                    //@todo: remove from here...
+                    newList.push(newFile);
+                    ////////////////////
+
+                    this.callbackOr(this.props.onError)(error);
+
+                    // UI update?
+                });
         }
 
-        this.setState({
-            fileList: newList
-        }, () => {
-            //  send files
-            this.updateAPI();
+        this.setState({fileList: newList});
+        this.isLoading = false;
+    }
+
+    /**
+     * Renames the file uploaded if needed.
+     * @param files
+     * @param file
+     * @returns {File|*}
+     */
+    processFiles_reName(files, file) {
+        let count = 1,
+            startName = file.name,
+            filename = file.name;
+
+        if (this.processFiles_reName_needsRename(files, startName)) {
+            while (this.processFiles_reName_needsRename(files, filename)) {
+                filename = this.processFiles_reName_newName(startName, count);
+                count++;
+            }
+            let blob = file.slice(0, file.size, file.contentType);
+            return new File([blob], filename,{type: file.contentType});
+        }
+        return file;
+    }
+
+    /**
+     * Check if the file needs a rename
+     * @param files
+     * @param filename
+     * @returns {boolean}
+     */
+    processFiles_reName_needsRename(files, filename) {
+        let needsRename = false;
+
+        files.forEach((existingFile) => {
+            if (existingFile.name.toString() === filename) {
+                needsRename = true;
+            }
         });
+
+        return needsRename;
+    }
+
+    /**
+     * create a new filename
+     * @param filename
+     * @param count
+     * @returns {string}
+     */
+    processFiles_reName_newName(filename, count) {
+        count = count ?? 1;
+        let newNameArray = filename.split('.');
+        let newName = newNameArray[0] + '(' + count + ')';
+
+        newNameArray.shift();
+        if (newNameArray.length > 0) {
+            newName = newName + '.' + newNameArray.join('.');
+        }
+        return newName;
     }
 
 
@@ -118,50 +193,42 @@ class InputFileUpload extends BasicAtom {
     }
 
 
-    updateAPI() {
-        let file = this.state.fileList[0];
+    /**
+     * @param file
+     * @returns {Promise<T>}
+     */
+    updateAPI(file) {
         let filename = file.name;
 
-        this.setState({
-            isLoading: true
-        });
-
-        this.callbackOr(this.props.urlGenerator, 'https://127.0.0.1', true)(filename)
-            .catch((error) => {
-                console.log("Error", error);
-
-                // handle error in UI
-                this.callbackOr(this.props.onError)(error);
-
-                // no longer loading
-                this.setState({
-                    isLoading: false
-                });
-            })
-            .then(
-            (url) => {
+        return this.callbackOr(this.props.urlGenerator, 'https://127.0.0.1', true)(filename)
+            .then((url) => {
                 let promise = (typeof this.props.uploadHandler !== 'undefined')
                     ? this.props.uploadHandler(filename, url, file, this.props.uploadMethod)
-                    : this.fallbackUploadHandler(filename, url, file, this.props.uploadMethod)
+                    : this.fallbackUploadHandler(filename, url, file, this.props.uploadMethod);
 
-                promise.catch((error)=>{
-                    console.log("Error", error);
+                return promise
+                    .then((response)=>{
+                        return this.updateAPI_handleResponse(response);
+                    }).catch((error)=>{
+                        return this.updateAPI_error(error);
+                    });
+            });
+    }
 
-                    // handle error in UI
-                    this.callbackOr(this.props.onError)(error);
-                }).then((fileUrl)=>{
-                    // handle success in UI
-                    this.callbackOr(this.props.onSuccess)(filename, fileUrl);
-                }).finally(
-                    () => {
-                        // no longer loading
-                        this.setState({
-                            isLoading: false
-                        });
-                    }
-                );
-            }
-        );
+    /**
+     * @param response
+     * @returns {Promise<never>|Promise<void>}
+     */
+    updateAPI_handleResponse(response) {
+        if (response.status !== 200 && response.status !== 201) {
+            return this.updateAPI_error(response.statusText);
+        }
+        return Promise.resolve(response);
+    }
+
+
+    updateAPI_error(error) {
+        return Promise.reject(error);
     }
 
     fallbackUploadHandler(filename, url, file, method) {

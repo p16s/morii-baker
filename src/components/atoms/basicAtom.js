@@ -6,6 +6,8 @@ class BasicAtom extends React.Component {
     constructor(props, context, state) {
         super(props, context);
         this.state = state ?? {};
+
+        this.state.isLoading = this.state.isLoading ?? false;
     }
 
 
@@ -54,6 +56,21 @@ class BasicAtom extends React.Component {
         return this._isMounted ?? false;
     }
 
+    /**
+     * Set the isLoading state
+     * @param {boolean} state
+     */
+    set isLoading(state) {
+        this.setState({isLoading:state});
+    }
+
+    /**
+     * is loading?
+     * @returns {boolean}
+     */
+    get isLoading() {
+        return this.state.isLoading;
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Utility
