@@ -1,4 +1,4 @@
-/*  title:  InputFileUpload
+/*  title:  FileUpload
     notes:  molecule styles
  ==================================================================================================================== */
 
@@ -8,43 +8,43 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --Input-file-upload-border-radius: var(--Global-border-radius, 5px);
-    --Input-file-upload-font-size: 1rem;
-    --Input-file-upload-padding: 12px 24px;
+    --File-upload-border-radius: var(--Global-border-radius, 5px);
+    --File-upload-font-size: 1rem;
+    --File-upload-padding: 12px 24px;
 }
 
 
 /*  base
 ===================================================================================================================== */
-.Input-file-upload {
+.File-upload {
 }
     /*  label acts as the "button"
     ================================================================================================================= */
-    .Input-file-upload label {
+    .File-upload label {
         align-items: center;
         border: 1px solid rgb(var(--Global-color-5, 114 123 155));
-        border-radius: var(--Input-file-upload-border-radius);
+        border-radius: var(--File-upload-border-radius);
         cursor: pointer;
         display: inline-flex;
-        font-size: var(--Input-file-upload-font-size);
+        font-size: var(--File-upload-font-size);
         font-weight: 400;
         line-height: 1;
-        padding: var(--Input-file-upload-padding);
+        padding: var(--File-upload-padding);
         transition: .3s;
     }
-        .Input-file-upload label.disabled {
+        .File-upload label.disabled {
             pointer-events: none;
         }
 
         /*  sort the icon */
-        .Input-file-upload .icon-attachment,
-        .Input-file-upload .icon-spinner{
+        .File-upload .icon-attachment,
+        .File-upload .icon-spinner{
             margin-right: .875rem;
         }
 
     /*  hide the original input
     ================================================================================================================= */
-    .Input-file-upload input {
+    .File-upload input {
         height: .1px;
         opacity: 0;
         overflow: hidden;
@@ -55,6 +55,6 @@
 
     /*  files
     ================================================================================================================= */
-    .Input-file-upload .Uploaded-file {
+    .File-upload .Uploaded-file {
         margin-left: 1rem;
     }

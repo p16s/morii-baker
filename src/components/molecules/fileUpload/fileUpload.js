@@ -1,15 +1,12 @@
 import React from "react";
 import BasicAtom from "../../atoms/basicAtom";
-import './inputFileUpload.css';
+import './fileUpload.css';
 import IconAttachment from "../../atoms/icons/attachment";
-import UploadedFile from "../../atoms/uploadedFile/uploadedFile";
-import ListItem from "../../atoms/listItem/listItem";
+import File from "../../atoms/file/file";
 import IconSpinner from "../../atoms/icons/spinner";
-import file from "../../atoms/icons/file";
-// import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 
 
-class InputFileUpload extends BasicAtom {
+class FileUpload extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
             fileList: []
@@ -29,7 +26,7 @@ class InputFileUpload extends BasicAtom {
      */
     render(className, props) {
         return (
-            <div className="Input-file-upload">
+            <div className="File-list">
                 <label
                     className={(this.isLoading ? 'disabled' : '')}
                     htmlFor={(this.props.forId ? this.props.forId : 'file-upload')}
@@ -58,7 +55,7 @@ class InputFileUpload extends BasicAtom {
         if (this.state.fileList && this.state.fileList.length) {
             return (this.state.fileList ?? []).map((value, index) => {
                 return (
-                    <UploadedFile
+                    <File
                         fileName={value.name}
                         onClick={() => {
                             this.removeUpload(index);
@@ -164,7 +161,7 @@ class InputFileUpload extends BasicAtom {
     }
 
     /**
-     * create a new filename
+     * create a new file
      * @param filename
      * @param count
      * @returns {string}
@@ -240,4 +237,4 @@ class InputFileUpload extends BasicAtom {
 }
 
 
-export default InputFileUpload;
+export default FileUpload;

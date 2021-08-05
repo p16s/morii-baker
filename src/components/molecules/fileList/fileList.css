@@ -1,4 +1,4 @@
-/*  title:  DownloadedFile
+/*  title:  FileList
     notes:  component styles
  ==================================================================================================================== */
 
@@ -7,10 +7,10 @@
 
 /*  basic
  ==================================================================================================================== */
-.Downloaded-files .heading {
-    margin-bottom: .5rem;       /*  should be 1rem but going to put margin on the uploadedFile  */
+.File-list .heading {
+    margin-bottom: .5rem;       /*  should be 1rem but going to put margin on the file  */
 }
 
-    .Downloaded-files .Uploaded-file {
+    .File-list .File {
         margin-top: .5rem;
     }

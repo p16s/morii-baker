@@ -1,13 +1,13 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import InputFileUpload from "../inputFileUpload";
+import FileUpload from "../fileUpload";
 
 
-class InputFileUploadExample extends BakerExample {
+class FileUploadExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
                 <h1>
-                    Form Elements - File upload
+                    File upload
 
                     {/*<a*/}
                     {/*    href={"https://www.figma.com/file/TyaSwVfNEDdQcodIuFs8DR/Baskerville-2.0?node-id=10%3A306"}*/}
@@ -25,9 +25,9 @@ class InputFileUploadExample extends BakerExample {
 
     render_normal() {
         return this.render_exampleComponent(
-            "InputFileUpload/Normal",
+            "FileUpload/Normal",
             <form>
-                <InputFileUpload
+                <FileUpload
                     forId="passed"
                     name={"Attach files"}
                     urlGenerator={()=>{return Promise.resolve('https://morii-mail.s3.eu-west-2.amazonaws.com/testing-folder%5Ctestupload1628078095879.txt?Content-Type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Crede\n' +
@@ -35,10 +35,10 @@ class InputFileUploadExample extends BakerExample {
                         '27fb93a331cdad1d9c&X-Amz-SignedHeaders=host')}}
                 />
             </form>,
-            "InputFileUpload with uploadedFile(s)"
+            "FileUpload with file(s)"
         );
     }
 }
 
 
-export default InputFileUploadExample;
+export default FileUploadExample;

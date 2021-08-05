@@ -1,15 +1,14 @@
 import BasicAtom from "../../atoms/basicAtom";
-import './downloadedFiles.css';
-import ListItem from "../../atoms/listItem/listItem";
-import UploadedFile from "../../atoms/uploadedFile/uploadedFile";
+import './fileList.css';
+import File from "../../atoms/file/file";
 
 
-class DownloadedFiles extends BasicAtom {
+class FileList extends BasicAtom {
     render(className, props) {
         return (
             <section
                 className={
-                    "Downloaded-files"
+                    "File-list"
                     + this.padIfString(className)
                     + this.getClassNameString()
                 }
@@ -32,9 +31,10 @@ class DownloadedFiles extends BasicAtom {
     render_list() {
         return (this.props.files ?? []).map((value, index) => {
             return (
-                <UploadedFile
+                <File
                     fileName={value.name}
                     noRemove={true}
+                    key={"file-" + index}
                 />
             );
         });
@@ -42,4 +42,4 @@ class DownloadedFiles extends BasicAtom {
 }
 
 
-export default DownloadedFiles;
+export default FileList;

@@ -1,5 +1,5 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import UploadedFile from "../uploadedFile";
+import File from "../file";
 
 
 class UploadedFileExample extends BakerExample {
@@ -7,7 +7,7 @@ class UploadedFileExample extends BakerExample {
         return (
             <section className={"examples"}>
                 <h1>
-                    Uploaded file
+                    File
 
                     {/*<a*/}
                     {/*    href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=32%3A0"}*/}
@@ -27,13 +27,13 @@ class UploadedFileExample extends BakerExample {
     render_basic() {
         return this.render_exampleComponent(
             'Primary / Basic',
-            <UploadedFile
+            <File
                 fileName="dummy_file.pdf"
                 onClick={() => {
-                    alert("Click event (remove)");
+                    alert("Click event (remove etc)");
                 }}
             />,
-            'Basic file uploaded.  WIth click event'
+            'Basic file.  With click event'
         );
     }
 
@@ -41,11 +41,11 @@ class UploadedFileExample extends BakerExample {
     render_no_remove() {
         return this.render_exampleComponent(
             'Primary / Basic',
-            <UploadedFile
+            <File
                 fileName="dummy_file.pdf"
                 noRemove={true}
             />,
-            'Basic file uploaded.  WIth no remove'
+            'Basic file.  With no remove'
         );
     }
 }

@@ -4,14 +4,14 @@ import InputExample from "../components/molecules/input/example/inputExample";
 import InputPhoneExample from "../components/molecules/inputPhone/example/inputPhoneExample";
 import TextareaExample from "../components/molecules/textarea/example/textareaExample";
 import PinExample from "../components/molecules/pin/example/pinExample";
-import InputFileUploadExample from "../components/molecules/inputFileUpload/example/inputFileUploadExample";
+import FileUploadExample from "../components/molecules/fileUpload/example/fileUploadExample";
 import ListExample from "../components/molecules/list/example/listExample";
 import IconBarExample from "../components/molecules/iconBar/example/IconBarExample";
 import TitleBarExample from "../components/molecules/titleBar/example/titleBarExample";
 import BreadcrumbsExample from "../components/molecules/breadcrumbs/example/breadcrumbsExample";
 import TableExample from "../components/molecules/table/example/tableExample";
 import SlideOutExample from "../components/molecules/slideOut/example/slideOutExample";
-import DownloadedFilesExample from "../components/molecules/downloadedFiles/example/downloadedFilesExample";
+import FileListExample from "../components/molecules/fileList/example/fileListExample";
 
 
 const PageMolecules = () => {
@@ -21,14 +21,14 @@ const PageMolecules = () => {
             <InputPhoneExample />
             <TextareaExample />
             <PinExample />
-            <InputFileUploadExample />
+            <FileUploadExample />
             <ListExample />
             <TitleBarExample />
             <IconBarExample />
             <BreadcrumbsExample />
             <TableExample />
             <SlideOutExample />
-            <DownloadedFilesExample />
+            <FileListExample />
         </div>
     );
 }

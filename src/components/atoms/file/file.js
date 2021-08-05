@@ -1,11 +1,11 @@
 import React from "react";
 import BasicAtom from "../basicAtom";
-import './uploadedFile.css';
+import './file.css';
 import IconFile from "../icons/file";
 import IconClose from "../icons/close";
 
 
-class UploadedFile extends BasicAtom {
+class File extends BasicAtom {
     render(className, props) {
         return (
             this.render_standard()
@@ -17,7 +17,7 @@ class UploadedFile extends BasicAtom {
         return React.cloneElement(
             <button
                 className={
-                    "Uploaded-file"
+                    "File"
                     + this.padIfString(className)
                     + this.getClassNameString()
                     + (this.props.noRemove ? ' no-remove' : '')
@@ -62,4 +62,4 @@ class UploadedFile extends BasicAtom {
 }
 
 
-export default UploadedFile;
+export default File;

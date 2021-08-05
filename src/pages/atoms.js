@@ -15,7 +15,7 @@ import TabExample from "../components/atoms/tab/example/tabExample";
 import ListItemExample from "../components/atoms/listItem/example/listItemExample";
 import IconExample from "../components/atoms/icon/example/iconExample";
 import IconsExample from "../components/atoms/icons/example/iconsExample";
-import UploadedFileExample from "../components/atoms/uploadedFile/example/uploadedFileExample";
+import UploadedFileExample from "../components/atoms/file/example/uploadedFileExample";
 
 
 const PageAtoms = () => {

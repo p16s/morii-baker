@@ -1,13 +1,13 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import DownloadedFiles from "../downloadedFiles";
+import FileList from "../fileList";
 
 
-class DownloadedFilesExample extends BakerExample {
+class FileListExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
                 <h1>
-                    Downloaded files
+                    File List
 
                     {/*<a*/}
                     {/*    href={"https://www.figma.com/file/VGOOy8mKPEs7hxW8gAqe60/Baskerville-Documentation?node-id=22%3A723"}*/}
@@ -25,8 +25,8 @@ class DownloadedFilesExample extends BakerExample {
 
     render_normal() {
         return this.render_exampleComponent(
-            "Downloaded Files/Normal",
-            <DownloadedFiles
+            "FileList/Normal",
+            <FileList
                 heading="Heading passed"
                 files={[
                     {
@@ -40,10 +40,10 @@ class DownloadedFilesExample extends BakerExample {
                     }
                 ]}
             />,
-            "Container for showing files downloaded"
+            "Container for files, with heading"
         );
     }
 }
 
 
-export default DownloadedFilesExample;
+export default FileListExample;

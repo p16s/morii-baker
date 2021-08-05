@@ -27,7 +27,7 @@ class InputExample extends BakerExample {
 
     render_normal() {
         return this.render_exampleComponent(
-            "InputFileUpload/Normal",
+            "FileUpload/Normal",
             <form>
                 <Input
                     for={"basic"}
@@ -38,14 +38,14 @@ class InputExample extends BakerExample {
                     placeholder={"Placeholder"}
                 />
             </form>,
-            "Label and InputFileUpload atoms used together."
+            "Label and FileUpload atoms used together."
         );
     }
 
 
     render_success() {
         return this.render_exampleComponent(
-            "InputFileUpload/Success",
+            "FileUpload/Success",
             <form>
                 <Input
                     for={"success"}
@@ -65,7 +65,7 @@ class InputExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "InputFileUpload/Error",
+            "FileUpload/Error",
             <form>
                 <Input
                     for={"error"}
