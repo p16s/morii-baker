@@ -15,11 +15,11 @@ class RandomExample extends BakerExample {
     }
     render_normal() {
         return this.render_exampleComponent(
-            "Pin/Normal",
+            "Random/Normal",
             <Random
                 list={["Mike", "Dave","Jose","Rob","Eowyn", "Dom", "Raffi", "Henry"]}
             />,
-            "Label and Pin atoms used together."
+            "Just a randomizer"
         );
     }
 }
