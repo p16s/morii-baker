@@ -13,8 +13,20 @@ class Random extends BasicAtom {
         this.shuffleList();
     }
 
+    componentDidUpdate(prevState) {
+        if (prevState.list !== this.props.list) {
+            this.setState({
+                list: this.props.list
+            },() => {
+                this.shuffle(this.state.list);
+            });
+        }
+    }
+
     shuffleList() {
-        this.setState({list: this.shuffle([...this.state.list])});
+        this.setState({
+            list: this.shuffle([...this.state.list])
+        });
     }
 
     /**
@@ -27,7 +39,6 @@ class Random extends BasicAtom {
         let randomIndex;
 
         while (0 !== currentIndex) {
-
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
 
@@ -55,5 +66,6 @@ class Random extends BasicAtom {
         );
     }
 }
+
 
 export default Random;
