@@ -1,11 +1,11 @@
 import React from "react";
-import Default from "../components/templates/default/default";
+import TemplateDefault from "../components/templates/default/default";
 
 
 const PageTemplates = () => {
     return (
         <>
-            <Default />
+            <TemplateDefault />
         </>
     );
 }

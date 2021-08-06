@@ -54,7 +54,7 @@
         ============================================================================================================= */
         .Breadcrumbs .breadcrumb:last-of-type {
             cursor: auto;
-            pointer-events: none;   /*  prevent a click to the same page (incase the slug present) */
+            pointer-events: none;   /*  prevent a click to the same page.js (incase the slug present) */
         }
 
     /*  if a logo added

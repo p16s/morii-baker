@@ -27,7 +27,7 @@ class TitleBarExample extends BakerExample {
 
     render_basic() {
         return this.render_exampleComponent (
-            'Titlebar / Default',
+            'Titlebar / Test',
             <TitleBar>
                 <h1>Heading as a h1</h1>
             </TitleBar>,
@@ -38,7 +38,7 @@ class TitleBarExample extends BakerExample {
 
     render_icon() {
         return this.render_exampleComponent (
-            'Titlebar / Default',
+            'Titlebar / Test',
             <TitleBar>
                 <h2>Heading as a h2</h2>
 

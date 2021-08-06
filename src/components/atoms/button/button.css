@@ -29,7 +29,7 @@
     transition: .3s;
 }
 
-    /*  default states
+    /*  test states
     ================================================================================================================= */
     .Button:not(:disabled):hover,
     .Button:focus,
@@ -45,14 +45,14 @@
 
 
 
-    /*  default
+    /*  test
     ================================================================================================================= */
     .Button {
         background-color: rgb(var(--Button-color-1));
         border: none;       /* only add to outline */
         color: #fff;    /* TODO might have to revisit this, would normally run a contrast function on the background */
     }
-        /*  default: states
+        /*  test: states
         ============================================================================================================= */
         .Button:not(:disabled):hover,
         .Button:not(.outline):focus,
@@ -65,7 +65,7 @@
             background-color: rgba(var(--Button-color-1), .3);
         }
 
-        /*  default: outline
+        /*  test: outline
         ============================================================================================================= */
         .Button.outline {
             background-color: transparent;

@@ -23,7 +23,7 @@ class LabelExample extends BakerExample {
         return this.render_exampleComponent(
             'Label / Normal',
             <Label for={"for-titleBar.js"}>Example of label text</Label>,
-            "This is a default label. It takes the for property"
+            "This is a test label. It takes the for property"
         );
     }
 }

@@ -1,5 +1,5 @@
 /*  title:  test
-    notes:  template styles, local for layout and overrides where needed for existing components
+    notes:  test a page.js using a template
  ==================================================================================================================== */
 
 
@@ -13,17 +13,3 @@
 
 /*  base
  ==================================================================================================================== */
-.Default-template {
-    align-items: stretch;       /*  only two main parents, side-col & main  */
-    display: flex;
-    justify-content: flex-start;
-}
-
-    .Default-template header,
-    .Default-template main {
-        width: 100%;
-    }
-
-    .Default-template main {
-        padding: 1rem 2rem;
-    }

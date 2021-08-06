@@ -4,7 +4,7 @@ import './bakerExample.css';
 
 class BakerExample extends React.Component {
     /**
-     * Default render returns nothing (should be overwrote by child class)
+     * Test render returns nothing (should be overwrote by child class)
      * @returns {string}
      */
     render() {

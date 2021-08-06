@@ -34,7 +34,7 @@ class CheckboxExample extends BakerExample {
                     onClick={() => {console.log('clicked Checkbox');}}
                 />
             </form>,
-            'Default checkbox.  With click event.'
+            'Test checkbox.  With click event.'
         );
     }
 
@@ -50,7 +50,7 @@ class CheckboxExample extends BakerExample {
                     }}
                 />
             </form>,
-            'Default checkbox.  With click event.'
+            'Test checkbox.  With click event.'
         );
     }
 
@@ -66,7 +66,7 @@ class CheckboxExample extends BakerExample {
                     }}
                 />
             </form>,
-            'Default checkbox.  With click event.'
+            'Test checkbox.  With click event.'
         );
     }
 
@@ -83,7 +83,7 @@ class CheckboxExample extends BakerExample {
                     }}
                 />
             </form>,
-            'Default checkbox.  With click event.'
+            'Test checkbox.  With click event.'
         );
     }
 }

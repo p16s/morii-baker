@@ -32,19 +32,19 @@ class ButtonExample extends BakerExample {
 
     render_basic() {
         return this.render_exampleComponent(
-            'Primary / Default',
+            'Primary / Test',
             <Button
                 text={'Normal button'}
                 onClick={() => {alert('button clicked');}}
             />,
-             'Default button.'
+             'Test button.'
         );
     }
 
 
     render_disabled() {
         return this.render_exampleComponent(
-            'Primary / Default / Disabled',
+            'Primary / Test / Disabled',
             <Button
                 text={'Disabled button'}
                 onClick={() => {alert('button clicked');}}

@@ -38,7 +38,7 @@ class ListItemExample extends BakerExample {
                     Item
                 </ListItem>
             </ul>,
-            'Default single list.  With click event.'
+            'Test single list.  With click event.'
         );
     }
 

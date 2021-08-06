@@ -73,9 +73,9 @@ class RobTest extends React.Component {
         this.state = {
             isShowing: true,
             count: 1,
-            formText: "Default form text",
-            first_name: 'default first',
-            last_name: 'default last'
+            formText: "Test form text",
+            first_name: 'test first',
+            last_name: 'test last'
         }
     }
 

@@ -35,7 +35,7 @@
         margin-bottom: 0;
     }
 
-    /*  default states
+    /*  test states
     ================================================================================================================= */
     .List-item:not(.disabled):hover,
     .List-item:not(.disabled):active,

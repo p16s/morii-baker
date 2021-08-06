@@ -27,7 +27,7 @@ class FormPinExample extends BakerExample {
         return this.render_exampleComponent(
             'FormPin / Normal',
             <FormPin />,
-            'Default FormPin.'
+            'Test FormPin.'
         );
     }
 }

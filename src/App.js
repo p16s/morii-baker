@@ -12,7 +12,7 @@ import PageAtoms from "./pages/atoms";
 import PageMolecules from "./pages/molecules";
 import PageOrganisms from "./pages/organisms";
 import PageTemplates from "./pages/templates";
-
+import Pages from "./pages/page";
 
 const App = () => {
     return (
@@ -42,6 +42,10 @@ const App = () => {
 
                     <Route path="/templates">
                         <PageTemplates />
+                    </Route>
+
+                    <Route path="/pages">
+                        <Pages />
                     </Route>
                 </Switch>
             </Router>

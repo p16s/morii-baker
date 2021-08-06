@@ -38,6 +38,12 @@ const Nav = () => {
                         Templates
                     </ListItem>
                 </Link>
+
+                <Link to="/pages">
+                    <ListItem active={(location.pathname === '/pages')}>
+                        Pages
+                    </ListItem>
+                </Link>
             </ul>
         </nav>
     );

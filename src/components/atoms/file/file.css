@@ -31,7 +31,7 @@
     transition: .3s;
 }
 
-    /*  default states
+    /*  test states
     ================================================================================================================= */
     .File:not(:disabled):hover,
     .File:not(:disabled):focus,

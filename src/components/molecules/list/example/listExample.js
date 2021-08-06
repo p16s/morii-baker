@@ -44,7 +44,7 @@ class ListExample extends BakerExample {
                     }}
                 />
             </div>,
-            'Default single list with listHeader.  With click event.'
+            'Test single list with listHeader.  With click event.'
         );
     }
 }
