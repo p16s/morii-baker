@@ -12,7 +12,7 @@ import BreadcrumbsExample from "../components/molecules/breadcrumbs/example/brea
 import TableExample from "../components/molecules/table/example/tableExample";
 import SlideOutExample from "../components/molecules/slideOut/example/slideOutExample";
 import FileListExample from "../components/molecules/fileList/example/fileListExample";
-
+import RandomExample from "../components/molecules/random/example/randomExample";
 
 const PageMolecules = () => {
     return (
@@ -29,6 +29,7 @@ const PageMolecules = () => {
             <TableExample />
             <SlideOutExample />
             <FileListExample />
+            <RandomExample />
         </div>
     );
 }
