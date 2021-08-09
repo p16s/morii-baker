@@ -42,7 +42,7 @@ class SideBarExample extends BakerExample {
     render_normal() {
         return this.render_exampleComponent(
             "SideBar",
-                <div style={{height: "800px"}}>
+                <>
                     <SideBar
                         header={'header'}
 
@@ -80,7 +80,7 @@ class SideBarExample extends BakerExample {
                             }
                         }
                     />
-                </div>,
+                </>,
             ""
         );
     }

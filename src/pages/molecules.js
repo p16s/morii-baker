@@ -13,6 +13,8 @@ import TableExample from "../components/molecules/table/example/tableExample";
 import SlideOutExample from "../components/molecules/slideOut/example/slideOutExample";
 import FileListExample from "../components/molecules/fileList/example/fileListExample";
 import RandomExample from "../components/molecules/random/example/randomExample";
+import ModalCenterExample from "../components/molecules/modalCenter/example/modalCenterExample";
+
 
 const PageMolecules = () => {
     return (
@@ -30,6 +32,7 @@ const PageMolecules = () => {
             <SlideOutExample />
             <FileListExample />
             <RandomExample />
+            <ModalCenterExample />
         </div>
     );
 }

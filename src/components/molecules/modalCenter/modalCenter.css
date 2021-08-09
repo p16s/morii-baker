@@ -1,0 +1,59 @@
+/*  title:  modalCenter
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+}
+
+
+/*  base
+===================================================================================================================== */
+.Modal-center {
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    position: fixed;
+    z-index: 99;
+}
+
+    /*  for overflow (allow a scroll)
+    ================================================================================================================= */
+    .Modal-center .for-overflow {
+        overflow: auto;
+    }
+
+        /*  content
+        ============================================================================================================= */
+        .Modal-center .content {
+            background-color: #fff;
+            border-radius: var(--Global-border-radius, 5px);
+            max-height: 40vh;
+            padding: 1rem 2rem;
+            width: 800px;
+
+            animation: zoomIn .2s;
+        }
+
+
+/*  TODO put in framework   */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.zoomIn {
+    animation-name: zoomIn;
+}

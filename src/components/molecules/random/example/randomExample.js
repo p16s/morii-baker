@@ -40,9 +40,6 @@ class RandomExample extends BakerExample {
 
 
     render_modify() {
-        console.log('render_modify');
-        console.log('toShuffle', this.state.toShuffel);
-
         return this.render_exampleComponent(
             "Random/Modifiable",
 
@@ -66,7 +63,7 @@ class RandomExample extends BakerExample {
                     />
                 </div>
             </div>,
-            "Randomizer with ability to add/remove"
+            "Randomizer with ability to remove an absent user"
 
         );
     }
