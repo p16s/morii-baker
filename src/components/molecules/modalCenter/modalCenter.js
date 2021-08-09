@@ -2,6 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import './modalCenter.css';
 import IconClose from "../../atoms/icons/close";
 import close from "../../atoms/icons/close";
+import {CSSTransition} from "react-transition-group";
 
 
 class ModalCenter extends BasicAtom {
@@ -10,43 +11,31 @@ class ModalCenter extends BasicAtom {
 
     }
 
-    // constructor(props, context) {
-    //     super(props, context, {
-    //         isActive: null
-    //     });
-    //
-    //     //  set local state to prop
-    //     this.state.isActive = this.props.isModalActive;
-    // }
-    //
-    // componentDidUpdate(prevProps) {
-    //     console.log('componentDidUpdate', prevProps);
-    //     console.log(this.state);
-    //
-    //     if (prevProps.isModalActive !== this.state.isActive) {
-    //         console.log("Update");
-    //         this.setState({
-    //             isActive: true
-    //         });
-    //
-    //     }
-    // }
-
 
     render() {
         return (
             <>
-                {this.render_is_active()}
+                <CSSTransition
+                    in={this.props.isActive}
+                    timeout={300}
+                    classNames="fade-in"
+                    unmountOnExit
+                >
+                    {this.render_is_active()}
+                </CSSTransition>
             </>
         );
     }
 
 
     render_is_active() {
-        if (this.props.isActive) {
+        // if (this.props.isActive) {
             return (
                 <div
-                    className="Modal-center"
+                    className={
+                        "Modal-center "
+                        + (this.props.isActive ? 'active' : '')
+                    }
                 >
                     <div className="for-overflow">
                         <div className="content">
@@ -62,7 +51,7 @@ class ModalCenter extends BasicAtom {
                     </div>
                 </div>
             );
-        }
+        // }
     }
 
 

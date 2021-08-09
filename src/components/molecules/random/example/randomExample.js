@@ -46,21 +46,20 @@ class RandomExample extends BakerExample {
             <div style={{'display': 'flex'}}>
                 <div style={{'width': '50%'}}>
                     <p>
-                        <strong>Click to remove users:</strong>
-                    </p>
-
-                    {this.render_available_list()}
-                </div>
-
-
-                <div style={{'width': '50%'}}>
-                    <p>
                         <strong>The order is:</strong>
                     </p>
 
                     <Random
                         list={this.state.toShuffel}
                     />
+                </div>
+
+                <div style={{'width': '50%'}}>
+                    <p>
+                        <strong>Click to remove users:</strong>
+                    </p>
+
+                    {this.render_available_list()}
                 </div>
             </div>,
             "Randomizer with ability to remove an absent user"
