@@ -2,6 +2,11 @@
   "name": "morii-baker",
   "version": "0.1.0",
   "private": true,
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
   "dependencies": {
     "dayjs": "^1.10.6",
     "react": "^17.0.1",
