@@ -7,9 +7,9 @@
 /*  responsive breakpoints
  ==================================================================================================================== */
 :root {
-    --global-break-small: 440px;
-    --global-break-medium: 767px;
-    --global-break-large: 1440px;
+    --Global-break-small: 440px;
+    --Global-break-medium: 767px;
+    --Global-break-large: 1440px;
 }
 
 

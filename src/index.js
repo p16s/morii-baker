@@ -6,8 +6,6 @@ import './assets/style/index.css';
 import App from "./App";
 // import RobTest from "./components/baker-local/robTest";
 
-import Button from "./components/atoms/button/button";
-
 
 ReactDOM.render(
     <React.StrictMode>
@@ -19,7 +17,3 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
-
-export {
-    Button
-}

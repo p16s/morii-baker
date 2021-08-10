@@ -13,6 +13,8 @@ import PageMolecules from "./pages/molecules";
 import PageOrganisms from "./pages/organisms";
 import PageTemplates from "./pages/templates";
 import Pages from "./pages/page";
+import PageMinimal from "./components/pages/minimal/minimal";
+
 
 const App = () => {
     return (
@@ -47,6 +49,9 @@ const App = () => {
                     <Route path="/pages">
                         <Pages />
                     </Route>
+                        <Route path="/page/login">
+                            <PageMinimal />
+                        </Route>
                 </Switch>
             </Router>
         </>
