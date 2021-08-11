@@ -13,8 +13,7 @@ class PageMinimal extends BasicAtom {
         return (
             <>
                 <TemplateMinimal>
-
-                    <h1>Some content</h1>
+                    
                 </TemplateMinimal>
             </>
         );
