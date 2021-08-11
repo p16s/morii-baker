@@ -14,6 +14,7 @@ import PageOrganisms from "./pages/organisms";
 import PageTemplates from "./pages/templates";
 import Pages from "./pages/page";
 import PageMinimal from "./components/pages/minimal/minimal";
+import PageLogin from "./components/pages/login/login";
 
 
 const App = () => {
@@ -49,8 +50,11 @@ const App = () => {
                     <Route path="/pages">
                         <Pages />
                     </Route>
-                        <Route path="/page/login">
+                        <Route path="/page/minimal">
                             <PageMinimal />
+                        </Route>
+                        <Route path="/page/login">
+                            <PageLogin />
                         </Route>
                 </Switch>
             </Router>

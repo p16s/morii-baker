@@ -50,3 +50,11 @@ body {
         width: 1040px;
     }
 
+
+
+
+/*  set a min width for the "site" (would be done where baker imported usually)
+===================================================================================================================== */
+#root {
+    min-width: 375px;
+}

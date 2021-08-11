@@ -27,9 +27,7 @@ class LoginExample extends BakerExample {
         return this.render_exampleComponent(
             "Login",
                 <>
-                    <Login
-                        isStage={1}
-                    />
+                    <Login />
                 </>,
             ""
         );

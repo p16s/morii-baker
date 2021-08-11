@@ -1,10 +1,7 @@
 import BasicAtom from "../../atoms/basicAtom";
-import IconBar from "../../molecules/iconBar/iconBar";
-import List from "../../molecules/list/list";
 import './login.css';
 import FormInput from "../../atoms/formInput/formInput";
 import Button from "../../atoms/button/button";
-import FormPin from "../../atoms/formPin/formPin";
 import Pin from "../../molecules/pin/pin";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
@@ -19,6 +16,11 @@ class Login extends BasicAtom {
             userEmailError: false,
             userPin: ''
         });
+    }
+
+
+    static defaultProps = {
+        isStage: 1
     }
 
 
@@ -76,14 +78,7 @@ class Login extends BasicAtom {
                         }
                     />
 
-                    <Button
-                        disabled={this.state.userPin.length < 4}
-                        onClick={
-                            () => this.validateUser()
-                        }
-                    >
-                        Enter
-                    </Button>
+                    {this.render_verify_cta()}
                 </>
             );
         }
@@ -110,7 +105,6 @@ class Login extends BasicAtom {
                     disabled={true}
                 >
                     Login
-
                     <IconSpinner />
                 </Button>
             );
@@ -130,6 +124,31 @@ class Login extends BasicAtom {
     }
 
 
+    render_verify_cta() {
+        if (this.isLoading) {
+            return (
+                <Button
+                    disabled={true}
+                >
+                    Enter
+                    <IconSpinner />
+                </Button>
+            );
+        } else {
+            return (
+                <Button
+                    disabled={this.state.userPin.length < 4}
+                    onClick={
+                        () => this.validateUser()
+                    }
+                >
+                    Enter
+                </Button>
+            );
+        }
+    }
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,7 +162,7 @@ class Login extends BasicAtom {
         alert("getUser clicked TODO integrate");
         this.isLoading = true;
 
-        //  dummy a lookup (IU testing, remove on integration)
+        //  dummy a timeout on a lookup (IU testing, remove on integration)
         setTimeout(() => {
             this.isLoading = false;
 
@@ -185,6 +204,16 @@ class Login extends BasicAtom {
      */
     validateUser() {
         alert("empty validateUser method");
+        this.isLoading = true;
+
+        //  dummy a timeout on a lookup (IU testing, remove on integration)
+        setTimeout(() => {
+            this.isLoading = false;
+
+            this.setState({
+                isStage: 1
+            });
+        }, 2000);
     }
 }
 

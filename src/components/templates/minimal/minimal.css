@@ -1,4 +1,4 @@
-/*  title:  minimal
+/*  title:  template-minimal
     notes:  minimal template, with basic header and small content area (eg login)
  ==================================================================================================================== */
 
@@ -12,32 +12,34 @@
 
 /*  base
  ==================================================================================================================== */
-.Minimal-template {
+.Template-minimal {
     background-color: #fff;
     min-height: 100vh;
 }
-    .Minimal-template .header {
+    .Template-minimal .header {
         align-items: stretch;
         background-color: #f5f5f5;
         border-bottom: 1px solid rgba(var(--Global-color-5,  114 123 155), .2);
         display: flex;
         justify-content: center;
         padding: 2rem 1.5rem;
+        width: 100%;
     }
 
     @media screen and (min-width: 768px) {
-        .Minimal-template .header {
+        .Template-minimal .header {
             justify-content: space-between;
         }
     }
-        .Minimal-template .header a {
+        .Template-minimal .header a {
             display: none;
         }
 
         @media screen and (min-width: 768px) {
-            .Minimal-template .header a {
+            .Template-minimal .header a {
                 color: rgb(var(--Global-color-1, 70 50 251));
                 display: inherit;
                 font-weight: 700;
+                text-decoration: none;
             }
         }
