@@ -23,8 +23,19 @@ class Pin extends BasicAtom {
                     {this.props.labelText}
                 </Label>
 
-                <FormPin />
+                <FormPin
+                    onChange={(e) => {this.handleKeyPress(e)}}
+                />
 
+                {this.render_validation()}
+            </>
+        );
+    }
+
+
+    render_validation() {
+        if (this.props.message && this.props.message.length) {
+            return (
                 <ValidationMessage
                     className={
                         (this.props.error ? ' error' : '')
@@ -33,8 +44,22 @@ class Pin extends BasicAtom {
                     }
                     message={this.props.message}
                 />
-            </>
-        );
+            );
+        }
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * handleKeyPress
+     *
+     * @param {KeyboardEvent} e
+     */
+    handleKeyPress(e) {
+        this.callbackOr(this.props.onChange)(e);
     }
 }
 

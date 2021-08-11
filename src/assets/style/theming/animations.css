@@ -1,0 +1,26 @@
+/*  title:  modalCenter
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+
+/*  fade in, with a slight zoom effect
+===================================================================================================================== */
+.fade-in-enter {
+    opacity: 0;
+    transform: scale(.5);
+}
+.fade-in-enter-active {
+    opacity: 1;
+    transition: 2s;
+    transform: scale(1);
+}
+.fade-in-exit {
+    opacity: 1;
+}
+.fade-in-exit-active {
+    opacity: 0;
+    transition: 1s;
+    transform: scale(.5);
+}
