@@ -47,17 +47,20 @@
         .Login .Form-input {
             margin-top: 1rem;
         }
+            .Login .email-cta {
+                align-items: center;
+                display: flex;
+            }
+
+        /*  loading spinner
+        ============================================================================================================= */
+        .Login .icon-spinner {
+            fill: #fff;
+            height: 1em;
+        }
 
         /*  main CTA
         ============================================================================================================= */
         .Login .Button {
             margin-top: 2rem;
-        }
-
-        /*  support CTA
-        ============================================================================================================= */
-        .Login .support-cta {
-            color: rgb(var(--Global-color-1, 78 50 251));
-            font-weight: 700;
-            margin-top: 1rem;
         }

@@ -7,6 +7,7 @@ import Button from "../../atoms/button/button";
 import FormPin from "../../atoms/formPin/formPin";
 import Pin from "../../molecules/pin/pin";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
+import IconSpinner from "../../atoms/icons/spinner";
 
 
 class Login extends BasicAtom {
@@ -53,22 +54,7 @@ class Login extends BasicAtom {
 
                     {this.render_email_validation()}
 
-                    <Button
-                        disabled={!this.state.canGetUser}
-                        onClick={
-                            () => this.getUser()
-                        }
-                    >
-                        Login
-                    </Button>
-
-                    <a
-                        className="support-cta"
-                        href="/"
-                        title="Contact support"
-                    >
-                        Contact support
-                    </a>
+                    {this.render_email_cta()}
                 </>
             );
         }
@@ -115,6 +101,35 @@ class Login extends BasicAtom {
         }
     }
 
+
+    render_email_cta() {
+        if (this.isLoading) {
+            return (
+                <Button
+                    className="email-cta"
+                    disabled={true}
+                >
+                    Login
+
+                    <IconSpinner />
+                </Button>
+            );
+        } else {
+            return (
+                <Button
+                    className="email-cta"
+                    disabled={!this.state.canGetUser}
+                    onClick={
+                        () => this.getUser()
+                    }
+                >
+                    Login
+                </Button>
+            );
+        }
+    }
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -125,11 +140,17 @@ class Login extends BasicAtom {
      * @param {MouseEvent} click
      */
     getUser() {
-         alert("getUser clicked");
+        alert("getUser clicked TODO integrate");
+        this.isLoading = true;
 
-         this.setState({
-             isStage: 2
-         });
+        //  dummy a lookup (IU testing, remove on integration)
+        setTimeout(() => {
+            this.isLoading = false;
+
+            this.setState({
+                isStage: 2
+            });
+        }, 1000);
     }
 
 
@@ -139,8 +160,6 @@ class Login extends BasicAtom {
      * @param {KeyboardEvent} e
      */
     setUserEmail(e) {
-        console.log('setUserEmail', e);
-
         this.setState({
             userEmail: e
         });
@@ -153,8 +172,6 @@ class Login extends BasicAtom {
      * @param {KeyboardEvent} e
      */
     setUserPin(e) {
-        console.log('setUserPin', e);
-
         this.setState({
             userPin: e
         });
