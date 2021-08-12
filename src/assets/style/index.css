@@ -56,5 +56,5 @@ body {
 /*  set a min width for the "site" (would be done where baker imported usually)
 ===================================================================================================================== */
 #root {
-    min-width: 375px;
+    min-width: var(--Global-min-site-width, 375px);
 }

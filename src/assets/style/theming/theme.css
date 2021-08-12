@@ -4,9 +4,10 @@
 
 
 
-/*  responsive breakpoints
+/*  widths & responsive breakpoints
  ==================================================================================================================== */
 :root {
+    --Global-min-site-width: 375px;
     --Global-break-small: 440px;
     --Global-break-medium: 767px;
     --Global-break-large: 1440px;

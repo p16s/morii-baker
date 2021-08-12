@@ -4,6 +4,8 @@ import "./onboard.css";
 import Input from "../../molecules/input/input";
 import InputPhone from "../../molecules/inputPhone/inputPhone";
 import Button from "../../atoms/button/button";
+import ContactPreferences from "../../molecules/contactPreferences/contactPreferences";
+import Pin from "../../molecules/pin/pin";
 
 
 class PageOnboard extends BasicAtom {
@@ -43,11 +45,11 @@ class PageOnboard extends BasicAtom {
                     </section>
 
                     <section>
-                        [notification prefs]
+                        <ContactPreferences />
                     </section>
 
                     <section>
-                        [pin]
+                        <Pin labelText="Pick a PIN number" />
                     </section>
 
                     <Button>Save details</Button>
