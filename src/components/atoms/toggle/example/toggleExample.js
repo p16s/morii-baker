@@ -3,6 +3,16 @@ import BakerExample from "../../../../helpers/bakerExample";
 
 
 class ToggleExample extends BakerExample {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            firstIsOn: true,
+            secondIsOn: false,
+        }
+    }
+
+
     render() {
         return (
             <section className={"examples"}>
@@ -50,24 +60,6 @@ class ToggleExample extends BakerExample {
             />,
             'Toggle with label'
         );
-    }
-
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // States
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /**
-     * Is it on || off?
-     *
-     * @returns {boolean}
-     */
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            firstIsOn: true,
-            secondIsOn: false,
-        }
     }
 
 

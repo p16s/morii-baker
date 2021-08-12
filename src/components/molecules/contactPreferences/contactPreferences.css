@@ -1,0 +1,32 @@
+/*  title:  contact-preferences
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+
+/*  container
+===================================================================================================================== */
+.Contact-preferences {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+    .Contact-preferences .Label {
+        padding-bottom: 1rem;
+    }
+
+    .Contact-preferences .Toggle {
+        margin-bottom: 1rem;
+    }
+
+
+
+
+
+
+
+
+
+

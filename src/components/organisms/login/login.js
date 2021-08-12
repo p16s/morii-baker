@@ -18,7 +18,6 @@ class Login extends BasicAtom {
         });
     }
 
-
     static defaultProps = {
         isStage: 1
     }
