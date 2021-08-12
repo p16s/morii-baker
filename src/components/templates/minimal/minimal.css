@@ -1,21 +1,27 @@
 /*  title:  template-minimal
     notes:  minimal template, with basic header and small content area (eg login)
- ==================================================================================================================== */
+===================================================================================================================== */
 
 
 
 /*  variables
- ==================================================================================================================== */
+===================================================================================================================== */
 :root {
 }
 
 
-/*  base
- ==================================================================================================================== */
+/*  BREAKPOINT - Mobile
+===================================================================================================================== */
 .Template-minimal {
     background-color: #fff;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     min-height: 100vh;
 }
+    /*  header
+    ================================================================================================================= */
     .Template-minimal .header {
         align-items: stretch;
         background-color: #f5f5f5;
@@ -25,21 +31,42 @@
         padding: 2rem 1.5rem;
         width: 100%;
     }
-
-    @media screen and (min-width: 768px) {
-        .Template-minimal .header {
-            justify-content: space-between;
-        }
-    }
         .Template-minimal .header a {
             display: none;
         }
 
-        @media screen and (min-width: 768px) {
-            .Template-minimal .header a {
-                color: rgb(var(--Global-color-1, 70 50 251));
-                display: inherit;
-                font-weight: 700;
-                text-decoration: none;
-            }
+    /*  main (children/page content)
+    ================================================================================================================= */
+    .Template-minimal .main {
+        background-color: rgba(255, 0, 0, .25);
+        padding: 2rem;
+        width: 100%;
+    }
+
+
+
+
+/*  BREAKPOINT - Tablet >
+===================================================================================================================== */
+@media screen and (min-width: 768px) {
+    .Template-minimal .header {
+        justify-content: space-between;
+    }
+
+        /*  header
+        ============================================================================================================= */
+        .Template-minimal .header a {
+            color: rgb(var(--Global-color-1, 70 50 251));
+            display: inherit;
+            font-weight: 700;
+            text-decoration: none;
         }
+
+        /*  main (children/page content)
+        ============================================================================================================= */
+        .Template-minimal .main {
+            background-color: rgba(0, 255, 0, .25);
+            width: calc(375px + 2rem);      /*  the calc is because we pad the content so need to add that width back dur to box-sizing   */
+        }
+}
+

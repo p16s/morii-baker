@@ -45,7 +45,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap');
 
 :root {
-    --Global-base-font-color: 66, 78, 121;
+    --Global-base-font-color: var(--Global-color-5);
     --Global-base-font-family: 'Nunito', sans-serif;
     --Global-base-font-padding: .75rem 0;
     --Global-base-font-size: 16px;
@@ -55,7 +55,7 @@
     --Global-heading-font-family: 'Roboto', sans-serif;
     --Global-heading-font-weight: 700;
 
-    --Global-h1-size: 1.25rem;
+    --Global-h1-size: 1.5rem;
     --Global-h2-size: 1.0625rem;
     --Global-h3-size: 1rem;
     --Global-h4-size: .875rem;

@@ -6,20 +6,15 @@ import "./login.css";
 
 class PageLogin extends BasicAtom {
     constructor(props, context) {
-        super(props, context, {
-        });
+        super(props, context, {});
     }
 
 
     render(className, props) {
         return (
-            <div className="page-login">
-                <TemplateMinimal>
-                    <main class="page-login-main">
-                        <Login />
-                    </main>
+                <TemplateMinimal className="page-login">
+                    <Login />
                 </TemplateMinimal>
-            </div>
         );
     }
 }

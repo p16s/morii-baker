@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: var(--Global-h1-size, 1.5rem);
     line-height: 1em;
+    padding-bottom: 1rem;
 }
 
 h2 {

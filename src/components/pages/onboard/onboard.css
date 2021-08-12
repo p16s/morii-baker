@@ -1,4 +1,4 @@
-/*  title:  page-login
+/*  title:  page-onboard
     notes:  layout for the page
  ==================================================================================================================== */
 
@@ -12,10 +12,15 @@
 
 /*  override the template styles for this page
 ===================================================================================================================== */
-.page-login .main {
-    margin: auto;
+.page-onboard p {
+    padding: 0;
 }
 
-    .page-login p {
-        padding: 0;
+    .page-onboard form {
+        margin-top: 2rem;
+    }
+
+    /*TODO*/
+    .page-onboard section {
+        margin-bottom: 2rem;
     }

@@ -23,7 +23,7 @@
         border-radius: var(--Global-border-radius, 5px);
         display: flex;
         flex-direction: column;
-        padding: 2.5rem;
+        /*padding: 2.5rem;*/
         width: 100%;
     }
 
@@ -36,7 +36,7 @@
         /*  heading / text
         ============================================================================================================= */
         .Login .main-content h1 {
-            margin-bottom: 1rem;
+            padding-bottom: 1rem;
         }
             .Login .main-content p {
                 padding: 0 0 2rem 0;
@@ -44,9 +44,9 @@
 
         /*  stage 1 (email)
         ============================================================================================================= */
-        .Login .Form-input {
-            margin-top: 1rem;
-        }
+        /*.Login .Form-input {*/
+        /*    margin-top: 1rem;*/
+        /*}*/
             .Login .email-cta {
                 align-items: center;
                 display: flex;
