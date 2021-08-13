@@ -2,8 +2,8 @@ import React from "react";
 import BasicAtom from "../../atoms/basicAtom";
 import Label from "../../atoms/label/label";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
-import PhoneInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
+import FormInputPhone from "../../atoms/formInputPhone/formInputPhone";
 
 
 class InputPhone extends BasicAtom {
@@ -21,7 +21,7 @@ class InputPhone extends BasicAtom {
             <>
                 {this.render_label()}
 
-                <PhoneInput
+                <FormInputPhone
                     id={this.props.id}
                     className={
                         "Form-input-phone "

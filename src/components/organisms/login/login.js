@@ -5,7 +5,7 @@ import Button from "../../atoms/button/button";
 import Pin from "../../molecules/pin/pin";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
-import { CSSTransition, TransitionGroup, SwitchTransition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import {withRouter} from 'react-router';    // TODO not sure on best practice with router yet
 
