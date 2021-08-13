@@ -161,7 +161,9 @@ class FormInputPhone extends BasicAtom {
     updateValue(e) {
         this.setState({
             value: this.value = e
-        })
+        });
+
+        this.callbackOr(this.props.onChange)(e);
     }
 }
 

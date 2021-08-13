@@ -5,12 +5,11 @@ import "./formInput.css";
 
 
 class FormInput extends BasicAtom {
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context, {
 
-        this.state = {
             value: ""
-        }
+        });
     }
 
 

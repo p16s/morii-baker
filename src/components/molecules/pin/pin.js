@@ -24,6 +24,7 @@ class Pin extends BasicAtom {
                 </Label>
 
                 <FormPin
+                    // TODO pass values in
                     onChange={(e) => {this.handleKeyPress(e)}}
                 />
 

@@ -67,8 +67,9 @@ class TemplateDefault extends BasicAtom {
                         </TitleBar>
                     </header>
 
-
-                    {this.props.children}
+                    <main>
+                        {this.props.children}
+                    </main>
                 </div>
             </div>
         );

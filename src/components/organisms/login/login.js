@@ -7,7 +7,7 @@ import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import {withRouter} from 'react-router';    // TODO not sure on best practice with router yet
+import { withRouter } from 'react-router';    // TODO not sure on best practice with router yet
 
 
 class Login extends BasicAtom {
@@ -27,6 +27,12 @@ class Login extends BasicAtom {
     }
 
 
+    /**
+     * main render
+     * @param className
+     * @param props
+     * @returns {JSX.Element}
+     */
     render(className, props) {
         return (
             <div className={
@@ -52,6 +58,10 @@ class Login extends BasicAtom {
     }
 
 
+    /**
+     * render email UI
+     * @returns {JSX.Element}
+     */
     render_email() {
         if (this.state.isStage === 1) {
             return (
@@ -61,9 +71,10 @@ class Login extends BasicAtom {
                     <FormInput
                         type="email"
                         placeholder="Enter your email"
-                        onChange={
-                            (e) => this.setUserEmail(e)
-                        }
+                        value={this.props.valueEmail}
+                        onChange={(e) => {
+                            this.setUserEmail(e);
+                        }}
                     />
 
                     {this.render_email_validation()}
@@ -75,6 +86,10 @@ class Login extends BasicAtom {
     }
 
 
+    /**
+     * render indentity UI
+     * @returns {JSX.Element}
+     */
     render_identity() {
         if (this.state.isStage === 2) {
             return (
@@ -85,6 +100,7 @@ class Login extends BasicAtom {
 
                     <Pin
                         labelText={"Your PIN number"}
+                        // TODO pass values in
                         onChange={
                             (e) => this.setUserPin(e)
                         }
@@ -96,7 +112,10 @@ class Login extends BasicAtom {
         }
     }
 
-
+    /**
+     * render any validation UI
+     * @returns {JSX.Element}
+     */
     render_email_validation() {
         if (this.state.userEmailError) {
             return (
@@ -108,7 +127,10 @@ class Login extends BasicAtom {
         }
     }
 
-
+    /**
+     * render the stage 1, email CTA, different UI based on state
+     * @returns {JSX.Element}
+     */
     render_email_cta() {
         if (this.isLoading) {
             return (
@@ -135,7 +157,10 @@ class Login extends BasicAtom {
         }
     }
 
-
+    /**
+     * render the stage 2, verify CTA, different UI based on state
+     * @returns {JSX.Element}
+     */
     render_verify_cta() {
         if (this.isLoading) {
             return (
@@ -193,6 +218,9 @@ class Login extends BasicAtom {
         this.setState({
             userEmail: e
         });
+
+        //  pass data out
+        this.callbackOr(this.props.userEmail)(e);
     }
 
 
@@ -205,6 +233,9 @@ class Login extends BasicAtom {
         this.setState({
             userPin: e
         });
+
+        //  pass data out
+        this.callbackOr(this.props.userPin)(e);
     }
 
 
