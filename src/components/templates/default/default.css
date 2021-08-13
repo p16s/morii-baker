@@ -1,4 +1,4 @@
-/*  title:  test
+/*  title:  template-default
     notes:  template styles, local for layout and overrides where needed for existing components
  ==================================================================================================================== */
 
@@ -13,17 +13,17 @@
 
 /*  base
  ==================================================================================================================== */
-.Default-template {
+.Template-default {
     align-items: stretch;       /*  only two main parents, side-col & main  */
     display: flex;
     justify-content: flex-start;
 }
 
-    .Default-template header,
-    .Default-template main {
+    .Template-default header,
+    .Template-default main {
         width: 100%;
     }
 
-    .Default-template main {
+    .Template-default main {
         padding: 1rem 2rem;
     }
