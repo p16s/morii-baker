@@ -2,17 +2,25 @@ import BasicAtom from "../../atoms/basicAtom";
 import './default.css';
 import List from "../../molecules/list/list";
 import SideBar from "../../organisms/sideBar/sideBar";
-import TitleBar from "../../molecules/titleBar/titleBar";
+// import TitleBar from "../../molecules/titleBar/titleBar";
 import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
+import IconMenu from "../../atoms/icons/menu";
 
 
 class TemplateDefault extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
+            isActive: false
         });
     }
 
 
+    /**
+     * main render
+     * @param className
+     * @param props
+     * @returns {JSX.Element}
+     */
     render(className, props) {
         return (
             <div
@@ -23,10 +31,14 @@ class TemplateDefault extends BasicAtom {
                 }
             >
                 <SideBar
+                    className={(this.state.isActive ? 'active' : '')}
                     header={this.props.sideBarData.header}
 
                     icons={this.props.sideBarData.icons}
                     options={this.props.sideBarData.options}
+                    onItemClick={(e, list, item) => {
+                        this.handleItemClick(e, list, item);
+                    }}
 
                     footer={(
                         <List
@@ -38,7 +50,7 @@ class TemplateDefault extends BasicAtom {
 
 
                 <div>
-                    <header>
+                    <header className="template-header">
                         <Breadcrumbs
                             breadcrumbs={this.props.breadcrumbs}
                             logo={this.props.logo}
@@ -47,6 +59,15 @@ class TemplateDefault extends BasicAtom {
                         {/*<TitleBar>*/}
                         {/*    <h1>[Heading as a h1]</h1>*/}
                         {/*</TitleBar>*/}
+
+                        <span
+                            className="mobile-toggle"
+                            onClick={() => {
+                                this.toggleMobileNav()
+                            }}
+                        >
+                            <IconMenu />
+                        </span>
                     </header>
 
                     <main>
@@ -55,6 +76,29 @@ class TemplateDefault extends BasicAtom {
                 </div>
             </div>
         );
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Handle click
+     *
+     * @param {MouseEvent} e
+     */
+    handleItemClick(e) {
+        this.callbackOr(this.props.onItemClick)(e);
+    }
+
+
+    toggleMobileNav() {
+        console.log("TOGGLE");
+
+        this.setState(prevState => ({
+            isActive: !prevState.isActive
+        }));
     }
 
 }

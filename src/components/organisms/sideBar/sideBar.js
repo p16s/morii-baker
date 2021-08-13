@@ -17,6 +17,7 @@ class SideBar extends BasicAtom {
                 <nav className={"options"}>
                     {this.render_header()}
                     {this.render_lists()}
+
                     {this.props.children}
 
                     <div className={"footer"}>
@@ -40,9 +41,9 @@ class SideBar extends BasicAtom {
 
 
     render_lists() {
-        return (this.props.lists ?? this.props.options ?? []).map(
-            (list, index) => {return this.render_list(list, index)}
-        );
+        return (this.props.lists ?? this.props.options ?? []).map((list, index) => {
+            return this.render_list(list, index)
+        });
     }
 
 
@@ -59,11 +60,25 @@ class SideBar extends BasicAtom {
     }
 
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Handle item click
+     *
+     * @param {MouseEvent} e
+     */
     handleItemClick(e, list, item) {
         this.callbackOr(this.props.onItemClick)(e, list, item);
     }
 
 
+    /**
+     * Handle icon click
+     *
+     * @param {MouseEvent} e
+     */
     handleIconClick(e, index) {
         this.callbackOr(this.props.onIconClick)(e, index);
     }
