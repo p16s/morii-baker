@@ -5,6 +5,7 @@ import Button from "../../atoms/button/button";
 import Pin from "../../molecules/pin/pin";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
+import { CSSTransition, TransitionGroup, SwitchTransition } from "react-transition-group";
 
 
 class Login extends BasicAtom {
@@ -18,6 +19,7 @@ class Login extends BasicAtom {
         });
     }
 
+
     static defaultProps = {
         isStage: 1
     }
@@ -29,11 +31,20 @@ class Login extends BasicAtom {
                 "Login"
                 + this.getClassNameString()}
             >
-                <div className="main-content">
-                    {this.render_email()}
+                <TransitionGroup>
+                    <CSSTransition
+                        classNames={"fade-in"}
+                        appear
+                        timeout={200}
+                        key={"1"}
+                    >
+                        <div className="main-content">
+                            {this.render_email()}
 
-                    {this.render_identity()}
-                </div>
+                            {this.render_identity()}
+                        </div>
+                    </CSSTransition>
+                </TransitionGroup>
             </div>
         );
     }
@@ -155,7 +166,6 @@ class Login extends BasicAtom {
     /**
      * getUser
      *
-     * @param {MouseEvent} click
      */
     getUser() {
         alert("getUser clicked TODO integrate");

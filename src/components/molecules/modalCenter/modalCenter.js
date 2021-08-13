@@ -8,7 +8,6 @@ import {CSSTransition} from "react-transition-group";
 class ModalCenter extends BasicAtom {
     constructor(props) {
         super(props);
-
     }
 
 

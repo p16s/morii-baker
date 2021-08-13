@@ -12,9 +12,9 @@ class PageLogin extends BasicAtom {
 
     render(className, props) {
         return (
-                <TemplateMinimal className="page-login">
-                    <Login />
-                </TemplateMinimal>
+            <TemplateMinimal className="page-login">
+                <Login />
+            </TemplateMinimal>
         );
     }
 }
