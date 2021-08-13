@@ -19,11 +19,9 @@
      ================================================================================================================ */
     .Login .main-content {
         align-items: flex-start;
-        /*border: 1px solid rgb(var(--Global-color-5, 227 229 235), .2);*/
         border-radius: var(--Global-border-radius, 5px);
         display: flex;
         flex-direction: column;
-        /*padding: 2.5rem;*/
         width: 100%;
     }
 
