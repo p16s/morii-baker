@@ -42,13 +42,10 @@
 
         /*  stage 1 (email)
         ============================================================================================================= */
-        /*.Login .Form-input {*/
-        /*    margin-top: 1rem;*/
-        /*}*/
-            .Login .email-cta {
-                align-items: center;
-                display: flex;
-            }
+        .Login .email-cta {
+            align-items: center;
+            display: flex;
+        }
 
         /*  loading spinner
         ============================================================================================================= */

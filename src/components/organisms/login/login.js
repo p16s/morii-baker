@@ -7,6 +7,8 @@ import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
 import { CSSTransition, TransitionGroup, SwitchTransition } from "react-transition-group";
 
+import {withRouter} from 'react-router';    // TODO not sure on best practice with router yet
+
 
 class Login extends BasicAtom {
     constructor(props, context) {
@@ -223,8 +225,10 @@ class Login extends BasicAtom {
                 isStage: 1
             });
         }, 2000);
+
+        this.props.history.push('/onboarding');
     }
 }
 
 
-export default Login;
+export default withRouter(Login);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
 import "./formInputPhone.css";
 import PhoneInput from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
+// import 'react-phone-number-input/style.css';
 import flags from 'react-phone-number-input/flags';
 
 
