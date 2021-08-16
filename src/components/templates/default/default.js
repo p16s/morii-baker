@@ -49,7 +49,7 @@ class TemplateDefault extends BasicAtom {
                 />
 
 
-                <div>
+                <div className="content-container">
                     <header className="template-header">
                         <Breadcrumbs
                             breadcrumbs={this.props.breadcrumbs}
@@ -70,7 +70,7 @@ class TemplateDefault extends BasicAtom {
                         </span>
                     </header>
 
-                    <main>
+                    <main className="main">
                         {this.props.children}
                     </main>
                 </div>

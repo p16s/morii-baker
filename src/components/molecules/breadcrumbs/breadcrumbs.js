@@ -4,23 +4,27 @@ import "./breadcrumbs.css";
 
 class Breadcrumbs extends BasicAtom {
     render(className, props) {
-        return (
-            <div
-                className={
-                    "Breadcrumbs"
-                    + this.padIfString(className)
-                    + this.getClassNameString()
-                }
-            >
-                {this.render_logo()}
-                {this.render_crumbs()}
-            </div>
-        );
+        if (this.props.breadcrumbs && this.props.breadcrumbs.length) {
+            return (
+                <div
+                    className={
+                        "Breadcrumbs"
+                        + this.padIfString(className)
+                        + this.getClassNameString()
+                    }
+                >
+                    {this.render_logo()}
+                    {this.render_crumbs()}
+                </div>
+            );
+        } else {
+            return null
+        }
     }
 
 
     render_logo() {
-        if (typeof this.props.logo !== 'undefined' && this.props.logo !== null) {
+        if (this.props.logo && this.props.logo.length ) {
             return (
                 <img
                     className={"logo"}
