@@ -1,0 +1,48 @@
+/*  title:  titleBar
+    notes:  molecule styles
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Title-bar-break: var(--global-break-medium, 767px);
+}
+
+
+/*  basic - mobile first
+===================================================================================================================== */
+.Title-bar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*padding: 2rem;*/
+}
+    .Title-bar h1,
+    .Title-bar h2 {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+
+
+
+/*  basic - desktop
+===================================================================================================================== */
+/*@media screen and (min-width: 767px) {*/
+    .Title-bar {
+        /*background: rgb(0, 255, 0, .15);*/
+    }
+
+        .Title-bar h1,
+        .Title-bar h2 {
+            display: inline;
+            margin-right: auto;
+            padding: 0;
+            width: auto;
+        }
+/*}*/

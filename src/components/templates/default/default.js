@@ -2,7 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import './default.css';
 import List from "../../molecules/list/list";
 import SideBar from "../../organisms/sideBar/sideBar";
-// import TitleBar from "../../molecules/titleBar/titleBar";
+// import TabBar from "../../molecules/titleBar/titleBar";
 import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
 import IconMenu from "../../atoms/icons/menu";
 
@@ -56,9 +56,9 @@ class TemplateDefault extends BasicAtom {
                             logo={this.props.logo}
                         />
 
-                        {/*<TitleBar>*/}
+                        {/*<TabBar>*/}
                         {/*    <h1>[Heading as a h1]</h1>*/}
-                        {/*</TitleBar>*/}
+                        {/*</TabBar>*/}
 
                         <span
                             className="mobile-toggle"

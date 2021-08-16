@@ -12,7 +12,7 @@ class BakerExample extends React.Component {
     }
 
     /**
-     * Render the titleBar.js component
+     * Render the tabBar.js component
      * @param title
      * @param what
      * @param about

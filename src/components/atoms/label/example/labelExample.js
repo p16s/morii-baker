@@ -16,13 +16,13 @@ class LabelExample extends BakerExample {
 
 
     /**
-     * Render the basic label titleBar.js
+     * Render the basic label tabBar.js
      * @returns {JSX.Element}
      */
     render_normal() {
         return this.render_exampleComponent(
             'Label / Normal',
-            <Label for={"for-titleBar.js"}>Example of label text</Label>,
+            <Label for={"for-tabBar.js"}>Example of label text</Label>,
             "This is a test label. It takes the for property"
         );
     }
