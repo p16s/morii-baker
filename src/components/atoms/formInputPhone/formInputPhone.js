@@ -90,7 +90,7 @@ class FormInputPhone extends BasicAtom {
             <PhoneInput
                 id={this.props.id}
                 className={
-                    "Form-input-phone"
+                    "Form-input-phone "
                     + this.padIfString(className)
                     + this.getClassNameString()
                 }
@@ -161,7 +161,9 @@ class FormInputPhone extends BasicAtom {
     updateValue(e) {
         this.setState({
             value: this.value = e
-        })
+        });
+
+        this.callbackOr(this.props.onChange)(e);
     }
 }
 

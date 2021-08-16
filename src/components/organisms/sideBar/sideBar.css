@@ -18,7 +18,21 @@
     display: inline-flex;       /*  TODO might need to rethink positioning */
     min-height: 100vh;
 }
-
+    @media screen and (max-width: 767px) {
+        .Side-bar {
+            position: fixed;
+            transform: translateX(-100%);
+            transition: .3s
+        }
+            .Side-bar.active {
+                transform: translateX(0);
+                transition: .2s
+            }
+    }
+    
+    @media screen and (min-width: 768px) {
+    
+    }
 
     /*  main container for the lists/footer
      ================================================================================================================ */

@@ -28,6 +28,9 @@ class Input extends BasicAtom {
                     placeholder={this.props.placeholder}
                     error={this.props.error}
                     success={this.props.success}
+                    onChange={(e) => {
+                        this.updateValue(e);
+                    }}
                 />
 
                 {this.render_validation()}
@@ -60,6 +63,20 @@ class Input extends BasicAtom {
                 />
             );
         }
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Callback to pass value up
+     *
+     * @param {KeyboardEvent} e
+     */
+    updateValue(e) {
+        this.callbackOr(this.props.onChange)(e);
     }
 }
 
