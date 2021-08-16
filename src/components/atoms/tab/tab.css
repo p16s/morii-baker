@@ -14,29 +14,70 @@
 }
 
 
-/*  test
+/*  basic
 ===================================================================================================================== */
 .Tab {
-    border-bottom: 1px solid rgb(var(--Tab-border-color));
-    color: rgb(114, 123, 155);
     cursor: pointer;
     font-size: .75rem;
-    font-weight: 700;
-    margin-right: 2px;
-    padding: var(--Tab-padding);
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
     transition: .2s;
 }
 
-    /*  test states
+
+/*  basic - Mobile
+===================================================================================================================== */
+@media screen and (max-width: 768px) {
+    .Tab {
+        align-items: center;
+        color: rgb(196 196 196);
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        padding: .75rem 1rem .875rem;
+    }
+
+    /*  tab states
+    ================================================================================================================= */
+    .Tab:not(:disabled).active {
+        color: rgb(var(--Global-color-1, 70 50 251));
+    }
+    .Tab:not(:disabled).active .icon {
+        fill: rgb(var(--Global-color-1, 70 50 251));
+    }
+        .Tab .icon {
+            fill: rgb(196 196 196);
+            height: 1rem;
+            margin-bottom: .5rem;
+            transition: .2s;
+        }
+}
+
+
+/*  basic - Tablet >
+===================================================================================================================== */
+@media screen and (min-width: 768px) {
+    .Tab {
+        border-bottom: 1px solid rgb(var(--Tab-border-color));
+        color: rgb(114, 123, 155);
+        font-weight: 700;
+        padding: var(--Tab-padding);
+        text-transform: uppercase;
+    }
+
+    /*  tab states
     ================================================================================================================= */
     .Tab:not(:disabled):hover,
-    .Tab:focus,
-    .Tab:focus-visible,
-    .Tab:focus-within,
-    .Tab:active {
+    .Tab:not(:disabled):focus,
+    .Tab:not(:disabled):focus-visible,
+    .Tab:not(:disabled):focus-within,
+    .Tab:not(:disabled).active {
         border-bottom: 2px solid rgb(var(--Tab-border-color-active));
         color: rgb(32, 43, 55);
     }
+
+        /*  don't show icon on mob  */
+        .Tab .icon {
+            display: none;
+        }
+ }

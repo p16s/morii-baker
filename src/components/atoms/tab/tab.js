@@ -4,32 +4,20 @@ import './tab.css';
 
 
 class Tab extends BasicAtom {
-    render(text, className) {
+    render(props, className) {
         return (
-            this.render_standard()
-        );
-    }
-
-
-    render_standard() {
-        return this.render_element();
-    }
-
-
-    render_element(className, props) {
-        return React.cloneElement(
             <span
                 className={
                     "Tab "
-                    + this.padIfString(className) + this.getClassNameString()
+                    + this.padIfString(className)
+                    + this.getClassNameString()
                 }
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
             >
-                {this.props.text}
-            </span>,
-            props ?? {}
+                {this.props.children}
+            </span>
         );
     }
 
