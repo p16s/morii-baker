@@ -11,20 +11,38 @@
 }
 
 
+/*  basic - all viewports
+===================================================================================================================== */
+.Tab-bar {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+
 /*  basic - mobile first
 ===================================================================================================================== */
 @media screen and (max-width: 767px) {
     .Tab-bar {
-        align-items: center;
         background-color: #f5f5f5;
         border-top: 1px solid rgb(var(--Global-border-color, 239 239 239));
         bottom: 0;
-        display: flex;
         left: 0;
         justify-content: space-around;
         position: fixed;
-        width: 100%;
     }
+}
+
+
+/*  basic - laptop >
+===================================================================================================================== */
+@media screen and (min-width: 767px) {
+    .Tab-bar {
+        border-bottom: 1px solid rgb(var(--Global-border-color, 239 239 239));
+    }
+        .Tab-bar .Tab {
+            border-color: #fff;     /*  color same as the parent to stop "jump" as border added to active   */
+        }
 }
 
 

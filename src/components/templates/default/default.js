@@ -56,6 +56,7 @@ class TemplateDefault extends BasicAtom {
                             logo={this.props.logo}
                         />
 
+                        {/*{this.props.titlebar}*/}
                         {/*<TabBar>*/}
                         {/*    <h1>[Heading as a h1]</h1>*/}
                         {/*</TabBar>*/}

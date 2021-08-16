@@ -19,30 +19,28 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /*padding: 2rem;*/
+    padding: 2rem 0;
 }
     .Title-bar h1,
-    .Title-bar h2 {
-        margin: 0;
+    .Title-bar h2,
+    .Title-bar h3,
+    .Title-bar p {
+        display: inline;
+        margin-right: auto;
         padding: 0;
-        width: 100%;
+        width: auto;
     }
 
 
 
 
-/*  basic - desktop
+/*  basic - laptop >
 ===================================================================================================================== */
-/*@media screen and (min-width: 767px) {*/
+@media screen and (min-width: 768px) {
     .Title-bar {
-        /*background: rgb(0, 255, 0, .15);*/
+        background-color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
-
-        .Title-bar h1,
-        .Title-bar h2 {
-            display: inline;
-            margin-right: auto;
-            padding: 0;
-            width: auto;
-        }
-/*}*/
+}
