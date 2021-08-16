@@ -33,7 +33,7 @@ class FormTextareaExample extends BakerExample {
 
 
     /**
-     * Render the basic formInput titleBar.js
+     * Render the basic formInput tabBar.js
      * @returns {JSX.Element}
      */
     render_normal() {

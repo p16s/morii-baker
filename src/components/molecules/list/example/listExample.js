@@ -31,11 +31,11 @@ class ListExample extends BakerExample {
                     header={'List header'}
                     items={
                         [
-                            'List item titleBar.js',
-                            'List item titleBar.js',
-                            'List item titleBar.js',
-                            'List item titleBar.js',
-                            'List item titleBar.js',
+                            'List item tabBar.js',
+                            'List item tabBar.js',
+                            'List item tabBar.js',
+                            'List item tabBar.js',
+                            'List item tabBar.js',
                         ]
                     }
                     activeItem={0}

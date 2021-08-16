@@ -91,7 +91,7 @@ class ListItemExample extends BakerExample {
     //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
     //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
     //         </ul>,
-    //         'Quick titleBar.js of a group of lists (Note: this will move to molecules when done)'
+    //         'Quick tabBar.js of a group of lists (Note: this will move to molecules when done)'
     //     );
     // }
 
