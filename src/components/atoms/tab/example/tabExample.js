@@ -27,11 +27,12 @@ class TabExample extends BakerExample {
         return this.render_exampleComponent(
             'Primary / Basic',
             <Tab
-                text={"Content"}
                 onClick={() => {
                     alert('clicked Tab');
                 }}
-            />,
+            >
+                Content
+            </Tab>,
             'Basic tab.  WIth click event'
         );
     }
