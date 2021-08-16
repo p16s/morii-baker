@@ -1,6 +1,5 @@
 import BasicAtom from "../../atoms/basicAtom";
 import './tabBar.css';
-import Tab from "../../atoms/tab/tab";
 
 
 class TabBar extends BasicAtom {

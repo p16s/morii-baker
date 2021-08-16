@@ -20,12 +20,15 @@ class ListItemExample extends BakerExample {
                 {this.render_basic()}
                 {this.render_active()}
                 {this.render_disabled()}
-                {/*{this.render_group()}*/}
             </section>
         );
     }
 
 
+    /**
+     * basic render
+     * @returns {JSX.Element}
+     */
     render_basic() {
         return this.render_exampleComponent(
             'List / Normal / Normal',
@@ -43,6 +46,10 @@ class ListItemExample extends BakerExample {
     }
 
 
+    /**
+     * active
+     * @returns {JSX.Element}
+     */
     render_active() {
         return this.render_exampleComponent(
             'List / Normal / Active',
@@ -61,6 +68,10 @@ class ListItemExample extends BakerExample {
     }
 
 
+    /**
+     * disabled
+     * @returns {JSX.Element}
+     */
     render_disabled() {
         return this.render_exampleComponent(
             'List / Disabled',
@@ -72,29 +83,6 @@ class ListItemExample extends BakerExample {
             'Disabled single list.'
         );
     }
-
-
-    // render_group() {
-    //     return this.render_exampleComponent(
-    //         'Lists / Example',
-    //         <ul
-    //             style={{
-    //                 "backgroundColor":'#424E79',
-    //                 display: 'flex',
-    //                 'flexDirection': 'column',
-    //                 width: '50%',
-    //             }}
-    //         >
-    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-    //             <ListItem onClick={()=>{alert('List clicked!');}}>Item</ListItem>
-    //         </ul>,
-    //         'Quick tabBar.js of a group of lists (Note: this will move to molecules when done)'
-    //     );
-    // }
-
 }
 
 export default ListItemExample;

@@ -44,6 +44,9 @@ class TemplateDefault extends BasicAtom {
                         <List
                             header={this.props.sideBarData.footer.list.header}
                             items={this.props.sideBarData.footer.list.items}
+                            onClick={(e) => {
+                                console.log("List clicked: ", e)
+                            }}
                         />
                     )}
                 />

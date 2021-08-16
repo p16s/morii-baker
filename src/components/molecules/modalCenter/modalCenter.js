@@ -10,7 +10,10 @@ class ModalCenter extends BasicAtom {
         super(props);
     }
 
-
+    /**
+     * main render
+     * @returns {JSX.Element}
+     */
     render() {
         return (
             <>
@@ -27,6 +30,10 @@ class ModalCenter extends BasicAtom {
     }
 
 
+    /**
+     * when active
+     * @returns {JSX.Element}
+     */
     render_is_active() {
         // if (this.props.isActive) {
             return (
