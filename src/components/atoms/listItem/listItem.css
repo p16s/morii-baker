@@ -25,7 +25,7 @@
     font-size: .875rem;
     font-weight: 700;
     list-style-type: none;
-    margin-bottom: 1rem;    /* TODO this going to be global?  Move to a lists constrctor  */
+    margin-bottom: 1rem;
     padding: var(--List-item-padding);
     text-decoration: none;
     transition: .2s;
@@ -52,9 +52,9 @@
         user-select: none;
     }
 
-    /*!*  likely will be an <a*/
-    /*================================================================================================================= *!*/
-    /*.List-item a {*/
-    /*    background-color: red;*/
-    /*    color: inherit;*/
-    /*}*/
+    /*  if a slug/link added
+    ================================================================================================================= */
+    .List-item a {
+        color: inherit;
+        text-decoration: none;
+    }

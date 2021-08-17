@@ -30,7 +30,6 @@
             }
     }
 
-
     /*  main container for the lists/footer
      ================================================================================================================ */
     .Side-bar .options {
@@ -54,3 +53,6 @@
         .Side-bar .footer {
             margin-top: auto;
         }
+            .Side-bar .footer .List-item:not(:last-of-type) {
+                margin-bottom: .25rem;
+            }

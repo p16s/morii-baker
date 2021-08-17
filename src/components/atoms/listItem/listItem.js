@@ -1,5 +1,7 @@
 import BasicAtom from "../basicAtom";
 import './listItem.css';
+import {Link} from "react-router-dom";
+import IconAddCircle from "../icons/add-circle";
 
 
 class ListItem extends BasicAtom {
@@ -11,17 +13,38 @@ class ListItem extends BasicAtom {
                     + this.padIfString(className)
                     + this.getClassNameString()
                     + (this.isActive() ? ' active' : '')
-                    // + (this.isClickable() ? ' clickable' : ' disabled')
+                    + (this.isDisabled ? ' disabled' : '')
                 }
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
             >
+                {this.render_content()}
+
                 {this.props.children}
             </li>
         );
     }
 
+
+    /**
+     * list, if there's a slug passed wrap in a link
+     * @returns {JSX.Element|*}
+     */
+    render_content() {
+        if (this.props.list.slug && this.props.list.slug.length) {
+            return (
+                <Link
+                    to={this.props.list.slug}
+                    title={"Go to " + this.props.list.text}
+                >
+                    {this.props.list.text}
+                </Link>
+            );
+        } else {
+            return this.props.list.text;
+        }
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers

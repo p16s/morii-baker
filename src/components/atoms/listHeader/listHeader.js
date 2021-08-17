@@ -5,6 +5,12 @@ import IconAddCircle from "../icons/add-circle";
 
 
 class ListHeader extends BasicAtom {
+    /**
+     * main render
+     * @param className
+     * @param props
+     * @returns {JSX.Element}
+     */
     render(className, props) {
         return (
             <h5 className={
@@ -18,6 +24,10 @@ class ListHeader extends BasicAtom {
     }
 
 
+    /**
+     * list header, if there's a slug passed wrap in a link
+     * @returns {JSX.Element|*}
+     */
     render_content() {
         if (this.props.header.slug && this.props.header.slug.length) {
             return (
@@ -31,7 +41,7 @@ class ListHeader extends BasicAtom {
                 </Link>
             );
         } else {
-            return this.props.header.text
+            return this.props.header.text;
         }
     }
 }

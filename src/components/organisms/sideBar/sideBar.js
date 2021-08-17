@@ -5,6 +5,10 @@ import './sideBar.css';
 
 
 class SideBar extends BasicAtom {
+    /**
+     * main render
+     * @returns {JSX.Element}
+     */
     render() {
         return (
             <div className={"Side-bar" + this.getClassNameString()}>
@@ -29,7 +33,10 @@ class SideBar extends BasicAtom {
         );
     }
 
-
+    /**
+     * main side bar header
+     * @returns {JSX.Element|*|string}
+     */
     render_header() {
         return (typeof this.props.header !== 'undefined')
             ? (
@@ -41,6 +48,10 @@ class SideBar extends BasicAtom {
     }
 
 
+    /**
+     * map/iterate the array
+     * @returns {JSX.Element[]}
+     */
     render_lists() {
         return (this.props.lists ?? this.props.options ?? []).map((list, index) => {
             return this.render_list(list, index)
@@ -48,6 +59,12 @@ class SideBar extends BasicAtom {
     }
 
 
+    /**
+     * render the list
+     * @param list
+     * @param index
+     * @returns {JSX.Element}
+     */
     render_list(list, index) {
         return (
             <List
@@ -55,7 +72,9 @@ class SideBar extends BasicAtom {
                 items={list.items}
                 activeItem={((this.props.activeList ?? null) === index) ? (this.props.activeItem ?? null) : null }
                 key={index}
-                onClick={(e, key) => {this.handleItemClick(e, index, key);}}
+                onClick={(e, key) => {
+                    this.handleItemClick(e, index, key);
+                }}
             />
         );
     }
