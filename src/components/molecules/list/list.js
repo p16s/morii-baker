@@ -12,30 +12,11 @@ class List extends BasicAtom {
 
                 <ul className={"List"}>
                     {this.render_items()}
+
                     {this.props.children}
                 </ul>
             </>
         );
-    }
-
-
-    /**
-     * render items
-     *
-     * @return {unknown[]}
-     */
-    render_items() {
-        return (this.props.items ?? []).map((value, index) => {
-            return (
-                <ListItem
-                    key={index}
-                    active={(this.props.activeItem ?? -1) === index}
-                    onClick={(e) => {this.handleClick(e, index)}}
-                >
-                    {value}
-                </ListItem>
-            );
-        });
     }
 
 
@@ -47,12 +28,34 @@ class List extends BasicAtom {
         return (typeof this.props.header !== 'undefined')
             ?
             (
-                <ListHeader>
-                    {this.props.header}
+                <ListHeader header={this.props.header}>
+                    dsdfsddsfsdfs
+                    {/*{this.props.header}*/}
                 </ListHeader>
             )
             : ('');
     }
+
+
+    /**
+     * render items
+     *
+     * @return {unknown[]}
+     */
+    render_items() {
+        return (this.props.items ?? []).map((list, index) => {
+            return (
+                <ListItem
+                    key={index}
+                    active={(this.props.activeItem ?? -1) === index}
+                    onClick={(e) => {this.handleClick(e, index, list.slug)}}
+                >
+                    {list.text}
+                </ListItem>
+            );
+        });
+    }
+
 
 
     /**
@@ -61,8 +64,8 @@ class List extends BasicAtom {
      * @param {MouseEvent} e
      * @param {number#} index
      */
-    handleClick(e, index) {
-        this.callbackOr(this.props.onClick)(e, index);
+    handleClick(e, index, slug) {
+        this.callbackOr(this.props.onClick)(e, index, slug);
     }
 }
 

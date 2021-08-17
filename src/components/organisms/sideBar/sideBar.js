@@ -16,6 +16,7 @@ class SideBar extends BasicAtom {
 
                 <nav className={"options"}>
                     {this.render_header()}
+
                     {this.render_lists()}
 
                     {this.props.children}

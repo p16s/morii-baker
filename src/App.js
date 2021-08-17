@@ -1,10 +1,7 @@
 import {
     BrowserRouter as Router,
     Route,
-    Switch,
-    Link,
-    NavLink,
-    useLocation
+    Switch
 } from "react-router-dom";
 import Nav from "./components/baker-local/nav/nav";
 import ThemeDemo from "./components/baker-local/themeDemo/themeDemo";

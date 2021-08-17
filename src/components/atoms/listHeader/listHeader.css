@@ -1,4 +1,4 @@
-/*  title:  listHeader
+/*  title:  list-header
     notes:  atom styles
  ==================================================================================================================== */
 
@@ -8,19 +8,32 @@
 /*  variables
 ===================================================================================================================== */
 :root {
-    --ListHeader-color: #989eb4;
-    --ListHeader-padding: 1rem 1.25rem;
+    --List-header-color: #989eb4;
+    --List-header-padding: 1rem 1.25rem;
 }
 
 
 /*  base
 ===================================================================================================================== */
-.ListHeader {
-    color: var(--ListHeader-color);
+.List-header {
+    color: var(--List-header-color);
     text-transform: uppercase;
     font-size: .625rem;
     font-weight: 700;
     line-height: 1.364;
     margin: 0;
-    padding: var(--ListHeader-padding);
+    padding: var(--List-header-padding);
 }
+    /*  if it's a link:
+    ================================================================================================================= */
+    .List-header a {
+        align-items: center;
+        color: inherit;
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+    }
+        .List-header .icon {
+            fill: var(--List-header-color);
+            height: .875rem;
+        }

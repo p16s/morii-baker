@@ -47,3 +47,12 @@
             display: none;
         }
     }
+
+        /*  if tabbar used in header
+        ============================================================================================================= */
+        .Template-default .Tab-bar {
+            background-color: #fff;
+            margin-top: -1px;       /*  bit of a hack to hide the bottom border if breadcrumb used  */
+            padding-left: 2rem;
+
+        }

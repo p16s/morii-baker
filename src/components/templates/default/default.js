@@ -44,8 +44,8 @@ class TemplateDefault extends BasicAtom {
                         <List
                             header={this.props.sideBarData.footer.list.header}
                             items={this.props.sideBarData.footer.list.items}
-                            onClick={(e) => {
-                                console.log("List clicked: ", e)
+                            onClick={(e, index, slug) => {
+                                this.handleListClick(e, index, slug);
                             }}
                         />
                     )}
@@ -59,7 +59,9 @@ class TemplateDefault extends BasicAtom {
                             logo={this.props.logo}
                         />
 
-                        {/*{this.props.titlebar}*/}
+                        {this.props.tabs}
+
+                        {this.props.titlebar}
                         {/*<TabBar>*/}
                         {/*    <h1>[Heading as a h1]</h1>*/}
                         {/*</TabBar>*/}
@@ -97,6 +99,24 @@ class TemplateDefault extends BasicAtom {
     }
 
 
+    /**
+     * handle the click event on the footer list
+     * @param e
+     * @param index
+     * @param slug
+     */
+    // TODO this is not the correct way, use the router
+    handleListClick(e, index, slug) {
+        if (slug && slug.length) {
+            // this.context.router.push(slug);
+            window.location.href = slug
+        }
+    }
+
+
+    /**
+     * mobile toggle
+     */
     toggleMobileNav() {
         console.log("TOGGLE");
 
