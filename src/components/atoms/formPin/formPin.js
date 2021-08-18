@@ -139,6 +139,7 @@ class FormPin extends BasicAtom {
                     maxLength={"1"}
                     onPaste={(e) => {this.handlePaste(e, i)}}
                     required={true}
+                    disabled={this.props.disabled}
                 />
             );
         }

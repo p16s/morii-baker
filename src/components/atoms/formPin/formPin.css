@@ -44,11 +44,11 @@
 
     /* states
     ================================================================================================================= */
-    .Pin input:hover,
-    .Pin input:focus,
-    .Pin input:focus-visible,
-    .Pin input:focus-within,
-    .Pin input:active {
+    .Pin input:not(:disabled):hover,
+    .Pin input:not(:disabled):focus,
+    .Pin input:not(:disabled):focus-visible,
+    .Pin input:not(:disabled):focus-within,
+    .Pin input:not(:disabled):active {
         box-shadow: inset 0 0 0 2px #424E79;    /* TODO change hex */
         border-color: transparent;
         transition: .2s;
@@ -60,6 +60,14 @@
         cursor: pointer;
     }
 
+    /*  disabled
+    ================================================================================================================= */
+    .Pin input:disabled {
+        background-color: #EFEFEF;
+        border: 1px solid #AAB0C3;
+        box-shadow: none;
+        cursor: not-allowed;
+    }
 
 
 

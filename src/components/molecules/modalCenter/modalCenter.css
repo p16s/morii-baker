@@ -8,13 +8,14 @@
 /*  variables
 ===================================================================================================================== */
 :root {
+    --Modal-center-background: var(--Global-color-5);
 }
 
 
 /*  base
 ===================================================================================================================== */
 .Modal-center {
-    background-color: rgb(0, 0, 0, .2);
+    background-color: rgba(var(--Modal-center-background), .5);
     backdrop-filter: blur(3px);
     align-items: center;
     display: flex;
@@ -46,14 +47,13 @@
             border-radius: var(--Global-border-radius, 5px);
             margin: 100px auto;
             min-width: 400px;
-            padding: 3rem 4rem;
+            padding: 1.5rem;
             position: relative;
-            width: 800px;
+            width: 435px;
         }
             /*  close   */
             .Modal-center .close {
                 align-items: center;
-                /*background-color: red;*/
                 border-radius: 100%;
                 cursor: pointer;
                 display: flex;
@@ -69,28 +69,3 @@
                     transition: .1s;
 
                 }
-
-
-
-
-
-
-/*!*  TODO crearte basic library of animations used on the app    *!*/
-/*.fade-in-enter {*/
-/*    opacity: 0;*/
-/*    transform: scale(.5);*/
-/*}*/
-/*.fade-in-enter-active {*/
-/*    opacity: 1;*/
-/*    transition: .2s;*/
-/*    transform: scale(1);*/
-/*}*/
-/*.fade-in-exit {*/
-/*    opacity: 1;*/
-/*}*/
-/*.fade-in-exit-active {*/
-/*    opacity: 0;*/
-/*    transition: .1s;*/
-/*    transform: scale(.5);*/
-/*}*/
-

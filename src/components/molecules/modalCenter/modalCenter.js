@@ -14,7 +14,7 @@ class ModalCenter extends BasicAtom {
      * main render
      * @returns {JSX.Element}
      */
-    render() {
+    render(className) {
         return (
             <>
                 <CSSTransition
@@ -34,13 +34,15 @@ class ModalCenter extends BasicAtom {
      * when active
      * @returns {JSX.Element}
      */
-    render_is_active() {
+    render_is_active(className) {
         // if (this.props.isActive) {
             return (
                 <div
                     className={
-                        "Modal-center "
-                        + (this.props.isActive ? 'active' : '')
+                        "Modal-center"
+                        + this.padIfString(className)
+                        + this.getClassNameString()
+                        + (this.props.isActive ? ' active' : '')
                     }
                 >
                     <div className="for-overflow">

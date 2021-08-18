@@ -21,10 +21,13 @@
 /* base
 ===================================================================================================================== */
 .Button {
+    align-items: center;
     border-radius: var(--Button-border-radius);
+    display: flex;
     font-size: var(--Button-font-size);
     font-weight: 700;
     line-height: 1;
+    justify-content: center;
     padding: var(--Button-padding);
     transition: .3s;
 }
@@ -130,8 +133,6 @@
         }
 
 
-
-
     /*  minimal
     ================================================================================================================= */
     .Button.minimal {
@@ -153,6 +154,14 @@
     }
 
 
+
+
+    /*  button with icon
+    ============================================================================================================= */
+    .Button .icon {
+        fill: #fff;
+        height: 1em;
+    }
 
 
     /*  disabled

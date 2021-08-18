@@ -53,6 +53,10 @@
         .Side-bar .footer {
             margin-top: auto;
         }
-            .Side-bar .footer .List-item:not(:last-of-type) {
-                margin-bottom: .25rem;
+        .Side-bar .footer .List-item:not(:last-of-type) {
+            margin-bottom: .25rem;
+        }
+            .Side-bar .footer a {
+                display: block;
+                width: 1000;
             }

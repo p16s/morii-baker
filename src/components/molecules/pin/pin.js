@@ -26,6 +26,7 @@ class Pin extends BasicAtom {
                 <FormPin
                     // TODO pass values in
                     onChange={(e) => {this.handleKeyPress(e)}}
+                    disabled={this.props.disabled}
                 />
 
                 {this.render_validation()}
