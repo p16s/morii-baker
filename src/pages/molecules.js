@@ -16,6 +16,7 @@ import RandomExample from "../components/molecules/random/example/randomExample"
 import ModalCenterExample from "../components/molecules/modalCenter/example/modalCenterExample";
 import ContactPreferencesExample from "../components/molecules/contactPreferences/example/contactPreferencesExample";
 import TabBarExample from "../components/molecules/tabBar/example/tabBarExample";
+import ToastExample from "../components/molecules/toast/example/toastExample";
 
 
 const PageMolecules = () => {
@@ -36,6 +37,8 @@ const PageMolecules = () => {
             <RandomExample />
             <ModalCenterExample />
             <TabBarExample />
+            <ContactPreferencesExample />
+            <ToastExample />
         </div>
     );
 }

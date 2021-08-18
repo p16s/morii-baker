@@ -1,0 +1,35 @@
+/*  title:  toast
+    notes:  component styles
+            shows as a "popup" dialogue, on a timer
+ ==================================================================================================================== */
+
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+    --Toast-offset-margin: 2rem;
+}
+
+
+/*  component
+===================================================================================================================== */
+.Toast {
+    align-items: flex-start;        /*  TODO will add positions another time    */
+    display: flex;
+    height: 100%;
+    inset: 0;
+    justify-content: flex-end;      /*  TODO will add positions another time    */
+    padding: var(--Toast-offset-margin);
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    /*  default position for the Alert
+    ================================================================================================================= */
+    .Toast .Alert {
+        /*position: absolute;*/
+    }

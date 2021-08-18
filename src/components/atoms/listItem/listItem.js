@@ -1,10 +1,24 @@
 import BasicAtom from "../basicAtom";
 import './listItem.css';
 import {Link} from "react-router-dom";
-import IconAddCircle from "../icons/add-circle";
 
 
 class ListItem extends BasicAtom {
+    /**
+     * set some default props
+     * @type {{list: string}}
+     */
+    static defaultProps = {
+        list: ''
+    }
+
+
+    /**
+     * main render
+     * @param className
+     * @param props
+     * @returns {JSX.Element}
+     */
     render(className, props) {
         return (
             <li
