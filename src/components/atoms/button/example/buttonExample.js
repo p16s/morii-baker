@@ -91,7 +91,7 @@ class ButtonExample extends BakerExample {
                 className={"minimal"}
                 onClick={() => {alert('button clicked');}}
             />,
-            'Button without lines or background.'
+            'NoDataMessage without lines or background.'
         );
     }
 
@@ -105,7 +105,7 @@ class ButtonExample extends BakerExample {
                 onClick={() => {alert('button clicked');}}
                 disabled={true}
             />,
-            'Button without lines or background.'
+            'NoDataMessage without lines or background.'
         );
     }
 
@@ -121,7 +121,7 @@ class ButtonExample extends BakerExample {
                     <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
                 </svg>
             </Button>,
-            'Button with just an icon'
+            'NoDataMessage with just an icon'
         );
     }
 
@@ -138,7 +138,7 @@ class ButtonExample extends BakerExample {
                     <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
                 </svg>
             </Button>,
-            'Button, disabled, with icon and secondary class'
+            'NoDataMessage, disabled, with icon and secondary class'
         );
     }
 }
