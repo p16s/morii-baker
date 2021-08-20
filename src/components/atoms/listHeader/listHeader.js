@@ -13,11 +13,14 @@ class ListHeader extends BasicAtom {
      */
     render(className, props) {
         return (
-            <h5 className={
-                "List-header"
-                + this.padIfString(className)
-                + this.getClassNameString()
-            }>
+            <h5
+                className={
+                    "List-header"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
+                onClick={(e) => { this.handleClick(e)}}
+            >
                 {this.render_content()}
             </h5>
         );
@@ -43,6 +46,15 @@ class ListHeader extends BasicAtom {
         } else {
             return this.props.header.text;
         }
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    handleClick(e) {
+        this.callbackOr(this.props.onClick)(e);
     }
 }
 

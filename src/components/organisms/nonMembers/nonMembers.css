@@ -19,7 +19,9 @@
     /*  Title-bar (and children) overrides
     ================================================================================================================= */
     .Non-members .Title-bar {
+        background-color: transparent;
         padding: 0 0 1rem 0;
+        position: relative;
     }
         .Non-members .Title-bar .Form-input {
             margin: 0 0 0 1rem;

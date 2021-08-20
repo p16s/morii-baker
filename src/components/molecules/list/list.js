@@ -28,7 +28,10 @@ class List extends BasicAtom {
         return (typeof this.props.header !== 'undefined')
             ?
             (
-                <ListHeader header={this.props.header} />
+                <ListHeader
+                    header={this.props.header}
+                    onClick={(e) => this.handleListHeaderClick(e)}
+                />
             )
             : ('');
     }
@@ -46,7 +49,7 @@ class List extends BasicAtom {
                     list={list}
                     key={index}
                     active={(this.props.activeItem ?? -1) === index}
-                    onClick={(e) => {this.handleClick(e, index)}}
+                    onClick={(e) => {this.handleListClick(e, index)}}
                 >
                     {/*{list.text}*/}
                 </ListItem>
@@ -59,14 +62,18 @@ class List extends BasicAtom {
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    handleListHeaderClick(e) {
+        this.callbackOr(this.props.onListHeaderClick)(e);
+    }
+
     /**
      * Handle click
      *
      * @param {MouseEvent} e
      * @param {number#} index
      */
-    handleClick(e, index) {
-        this.callbackOr(this.props.onClick)(e, index);
+    handleListClick(e, index) {
+        this.callbackOr(this.props.onListClick)(e, index);
     }
 }
 

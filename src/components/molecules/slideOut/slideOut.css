@@ -17,7 +17,7 @@
 .Slide-out {
     bottom: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     transform: translateY(calc(100% - 20px));
     transition: .3s;
     right: 0;
