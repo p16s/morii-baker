@@ -17,6 +17,7 @@ import ModalCenterExample from "../components/molecules/modalCenter/example/moda
 import ContactPreferencesExample from "../components/molecules/contactPreferences/example/contactPreferencesExample";
 import TabBarExample from "../components/molecules/tabBar/example/tabBarExample";
 import ToastExample from "../components/molecules/toast/example/toastExample";
+import NoDataMessageExample from "../components/molecules/noDataMessage/example/noDataMessageExample";
 
 
 const PageMolecules = () => {
@@ -39,6 +40,7 @@ const PageMolecules = () => {
             <TabBarExample />
             <ContactPreferencesExample />
             <ToastExample />
+            <NoDataMessageExample />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import BasicAtom from "../../atoms/basicAtom";
 import './noDataMessage.css';
+import IconUser from "../../atoms/icons/user";
 
 
 class NoDataMessage extends BasicAtom {
