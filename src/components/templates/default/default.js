@@ -14,6 +14,19 @@ class TemplateDefault extends BasicAtom {
         });
     }
 
+    static defaultProps = {
+        "sideBarData": {
+            "header": "",
+            "icons": [],
+            "options": [],
+            "footer": {
+                "list": {
+                    "header": '',
+                    "items": []
+                }
+            }
+        },
+    }
 
     /**
      * main render
@@ -36,8 +49,11 @@ class TemplateDefault extends BasicAtom {
 
                     icons={this.props.sideBarData.icons}
                     options={this.props.sideBarData.options}
-                    onItemClick={(e, list, item) => {
-                        this.handleItemClick(e, list, item);
+                    onListHeaderClick={(e) => {
+                        this.handleListHeaderClick(e);
+                    }}
+                    onListClick={(e, list, item) => {
+                        this.handleListClick(e, list, item);
                     }}
 
                     footer={(
@@ -90,27 +106,21 @@ class TemplateDefault extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Handle click
-     *
-     * @param {MouseEvent} e
-     */
-    handleItemClick(e) {
-        this.callbackOr(this.props.onItemClick)(e);
-    }
-
-
-    /**
-     * handle the click event on the footer list
+     * handle the click event
      * @param e
      * @param index
-     * @param slug
      */
-    // TODO this is not the correct way, use the router
-    handleListClick(e, index, slug) {
-        if (slug && slug.length) {
-            // this.context.router.push(slug);
-            window.location.href = slug
-        }
+    handleListHeaderClick(e, index) {
+        this.callbackOr(this.props.onListHeaderClick)(e);
+    }
+
+    /**
+     * handle the click event
+     * @param e
+     * @param index
+     */
+    handleListClick(e, index) {
+        this.callbackOr(this.props.onListClick)(e);
     }
 
 

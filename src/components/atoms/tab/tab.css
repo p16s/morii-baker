@@ -75,6 +75,10 @@
         border-bottom: 2px solid rgb(var(--Tab-border-color-active));
         color: rgb(32, 43, 55);
     }
+        .Tab a {
+            color: inherit;
+            text-decoration: none;
+        }
 
         /*  don't show icon on mob  */
         .Tab .icon {

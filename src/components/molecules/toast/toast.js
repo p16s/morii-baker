@@ -69,7 +69,7 @@ class Toast extends BasicAtom {
     render_alert() {
         // if (this.props.isVisible) {
             return (
-                <Alert className={this.props.type}>
+                <Alert className={this.props.className}>
                     {this.props.children}
                 </Alert>
             );
@@ -83,6 +83,8 @@ class Toast extends BasicAtom {
 
     startRemovalTimer() {
         setTimeout(() => {
+            console.log("remove timer");
+
             this.callbackOr(this.props.stoppedShowing)(true);
         }, this.props.showTime);
     }

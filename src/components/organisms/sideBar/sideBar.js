@@ -72,8 +72,11 @@ class SideBar extends BasicAtom {
                 items={list.items}
                 activeItem={((this.props.activeList ?? null) === index) ? (this.props.activeItem ?? null) : null }
                 key={index}
-                onClick={(e, key) => {
-                    this.handleItemClick(e, index, key);
+                onListHeaderClick={(e, key) => {
+                    this.handleListHeaderClick(e, index, key);
+                }}
+                onListClick={(e, key) => {
+                    this.handleListClick(e, index, key);
                 }}
             />
         );
@@ -84,13 +87,17 @@ class SideBar extends BasicAtom {
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    handleListHeaderClick(e, list, item) {
+        this.callbackOr(this.props.onListHeaderClick)(e, list, item);
+    }
+
     /**
      * Handle item click
      *
      * @param {MouseEvent} e
      */
-    handleItemClick(e, list, item) {
-        this.callbackOr(this.props.onItemClick)(e, list, item);
+    handleListClick(e, list, item) {
+        this.callbackOr(this.props.onListClick)(e, list, item);
     }
 
 

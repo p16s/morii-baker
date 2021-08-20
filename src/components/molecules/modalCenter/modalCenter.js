@@ -1,14 +1,10 @@
 import BasicAtom from "../../atoms/basicAtom";
 import './modalCenter.css';
 import IconClose from "../../atoms/icons/close";
-import close from "../../atoms/icons/close";
 import {CSSTransition} from "react-transition-group";
 
 
 class ModalCenter extends BasicAtom {
-    constructor(props) {
-        super(props);
-    }
 
     /**
      * main render
