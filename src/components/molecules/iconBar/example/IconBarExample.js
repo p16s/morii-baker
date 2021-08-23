@@ -32,8 +32,6 @@ class IconBarExample extends BakerExample {
                 <IconBar
                     icons={["1","2","3"]}
                     activeIcon={0}
-                    onClick={(e, key) => { alert('Clicked ' + key); }}
-
                     footer={(
                         <Button className={"secondary round"}>
                             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,6 +39,7 @@ class IconBarExample extends BakerExample {
                             </svg>
                         </Button>
                     )}
+                    onClick={(e, key) => { alert('Clicked ' + key); }}
                 >
                     <Icon
                         src={'https://app.morii.io/favicon.png'}

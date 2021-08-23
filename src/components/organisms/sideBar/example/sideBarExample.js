@@ -72,37 +72,37 @@ class SideBarExample extends BakerExample {
     render_normal() {
         return this.render_exampleComponent(
             "SideBar",
-                <>
-                    <SideBar
-                        icons={this.state.sideBarData.icons}
-                        onIconClick={(e) => {
-                            alert("onIconClick");
-                        }}
-                        onAddOrgClick={() => {
-                            alert("Add org clicked");
-                        }}
+            <>
+                <SideBar
+                    icons={this.state.sideBarData.icons}
+                    onIconClick={(e) => {
+                        alert("onIconClick");
+                    }}
+                    onAddOrgClick={() => {
+                        alert("Add org clicked");
+                    }}
 
-                        header={this.state.sideBarData.header}
-                        onListHeaderClick={(e) => {
-                            this.handleListHeaderClick(e);
-                        }}
+                    header={this.state.sideBarData.header}
+                    onListHeaderClick={(e) => {
+                        alert("onListHeaderClick");
+                    }}
 
-                        options={this.state.sideBarData.options}
-                        onListClick={(e, list, item) => {
-                            this.handleListClick(e, list, item);
-                        }}
+                    options={this.state.sideBarData.options}
+                    onListClick={(e, list, item) => {
+                        alert("onListClick");
+                    }}
 
-                        footer={(
-                            <List
-                                header={this.state.sideBarData.footer.list.header}
-                                items={this.state.sideBarData.footer.list.items}
-                                onClick={(e, index, slug) => {
-                                    this.handleListClick(e, index, slug);
-                                }}
-                            />
-                        )}
-                    />
-                </>,
+                    footer={(
+                        <List
+                            header={this.state.sideBarData.footer.list.header}
+                            items={this.state.sideBarData.footer.list.items}
+                            onClick={(e, index, slug) => {
+                                alert("onListClick");
+                            }}
+                        />
+                    )}
+                />
+            </>,
             ""
         );
     }
