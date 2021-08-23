@@ -6,17 +6,47 @@ import List from "../../../molecules/list/list";
 class SideBarExample extends BakerExample {
     constructor(props, context) {
         super(props, context);
-        this.state = {};
+        this.state = {
+            "sideBarData": {
+                "header": "Company",
+                "icons": [
+                    'https://app.morii.io/favicon.png'
+                ],
+                "options": [
+                    {
+                        "header": {
+                            "text": 'Groups',
+                            "slug": "#"
+                        },
+                        "items": [
+                            {
+                                "text": 'Group One',
+                                "slug": "groups/1111/messages"
+                            }
+                        ]
+                    }
+                ],
+                "footer": {
+                    "list": {
+                        "header": {
+                            "text": "Account"
+                        },
+                        "items": [
+                            {
+                                "text": 'Settings',
+                                "slug": "/settings"
+                            },
+                            {
+                                "text": 'Logout',
+                                "slug": "/logout"
+                            }
+                        ]
+                    }
+                }
+            }
+        };
     }
 
-
-    componentDidMount() {
-        this.setState({
-            activeIcon: 0,
-            activeList: 0,
-            activeItem: 0,
-        });
-    }
 
 
     render() {
@@ -44,41 +74,33 @@ class SideBarExample extends BakerExample {
             "SideBar",
                 <>
                     <SideBar
-                        header={'header'}
+                        icons={this.state.sideBarData.icons}
+                        onIconClick={(e) => {
+                            alert("onIconClick");
+                        }}
+                        onAddOrgClick={() => {
+                            alert("Add org clicked");
+                        }}
 
-                        icons={['a', 'b']}
-                        options={
-                            [
-                                {
-                                    header: 'Hello',
-                                    items: ['One', 'Two', 'Three']
-                                },
-                            ]
-                        }
+                        header={this.state.sideBarData.header}
+                        onListHeaderClick={(e) => {
+                            this.handleListHeaderClick(e);
+                        }}
+
+                        options={this.state.sideBarData.options}
+                        onListClick={(e, list, item) => {
+                            this.handleListClick(e, list, item);
+                        }}
 
                         footer={(
                             <List
-                                header={"Account"}
-                                items={['Settings', 'Logout']}
+                                header={this.state.sideBarData.footer.list.header}
+                                items={this.state.sideBarData.footer.list.items}
+                                onClick={(e, index, slug) => {
+                                    this.handleListClick(e, index, slug);
+                                }}
                             />
                         )}
-
-                        activeIcon={this.state.activeIcon}
-                        activeList={this.state.activeList}
-                        activeItem={this.state.activeItem}
-
-                        onItemClick={(e, list, item) => {
-                            this.setState({
-                                activeList: list,
-                                activeItem: item,
-                            })
-                        }}
-
-                        onIconClick={
-                            (e, icon) => {
-                                this.setState({activeIcon: icon})
-                            }
-                        }
                     />
                 </>,
             ""

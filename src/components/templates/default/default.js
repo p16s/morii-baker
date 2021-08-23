@@ -78,9 +78,6 @@ class TemplateDefault extends BasicAtom {
                         {this.props.tabs}
 
                         {this.props.titlebar}
-                        {/*<TabBar>*/}
-                        {/*    <h1>[Heading as a h1]</h1>*/}
-                        {/*</TabBar>*/}
 
                         <span
                             className="mobile-toggle"
