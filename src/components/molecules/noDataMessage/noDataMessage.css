@@ -19,11 +19,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
     text-align: center;
 }
     .No-data-message .icon {
         fill: rgba(var(--Global-color-5, 114 123 155), .2);
-        height: 2.5rem;
+        height: 4rem;
         width: auto;
     }
 
+    .No-data-message h1,
+    .No-data-message h2,
+    .No-data-message h3,
+    .No-data-message h4,
+    .No-data-message h5,
+    .No-data-message p {
+        color: inherit;
+        margin: 0;
+        padding: 1rem 0 0 0;
+    }

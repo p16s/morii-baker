@@ -24,7 +24,7 @@
 }
 .fade-in-exit-active {
     opacity: 0;
-    transition: 1s;
+    transition: .2s;
     transform: scale(.5);
 }
 

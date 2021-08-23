@@ -5,67 +5,51 @@ import TitleBar from "../../molecules/titleBar/titleBar";
 import FormInput from "../../molecules/input/input";
 import Table from "../../molecules/table/table";
 import Button from "../../atoms/button/button";
+import ModalCenter from "../../molecules/modalCenter/modalCenter";
+import Input from "../../molecules/input/input";
+import IconSpinner from "../../atoms/icons/spinner";
 
 
 class NonMembers extends BasicAtom {
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context, {
+            users: props.users,
 
-        this.setState({
-           users: null
+            isAddingNewUser: false,
+            newUserName: '',
+            newUserEmail: ''
         });
     }
 
 
-    componentDidMount() {
-        // fake an api response/data TODO unlikely it will come back like this
-        this.setState({
-            users: this.state.users = [
-                [
-                    <strong>Ann Curtis</strong>,
-                    'anncurtis@gmail.com',
-                    '355-298-0908%',
-                    <Button
-                        className={"minimal"}
-                        onClick={() => {
-                            this.handleButtonClick()
-                        }}
-                    >
-                        + Add
-                    </Button>
-                ],
-                [
-                    <strong>Ann Curtis</strong>,
-                    'anncurtis@gmail.com',
-                    '355-298-0908%',
-                    <Button
-                        className={"minimal"}
-                        onClick={() => {
-                            this.handleButtonClick()
-                        }}
-                    >
-                        + Add
-                    </Button>
-                ]
-            ],
-        });
-    }
-
-
+    /**
+     * main render
+     * @param className
+     * @param props
+     * @returns {JSX.Element}
+     */
     render(className, props) {
         return (
-            <SlideOut
-                className={"Non-members"}
-                toggleName={"Non-members"}
-            >
-                {this.render_header_area()}
+            <>
+                <SlideOut
+                    className={"Non-members"}
+                    toggleName={"Non-members"}
+                >
+                    {this.render_header_area()}
 
-                {this.render_added_members()}
-            </SlideOut>
+                    {this.render_added_members()}
+                </SlideOut>
+
+                {this.render_add_user()}
+            </>
         );
     }
 
 
+    /**
+     * render the header
+     * @returns {JSX.Element}
+     */
     render_header_area() {
         return (
             <TitleBar>
@@ -74,7 +58,9 @@ class NonMembers extends BasicAtom {
                 <Button
                     className={"outline"}
                     onClick={() => {
-                        this.inviteUser()
+                        this.setState({
+                            isAddingNewUser: true
+                        });
                     }}
                 >
                     + Invite new user
@@ -91,6 +77,10 @@ class NonMembers extends BasicAtom {
     }
 
 
+    /**
+     * render table of users
+     * @returns {JSX.Element}
+     */
     render_added_members() {
         if (this.state.users && this.state.users.length) {
             return (
@@ -122,6 +112,11 @@ class NonMembers extends BasicAtom {
         }
     }
 
+
+    /**
+     * empty render
+     * @returns {JSX.Element}
+     */
     render_no_members() {
         return (
             <div className={"no-users"}>
@@ -135,15 +130,115 @@ class NonMembers extends BasicAtom {
     }
 
 
+    /**
+     * render add user (modal)
+     */
+    render_add_user() {
+        return (
+            <ModalCenter
+                isActive={this.state.isAddingNewUser}
+                onClose={() => {
+                    this.setState({
+                       isAddingNewUser: false
+                    });
+                }}
+            >
+                <h1 className="heading">Invite new user</h1>
+
+                <form>
+                    <Input
+                        for={"name"}
+                        labelText={"Name"}
+
+                        id={"name"}
+                        value={this.state.newUserName}
+                        placeholder={"E.g. John Smith"}
+                        onChange={(e) => {
+                            this.setState({
+                                newUserName: e
+                            });
+                        }}
+                    />
+
+                    <Input
+                        for={"email"}
+                        labelText={"Email"}
+
+                        id={"email"}
+                        value={this.state.newUserEmail}
+                        placeholder={"E.g. johnsmith@email.com"}
+                        onChange={(e) => {
+                            this.setState({
+                                newUserEmail: e
+                            });
+                        }}
+                    />
+
+                    <aside className="ctas">
+                        <Button
+                            className="outline"
+                            onClick={(e) => {
+                                this.cancelAddingUser(e);
+                            }}
+                            type="button"
+                        >
+                            Cancel
+                        </Button>
+
+                        <Button
+                            disabled={this.isLoading || (!this.state.newUserName.length || !this.state.newUserEmail.length)}
+                            onClick={(e) => {
+                                this.addUser(e);
+                            }}
+                            type="button"
+                        >
+                            Invite user
+
+                            {this.isLoading ? <IconSpinner /> : null}
+                        </Button>
+                    </aside>
+                </form>
+            </ModalCenter>
+        );
+    }
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    inviteUser() {
-        alert("inviteUser method, used to clear the users to test the UI");
+    /**
+     * add the user
+     * @param e
+     */
+    addUser(e) {
+        alert("dummy addUser method");
+
+        e.preventDefault();
+        this.isLoading = true;
+
+        //  reset user
+        setTimeout(() => {
+            this.isLoading = false;
+
+            this.setState({
+                isAddingNewUser: false
+            });
+        }, 2000);
+    }
+
+
+    /**
+     * cancel the add, clear the data
+     * @param e
+     */
+    cancelAddingUser(e) {
+        e.preventDefault();
 
         this.setState({
-            users: this.state.users = null
+            isAddingNewUser: false,
+            newUserName: '',
+            newUserEmail: ''
         });
     }
 

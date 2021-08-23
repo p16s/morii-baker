@@ -12,6 +12,9 @@ class SlideOut extends BasicAtom {
     }
 
 
+    /**
+     * when mounted
+     */
     componentDidMount() {
         this.setState({
             isActive: this.isActive = false
@@ -19,6 +22,12 @@ class SlideOut extends BasicAtom {
     }
 
 
+    /**
+     * main render
+     * @param className
+     * @param props
+     * @returns {JSX.Element}
+     */
     render(className, props) {
         return (
             <section

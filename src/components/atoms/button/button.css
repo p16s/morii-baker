@@ -23,7 +23,7 @@
 .Button {
     align-items: center;
     border-radius: var(--Button-border-radius);
-    display: flex;
+    display: inline-flex;
     font-size: var(--Button-font-size);
     font-weight: 700;
     line-height: 1;

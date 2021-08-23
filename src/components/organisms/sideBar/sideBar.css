@@ -16,7 +16,10 @@
 .Side-bar {
     align-items: stretch;
     display: inline-flex;       /*  TODO might need to rethink positioning */
+    max-height: 100vh;
     min-height: 100vh;
+    position: sticky;
+    top: 0;
 }
     @media screen and (max-width: 767px) {
         .Side-bar {

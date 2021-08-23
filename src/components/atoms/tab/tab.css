@@ -23,12 +23,17 @@
     text-decoration: none;
     transition: .2s;
 }
+    .Tab a {
+        color: inherit;
+        text-decoration: none;
+    }
 
 
 /*  basic - Mobile
 ===================================================================================================================== */
 @media screen and (max-width: 768px) {
-    .Tab {
+    .Tab,
+    .Tab > a {
         align-items: center;
         color: rgb(196 196 196);
         display: flex;
@@ -75,10 +80,6 @@
         border-bottom: 2px solid rgb(var(--Tab-border-color-active));
         color: rgb(32, 43, 55);
     }
-        .Tab a {
-            color: inherit;
-            text-decoration: none;
-        }
 
         /*  don't show icon on mob  */
         .Tab .icon {
