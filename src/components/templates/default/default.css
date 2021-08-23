@@ -29,9 +29,14 @@
     }
 
     .Template-default main {
-        padding: 1rem 2rem;
+        overflow: auto;
+        padding: 1rem;
     }
-
+    @media screen and (min-width: 768px) {
+        .Template-default main {
+            padding: 1rem 2rem;
+        }
+    }
 
     /*  header TODO
     ================================================================================================================= */
@@ -41,7 +46,17 @@
         right: 1em;
         top: 1em;
     }
-
+    @media screen and (max-width: 767px) {
+        .Template-default header {
+            background-color: rgb(var(--Global-color-5-darker, 66 78 121));
+        }
+            .Template-default .Breadcrumbs .breadcrumb {
+                color: #fff;
+            }
+            .Template-default .icon {
+                fill: #fff;
+            }
+    }
     @media screen and (min-width: 768px) {
         .Template-default .mobile-toggle {
             display: none;
@@ -53,6 +68,9 @@
         .Template-default .Tab-bar {
             background-color: #fff;
             margin-top: -1px;       /*  bit of a hack to hide the bottom border if breadcrumb used  */
-            padding-left: 2rem;
-
+        }
+        @media screen and (min-width: 768px) {
+            .Template-default .Tab-bar {
+                padding-left: 2rem;
+            }
         }

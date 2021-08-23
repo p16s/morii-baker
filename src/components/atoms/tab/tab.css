@@ -44,7 +44,7 @@
 
     /*  tab states
     ================================================================================================================= */
-    .Tab:not(:disabled).active {
+    .Tab:not(:disabled).active a {
         color: rgb(var(--Global-color-1, 70 50 251));
     }
     .Tab:not(:disabled).active .icon {

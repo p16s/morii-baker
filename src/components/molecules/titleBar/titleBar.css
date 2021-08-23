@@ -19,9 +19,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2rem 0;
+    padding: 1rem 0;
     width: 100%;
 }
+@media screen and (min-width: 768px) {
+    .Title-bar {
+        padding: 2rem 0;
+    }
+}
+
+
     .Title-bar h1,
     .Title-bar h2,
     .Title-bar h3,

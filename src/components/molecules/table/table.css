@@ -14,7 +14,7 @@
 }
 
 
-/*  test
+/*  Table (mobile first)
 ===================================================================================================================== */
 .Table {
     border-collapse: collapse;
@@ -31,6 +31,7 @@
     .Table th {
         border-bottom: 1px solid rgb(var(--Global-border-color, 170 176 195));
         color: rba(var(--Table-th-color));
+        display: none;      /*  don't show header on mob    */
         font-weight: 600;
         font-size: .625rem;
         line-height: .875rem;
@@ -42,22 +43,52 @@
 
     /*  tr
     ================================================================================================================= */
-    .Table tr {
+    .Table tbody tr {
+        border-top: 1px solid #EFEFEF;
+        display: flex;
+        flex-direction: column;
+        padding: .5rem 0;
         transition: .3s;
     }
         .Table tbody tr:hover {
             background-color: rgba(var(--Table-td-hover-color), .1);
-            cursor: pointer;
+            /*cursor: pointer;*/
             transition: .2s;
         }
 
         /*  td
         ============================================================================================================= */
         .Table td {
-            border-top: 1px solid #EFEFEF;
             color: rba(var(--Table-td-color));
             font-family: Nunito Sans, sans-serif;
             font-size: .875rem;
             line-height: 1.4;
-            padding: 1rem  .5rem;
+            padding: 0;
         }
+
+
+
+
+
+/*  Table - laptop >
+===================================================================================================================== */
+@media screen and (min-width: 767px) {
+
+    /*  head
+    ================================================================================================================= */
+    .Table th {
+        display: table-cell;
+    }
+
+    /*  tr
+    ================================================================================================================= */
+    .Table tbody tr {
+        display: table-row;
+        padding: 0;
+    }
+        /*  td
+        ============================================================================================================= */
+        .Table td {
+            padding: 1rem .5rem;
+        }
+}

@@ -30,6 +30,7 @@
         left: 0;
         justify-content: space-around;
         position: fixed;
+        z-index: 100;   /*  keep above anything (like the slide-out non-members)    */
     }
 }
 
