@@ -45,13 +45,21 @@ class TemplateDefault extends BasicAtom {
             >
                 <SideBar
                     className={(this.state.isActive ? 'active' : '')}
-                    header={this.props.sideBarData.header}
 
                     icons={this.props.sideBarData.icons}
-                    options={this.props.sideBarData.options}
+                    onIconClick={(e) => {
+                        alert("onIconClick");
+                    }}
+                    onAddOrgClick={() => {
+                        alert("Add org clicked");
+                    }}
+
+                    header={this.props.sideBarData.header}
                     onListHeaderClick={(e) => {
                         this.handleListHeaderClick(e);
                     }}
+
+                    options={this.props.sideBarData.options}
                     onListClick={(e, list, item) => {
                         this.handleListClick(e, list, item);
                     }}
