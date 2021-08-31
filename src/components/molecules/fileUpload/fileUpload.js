@@ -20,9 +20,10 @@ class FileUpload extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Render element
-     *
-     * @return {*}
+     * main render
+     * @param className
+     * @param props
+     * @returns {JSX.Element}
      */
     render(className, props) {
         return (
@@ -51,6 +52,10 @@ class FileUpload extends BasicAtom {
     }
 
 
+    /**
+     * show the files uploaded
+     * @returns {unknown[]}
+     */
     render_files() {
         if (this.state.fileList && this.state.fileList.length) {
             return (this.state.fileList ?? []).map((value, index) => {
@@ -68,6 +73,11 @@ class FileUpload extends BasicAtom {
         }
     }
 
+
+    /**
+     * render the icon, based on state
+     * @returns {JSX.Element}
+     */
     render_icon() {
         if (this.isLoading) {
             return (
