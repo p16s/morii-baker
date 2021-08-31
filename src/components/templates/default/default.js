@@ -48,7 +48,7 @@ class TemplateDefault extends BasicAtom {
 
                     icons={this.props.sideBarData.icons}
                     onIconClick={(e) => {
-                        alert("onIconClick");
+                        this.handleIconClick(e);
                     }}
                     onAddOrgClick={() => {
                         alert("Add org clicked");
@@ -109,6 +109,16 @@ class TemplateDefault extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * handle the click event for the icon(s)
+     * @param e
+     * @param index
+     */
+    handleIconClick(e, index) {
+        this.callbackOr(this.props.onIconClick)(e);
+    }
+
 
     /**
      * handle the click event

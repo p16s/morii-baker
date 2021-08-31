@@ -42,7 +42,7 @@ body {
     font-family: var(--Global-base-font-family, sans-serif);
     font-size: var(--Global-base-font-size), 16px;
 }
-    /*  used on pages that can showcase similar to figma (atomes/molecules/organisms etc)   */
+    /*  used on components that can showcase similar to figma (atomes/molecules/organisms etc)   */
     .figma-like {
         background-color: #eeeeee;
         margin: 0 auto;

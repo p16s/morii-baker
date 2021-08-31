@@ -29,6 +29,7 @@
     line-height: 1;
     justify-content: center;
     padding: var(--Button-padding);
+    text-decoration: none;
     transition: .3s;
 }
 

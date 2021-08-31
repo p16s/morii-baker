@@ -1604,7 +1604,7 @@
 			Entity: require('./src/entity.js'),
 			Group: require('./src/group.js'),
 			Files: require('./src/files.js'),
-			Message: require('./src/message.js'),
+			Message: require('./src/index.js'),
 			// ShareClass: require('./src/share-class.js.removed'),
 			// ShareTransfer: require('./src/share-transfer.js.removed'),
 			User: require('./src/user.js'),

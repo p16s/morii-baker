@@ -40,7 +40,7 @@ const Nav = () => {
                 </Link>
 
                 <Link to="/pages">
-                    <ListItem active={(location.pathname === '/pages')}>
+                    <ListItem active={(location.pathname === '/components')}>
                         Pages
                     </ListItem>
                 </Link>

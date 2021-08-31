@@ -95,7 +95,7 @@ class FormTextarea extends BasicAtom {
                 onChange={(e) => {
                     this.updateValue(e.target.value)
                 }}
-            />,
+            >{this.props.value}</textarea>,
             props ?? {}
         );
     }
@@ -156,7 +156,9 @@ class FormTextarea extends BasicAtom {
     updateValue(e) {
         this.setState({
             value: this.value = e
-        })
+        });
+
+        this.callbackOr(this.props.onChange)(e);
     }
 }
 

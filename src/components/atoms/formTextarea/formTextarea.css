@@ -22,6 +22,7 @@
 .Form-textarea {
     border: var(--Form-textarea-border);
     border-radius: var(--Form-textarea-border-radius);
+    font-family: 'Nunito Sans', sans-serif;
     font-size: var(--Form-textarea-font-size);
     line-height: 1;
     min-height: 80px;

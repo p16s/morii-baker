@@ -7,7 +7,6 @@ import "./formInput.css";
 class FormInput extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
-
             value: ""
         });
     }

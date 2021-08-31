@@ -66,10 +66,12 @@
         border-bottom: 2px solid rgb(var(--Tab-border-color));
         color: rgb(114, 123, 155);
         font-weight: 700;
-        padding: var(--Tab-padding);
         text-transform: uppercase;
     }
-
+        .Tab a {
+            display: inline-block;
+            padding: var(--Tab-padding);        /*  TODO prob want to ensure non-links accounted for at some point  */
+        }
     /*  tab states
     ================================================================================================================= */
     .Tab:not(:disabled):hover,
