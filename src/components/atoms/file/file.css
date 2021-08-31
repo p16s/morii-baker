@@ -59,6 +59,15 @@
         width: 1rem;
     }
 
+    /*  span to restrict filename length
+    ================================================================================================================= */
+    .File > span {
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     /*  basic animation
     ================================================================================================================= */
     .File:not(:disabled):hover .icon-close {

@@ -17,6 +17,9 @@
 /*  base
 ===================================================================================================================== */
 .File-upload {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 }
     /*  label acts as the "button"
     ================================================================================================================= */
@@ -29,6 +32,7 @@
         font-size: var(--File-upload-font-size);
         font-weight: 400;
         line-height: 1;
+        margin-right: 1rem;
         padding: var(--File-upload-padding);
         transition: .3s;
     }
@@ -55,6 +59,6 @@
 
     /*  files
     ================================================================================================================= */
-    .File-upload .Uploaded-file {
-        margin-left: 1rem;
+    .File-upload .File {
+        margin: 2px 1rem 2px 0;
     }

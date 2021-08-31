@@ -30,7 +30,7 @@ class File extends BasicAtom {
             >
                 <IconFile />
 
-                {this.props.fileName}
+                <span title={this.props.fileName}>{this.props.fileName}</span>
 
                 {this.render_remove()}
             </button>,
