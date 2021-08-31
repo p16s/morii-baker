@@ -185,10 +185,15 @@ class FileUpload extends BasicAtom {
         if (newNameArray.length > 0) {
             newName = newName + '.' + newNameArray.join('.');
         }
+
         return newName;
     }
 
 
+    /**
+     * remove file
+     * @param toRemove
+     */
     removeUpload(toRemove) {
         const updatedList = [...this.state.fileList];
 
