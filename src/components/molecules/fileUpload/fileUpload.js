@@ -139,8 +139,7 @@ class FileUpload extends BasicAtom {
             await this.updateAPI(newFile)
                 .then((response) => {
                     newList.push(newFile);
-                    this.callbackOr(this.props.onSuccess)(response);
-
+                    this.callbackOr(this.props.onSuccess)(response, newFile);
                     // UI update?
                 })
                 .catch((error) => {

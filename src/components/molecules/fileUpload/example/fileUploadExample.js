@@ -35,6 +35,7 @@ class FileUploadExample extends BakerExample {
                     forId="passed"
                     name={"Attach files"}
                     urlGenerator={() => {
+                        // change to fail=1 to test a fail (HTTP 400 Bad request error)
                         return Promise.resolve('http://localhost:3001/upload?fail=0')
                     }}
                     onRemove={(file) => {
@@ -43,6 +44,13 @@ class FileUploadExample extends BakerExample {
                     onError={(error) => {
                         console.log('Problem uploading file: ', error);
                     }}
+                    onSuccess={
+                        (response, file) => {
+                            console.log('File uploaded fine.');
+                            console.log('API response: ', response);
+                            console.log('file: ', file);
+                        }
+                    }
                 />
             </form>,
             "FileUpload with file(s)"
