@@ -9,6 +9,14 @@ import IconSpinner from "../../atoms/icons/spinner";
 class FileUpload extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
+            uploadedFiles: [
+                {
+                    name: "uploaded.mock"
+                },
+                {
+                    name: "testing.pdf"
+                }
+            ],
             fileList: []
         });
     }
@@ -27,7 +35,7 @@ class FileUpload extends BasicAtom {
      */
     render(className, props) {
         return (
-            <div className="File-upload">
+            <div id="clone-here" className="File-upload">
                 <label
                     className={(this.isLoading ? 'disabled' : '')}
                     htmlFor={(this.props.forId ? this.props.forId : 'file-upload')}
@@ -45,10 +53,30 @@ class FileUpload extends BasicAtom {
                     }}
                     multiple
                 />
+                {this.render_already_uploaded()}
 
                 {this.render_files()}
             </div>
         );
+    }
+
+    /**
+     * any already uploaded
+     * @returns {unknown[]}
+     */
+    render_already_uploaded() {
+        return (this.state.uploadedFiles ?? []).map((value, index) => {
+            return (
+                <File
+                    fileName={value.name}
+                    onClick={() => {
+                        this.removeExisting(index);
+                    }}
+                    disabled={this.isLoading}
+                    key={"value-" + index}
+                />
+            );
+        });
     }
 
 
@@ -116,16 +144,11 @@ class FileUpload extends BasicAtom {
                     // UI update?
                 })
                 .catch((error) => {
-                    //@todo: remove from here...
-                    newList.push(newFile);
-                    ////////////////////
-
                     this.callbackOr(this.props.onError)(error);
-
-                    // UI update?
-                });
+                })
         }
 
+        document.getElementById("passed").value = '';
         this.setState({fileList: newList});
         this.isLoading = false;
     }
@@ -191,13 +214,30 @@ class FileUpload extends BasicAtom {
 
 
     /**
+     * remove existing file
+     * @param toRemove
+     */
+    removeExisting(toRemove) {
+        const updatedList = [...this.state.uploadedFiles];
+        const removed = updatedList.splice(toRemove, 1);
+
+        this.callbackOr(this.props.onRemove)(removed);
+
+        this.setState({
+            uploadedFiles: updatedList
+        });
+    }
+
+
+    /**
      * remove file
      * @param toRemove
      */
     removeUpload(toRemove) {
         const updatedList = [...this.state.fileList];
+        const removed = updatedList.splice(toRemove, 1);
 
-        updatedList.splice(toRemove, 1);
+        this.callbackOr(this.props.onRemove)(removed);
 
         this.setState({
             fileList: updatedList
