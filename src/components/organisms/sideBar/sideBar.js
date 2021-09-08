@@ -2,7 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import IconBar from "../../molecules/iconBar/iconBar";
 import List from "../../molecules/list/list";
 import './sideBar.css';
-import Button from "../../atoms/button/button";
+// import Button from "../../atoms/button/button";
 
 
 class SideBar extends BasicAtom {
@@ -11,22 +11,28 @@ class SideBar extends BasicAtom {
      * @returns {JSX.Element}
      */
     render() {
+        const icons = [];
+
+        this.props.icons.forEach((val) => {
+            icons.push(val.icon);
+        });
+
         return (
             <div className={"Side-bar" + this.getClassNameString()}>
                 <IconBar
-                    icons={this.props.icons}
+                    icons={icons}
                     activeIcon={this.props.activeIcon ?? null}
-                    footer={(
-                        <Button
-                            onClick={() => {
-                                this.handleAddOrgClick();
-                            }}
-                            className={"secondary round"}>
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
-                            </svg>
-                        </Button>
-                    )}
+                    // footer={(
+                    //     <Button
+                    //         onClick={() => {
+                    //             this.handleAddOrgClick();
+                    //         }}
+                    //         className={"secondary round"}>
+                    //         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    //             <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
+                    //         </svg>
+                    //     </Button>
+                    // )}
                     onClick={(e, key) => {this.handleIconClick(e, key);}}
                 />
 
@@ -44,6 +50,7 @@ class SideBar extends BasicAtom {
             </div>
         );
     }
+
 
     /**
      * main side bar header
@@ -82,7 +89,7 @@ class SideBar extends BasicAtom {
             <List
                 header={list.header}
                 items={list.items}
-                activeItem={((this.props.activeList ?? null) === index) ? (this.props.activeItem ?? null) : null }
+                activeItem={this.props.activeList}
                 key={index}
                 onListHeaderClick={(e, key) => {
                     this.handleListHeaderClick(e, index, key);

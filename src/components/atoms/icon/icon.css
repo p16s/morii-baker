@@ -34,6 +34,12 @@
     .Icon.active {
         border: 2px solid var(--Icon-active-color);
     }
+        /*  remove the effect of the border */
+        .Icon.active > img {
+            padding: 4px;
+            transition: .2s;
+        }
+
         .Icon.active > .letter {
             line-height: 1.1em;
         }

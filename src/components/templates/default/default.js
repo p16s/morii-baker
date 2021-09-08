@@ -2,16 +2,20 @@ import BasicAtom from "../../atoms/basicAtom";
 import './default.css';
 import List from "../../molecules/list/list";
 import SideBar from "../../organisms/sideBar/sideBar";
-// import TabBar from "../../molecules/titleBar/titleBar";
 import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
 import IconMenu from "../../atoms/icons/menu";
-
+// import TabBar from "../../molecules/titleBar/titleBar";
 
 class TemplateDefault extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
             isActive: false
         });
+    }
+
+    componentDidMount() {
+        super.componentDidMount();
+
     }
 
     static defaultProps = {
@@ -47,8 +51,9 @@ class TemplateDefault extends BasicAtom {
                     className={(this.state.isActive ? 'active' : '')}
 
                     icons={this.props.sideBarData.icons}
-                    onIconClick={(e) => {
-                        this.handleIconClick(e);
+                    activeIcon={this.props.sideBarData.activeIcon}
+                    onIconClick={(e, index) => {
+                        this.handleIconClick(e, index);
                     }}
                     onAddOrgClick={() => {
                         alert("Add org clicked");
@@ -58,6 +63,7 @@ class TemplateDefault extends BasicAtom {
                     onListHeaderClick={(e) => {
                         this.handleListHeaderClick(e);
                     }}
+                    activeList={this.props.activeList}
 
                     options={this.props.sideBarData.options}
                     onListClick={(e, list, item) => {
@@ -116,7 +122,7 @@ class TemplateDefault extends BasicAtom {
      * @param index
      */
     handleIconClick(e, index) {
-        this.callbackOr(this.props.onIconClick)(e);
+        this.callbackOr(this.props.onIconClick)(e, index);
     }
 
 
@@ -143,8 +149,6 @@ class TemplateDefault extends BasicAtom {
      * mobile toggle
      */
     toggleMobileNav() {
-        console.log("TOGGLE");
-
         this.setState(prevState => ({
             isActive: !prevState.isActive
         }));

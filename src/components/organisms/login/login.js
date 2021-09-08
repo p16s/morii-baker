@@ -6,18 +6,22 @@ import Pin from "../../molecules/pin/pin";
 import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-
+import {useHistory} from "react-router-dom";
 import { withRouter } from 'react-router';    // TODO not sure on best practice with router yet
+import moriiApp from "../../../../../MoriiApp";
+import AppContext from "../../../../../context/appContext";
+import {useContext} from "react";
 
 
-class Login extends BasicAtom {
+class LoginAtom extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
             isStage: props.isStage,
             canGetUser: true,
             userEmail: "",
             userEmailError: false,
-            userPin: ''
+            userPin: '',
+            verificationCode: ''
         });
     }
 
@@ -99,6 +103,19 @@ class Login extends BasicAtom {
                     <p>Check your email for the verification code</p>
 
                     <Pin
+                        length={6}
+                        labelText={"Your verification code"}
+                        onChange={
+                            (e) => {
+                               this.setVerificationCode(e);
+                            }
+                        }
+                    />
+
+                    <br />
+                    <br />
+
+                    <Pin
                         labelText={"Your PIN number"}
                         // TODO pass values in
                         onChange={
@@ -174,7 +191,7 @@ class Login extends BasicAtom {
         } else {
             return (
                 <Button
-                    disabled={this.state.userPin.length < 4}
+                    disabled={this.state.userPin.length < 4 || this.state.verificationCode.length < 6}
                     onClick={
                         () => this.validateUser()
                     }
@@ -195,17 +212,22 @@ class Login extends BasicAtom {
      *
      */
     getUser() {
-        alert("getUser clicked TODO integrate");
+        // alert("getUser clicked TODO integrate");
         this.isLoading = true;
 
-        //  dummy a timeout on a lookup (IU testing, remove on integration)
-        setTimeout(() => {
-            this.isLoading = false;
-
-            this.setState({
-                isStage: 2
+        moriiApp.auth.loginRequest(this.state.userEmail)
+            .then((response) => {
+                if (response === true) {
+                    this.setState({
+                        isStage: 2
+                    });
+                } else {
+                    alert('Problem logging in. Please check the email address');
+                }
+             })
+            .finally(() => {
+                this.isLoading = false;
             });
-        }, 1000);
     }
 
 
@@ -218,6 +240,7 @@ class Login extends BasicAtom {
         this.setState({
             userEmail: e
         });
+
 
         //  pass data out
         this.callbackOr(this.props.userEmail)(e);
@@ -238,6 +261,20 @@ class Login extends BasicAtom {
         this.callbackOr(this.props.userPin)(e);
     }
 
+    /**
+     * setVerificationCode
+     *
+     * @param {KeyboardEvent} e
+     */
+    setVerificationCode(e) {
+        this.setState({
+            verificationCode: e
+        });
+
+        //  pass data out
+        this.callbackOr(this.props.verificationCode)(e);
+    }
+
 
     /**
      * validateUser
@@ -245,21 +282,44 @@ class Login extends BasicAtom {
      * @param {KeyboardEvent} e
      */
     validateUser() {
-        alert("empty validateUser method");
         this.isLoading = true;
 
-        //  dummy a timeout on a lookup (IU testing, remove on integration)
-        setTimeout(() => {
+        moriiApp.auth.login(
+            this.state.userEmail,
+            this.state.userPin,
+            this.state.verificationCode
+        ).catch((error) => {
+            alert('Invalid PIN or verification code');
+
             this.isLoading = false;
-
-            this.setState({
-                isStage: 1
-            });
-        }, 2000);
-
-        this.props.history.push('/onboarding');
+            return Promise.reject(error);
+        })
+            .then((val) => {
+            this.callbackOr(this.props.onLogin)(val);
+        });
     }
+
 }
 
+
+const Login = (props) => {
+    const history = useHistory();
+
+    const loginFunc = (val) => {
+        moriiApp.user.getUser().then(
+            (user) => {
+                if (user.phone === null) {
+                    history.push('/onboarding');
+                } else {
+                    history.push('/');
+                    window.location.reload();
+                }
+                return user;
+            }
+        )
+    }
+
+    return (<LoginAtom onLogin={loginFunc} />)
+}
 
 export default withRouter(Login);

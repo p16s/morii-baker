@@ -64,7 +64,7 @@
         /*  main (children/page content)
         ============================================================================================================= */
         .Template-minimal .main {
-            width: calc(375px + 2rem);      /*  the calc is because we pad the content so need to add that width back dur to box-sizing   */
+            width: calc(385px + 2rem);      /*  the calc is because we pad the content so need to add that width back dur to box-sizing   */
         }
 }
 
