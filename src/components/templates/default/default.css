@@ -34,7 +34,7 @@
     }
     @media screen and (min-width: 768px) {
         .Template-default main {
-            padding: 1rem 2rem;
+            padding: 0 2rem 2rem 2rem;
         }
     }
 

@@ -4,17 +4,16 @@ import React from "react";
 
 
 class Response extends BasicAtom {
-    render(className) {
+    render() {
         return (
             <span
                 className={
                     "Response"
-                    + this.padIfString(className)
                     + this.getClassNameString()
                     + (this.props.disabled ? ' disabled' : '')
                 }
                 onClick={(e) => {
-                    this.handleClick(e, this.props.responseText)
+                    this.handleClick(e, this.props.index)
                 }}
             >
                 {/*TODO make atom and refactor*/}
@@ -22,6 +21,7 @@ class Response extends BasicAtom {
                     id={this.props.for}
                     type="radio"
                     name="response"
+                    checked={this.props.selected}
                     disabled={this.props.disabled}
                 />
                 <label htmlFor={this.props.for}>

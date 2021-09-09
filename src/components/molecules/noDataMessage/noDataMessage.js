@@ -7,12 +7,15 @@ import IconUser from "../../atoms/icons/user";
 class NoDataMessage extends BasicAtom {
     render(className) {
         return (
-            <aside className={
-                "No-data-message"
-                + this.padIfString(className)
-                + this.getClassNameString()
-            }>
-                <IconUser />
+            <aside
+                className={
+                    "No-data-message"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
+            >
+                {this.props.image ? this.props.image : <IconUser />}
+
                 {this.props.children}
             </aside>
         );

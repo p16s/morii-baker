@@ -87,8 +87,8 @@ class NonMembers extends BasicAtom {
             tbody.push(
                 [
                     user.name,
-                    'todo',
-                    'todo',
+                    user.username,
+                    user.phone,
                     'todo',
                 ]
             );
