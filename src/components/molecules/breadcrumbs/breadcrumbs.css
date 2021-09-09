@@ -19,7 +19,7 @@
     border-bottom: 1px solid rgb(var(--Global-border-color, 70 176 195));
     align-items: center;
     display: flex;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem .5rem 2rem;
 }
 
     /*  individual breadcrumb

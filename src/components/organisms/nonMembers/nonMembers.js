@@ -8,6 +8,8 @@ import Button from "../../atoms/button/button";
 import ModalCenter from "../../molecules/modalCenter/modalCenter";
 import Input from "../../molecules/input/input";
 import IconSpinner from "../../atoms/icons/spinner";
+import Checkbox from "../../atoms/checkbox/checkbox";
+import React from "react";
 
 
 class NonMembers extends BasicAtom {
@@ -77,6 +79,25 @@ class NonMembers extends BasicAtom {
     }
 
 
+
+     render_table_data() {
+        const tbody = [];
+
+        this.state.users.forEach((user, index) => {
+            tbody.push(
+                [
+                    user.name,
+                    'todo',
+                    'todo',
+                    'todo',
+                ]
+            );
+        });
+
+        return tbody;
+    }
+
+
     /**
      * render table of users
      * @returns {JSX.Element}
@@ -91,7 +112,7 @@ class NonMembers extends BasicAtom {
                         "Phone number",
                         "Add to group",
                     ]}
-                    tbody={this.state.users}
+                    tbody={this.render_table_data()}
                 />
             );
         } else {

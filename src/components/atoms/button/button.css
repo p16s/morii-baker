@@ -65,7 +65,7 @@
         .Button:not(.outline):active {
             background-color: rgba(var(--Button-color-1-darker));
         }
-        .Button:disabled {
+        .Button:not(.outline):disabled {
             background-color: rgba(var(--Button-color-1), .3);
         }
 
@@ -151,6 +151,7 @@
         color: #1C00CA;      /*  TODO we might want some pure css to modify global branding colours but beyond the scope here */
     }
     .Button.minimal:disabled {
+        background-color: transparent;
         color: rgba(var(--Button-color-1), .3);
     }
 

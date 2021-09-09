@@ -10,7 +10,7 @@
 :root {
     --Tab-border-color: var(--Global-base-font-color, 66, 78, 121);
     --Tab-border-color-active: var(--Global-color-1, 70, 50, 251);
-    --Tab-padding: 0 1.25rem .5rem;
+    --Tab-padding: .5rem 1.25rem;
 }
 
 
