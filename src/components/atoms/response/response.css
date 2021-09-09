@@ -1,0 +1,33 @@
+/*  title:  response
+    notes:  show/select a response from a message
+===================================================================================================================== */
+
+
+
+/*  main component styles
+===================================================================================================================== */
+.Response {
+    align-items: center;
+    border: 1px solid rgb(var(--Global-border-color, 227 229 235));
+    border-radius: 10px;
+    color: rgb(var(--Global-heading-color, 32 43 55));
+    cursor: pointer;
+    display: inline-flex;
+    font-size: .875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+    .Response.disabled {
+        background-color: rgba(var(--Global-color-5, 239 239 239), .05);
+        cursor: not-allowed;
+        opacity: .8;
+    }
+        .Response.disabled input,
+        .Response.disabled label {
+            pointer-events: none;
+        }
+    .Response input {
+        background-color: red;
+        margin: 0 .25rem 0 0;
+    }
