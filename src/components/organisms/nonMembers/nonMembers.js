@@ -79,7 +79,9 @@ class NonMembers extends BasicAtom {
     }
 
 
-
+    /**
+     * render the main table
+     */
      render_table_data() {
         const tbody = [];
 
