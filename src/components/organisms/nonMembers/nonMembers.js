@@ -211,7 +211,31 @@ class NonMembers extends BasicAtom {
                         <Button
                             disabled={this.isLoading || (!this.state.newUserName.length || !this.state.newUserEmail.length)}
                             onClick={(e) => {
-                                this.addUser(e);
+                                e.preventDefault();
+                                this.isLoading = true;
+                                let that = this;
+
+                                if (typeof this.props.onInvite !== 'undefined') {
+                                    this.props.onInvite(
+                                        () => {
+                                            that.isLoading = false;
+                                            that.setState({
+                                                isAddingNewUser: false
+                                            });
+                                        },
+                                        () => {
+                                            that.isLoading = false;
+                                        }
+                                    );
+                                } else {
+                                    setTimeout(() => {
+                                        console.log('FAKE add user');
+                                        that.isLoading = false;
+                                        that.setState({
+                                            isAddingNewUser: false
+                                        });
+                                    }, 1000);
+                                }
                             }}
                             type="button"
                         >
@@ -229,27 +253,6 @@ class NonMembers extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * add the user
-     * @param e
-     */
-    addUser(e) {
-        alert("dummy addUser method");
-
-        e.preventDefault();
-        this.isLoading = true;
-
-        //  reset user
-        setTimeout(() => {
-            this.isLoading = false;
-
-            this.setState({
-                isAddingNewUser: false
-            });
-        }, 2000);
-    }
-
 
     /**
      * cancel the add, clear the data
