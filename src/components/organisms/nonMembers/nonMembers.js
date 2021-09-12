@@ -15,8 +15,6 @@ import React from "react";
 class NonMembers extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
-            users: props.users,
-
             isAddingNewUser: false,
             newUserName: '',
             newUserEmail: ''
@@ -85,7 +83,7 @@ class NonMembers extends BasicAtom {
      render_table_data() {
         const tbody = [];
 
-        this.state.users.forEach((user, index) => {
+        this.props.users.forEach((user, index) => {
             tbody.push(
                 [
                     user.name,
@@ -105,7 +103,7 @@ class NonMembers extends BasicAtom {
      * @returns {JSX.Element}
      */
     render_added_members() {
-        if (this.state.users && this.state.users.length) {
+        if (this.props.users && this.props.users.length) {
             return (
                 <Table
                     thead={[
