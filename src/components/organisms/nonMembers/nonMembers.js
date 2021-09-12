@@ -225,7 +225,9 @@ class NonMembers extends BasicAtom {
                                         },
                                         () => {
                                             that.isLoading = false;
-                                        }
+                                        },
+                                        this.state.newUserName,
+                                        this.state.newUserEmail
                                     );
                                 } else {
                                     setTimeout(() => {
