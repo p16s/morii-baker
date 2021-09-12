@@ -20,7 +20,30 @@ class NonMembers extends BasicAtom {
             newUserEmail: ''
         });
     }
+    __validateEmail(email) {
+        let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
+        if (!email) return false;
+
+        let emailParts = email.split('@');
+
+        if(emailParts.length !== 2) return false
+
+        let account = emailParts[0];
+        let address = emailParts[1];
+
+        if(account.length > 64) return false
+
+        else if(address.length > 255) return false
+
+        let domainParts = address.split('.');
+        if (domainParts.some(function (part) {
+            return part.length > 63;
+        })) return false;
+
+
+        return tester.test(email);
+    }
 
     /**
      * main render
@@ -207,7 +230,14 @@ class NonMembers extends BasicAtom {
                         </Button>
 
                         <Button
-                            disabled={this.isLoading || (!this.state.newUserName.length || !this.state.newUserEmail.length)}
+                            disabled={
+                                this.isLoading
+                                || (
+                                    !this.state.newUserName.length
+                                    || !this.state.newUserEmail.length
+                                    || !this.__validateEmail(this.state.newUserEmail)
+                                )
+                            }
                             onClick={(e) => {
                                 e.preventDefault();
                                 this.isLoading = true;
