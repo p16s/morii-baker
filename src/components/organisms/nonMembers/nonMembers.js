@@ -9,6 +9,8 @@ import ModalCenter from "../../molecules/modalCenter/modalCenter";
 import Input from "../../molecules/input/input";
 import IconSpinner from "../../atoms/icons/spinner";
 import React from "react";
+import Toggle from "../../atoms/toggle/toggle";
+import IconAdd from "../../atoms/icons/add";
 
 
 class NonMembers extends BasicAtom {
@@ -109,7 +111,29 @@ class NonMembers extends BasicAtom {
                     user.name,
                     user.username,
                     user.phone,
-                    'todo',
+                    <Toggle
+                        value={true}
+                        onChange={() => {
+                            // TODO
+                        }}
+                    />,
+                    <Toggle
+                        value={user.groupAdmin}
+                        onChange={() => {
+                            // TOOD
+                        }}
+                        label={(true ? "Admin" : "Member")}
+                    />,
+                    <span
+                        className="add-non-member-to-group-cta"
+                        onClick={() => {
+                            // TODO
+                        }}
+                    >
+                        <IconAdd />
+                        Add
+                    </span>
+
                 ]
             );
         });
@@ -130,6 +154,8 @@ class NonMembers extends BasicAtom {
                         "Name",
                         "Email",
                         "Phone number",
+                        "Can Send",
+                        "Sender/Admin",
                         "Add to group",
                     ]}
                     tbody={this.render_table_data()}
@@ -143,6 +169,8 @@ class NonMembers extends BasicAtom {
                             "Name",
                             "Email",
                             "Phone number",
+                            "Can Send",
+                            "Sender/Admin",
                             "Add to group",
                         ]}
                     />

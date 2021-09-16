@@ -26,6 +26,14 @@
         font-weight: 700;
     }
 
+    /*  we don't want a border on these when used in a table    */
+    .Table .Toggle.has-label {
+        border: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+
     /*  head
     ================================================================================================================= */
     .Table th {
