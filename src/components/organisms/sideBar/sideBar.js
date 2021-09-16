@@ -2,7 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import IconBar from "../../molecules/iconBar/iconBar";
 import List from "../../molecules/list/list";
 import './sideBar.css';
-// import Button from "../../atoms/button/button";
+import Button from "../../atoms/button/button";
 
 
 class SideBar extends BasicAtom {
@@ -22,17 +22,17 @@ class SideBar extends BasicAtom {
                 <IconBar
                     icons={icons}
                     activeIcon={this.props.activeIcon ?? null}
-                    // footer={(
-                    //     <Button
-                    //         onClick={() => {
-                    //             this.handleAddOrgClick();
-                    //         }}
-                    //         className={"secondary round"}>
-                    //         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    //             <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
-                    //         </svg>
-                    //     </Button>
-                    // )}
+                    footer={(
+                        <Button
+                            onClick={() => {
+                                this.handleAddOrgClick();
+                            }}
+                            className={"secondary round"}>
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.2079 6.10571H5.95076V9.57714H4.03076V6.10571H0.790759V4.38286H4.03076V0.92H5.95076V4.38286H9.2079V6.10571Z" fill="white"/>
+                            </svg>
+                        </Button>
+                    )}
                     onClick={(e, key) => {this.handleIconClick(e, key);}}
                 />
 

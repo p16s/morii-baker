@@ -56,7 +56,7 @@ class TemplateDefault extends BasicAtom {
                         this.handleIconClick(e, index);
                     }}
                     onAddOrgClick={() => {
-                        alert("Add org clicked");
+                        this.handleAddOrgClick();
                     }}
 
                     header={this.props.sideBarData.header}
@@ -152,6 +152,14 @@ class TemplateDefault extends BasicAtom {
         this.setState(prevState => ({
             isActive: !prevState.isActive
         }));
+    }
+
+
+    /**
+     * handle add org click
+     */
+    handleAddOrgClick() {
+        this.callbackOr(this.props.onAddOrgClick)();
     }
 
 }
