@@ -56,7 +56,7 @@ class NonMembers extends BasicAtom {
             <>
                 <SlideOut
                     className={"Non-members"}
-                    toggleName={"Non-members"}
+                    toggleName={"Add members"}
                 >
                     {this.render_header_area()}
 
@@ -77,7 +77,12 @@ class NonMembers extends BasicAtom {
         return (
             <TitleBar>
                 <h2>Non members</h2>
-
+                <form>
+                    <FormInput
+                        inputClass={"search"}
+                        placeholder={"E.g. John Smith"}
+                    />
+                </form>
                 <Button
                     className={"outline"}
                     onClick={() => {
@@ -88,13 +93,6 @@ class NonMembers extends BasicAtom {
                 >
                     + Invite new user
                 </Button>
-
-                <form>
-                    <FormInput
-                        inputClass={"search"}
-                        placeholder={"E.g. John Smith"}
-                    />
-                </form>
             </TitleBar>
         );
     }

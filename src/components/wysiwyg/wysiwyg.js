@@ -16,10 +16,12 @@ class Wysiwyg extends BasicAtom {
                     apiKey={"5qnz6f1ucl0mznhjzd3qaxoabsium0nqgwo5fxd6hm8jpx49"}
                     outputFormat={'html'}
                     init={{
+                        browser_spellcheck : true,
                         plugins: [
                             'table',
                             'lists',
-                            'link'
+                            'link',
+                            'emoticons'
                         ],
                         menubar: 'insert table',
                         visual : false,
@@ -28,7 +30,7 @@ class Wysiwyg extends BasicAtom {
                         themes: "modern",
                         directionality : "ltr",
                         height: "100%",
-                        toolbar: "styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | forecolor backcolor | link"
+                        toolbar: "styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | forecolor backcolor | link | emoticons"
                     }}
                     onEditorChange={(change)=> {
                         if (typeof this.props.onChange !== 'undefined') {

@@ -190,3 +190,10 @@
         justify-content: center;
         padding: 1rem;
     }
+
+
+    /*  use the branding
+    ================================================================================================================= */
+    .Button.color-5 {
+        background-color: rgb(var(--Global-color-4));
+    }
