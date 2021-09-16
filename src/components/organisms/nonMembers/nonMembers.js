@@ -127,7 +127,7 @@ class NonMembers extends BasicAtom {
                     <span
                         className="add-non-member-to-group-cta"
                         onClick={() => {
-                            // TODO
+                            this.handleAddToGroup(user);
                         }}
                     >
                         <IconAdd />
@@ -328,6 +328,14 @@ class NonMembers extends BasicAtom {
         alert("Add clicked");
     }
 
+
+    /**
+     * add to group CTA
+     * @param e
+     */
+    handleAddToGroup(e) {
+        this.callbackOr(this.props.onAddToGroup)(e);
+    }
 }
 
 
