@@ -81,3 +81,8 @@
         overflow: auto;
         padding: 1.5rem;
     }
+    @media screen and (max-width: 768px) {
+        .Slide-out .content {
+            max-height: calc(100vh - 170px);
+        }
+    }
