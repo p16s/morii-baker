@@ -8,7 +8,6 @@ import Button from "../../atoms/button/button";
 import ModalCenter from "../../molecules/modalCenter/modalCenter";
 import Input from "../../molecules/input/input";
 import IconSpinner from "../../atoms/icons/spinner";
-import Checkbox from "../../atoms/checkbox/checkbox";
 import React from "react";
 
 
@@ -21,7 +20,7 @@ class NonMembers extends BasicAtom {
         });
     }
     __validateEmail(email) {
-        let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+        let tester = /^[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
         if (!email) return false;
 
