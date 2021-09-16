@@ -9,9 +9,6 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {useHistory} from "react-router-dom";
 import { withRouter } from 'react-router';    // TODO not sure on best practice with router yet
 import moriiApp from "../../../../../MoriiApp";
-import AppContext from "../../../../../context/appContext";
-import {useContext} from "react";
-
 
 class LoginAtom extends BasicAtom {
     constructor(props, context) {

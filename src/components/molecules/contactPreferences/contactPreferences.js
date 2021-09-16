@@ -87,7 +87,6 @@ class ContactPreferences extends BasicAtom {
      * @param {MouseEvent} e
      */
     toggle(toToggle, state) {
-        let that = this;
         this.setState( {
             [toToggle]: state ?? !this.state[toToggle]
         },
