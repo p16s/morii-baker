@@ -30,11 +30,11 @@
 
     .Template-default main {
         overflow: auto;
-        padding: 1rem;
+        padding: 1rem 1rem 100px 1rem;
     }
     @media screen and (min-width: 768px) {
         .Template-default main {
-            padding: 0 2rem 2rem 2rem;
+            padding: 0 2rem 2rem 2rem;      /*  extra padding on mobile as we have the tab bar  */
         }
     }
 
@@ -42,6 +42,7 @@
     ================================================================================================================= */
     .Template-default .mobile-toggle {
         cursor: pointer;
+        fill: #fff;
         position: absolute;;
         right: 1em;
         top: 1em;
@@ -52,9 +53,6 @@
         }
             .Template-default .Breadcrumbs .breadcrumb {
                 color: #fff;
-            }
-            .Template-default header .icon {
-                fill: #fff;
             }
     }
     @media screen and (min-width: 768px) {
