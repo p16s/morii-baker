@@ -4,20 +4,31 @@ import List from "../../molecules/list/list";
 import SideBar from "../../organisms/sideBar/sideBar";
 import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
 import IconMenu from "../../atoms/icons/menu";
-// import TabBar from "../../molecules/titleBar/titleBar";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
+
 
 class TemplateDefault extends BasicAtom {
+    /**
+     * inherit and set local state
+     * @param props
+     * @param context
+     */
     constructor(props, context) {
         super(props, context, {
             isActive: false
         });
     }
 
+
     componentDidMount() {
         super.componentDidMount();
-
     }
 
+
+    /**
+     * set some default props
+     * @type {{sideBarData: {footer: {list: {header: string, items: []}}, options: [], header: string, icons: []}}}
+     */
     static defaultProps = {
         "sideBarData": {
             "header": "",
@@ -31,6 +42,7 @@ class TemplateDefault extends BasicAtom {
             }
         },
     }
+
 
     /**
      * main render

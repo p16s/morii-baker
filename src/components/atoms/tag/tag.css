@@ -9,7 +9,7 @@
 ===================================================================================================================== */
 :root {
     --Tag-background-color: rgba(var(--Global-color-5, 114 123 155), .5);
-    --Tag-border-radius: 20px;
+    --Tag-border-radius: var(--Global-border-radius, 5px);
     --Tag-color-error: var(--Global-color-error, 255 0 0);
     --Tag-color-success: var(--Global-color-success, 0 255 0);
 }
@@ -22,7 +22,7 @@
     border-radius: var(--Tag-border-radius);
     color: #fff;
     font-size: .875rem;;
-    padding: .15rem .75rem;
+    padding: .0903rem .75rem;
 }
 
     /*  error || scheduled
