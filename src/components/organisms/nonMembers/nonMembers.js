@@ -80,7 +80,7 @@ class NonMembers extends BasicAtom {
                 <form>
                     <FormInput
                         inputClass={"search"}
-                        placeholder={"E.g. John Smith"}
+                        placeholder={"Search for non-member"}
                         onChange={val => {
                             this.setState({
                                 searchVal: val,
