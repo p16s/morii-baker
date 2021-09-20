@@ -42,7 +42,7 @@ class NonMembers extends BasicAtom {
         if (domainParts.some(function (part) {
             return part.length > 63;
         })) return false;
-        
+
         return tester.test(email);
     }
 

@@ -1,12 +1,20 @@
 import BasicAtom from "../../atoms/basicAtom";
 import './iconBar.css';
 import Icon from "../../atoms/icon/icon";
+import {Link} from "react-router-dom";
+import IconHome from "../../atoms/icons/home";
 
 
 class IconBar extends BasicAtom {
     render() {
         return (
             <div className={"Icon-bar" + this.getClassNameString()}>
+                <Link
+                    to={"/"}
+                    title="View unified inbox"
+                >
+                    <IconHome />
+                </Link>
                 {this.render_icons()}
                 {this.props.children}
 
