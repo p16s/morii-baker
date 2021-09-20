@@ -42,8 +42,7 @@ class NonMembers extends BasicAtom {
         if (domainParts.some(function (part) {
             return part.length > 63;
         })) return false;
-
-
+        
         return tester.test(email);
     }
 
@@ -122,22 +121,6 @@ class NonMembers extends BasicAtom {
                     user.name,
                     user.username,
                     user.phone,
-<<<<<<< HEAD
-                    // <Toggle
-                    //     value={true}
-                    //     onChange={() => {
-                    //         // TODO
-                    //     }}
-                    // />,
-                    // <Toggle
-                    //     value={user.groupAdmin}
-                    //     onChange={() => {
-                    //         // TOOD
-                    //     }}
-                    //     label={(true ? "Admin" : "Member")}
-                    // />,
-=======
->>>>>>> e4941e4ff9fe23cccce7c2e710307c4bee7c4769
                     <span
                         className="add-non-member-to-group-cta"
                         onClick={() => {
@@ -168,11 +151,6 @@ class NonMembers extends BasicAtom {
                         "Name",
                         "Email",
                         "Phone number",
-<<<<<<< HEAD
-                        // "Can Send",
-                        // "Sender/Admin",
-=======
->>>>>>> e4941e4ff9fe23cccce7c2e710307c4bee7c4769
                         "Add to group",
                     ]}
                     tbody={this.render_table_data()}
@@ -186,8 +164,6 @@ class NonMembers extends BasicAtom {
                             "Name",
                             "Email",
                             "Phone number",
-                            // "Can Send",
-                            // "Sender/Admin",
                             "Add to group",
                         ]}
                     />
