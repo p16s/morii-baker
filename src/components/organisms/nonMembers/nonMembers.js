@@ -111,19 +111,19 @@ class NonMembers extends BasicAtom {
                     user.name,
                     user.username,
                     user.phone,
-                    <Toggle
-                        value={true}
-                        onChange={() => {
-                            // TODO
-                        }}
-                    />,
-                    <Toggle
-                        value={user.groupAdmin}
-                        onChange={() => {
-                            // TOOD
-                        }}
-                        label={(true ? "Admin" : "Member")}
-                    />,
+                    // <Toggle
+                    //     value={true}
+                    //     onChange={() => {
+                    //         // TODO
+                    //     }}
+                    // />,
+                    // <Toggle
+                    //     value={user.groupAdmin}
+                    //     onChange={() => {
+                    //         // TOOD
+                    //     }}
+                    //     label={(true ? "Admin" : "Member")}
+                    // />,
                     <span
                         className="add-non-member-to-group-cta"
                         onClick={() => {
@@ -154,8 +154,8 @@ class NonMembers extends BasicAtom {
                         "Name",
                         "Email",
                         "Phone number",
-                        "Can Send",
-                        "Sender/Admin",
+                        // "Can Send",
+                        // "Sender/Admin",
                         "Add to group",
                     ]}
                     tbody={this.render_table_data()}
@@ -169,8 +169,8 @@ class NonMembers extends BasicAtom {
                             "Name",
                             "Email",
                             "Phone number",
-                            "Can Send",
-                            "Sender/Admin",
+                            // "Can Send",
+                            // "Sender/Admin",
                             "Add to group",
                         ]}
                     />
