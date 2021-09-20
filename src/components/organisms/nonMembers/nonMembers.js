@@ -18,7 +18,8 @@ class NonMembers extends BasicAtom {
         super(props, context, {
             isAddingNewUser: false,
             newUserName: '',
-            newUserEmail: ''
+            newUserEmail: '',
+            searchVal: '',
         });
     }
     __validateEmail(email) {
@@ -82,6 +83,11 @@ class NonMembers extends BasicAtom {
                     <FormInput
                         inputClass={"search"}
                         placeholder={"E.g. John Smith"}
+                        onChange={val => {
+                            this.setState({
+                                searchVal: val,
+                            });
+                        }}
                     />
                 </form>
                 <Button
@@ -106,6 +112,11 @@ class NonMembers extends BasicAtom {
         const tbody = [];
 
         this.props.users.forEach((user, index) => {
+            if (this.state.searchVal === ''
+                || (user.name ?? '').toLowerCase().includes(this.state.searchVal.toLowerCase())
+                || (user.username ?? '').toLowerCase().includes(this.state.searchVal.toLowerCase())
+                || (user.phone ?? '').toLowerCase().includes(this.state.searchVal.toLowerCase())
+            )
             tbody.push(
                 [
                     user.name,
