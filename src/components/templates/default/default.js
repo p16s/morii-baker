@@ -64,7 +64,6 @@ class TemplateDefault extends BasicAtom {
                     icons={this.props.sideBarData.icons}
                     activeIcon={this.props.sideBarData.activeIcon}
                     onIconClick={(e, index) => {
-                        console.log("HANDLELICL")
                         this.handleIconClick(e, index);
                     }}
                     onAddOrgClick={() => {
