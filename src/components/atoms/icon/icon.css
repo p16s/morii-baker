@@ -19,12 +19,14 @@
 /*  base
 ===================================================================================================================== */
 .Icon {
+    align-items: center;
     background-color: var(--Icon-background-color);
     border-radius: 5px;
     cursor: pointer;
-    display: block;
+    display: inline-flex;
     font-size: var(--Icon-height);
     height: var(--Icon-height);
+    justify-content: center;
     position: relative;
     width: var(--Icon-width);
 }

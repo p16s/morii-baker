@@ -9,12 +9,15 @@ class IconBar extends BasicAtom {
     render() {
         return (
             <div className={"Icon-bar" + this.getClassNameString()}>
-                <Link
-                    to={"/"}
-                    title="View unified inbox"
+                {/*add a home TODO possibly refactor this*/}
+                <Icon
+                    onClick={() => {
+                        window.location.href = "/"
+                    }}
+                    active={window.location.pathname === "/"}
                 >
                     <IconHome />
-                </Link>
+                </Icon>
                 {this.render_icons()}
                 {this.props.children}
 
