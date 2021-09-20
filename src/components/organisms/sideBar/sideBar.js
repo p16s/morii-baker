@@ -2,7 +2,6 @@ import BasicAtom from "../../atoms/basicAtom";
 import IconBar from "../../molecules/iconBar/iconBar";
 import List from "../../molecules/list/list";
 import './sideBar.css';
-import Button from "../../atoms/button/button";
 
 
 class SideBar extends BasicAtom {

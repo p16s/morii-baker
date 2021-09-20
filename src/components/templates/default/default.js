@@ -4,7 +4,6 @@ import List from "../../molecules/list/list";
 import SideBar from "../../organisms/sideBar/sideBar";
 import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
 import IconMenu from "../../atoms/icons/menu";
-import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 
 class TemplateDefault extends BasicAtom {
