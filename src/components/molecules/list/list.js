@@ -25,7 +25,7 @@ class List extends BasicAtom {
      * @return {JSX.Element|string}
      */
     render_header() {
-        return (typeof this.props.header !== 'undefined')
+        return (typeof this.props.header !== 'undefined' && (this.props.header ?? {text: ''}).text !== '')
             ?
             (
                 <ListHeader
