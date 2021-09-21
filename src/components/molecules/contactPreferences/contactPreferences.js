@@ -18,6 +18,17 @@ class ContactPreferences extends BasicAtom {
     }
 
 
+    componentDidMount() {
+        super.componentDidMount();
+
+        this.setState({
+            sms: (this.props.default ?? {}).sms ?? false,
+            email: (this.props.default ?? {}).email ?? false,
+            whatsapp: (this.props.default ?? {}).whatsapp ?? false
+        });
+    }
+
+
     render(className, props) {
         return (
             <div
@@ -33,15 +44,7 @@ class ContactPreferences extends BasicAtom {
                     label={(this.state.sms ? "SMS" : "SMS")}
                     value={this.state.sms}
                     onChange={() => {
-                        this.toggle('sms')
-                    }}
-                />
-
-                <Toggle
-                    label={(this.state.email ? "Email" : "Email")}
-                    value={this.state.email}
-                    onChange={() => {
-                        this.toggle('email')
+                        this.toggle('sms');
                     }}
                 />
 
@@ -49,7 +52,15 @@ class ContactPreferences extends BasicAtom {
                     label={(this.state.whatsapp ? "Whatsapp" : "Whatsapp")}
                     value={this.state.whatsapp}
                     onChange={() => {
-                        this.toggle('whatsapp')
+                        this.toggle('whatsapp');
+                    }}
+                />
+
+                <Toggle
+                    label={(this.state.email ? "Email" : "Email")}
+                    value={this.state.email}
+                    onChange={() => {
+                        this.toggle('email');
                     }}
                 />
             </div>
@@ -75,10 +86,20 @@ class ContactPreferences extends BasicAtom {
      *
      * @param {MouseEvent} e
      */
-    toggle(toToggle) {
+    toggle(toToggle, state) {
         this.setState( {
-            [toToggle]: !this.state[toToggle]
-        });
+            [toToggle]: state ?? !this.state[toToggle]
+        },
+            () => {
+                this.callbackOr(this.props.onChange)(
+                    {
+                        sms: this.state.sms,
+                        email: this.state.email,
+                        whatsapp: this.state.whatsapp,
+                    }
+                );
+            }
+        );
     }
 }
 

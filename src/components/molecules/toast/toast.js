@@ -83,7 +83,6 @@ class Toast extends BasicAtom {
 
     startRemovalTimer() {
         setTimeout(() => {
-
             this.callbackOr(this.props.stoppedShowing)(true);
         }, this.props.showTime);
     }

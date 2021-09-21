@@ -35,7 +35,7 @@ class FileList extends BasicAtom {
                     href={(value.url ? value.url : '#')}
                     title={"Click to download " + value.name}
                     target="_blank"
-                    rel="nofollow noopener"
+                    rel="nofollow noopener noreferrer"
                     key={"file-" + index}
                 >
                     <File

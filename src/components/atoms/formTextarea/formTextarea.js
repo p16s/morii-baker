@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from 'prop-types';
 import BasicAtom from "../basicAtom";
 import "./formTextarea.css";
-import Label from "../label/label";
 
 
 class FormTextarea extends BasicAtom {

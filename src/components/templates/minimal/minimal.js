@@ -34,7 +34,7 @@ class TemplateMinimal extends BasicAtom {
                     </svg>
 
                     <a
-                        href="/"
+                        href="mailto:support@p16s.co?subject=Account issue"
                         title="Contact support"
                     >
                         Contact support

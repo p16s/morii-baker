@@ -19,7 +19,7 @@
     border-bottom: 1px solid rgb(var(--Global-border-color, 70 176 195));
     align-items: center;
     display: flex;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem .75rem 2rem;
 }
 
     /*  individual breadcrumb
@@ -33,6 +33,24 @@
         text-decoration: none;
         transition: .3s;
     }
+    /* on mobile show a reduced UI */
+    @media screen and (max-width: 767px) {
+        .Breadcrumbs .breadcrumb {
+            display: none;
+        }
+
+        /*  hide the > */
+        .Breadcrumbs .breadcrumb:before {
+            display: none;
+        }
+
+        /*  .Breadcrumbs .breadcrumb:nth-of-type(-n+2) {*/
+        .Breadcrumbs .breadcrumb:nth-of-type(2) {
+            display: inherit;
+            margin-left: 1rem;
+        }
+    }
+
         /*  states: active
         ============================================================================================================= */
         .Breadcrumbs .breadcrumb:hover,
@@ -60,9 +78,15 @@
     /*  if a logo added
     ================================================================================================================= */
     .Breadcrumbs .logo {
-        border: 1px solid 1px solid rgb(var(--Global-border-color, 70 176 195));
+        border: 1px solid rgb(227, 229, 235);
         border-radius: 2px;
-        height: 22px;
+        height: 24px;
         margin-right: .5rem;
-        /*width: 16px;*/
+        padding: 2px;
+    }
+    @media screen and (min-width: 767px) {
+        .Breadcrumbs .logo {
+            border-width: 2px;
+            height: 22px;
+        }
     }

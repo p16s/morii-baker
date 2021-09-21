@@ -23,6 +23,12 @@
     right: 0;
     z-index: 99;
 }
+@media screen and (min-width: 768px) {
+    .Slide-out {
+        left: 285px;
+    }
+}
+
     /*  animate the whole drawer to show the content    */
     .Slide-out.active {
         transform: translateY(0);
@@ -74,4 +80,9 @@
         max-height: 50vh;
         overflow: auto;
         padding: 1.5rem;
+    }
+    @media screen and (max-width: 768px) {
+        .Slide-out .content {
+            max-height: calc(100vh - 170px);
+        }
     }

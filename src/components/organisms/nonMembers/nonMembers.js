@@ -8,19 +8,42 @@ import Button from "../../atoms/button/button";
 import ModalCenter from "../../molecules/modalCenter/modalCenter";
 import Input from "../../molecules/input/input";
 import IconSpinner from "../../atoms/icons/spinner";
+import React from "react";
+import IconAdd from "../../atoms/icons/add";
 
 
 class NonMembers extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
-            users: props.users,
-
             isAddingNewUser: false,
             newUserName: '',
-            newUserEmail: ''
+            newUserEmail: '',
+            searchVal: '',
         });
     }
+    __validateEmail(email) {
+        let tester = /^[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
+        if (!email) return false;
+
+        let emailParts = email.split('@');
+
+        if(emailParts.length !== 2) return false
+
+        let account = emailParts[0];
+        let address = emailParts[1];
+
+        if(account.length > 64) return false
+
+        else if(address.length > 255) return false
+
+        let domainParts = address.split('.');
+        if (domainParts.some(function (part) {
+            return part.length > 63;
+        })) return false;
+
+        return tester.test(email);
+    }
 
     /**
      * main render
@@ -33,7 +56,7 @@ class NonMembers extends BasicAtom {
             <>
                 <SlideOut
                     className={"Non-members"}
-                    toggleName={"Non-members"}
+                    toggleName={"Add members"}
                 >
                     {this.render_header_area()}
 
@@ -54,7 +77,17 @@ class NonMembers extends BasicAtom {
         return (
             <TitleBar>
                 <h2>Non members</h2>
-
+                <form>
+                    <FormInput
+                        inputClass={"search"}
+                        placeholder={"Search for non-member"}
+                        onChange={val => {
+                            this.setState({
+                                searchVal: val,
+                            });
+                        }}
+                    />
+                </form>
                 <Button
                     className={"outline"}
                     onClick={() => {
@@ -65,15 +98,43 @@ class NonMembers extends BasicAtom {
                 >
                     + Invite new user
                 </Button>
-
-                <form>
-                    <FormInput
-                        inputClass={"search"}
-                        placeholder={"E.g. John Smith"}
-                    />
-                </form>
             </TitleBar>
         );
+    }
+
+
+    /**
+     * render the main table
+     */
+     render_table_data() {
+        const tbody = [];
+
+        this.props.users.forEach((user, index) => {
+            if (this.state.searchVal === ''
+                || (user.name ?? '').toLowerCase().includes(this.state.searchVal.toLowerCase())
+                || (user.username ?? '').toLowerCase().includes(this.state.searchVal.toLowerCase())
+                || (user.phone ?? '').toLowerCase().includes(this.state.searchVal.toLowerCase())
+            )
+            tbody.push(
+                [
+                    user.name,
+                    user.username,
+                    user.phone,
+                    <span
+                        className="add-non-member-to-group-cta"
+                        onClick={() => {
+                            this.handleAddToGroup(user);
+                        }}
+                    >
+                        <IconAdd />
+                        Add
+                    </span>
+
+                ]
+            );
+        });
+
+        return tbody;
     }
 
 
@@ -82,7 +143,7 @@ class NonMembers extends BasicAtom {
      * @returns {JSX.Element}
      */
     render_added_members() {
-        if (this.state.users && this.state.users.length) {
+        if (this.props.users && this.props.users.length) {
             return (
                 <Table
                     thead={[
@@ -91,7 +152,7 @@ class NonMembers extends BasicAtom {
                         "Phone number",
                         "Add to group",
                     ]}
-                    tbody={this.state.users}
+                    tbody={this.render_table_data()}
                 />
             );
         } else {
@@ -186,9 +247,42 @@ class NonMembers extends BasicAtom {
                         </Button>
 
                         <Button
-                            disabled={this.isLoading || (!this.state.newUserName.length || !this.state.newUserEmail.length)}
+                            disabled={
+                                this.isLoading
+                                || (
+                                    !this.state.newUserName.length
+                                    || !this.state.newUserEmail.length
+                                    || !this.__validateEmail(this.state.newUserEmail)
+                                )
+                            }
                             onClick={(e) => {
-                                this.addUser(e);
+                                e.preventDefault();
+                                this.isLoading = true;
+                                let that = this;
+
+                                if (typeof this.props.onInvite !== 'undefined') {
+                                    this.props.onInvite(
+                                        () => {
+                                            that.isLoading = false;
+                                            that.setState({
+                                                isAddingNewUser: false
+                                            });
+                                        },
+                                        () => {
+                                            that.isLoading = false;
+                                        },
+                                        this.state.newUserName,
+                                        this.state.newUserEmail
+                                    );
+                                } else {
+                                    setTimeout(() => {
+                                        console.log('FAKE add user');
+                                        that.isLoading = false;
+                                        that.setState({
+                                            isAddingNewUser: false
+                                        });
+                                    }, 1000);
+                                }
                             }}
                             type="button"
                         >
@@ -206,27 +300,6 @@ class NonMembers extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * add the user
-     * @param e
-     */
-    addUser(e) {
-        alert("dummy addUser method");
-
-        e.preventDefault();
-        this.isLoading = true;
-
-        //  reset user
-        setTimeout(() => {
-            this.isLoading = false;
-
-            this.setState({
-                isAddingNewUser: false
-            });
-        }, 2000);
-    }
-
 
     /**
      * cancel the add, clear the data
@@ -247,6 +320,14 @@ class NonMembers extends BasicAtom {
         alert("Add clicked");
     }
 
+
+    /**
+     * add to group CTA
+     * @param e
+     */
+    handleAddToGroup(e) {
+        this.callbackOr(this.props.onAddToGroup)(e);
+    }
 }
 
 

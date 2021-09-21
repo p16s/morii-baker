@@ -33,6 +33,7 @@ class Button extends BasicAtom {
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
+                type={this.props.type}
             >
                 {this.props.text}
 

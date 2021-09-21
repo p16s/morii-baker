@@ -19,12 +19,14 @@
 /*  base
 ===================================================================================================================== */
 .Icon {
+    align-items: center;
     background-color: var(--Icon-background-color);
     border-radius: 5px;
     cursor: pointer;
-    display: block;
+    display: inline-flex;
     font-size: var(--Icon-height);
     height: var(--Icon-height);
+    justify-content: center;
     position: relative;
     width: var(--Icon-width);
 }
@@ -34,6 +36,12 @@
     .Icon.active {
         border: 2px solid var(--Icon-active-color);
     }
+        /*  remove the effect of the border */
+        .Icon.active > img {
+            padding: 4px;
+            transition: .2s;
+        }
+
         .Icon.active > .letter {
             line-height: 1.1em;
         }

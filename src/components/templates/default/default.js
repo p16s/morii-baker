@@ -2,18 +2,32 @@ import BasicAtom from "../../atoms/basicAtom";
 import './default.css';
 import List from "../../molecules/list/list";
 import SideBar from "../../organisms/sideBar/sideBar";
-// import TabBar from "../../molecules/titleBar/titleBar";
 import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
 import IconMenu from "../../atoms/icons/menu";
 
 
 class TemplateDefault extends BasicAtom {
+    /**
+     * inherit and set local state
+     * @param props
+     * @param context
+     */
     constructor(props, context) {
         super(props, context, {
             isActive: false
         });
     }
 
+
+    componentDidMount() {
+        super.componentDidMount();
+    }
+
+
+    /**
+     * set some default props
+     * @type {{sideBarData: {footer: {list: {header: string, items: []}}, options: [], header: string, icons: []}}}
+     */
     static defaultProps = {
         "sideBarData": {
             "header": "",
@@ -27,6 +41,7 @@ class TemplateDefault extends BasicAtom {
             }
         },
     }
+
 
     /**
      * main render
@@ -47,17 +62,19 @@ class TemplateDefault extends BasicAtom {
                     className={(this.state.isActive ? 'active' : '')}
 
                     icons={this.props.sideBarData.icons}
-                    onIconClick={(e) => {
-                        this.handleIconClick(e);
+                    activeIcon={this.props.sideBarData.activeIcon}
+                    onIconClick={(e, index) => {
+                        this.handleIconClick(e, index);
                     }}
                     onAddOrgClick={() => {
-                        alert("Add org clicked");
+                        this.handleAddOrgClick();
                     }}
 
                     header={this.props.sideBarData.header}
                     onListHeaderClick={(e) => {
                         this.handleListHeaderClick(e);
                     }}
+                    activeList={this.props.activeList}
 
                     options={this.props.sideBarData.options}
                     onListClick={(e, list, item) => {
@@ -116,7 +133,7 @@ class TemplateDefault extends BasicAtom {
      * @param index
      */
     handleIconClick(e, index) {
-        this.callbackOr(this.props.onIconClick)(e);
+        this.callbackOr(this.props.onIconClick)(e, index);
     }
 
 
@@ -143,11 +160,17 @@ class TemplateDefault extends BasicAtom {
      * mobile toggle
      */
     toggleMobileNav() {
-        console.log("TOGGLE");
-
         this.setState(prevState => ({
             isActive: !prevState.isActive
         }));
+    }
+
+
+    /**
+     * handle add org click
+     */
+    handleAddOrgClick() {
+        this.callbackOr(this.props.onAddOrgClick)();
     }
 
 }

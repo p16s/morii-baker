@@ -6,7 +6,7 @@ class Breadcrumbs extends BasicAtom {
     render(className, props) {
         if (this.props.breadcrumbs && this.props.breadcrumbs.length) {
             return (
-                <div
+                <nav
                     className={
                         "Breadcrumbs"
                         + this.padIfString(className)
@@ -15,7 +15,7 @@ class Breadcrumbs extends BasicAtom {
                 >
                     {this.render_logo()}
                     {this.render_crumbs()}
-                </div>
+                </nav>
             );
         } else {
             return null
