@@ -91,7 +91,7 @@ class FormInput extends BasicAtom {
                 }
                 type={this.props.type ?? 'text'}
                 placeholder={this.props.placeholder}
-                value={this.state.value}
+                value={this.props.value}
                 onClick={(e) => {
                     this.handleClick(e);
                 }}

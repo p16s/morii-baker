@@ -39,6 +39,10 @@ class Input extends BasicAtom {
     }
 
 
+    /**
+     * render label
+     * @returns {JSX.Element}
+     */
     render_label() {
         if (this.props.for && this.props.for.length) {
             return (
@@ -50,6 +54,10 @@ class Input extends BasicAtom {
     }
 
 
+    /**
+     * render validation
+     * @returns {JSX.Element}
+     */
     render_validation() {
         if (this.props.message && this.props.message.length) {
             return (
