@@ -9,19 +9,10 @@ import IconSpinner from "../../atoms/icons/spinner";
 class FileUpload extends BasicAtom {
     constructor(props, context) {
         super(props, context, {
-            uploadedFiles: [
-                {
-                    name: "uploaded.mock"
-                },
-                {
-                    name: "testing.pdf"
-                }
-            ],
+            uploadedFiles: props.uploadedFiles ?? [],
             fileList: []
         });
     }
-
-
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
@@ -35,7 +26,7 @@ class FileUpload extends BasicAtom {
      */
     render(className, props) {
         return (
-            <div id="clone-here" className="File-upload">
+            <div className="File-upload">
                 <label
                     className={(this.isLoading ? 'disabled' : '')}
                     htmlFor={(this.props.forId ? this.props.forId : 'file-upload')}
@@ -138,7 +129,13 @@ class FileUpload extends BasicAtom {
 
             await this.updateAPI(newFile)
                 .then((response) => {
-                    newList.push(newFile);
+                    console.log(response);
+                    newList.push(
+                        {
+                            name: newFile.name,
+                            location: response.filename,
+                        }
+                    );
                     this.callbackOr(this.props.onSuccess)(response, newFile);
                     // UI update?
                 })
@@ -249,17 +246,22 @@ class FileUpload extends BasicAtom {
      * @returns {Promise<T>}
      */
     updateAPI(file) {
-        let filename = file.name;
-
-        return this.callbackOr(this.props.urlGenerator, 'https://127.0.0.1', true)(filename)
+        return this.callbackOr(this.props.urlGenerator, 'https://127.0.0.1', true)(file)
             .then((url) => {
+                let filename = file.name;
+                if (typeof url === 'object') {
+                    filename = url.filename;
+                    url = url.signedRequest;
+                }
+
                 let promise = (typeof this.props.uploadHandler !== 'undefined')
-                    ? this.props.uploadHandler(filename, url, file, this.props.uploadMethod)
-                    : this.fallbackUploadHandler(filename, url, file, this.props.uploadMethod);
+                    ? this.props.uploadHandler(url, file, this.props.uploadMethod)
+                    : this.fallbackUploadHandler(url, file, this.props.uploadMethod);
+
 
                 return promise
                     .then((response)=>{
-                        return this.updateAPI_handleResponse(response);
+                        return this.updateAPI_handleResponse(response, filename);
                     }).catch((error)=>{
                         return this.updateAPI_error(error);
                     });
@@ -268,13 +270,15 @@ class FileUpload extends BasicAtom {
 
     /**
      * @param response
-     * @returns {Promise<never>|Promise<void>}
+     * @param filename
+     *
+     * @returns {Promise}
      */
-    updateAPI_handleResponse(response) {
+    updateAPI_handleResponse(response, filename) {
         if (response.status !== 200 && response.status !== 201) {
             return this.updateAPI_error(response.statusText);
         }
-        return Promise.resolve(response);
+        return Promise.resolve({uploadResponse: response, filename: filename});
     }
 
 
@@ -282,11 +286,10 @@ class FileUpload extends BasicAtom {
         return Promise.reject(error);
     }
 
-    fallbackUploadHandler(filename, url, file, method) {
+    fallbackUploadHandler(url, file, method) {
         let formData = new FormData();
-        formData.append(filename, file);
 
-        return fetch(url, { method: method ?? "PUT", body: formData });
+        return fetch(url, { method: method ?? "PUT", body: file });
     }
 }
 
