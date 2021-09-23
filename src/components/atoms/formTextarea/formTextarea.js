@@ -87,7 +87,7 @@ class FormTextarea extends BasicAtom {
             <textarea
                 id={this.props.id}
                 className={"Form-textarea" + this.padIfString(className) + this.getClassNameString()}
-                value={this.state.value}
+                value={this.props.value ?? this.state.value}
                 onClick={(e) => {
                     this.handleClick(e)
                 }}
