@@ -38,12 +38,18 @@
     /*  toggle handle
     ================================================================================================================= */
     .Slide-out .toggle-handle {
+        background: linear-gradient(
+                180deg, var(--Slide-out-bg-color) 0%,
+                var(--Slide-out-bg-color) 60%,
+                rgba(255,255,255,0) 100%
+        );
         display: flex;
         left: 0;
         justify-content: center;
         position: absolute;
         top: 0;
         width: 100%;
+        z-index: 2;
     }
         /*  actual "tab" */
         .Slide-out .toggle-handle span {

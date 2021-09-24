@@ -287,8 +287,6 @@ class FileUpload extends BasicAtom {
     }
 
     fallbackUploadHandler(url, file, method) {
-        let formData = new FormData();
-
         return fetch(url, { method: method ?? "PUT", body: file });
     }
 }

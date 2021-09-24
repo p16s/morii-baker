@@ -23,6 +23,7 @@ class Checkbox extends OnOff {
                     this.handleChange(e);
                     this.callbackOr(this.props.onClick)();
                 }}
+                disabled={this.props.disabled}
             />,
             props ?? {}
         );
