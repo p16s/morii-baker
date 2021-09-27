@@ -31,6 +31,9 @@ class Input extends BasicAtom {
                     onChange={(e) => {
                         this.updateValue(e);
                     }}
+                    onKeyPress={(e) => {
+                        this.handleKeyPress(e);
+                    }}
                 />
 
                 {this.render_validation()}
@@ -85,6 +88,21 @@ class Input extends BasicAtom {
      */
     updateValue(e) {
         this.callbackOr(this.props.onChange)(e);
+    }
+
+
+    /**
+     * handle a keypress (eg enter)
+     *
+     * @param {KeyboardEvent} e
+     */
+    handleKeyPress(e) {
+        this.callbackOr(this.props.onKeyPress)(e);
+
+        // pass an enter prop
+        if (e.key === 'Enter'){
+            this.callbackOr(this.props.onEnter)(e);
+        }
     }
 }
 

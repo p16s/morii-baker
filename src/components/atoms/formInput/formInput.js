@@ -98,6 +98,9 @@ class FormInput extends BasicAtom {
                 onChange={(e) => {
                     this.updateValue(e.target.value);
                 }}
+                onKeyPress={(e) => {
+                    this.handleKeyPress(e);
+                }}
             />,
             props ?? {}
         );
@@ -157,6 +160,20 @@ class FormInput extends BasicAtom {
         });
 
         this.callbackOr(this.props.onChange)(e);
+    }
+
+    /**
+     * handle a keypress (eg enter)
+     *
+     * @param {KeyboardEvent} e
+     */
+    handleKeyPress(e) {
+        this.callbackOr(this.props.onKeyPress)(e);
+
+        // pass an enter prop
+        if (e.key === 'Enter'){
+            this.callbackOr(this.props.onEnter)(e);
+        }
     }
 }
 
