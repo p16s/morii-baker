@@ -41,21 +41,19 @@
     /*  error
     ================================================================================================================= */
     .Alert.error {
-        background-color: rgba(var(--Alert-color-error), .1);
+        /*background-color: rgba(var(--Alert-color-error), .1);*/
+        background-color: rgb(253, 232, 241);
         border: 1px solid rgb(var(--Alert-color-error));
         color: rgb(var(--Alert-color-error));
+        fill: rgb(var(--Alert-color-error));
     }
-        .Alert.error svg {
-            /*TODO */
-        }
 
     /*  success
     ================================================================================================================= */
     .Alert.success {
-        background-color: rgba(var(--Alert-color-success), .1);
+        /*background-color: rgba(var(--Alert-color-success), .1);*/
+        background-color: rgb(233, 251, 247);
         border: 1px solid rgb(var(--Alert-color-success));
         color: rgb(var(--Alert-color-success));
-    }
-    .Alert.success svg {
-        /*TODO */
+        fill: rgb(var(--Alert-color-success));
     }

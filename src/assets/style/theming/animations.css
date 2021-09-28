@@ -29,6 +29,8 @@
 }
 
 
+
+
 .slide-in-from-right-appear,
 .slide-in-from-right-enter {
     transform: translateX(200px);
@@ -37,11 +39,10 @@
 .slide-in-from-right-appear-active,
 .slide-in-from-right-enter-active {
     transform: translateX(0);
-    transition: .3s;
+    transition: 3s;
 }
 
-
 .slide-in-from-right-exit-active {
-    transition: .2s;
+    transition: 2s;
     transform: translateX(200px);
 }

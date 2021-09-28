@@ -198,3 +198,11 @@
     .Button.color-5 {
         background-color: rgb(var(--Global-color-4));
     }
+    .Button:not(:disabled).color-5:hover,
+     .Button.color-5:focus,
+     .Button.color-5:focus-visible,
+     .Button.color-5:focus-within,
+     .Button.color-5:active {
+        background-color: rgb(var(--Global-color-4-darker));
+
+    }
