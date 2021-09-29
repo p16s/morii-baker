@@ -46,7 +46,7 @@
             background-color: #fff;
             border-radius: var(--Global-border-radius, 5px);
             margin: 100px auto;
-            min-width: 400px;
+            max-width: 95vw;
             padding: 1.5rem;
             position: relative;
             width: 435px;
