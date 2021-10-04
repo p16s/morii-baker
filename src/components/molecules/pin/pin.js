@@ -24,10 +24,14 @@ class Pin extends BasicAtom {
                 </Label>
 
                 <FormPin
-                    // TODO pass values in
                     length={this.props.length}
-                    onChange={(e) => {this.handleKeyPress(e)}}
+                    onChange={(e) => {
+                        this.handleKeyPress(e)
+                    }}
                     disabled={this.props.disabled}
+                    onKeyPress={(e) => {
+                        this.handleKeyPress(e)
+                    }}
                 />
 
                 {this.render_validation()}

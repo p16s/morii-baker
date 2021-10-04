@@ -37,7 +37,7 @@
     /*  head
     ================================================================================================================= */
     .Table th {
-        border-bottom: 1px solid rgb(var(--Global-border-color, 170 176 195));
+        border-bottom: 1px solid #e3e3e3;
         color: rba(var(--Table-th-color));
         display: none;      /*  don't show header on mob    */
         font-weight: 600;

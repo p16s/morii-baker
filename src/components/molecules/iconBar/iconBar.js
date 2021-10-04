@@ -1,7 +1,6 @@
 import BasicAtom from "../../atoms/basicAtom";
 import './iconBar.css';
 import Icon from "../../atoms/icon/icon";
-import {Link} from "react-router-dom";
 import IconHome from "../../atoms/icons/home";
 
 

@@ -2,8 +2,6 @@ import BasicAtom from "../../atoms/basicAtom";
 import IconBar from "../../molecules/iconBar/iconBar";
 import List from "../../molecules/list/list";
 import './sideBar.css';
-import {Link} from "react-router-dom";
-import IconHome from "../../atoms/icons/home";
 
 
 class SideBar extends BasicAtom {

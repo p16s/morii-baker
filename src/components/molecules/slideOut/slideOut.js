@@ -38,13 +38,13 @@ class SlideOut extends BasicAtom {
                     + (this.isActive ? ' active' : '')
                 }
             >
-                <div className={"toggle-handle"}>
-                    <span
-                        className={( this.isActive ? 'active' : '')}
-                        onClick={() => {
-                            this.toggleActive();
-                        }}
-                    >
+                <div
+                    className="toggle-handle"
+                    onClick={() => {
+                        this.toggleActive();
+                    }}
+                >
+                    <span className={( this.isActive ? 'active' : '')}>
                         {this.props.toggleName}
 
                         <svg className={"icon"} width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">

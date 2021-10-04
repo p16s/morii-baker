@@ -23,12 +23,12 @@
     /*  header
     ================================================================================================================= */
     .Template-minimal .header {
-        align-items: stretch;
+        align-items: center;
         background-color: #f5f5f5;
         border-bottom: 1px solid rgba(var(--Global-color-5,  114 123 155), .2);
         display: flex;
         justify-content: center;
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 2.5rem;
         width: 100%;
     }
         .Template-minimal .header a {

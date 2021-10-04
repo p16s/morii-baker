@@ -76,6 +76,9 @@ class LoginAtom extends BasicAtom {
                         onChange={(e) => {
                             this.setUserEmail(e);
                         }}
+                        onEnter={(e) => {
+                            this.getUser();
+                        }}
                     />
 
                     {this.render_email_validation()}
@@ -102,11 +105,9 @@ class LoginAtom extends BasicAtom {
                     <Pin
                         length={6}
                         labelText={"Your verification code"}
-                        onChange={
-                            (e) => {
-                               this.setVerificationCode(e);
-                            }
-                        }
+                        onChange={(e) => {
+                            this.setVerificationCode(e);
+                        }}
                     />
 
                     <br />
@@ -114,10 +115,9 @@ class LoginAtom extends BasicAtom {
 
                     <Pin
                         labelText={"Your PIN number"}
-                        // TODO pass values in
-                        onChange={
-                            (e) => this.setUserPin(e)
-                        }
+                        onChange={(e) => {
+                            this.setUserPin(e);
+                        }}
                     />
 
                     {this.render_verify_cta()}
@@ -290,12 +290,10 @@ class LoginAtom extends BasicAtom {
 
             this.isLoading = false;
             return Promise.reject(error);
-        })
-            .then((val) => {
+        }).then((val) => {
             this.callbackOr(this.props.onLogin)(val);
         });
     }
-
 }
 
 

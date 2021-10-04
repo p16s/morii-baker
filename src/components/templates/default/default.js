@@ -7,16 +7,16 @@ import IconMenu from "../../atoms/icons/menu";
 
 
 class TemplateDefault extends BasicAtom {
-    /**
-     * inherit and set local state
-     * @param props
-     * @param context
-     */
-    constructor(props, context) {
-        super(props, context, {
-            isActive: false
-        });
-    }
+    // /**
+    //  * inherit and set local state
+    //  * @param props
+    //  * @param context
+    //  */
+    // constructor(props, context) {
+    //     super(props, context, {
+    //         isActive: props.isMobileNavActive
+    //     });
+    // }
 
 
     componentDidMount() {
@@ -40,6 +40,7 @@ class TemplateDefault extends BasicAtom {
                 }
             }
         },
+        "isMobileNavActive": false
     }
 
 
@@ -59,7 +60,8 @@ class TemplateDefault extends BasicAtom {
                 }
             >
                 <SideBar
-                    className={(this.state.isActive ? 'active' : '')}
+                    // className={(this.state.isActive ? 'active' : '')}
+                    className={(this.props.isMobileNavActive ? 'active' : '')}
 
                     icons={this.props.sideBarData.icons}
                     activeIcon={this.props.sideBarData.activeIcon}
@@ -107,7 +109,7 @@ class TemplateDefault extends BasicAtom {
                         <span
                             className="mobile-toggle"
                             onClick={() => {
-                                this.toggleMobileNav()
+                                this.toggleMobileNav();
                             }}
                         >
                             <IconMenu />
@@ -160,9 +162,11 @@ class TemplateDefault extends BasicAtom {
      * mobile toggle
      */
     toggleMobileNav() {
-        this.setState(prevState => ({
-            isActive: !prevState.isActive
-        }));
+        // this.setState(prevState => ({
+        //     isActive: !prevState.isActive
+        // }));
+
+        this.callbackOr(this.props.onToggleMobileNav)();
     }
 
 

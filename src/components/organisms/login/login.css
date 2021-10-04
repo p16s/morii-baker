@@ -24,7 +24,13 @@
         flex-direction: column;
         width: 100%;
     }
-
+    /*TODO the pin are too large on the enter verification code on mobile so reduce here and speak to design*/
+    @media screen and (max-width: 767px) {
+        .Login .Pin .pin-input {
+            height: 38px;
+            width: 38px;
+        }
+    }
     @media screen and (min-width: 768px) {
         .Login .main-content {
             max-width: 370px;

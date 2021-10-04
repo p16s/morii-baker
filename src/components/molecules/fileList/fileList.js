@@ -31,22 +31,33 @@ class FileList extends BasicAtom {
     render_list() {
         return (this.props.files ?? []).map((value, index) => {
             return (
-                <a
-                    href={(value.url ? value.url : '#')}
-                    title={"Click to download " + value.name}
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
+                <File
+                    fileName={value.name}
+                    noRemove={true}
+                    onClick={(e) => {
+                        this.handleClick(index, value.name, value.location);
+                    }}
                     key={"file-" + index}
-                >
-                    <File
-                        fileName={value.name}
-                        noRemove={true}
-                    />
-                </a>
+                />
             );
         });
     }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Handle click
+     *
+     * @param {MouseEvent} e
+     */
+    handleClick(index, name, location) {
+        this.callbackOr(this.props.onClick)(index, name, location);
+    }
 }
+
 
 
 export default FileList;

@@ -26,7 +26,7 @@ class FormPin extends BasicAtom {
     handleKeyPress(e, key) {
         let value = e.key ?? e.target.value;
         let pins = this.state.pins;
-        let keysAllowed = this.keysAllowed
+        let keysAllowed = this.keysAllowed;
 
         if (value === 'ArrowLeft' && key > 0) {
             this["input" + (key - 1)].focus();

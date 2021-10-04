@@ -45,6 +45,7 @@ class NonMembers extends BasicAtom {
         return tester.test(email);
     }
 
+
     /**
      * main render
      * @param className
@@ -233,6 +234,9 @@ class NonMembers extends BasicAtom {
                                 newUserEmail: e
                             });
                         }}
+                        onEnter={(e) => {
+                            this.inviteNewUser(e);
+                        }}
                     />
 
                     <aside className="ctas">
@@ -256,33 +260,7 @@ class NonMembers extends BasicAtom {
                                 )
                             }
                             onClick={(e) => {
-                                e.preventDefault();
-                                this.isLoading = true;
-                                let that = this;
-
-                                if (typeof this.props.onInvite !== 'undefined') {
-                                    this.props.onInvite(
-                                        () => {
-                                            that.isLoading = false;
-                                            that.setState({
-                                                isAddingNewUser: false
-                                            });
-                                        },
-                                        () => {
-                                            that.isLoading = false;
-                                        },
-                                        this.state.newUserName,
-                                        this.state.newUserEmail
-                                    );
-                                } else {
-                                    setTimeout(() => {
-                                        console.log('FAKE add user');
-                                        that.isLoading = false;
-                                        that.setState({
-                                            isAddingNewUser: false
-                                        });
-                                    }, 1000);
-                                }
+                                this.inviteNewUser(e);
                             }}
                             type="button"
                         >
@@ -316,10 +294,49 @@ class NonMembers extends BasicAtom {
     }
 
 
-    handleButtonClick() {
-        alert("Add clicked");
-    }
+    /**
+     * invite method
+     * @param e
+     */
+    inviteNewUser(e) {
+        //  make sure requirements met then can submit
+        if (
+            !this.isLoading
+            && (
+                this.state.newUserName.length &&
+                this.state.newUserEmail.length &&
+                this.__validateEmail(this.state.newUserEmail)
+            )
+        ) {
+            e.preventDefault();
+            this.isLoading = true;
+            let that = this;
 
+            if (typeof this.props.onInvite !== 'undefined') {
+                this.props.onInvite(
+                    () => {
+                        that.isLoading = false;
+                        that.setState({
+                            isAddingNewUser: false
+                        });
+                    },
+                    () => {
+                        that.isLoading = false;
+                    },
+                    this.state.newUserName,
+                    this.state.newUserEmail
+                );
+            } else {
+                setTimeout(() => {
+                    console.log('FAKE add user');
+                    that.isLoading = false;
+                    that.setState({
+                        isAddingNewUser: false
+                    });
+                }, 1000);
+            }
+        }
+    }
 
     /**
      * add to group CTA
