@@ -52,7 +52,7 @@
             /*  list parent
             ========================================================================================================= */
             .Filters .list-parent {
-                display: none;      /*  show when group active  */
+                /*display: none;      !*  show when group active  *!*/
             }
                     .Filters .list-group.active .icon-arrow-dropdown {
                         transform: rotate(0deg);
@@ -69,3 +69,52 @@
                     .Filters .list-child label {
                         cursor: pointer;
                     }
+
+
+
+
+/*  special animation for this component
+===================================================================================================================== */
+.Filters .fade-and-slide-in-appear,
+.Filters .fade-and-slide-in-enter {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.Filters .fade-and-slide-in-appear-active,
+.Filters .fade-and-slide-in-enter-active {
+    opacity: 1;
+    transition: .2s;
+    transform: translateY(0);
+}
+
+.Filters .fade-and-slide-in-exit {
+    opacity: 1;
+}
+.Filters .fade-and-slide-in-exit-active {
+    opacity: 0;
+    transition: .2s;
+    transform: translateY(50px);
+}
+
+
+
+.Filters .parent-animation-appear,
+.Filters .parent-animation-enter {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.Filters .parent-animation-appear-active,
+.Filters .parent-animation-enter-active {
+    opacity: 1;
+    transition: .2s;
+    transform: translateY(0);
+}
+
+.Filters .parent-animation-exit {
+    opacity: 1;
+}
+.Filters .parent-animation-exit-active {
+    opacity: 0;
+    transition: .1s;
+    transform: translateY(50px);
+}

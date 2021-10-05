@@ -2,6 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import "./filters.css";
 import Button from "../../atoms/button/button";
 import IconArrowDropdown from "../../atoms/icons/arrow-dropdown";
+import {CSSTransition} from "react-transition-group";
 
 
 class Filters extends BasicAtom {
@@ -12,7 +13,7 @@ class Filters extends BasicAtom {
     constructor(props) {
         super(props);
         this.state = {
-            areFiltersVisible: true,
+            areFiltersVisible: false,
             parentVisible: -1
         };
     }
@@ -35,21 +36,22 @@ class Filters extends BasicAtom {
                 }
             >
                 <Button
-                    className="outline"
+                    className={this.state.areFiltersVisible ? "primary" : "outline"}
                     onClick={() => this.toggleShowFilters()}
                 >
                     Filters
                 </Button>
 
-                {
-                    this.state.areFiltersVisible
-                        ?
-                            <div className="lists-container">
-                                {this.render_filter_list_parents()}
-                            </div>
-                        : null
-                }
-
+                <CSSTransition
+                    in={this.state.areFiltersVisible}
+                    timeout={300}
+                    classNames="fade-and-slide-in"
+                    unmountOnExit
+                >
+                    <div className="lists-container">
+                        {this.render_filter_list_parents()}
+                    </div>
+                </CSSTransition>
             </div>
         );
     }
@@ -73,7 +75,6 @@ class Filters extends BasicAtom {
                             "list-group"
                             + (this.state.parentVisible === index ? ' active' : '')
                         }
-
                         key={"list-" + index}
                     >
                         <p
@@ -86,9 +87,19 @@ class Filters extends BasicAtom {
                             {opt.list_title}
                         </p>
 
-                        <ul className="list-parent">
-                            {this.render_filter_list(opt.children)}
-                        </ul>
+                        <CSSTransition
+                            in={this.state.parentVisible === index}
+                            timeout={100}
+                            classNames="parent-animation"
+                            unmountOnExit
+                        >
+                            <ul
+                                className="list-parent"
+                                key={"list-" + index}
+                            >
+                                {this.render_filter_list(opt.children)}
+                            </ul>
+                        </CSSTransition>
                     </div>
                 );
             }

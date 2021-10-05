@@ -16,6 +16,11 @@ class FiltersExample extends BakerExample {
         );
     }
 
+
+    /**
+     * render_normal (example)
+     * @returns {JSX.Element}
+     */
     render_normal() {
         const fakeOptions = [
             {
@@ -69,18 +74,19 @@ class FiltersExample extends BakerExample {
                     />
                 ]
             },
-
-
         ]
 
-        return (
+
+        return this.render_exampleComponent(
+            "Filters/Normal",
             <Filters
-                className={"dsaasdasdasdksadasdasd"}
+                className={"example-class"}
                 options={fakeOptions}
                 onChildClick={(e) => {
                     console.log("Filters onChildClick", e);
                 }}
-            />
+            />,
+            "Each filter list can be any component passed in via the array.  This component just handles the list presentation/logic"
         );
     }
 
