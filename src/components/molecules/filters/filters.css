@@ -1,0 +1,30 @@
+/*  title:  Filters
+    notes:  molecule styles
+            "children" can be passed as any node type (text/component)
+===================================================================================================================== */
+
+
+
+
+/*  each list container
+===================================================================================================================== */
+.Filters .list-container {
+    border: 1px solid red;
+}
+    /*  each "<ul>"
+    ================================================================================================================= */
+    .Filters .list-parent {
+
+    }
+        /*  each child "<li>"
+        ============================================================================================================= */
+        .Filters .list-child {
+            background-color: #e3e3e3;
+            display: none;      /*  only shows when parent clicked  */
+            list-style-type: none;
+        }
+            /*  some children want a ponter (not all, as can be component passed in)    */
+            .Filters li.list-child,
+            .Filters .list-child label {
+                cursor: pointer;
+            }

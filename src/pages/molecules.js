@@ -24,6 +24,7 @@ import FiltersExample from "../components/molecules/filters/example/filtersExamp
 const PageMolecules = () => {
     return (
         <div className="figma-like">
+                <FiltersExample />
             <InputExample />
             <InputPhoneExample />
             <TextareaExample />

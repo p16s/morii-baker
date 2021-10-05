@@ -22,15 +22,7 @@ class Filters extends BasicAtom {
                         + this.padIfString(className)
                     }
                 >
-                    <select
-                        onChange={() => {
-                            this.handleOnChange(event)
-                        }}
-                    >
-                        {this.render_option_list()}
-                    </select>
-
-                    <IconArrowDropdown />
+                    {this.render_filter_list_parents()}
                 </div>
 
             </>
@@ -39,11 +31,10 @@ class Filters extends BasicAtom {
 
 
     /**
-     *  options are passed in as props
-     * @param options
+     * each parent "list"
      * @returns {unknown[]}
      */
-    render_option_list() {
+    render_filter_list_parents() {
         /**
          * deconstruct the props we need
          */
@@ -52,32 +43,65 @@ class Filters extends BasicAtom {
         return (
             options ?? []).map((opt, index) => {
                 return (
-                    <option
-                        value={opt.value}
-                        key={"opt-"+ index}
+                    <div
+                        className="list-container"
+                        key={"list-" + index}
                     >
-                        {opt.value}
-                    </option>
+                        <p>{opt.list_title}</p>
+
+                        <ul
+                            className="list-parent"
+                        >
+                            {this.render_filter_list(opt.children)}
+                        </ul>
+                    </div>
                 );
             }
         );
     }
 
 
+    /**
+     * each child of the parent
+     * @param opt
+     * @returns {unknown[]}
+     */
+    render_filter_list(opt) {
+        return (
+            opt ?? []).map((opt, index) => {
+                return (
+                    <li
+                        className="list-child"
+                        key={"item-" + index}
+                    >
+                        {opt}
+                    </li>
+                );
+            }
+        );
+    }
+
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * Callback to pass value up
-     *
-     * @param {KeyboardEvent} e
-     */
-    handleOnChange(e) {
-        let theValue = e.target.value;
-
-        this.callbackOr(this.props.onChange)(theValue);
+    handleOnClick(e) {
+        console.log("handleOnClick", e);
     }
+
+
+    // /**
+    //  * Callback to pass value up
+    //  *
+    //  * @param {KeyboardEvent} e
+    //  */
+    // handleOnChange(e) {
+    //     let theValue = e.target.value;
+    //
+    //     this.callbackOr(this.props.onChange)(theValue);
+    // }
 }
 
 
