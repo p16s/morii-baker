@@ -6,25 +6,63 @@
 
 
 
-/*  each list container
+/*  filters component
 ===================================================================================================================== */
-.Filters .list-container {
-    border: 1px solid red;
-}
-    /*  each "<ul>"
-    ================================================================================================================= */
-    .Filters .list-parent {
+.Filters {
+    --border-color: #EFEFEF;
+    --padding: 1rem;
 
+
+    border: 1px solid red;
+    /*color: red;*/
+    position: relative;
+}
+    /*  all the lists container
+    ================================================================================================================= */
+    .Filters .lists-container {
+        background-color: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: var(--Global-border-radius, 5px);
+        position: absolute;
+        top: calc(100% + 1rem);      /*  move away from the button   */
+        z-index: 99;
     }
-        /*  each child "<li>"
+        /*  each container / individual list group
         ============================================================================================================= */
-        .Filters .list-child {
-            background-color: #e3e3e3;
-            display: none;      /*  only shows when parent clicked  */
-            list-style-type: none;
+        .Filters .list-group {
+            border-bottom: 1px solid var(--border-color);
         }
-            /*  some children want a ponter (not all, as can be component passed in)    */
-            .Filters li.list-child,
-            .Filters .list-child label {
+        .Filters .list-group:last-of-type {
+            border: none;
+        }
+            /*  list title
+            ========================================================================================================= */
+            .Filters .list-title {
+                align-items: center;
                 cursor: pointer;
+                display: flex;
+                padding: var(--padding);
             }
+
+            /*  list parent
+            ========================================================================================================= */
+            .Filters .list-parent {
+                display: none;
+            }
+                .Filters .list-parent.active {
+                    display: inherit;
+                }
+
+                /*  each child "<li>"
+                ===================================================================================================== */
+                .Filters .list-child {
+                    background-color: #e3e3e3;
+                    /*display: none;      !*  only shows when parent clicked  *!*/
+                    list-style-type: none;
+                    padding: var(--padding);
+                }
+                    /*  some children want a ponter (not all, as can be component passed in)    */
+                    .Filters li.list-child,
+                    .Filters .list-child label {
+                        cursor: pointer;
+                    }

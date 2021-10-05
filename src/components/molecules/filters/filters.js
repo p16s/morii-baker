@@ -1,9 +1,23 @@
 import BasicAtom from "../../atoms/basicAtom";
 import "./filters.css";
+import Button from "../../atoms/button/button";
 import IconArrowDropdown from "../../atoms/icons/arrow-dropdown";
 
 
 class Filters extends BasicAtom {
+    /**
+     * local state
+     * @param props
+     */
+    constructor(props) {
+        super(props);
+        this.state = {
+            areFiltersVisible: true,
+            parentVisible: -1
+        };
+    }
+
+
     /**
      * main render
      */
@@ -13,19 +27,30 @@ class Filters extends BasicAtom {
          */
         let { className } = this.props;
 
-
         return (
-            <>
-                <div
-                    className={
-                        "Filters"
-                        + this.padIfString(className)
-                    }
+            <div
+                className={
+                    "Filters"
+                    + this.padIfString(className)
+                }
+            >
+                <Button
+                    className="outline"
+                    onClick={() => this.toggleShowFilters()}
                 >
-                    {this.render_filter_list_parents()}
-                </div>
+                    Filters
+                </Button>
 
-            </>
+                {
+                    this.state.areFiltersVisible
+                        ?
+                            <div className="lists-container">
+                                {this.render_filter_list_parents()}
+                            </div>
+                        : null
+                }
+
+            </div>
         );
     }
 
@@ -44,13 +69,24 @@ class Filters extends BasicAtom {
             options ?? []).map((opt, index) => {
                 return (
                     <div
-                        className="list-container"
+                        className="list-group"
                         key={"list-" + index}
                     >
-                        <p>{opt.list_title}</p>
+                        <p
+                            className="list-title"
+                            onClick={() => {
+                                this.toggleShowParent(index);
+                            }}
+                        >
+                            <IconArrowDropdown />
+                            {opt.list_title}
+                        </p>
 
                         <ul
-                            className="list-parent"
+                            className={
+                                "list-parent"
+                                + (this.state.parentVisible === index ? ' active' : '')
+                            }
                         >
                             {this.render_filter_list(opt.children)}
                         </ul>
@@ -86,6 +122,28 @@ class Filters extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    toggleShowFilters() {
+        this.setState({
+            areFiltersVisible: !this.state.areFiltersVisible
+        })
+    }
+
+
+    toggleShowParent(index) {
+        if (index !== this.state.parentVisible) {
+            this.setState({
+                parentVisible: index
+            });
+        } else {
+            this.setState({
+                parentVisible: -1
+            });
+
+        }
+    }
+
 
     handleOnClick(e) {
         console.log("handleOnClick", e);
