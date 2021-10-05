@@ -12,9 +12,6 @@
     --border-color: #EFEFEF;
     --padding: 1rem;
 
-
-    border: 1px solid red;
-    /*color: red;*/
     position: relative;
 }
     /*  all the lists container
@@ -31,10 +28,14 @@
         ============================================================================================================= */
         .Filters .list-group {
             border-bottom: 1px solid var(--border-color);
+            min-width: 300px;
         }
         .Filters .list-group:last-of-type {
             border: none;
         }
+            .Filters .list-group.active .list-parent {
+                display: inherit;
+            }
             /*  list title
             ========================================================================================================= */
             .Filters .list-title {
@@ -43,25 +44,27 @@
                 display: flex;
                 padding: var(--padding);
             }
+                .Filters .list-title .icon-arrow-dropdown {
+                    transform: rotate(-90deg);
+                    transition: .2s;
+                }
 
             /*  list parent
             ========================================================================================================= */
             .Filters .list-parent {
-                display: none;
+                display: none;      /*  show when group active  */
             }
-                .Filters .list-parent.active {
-                    display: inherit;
-                }
+                    .Filters .list-group.active .icon-arrow-dropdown {
+                        transform: rotate(0deg);
+                    }
 
                 /*  each child "<li>"
                 ===================================================================================================== */
                 .Filters .list-child {
-                    background-color: #e3e3e3;
-                    /*display: none;      !*  only shows when parent clicked  *!*/
                     list-style-type: none;
                     padding: var(--padding);
                 }
-                    /*  some children want a ponter (not all, as can be component passed in)    */
+                    /*  some children want a pointer (not all, as can be component passed in)    */
                     .Filters li.list-child,
                     .Filters .list-child label {
                         cursor: pointer;

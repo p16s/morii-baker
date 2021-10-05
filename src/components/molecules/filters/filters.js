@@ -63,13 +63,17 @@ class Filters extends BasicAtom {
         /**
          * deconstruct the props we need
          */
-        let { options, isSelected } = this.props;
+        let { options } = this.props;
 
         return (
             options ?? []).map((opt, index) => {
                 return (
                     <div
-                        className="list-group"
+                        className={
+                            "list-group"
+                            + (this.state.parentVisible === index ? ' active' : '')
+                        }
+
                         key={"list-" + index}
                     >
                         <p
@@ -82,12 +86,7 @@ class Filters extends BasicAtom {
                             {opt.list_title}
                         </p>
 
-                        <ul
-                            className={
-                                "list-parent"
-                                + (this.state.parentVisible === index ? ' active' : '')
-                            }
-                        >
+                        <ul className="list-parent">
                             {this.render_filter_list(opt.children)}
                         </ul>
                     </div>
@@ -108,6 +107,9 @@ class Filters extends BasicAtom {
                 return (
                     <li
                         className="list-child"
+                        onClick={(opt) => {
+                            this.props.onChildClick(opt);
+                        }}
                         key={"item-" + index}
                     >
                         {opt}

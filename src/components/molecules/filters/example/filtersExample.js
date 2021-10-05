@@ -1,5 +1,6 @@
 import BakerExample from "../../../../helpers/bakerExample";
 import Filters from "../filters";
+import FormInput from "../../../atoms/formInput/formInput";
 
 
 class FiltersExample extends BakerExample {
@@ -57,7 +58,15 @@ class FiltersExample extends BakerExample {
             {
                 "list_title": "List 3",
                 "children": [
-                    <input type="text" />
+
+                    <FormInput
+                        onChange={(e) => {
+                            console.log("FormInput on change ", e);
+                        }}
+                        onEnter={() => {
+                            console.log("FormInput onEnter");
+                        }}
+                    />
                 ]
             },
 
@@ -68,9 +77,8 @@ class FiltersExample extends BakerExample {
             <Filters
                 className={"dsaasdasdasdksadasdasd"}
                 options={fakeOptions}
-                isSelected={1}
-                onChange={(e) => {
-                    console.log("handle change of option", e);
+                onChildClick={(e) => {
+                    console.log("Filters onChildClick", e);
                 }}
             />
         );
