@@ -18,6 +18,7 @@ import ContactPreferencesExample from "../components/molecules/contactPreference
 import TabBarExample from "../components/molecules/tabBar/example/tabBarExample";
 import ToastExample from "../components/molecules/toast/example/toastExample";
 import NoDataMessageExample from "../components/molecules/noDataMessage/example/noDataMessageExample";
+import FiltersExample from "../components/molecules/filters/example/filtersExample";
 
 
 const PageMolecules = () => {
@@ -33,6 +34,7 @@ const PageMolecules = () => {
             <IconBarExample />
             <BreadcrumbsExample />
             <TableExample />
+            <FiltersExample />
             <SlideOutExample />
             <FileListExample />
             <RandomExample />

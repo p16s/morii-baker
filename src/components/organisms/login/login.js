@@ -7,8 +7,9 @@ import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {useHistory} from "react-router-dom";
-import { withRouter } from 'react-router';    // TODO not sure on best practice with router yet
-import moriiApp from "../../../../../MoriiApp";
+import { withRouter } from 'react-router';
+// import moriiApp from "../../../../../MoriiApp";
+
 
 class LoginAtom extends BasicAtom {
     constructor(props, context) {
@@ -48,9 +49,9 @@ class LoginAtom extends BasicAtom {
                         key={"1"}
                     >
                         <div className="main-content">
-                            {this.render_email()}
+                            {/*{this.render_email()}*/}
 
-                            {this.render_identity()}
+                            {/*{this.render_identity()}*/}
                         </div>
                     </CSSTransition>
                 </TransitionGroup>
@@ -238,7 +239,6 @@ class LoginAtom extends BasicAtom {
             userEmail: e
         });
 
-
         //  pass data out
         this.callbackOr(this.props.userEmail)(e);
     }
@@ -316,5 +316,6 @@ const Login = (props) => {
 
     return (<LoginAtom onLogin={loginFunc} />)
 }
+
 
 export default withRouter(Login);

@@ -43,18 +43,20 @@ class List extends BasicAtom {
      * @return {unknown[]}
      */
     render_items() {
-        return (this.props.items ?? []).map((list, index) => {
-            return (
-                <ListItem
-                    list={list}
-                    key={index}
-                    active={(this.props.activeItem ?? -1) === index}
-                    onClick={(e) => {this.handleListClick(e, index)}}
-                >
-                    {/*{list.text}*/}
-                </ListItem>
-            );
-        });
+        return (
+            this.props.items ?? []).map((list, index) => {
+                return (
+                    <ListItem
+                        list={list}
+                        key={index}
+                        active={(this.props.activeItem ?? -1) === index}
+                        onClick={(e) => {this.handleListClick(e, index)}}
+                    >
+                        {/*{list.text}*/}
+                    </ListItem>
+                );
+           }
+       );
     }
 
 

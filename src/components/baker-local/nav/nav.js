@@ -9,41 +9,41 @@ const Nav = () => {
     return (
         <nav>
             <ul className={'site-nav'}>
-                <Link to="/">
-                    <ListItem active={(location.pathname === '/')}>
+                <ListItem active={(location.pathname === '/')}>
+                    <Link to="/">
                         Theme
-                    </ListItem>
-                </Link>
+                    </Link>
+                </ListItem>
 
-                <Link to="/atoms">
-                    <ListItem active={(location.pathname === '/atoms')}>
+                <ListItem active={(location.pathname === '/atoms')}>
+                    <Link to="/atoms">
                         Atoms
-                    </ListItem>
-                </Link>
+                    </Link>
+                </ListItem>
 
-                <Link to="/molecules">
-                    <ListItem active={(location.pathname === '/molecules')}>
+                <ListItem active={(location.pathname === '/molecules')}>
+                    <Link to="/molecules">
                         Molecules
-                    </ListItem>
-                </Link>
+                    </Link>
+                </ListItem>
 
-                <Link to="/organisms">
-                    <ListItem active={(location.pathname === '/organisms')}>
+                <ListItem active={(location.pathname === '/organisms')}>
+                    <Link to="/organisms">
                         Organisms
-                    </ListItem>
-                </Link>
+                    </Link>
+                </ListItem>
 
-                <Link to="/templates">
-                    <ListItem active={(location.pathname === '/templates')}>
+                <ListItem active={(location.pathname === '/templates')}>
+                    <Link to="/templates">
                         Templates
-                    </ListItem>
-                </Link>
+                    </Link>
+                </ListItem>
 
-                <Link to="/pages">
-                    <ListItem active={(location.pathname === '/components')}>
+                <ListItem active={(location.pathname === '/components')}>
+                    <Link to="/pages">
                         Pages
-                    </ListItem>
-                </Link>
+                    </Link>
+                </ListItem>
             </ul>
         </nav>
     );
