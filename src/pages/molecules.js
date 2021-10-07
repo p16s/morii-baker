@@ -18,11 +18,15 @@ import ContactPreferencesExample from "../components/molecules/contactPreference
 import TabBarExample from "../components/molecules/tabBar/example/tabBarExample";
 import ToastExample from "../components/molecules/toast/example/toastExample";
 import NoDataMessageExample from "../components/molecules/noDataMessage/example/noDataMessageExample";
+import FiltersExample from "../components/molecules/filters/example/filtersExample";
+import InputTagsExample from "../components/molecules/inputTags/example/inputTagsExample";
 
 
 const PageMolecules = () => {
     return (
         <div className="figma-like">
+                <InputTagsExample />
+                <FiltersExample />
             <InputExample />
             <InputPhoneExample />
             <TextareaExample />
@@ -33,6 +37,7 @@ const PageMolecules = () => {
             <IconBarExample />
             <BreadcrumbsExample />
             <TableExample />
+            <FiltersExample />
             <SlideOutExample />
             <FileListExample />
             <RandomExample />

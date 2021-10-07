@@ -12,7 +12,11 @@ class Label extends BasicAtom {
     render_element(text, className) {
         return (
             <label
-                className={"Label" + this.padIfString(className) + this.getClassNameString()}
+                className={
+                    "Label"
+                    + this.padIfString(className)
+                    + this.getClassNameString()
+                }
                 htmlFor={this.props.for}
             >
                 {text}

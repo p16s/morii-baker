@@ -14,17 +14,15 @@ class PageMinimal extends BasicAtom {
         return (
             <>
                 <TemplateMinimal>
-
                     <input
                         id="testingit"
                         type="file"
                         onChange={(e) => {
-                            console.log("onChange", e.target.files);
+                            console.log("onChange");
                             this.addToList(e.target.files);
                         }}
                         multiple
                     />
-                    {/*{this.render_upload_list()}*/}
 
                     <h1>Minimal template</h1>
 
@@ -36,23 +34,12 @@ class PageMinimal extends BasicAtom {
         );
     }
 
-    render_upload_list() {
-        return this.state.fileList.map((file, index) => {
-            return (
-                <p>File: {file}</p>
-            );
-        });
-    }
-
-
-    addToList(file) {
+    addToList(toAdd) {
         const newList = [...this.state.fileList];
-
-        newList.push(file);
 
         this.setState({
             fileList: newList
-        });
+        })
     }
 }
 
