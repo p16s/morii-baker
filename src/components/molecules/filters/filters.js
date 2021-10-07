@@ -3,6 +3,7 @@ import "./filters.css";
 import Button from "../../atoms/button/button";
 import IconArrowDropdown from "../../atoms/icons/arrow-dropdown";
 import {CSSTransition} from "react-transition-group";
+import IconCheck from "../../atoms/icons/check";
 
 
 class Filters extends BasicAtom {
@@ -34,6 +35,7 @@ class Filters extends BasicAtom {
                 className={
                     "Filters"
                     + this.padIfString(className)
+                    + (this.state.areFiltersVisible ? " active " : '')
                 }
             >
                 <Button
@@ -120,14 +122,22 @@ class Filters extends BasicAtom {
                     <li
                         className={
                             "list-child"
-                            //  TODO make an active based on...
+                            +
+                            (opt == this.props.activeFilters ? " active" : '')
                         }
-                        onClick={(opt, index) => {
+                        onClick={() => {
                             this.props.onChildClick(opt, index);
                         }}
                         key={"item-" + index}
                     >
                         {opt}
+
+                        {
+                            opt == this.props.activeFilters
+                                ?
+                                    <IconCheck />
+                                : ''
+                        }
                     </li>
                 );
             }
@@ -144,7 +154,8 @@ class Filters extends BasicAtom {
      */
     toggleShowFilters() {
         this.setState({
-            areFiltersVisible: !this.state.areFiltersVisible
+            areFiltersVisible: !this.state.areFiltersVisible,
+            parentVisible: -1,
         })
     }
 
