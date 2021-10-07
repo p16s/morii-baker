@@ -68,8 +68,6 @@ class LoginAtom extends BasicAtom {
         if (this.state.isStage === 1) {
             return (
                 <>
-                    <h1>Log in</h1>
-
                     <FormInput
                         type="email"
                         placeholder="Enter your email"
@@ -153,7 +151,7 @@ class LoginAtom extends BasicAtom {
                     className="email-cta"
                     disabled={true}
                 >
-                    Login
+                    Sign in with Email
                     <IconSpinner />
                 </Button>
             );
@@ -166,7 +164,7 @@ class LoginAtom extends BasicAtom {
                         () => this.getUser()
                     }
                 >
-                    Login
+                    Sign in with Email
                 </Button>
             );
         }
@@ -210,7 +208,6 @@ class LoginAtom extends BasicAtom {
      *
      */
     getUser() {
-        // alert("getUser clicked TODO integrate");
         this.isLoading = true;
 
         moriiApp.auth.loginRequest(this.state.userEmail)
