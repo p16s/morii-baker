@@ -1,4 +1,4 @@
-/*  title:  Filters
+/*  title:  InputTags
     notes:  molecule styles
             "children" can be passed as any node type (text/component)
 ===================================================================================================================== */
@@ -33,9 +33,10 @@
         .Filters .list-group:last-of-type {
             border: none;
         }
-            .Filters .list-group.active .list-parent {
-                display: inherit;
-            }
+            /*done via the CSSTransition now*/
+            /*.InputTags .list-group.active .list-parent {*/
+            /*    display: inherit;*/
+            /*}*/
             /*  list title
             ========================================================================================================= */
             .Filters .list-title {
@@ -44,6 +45,10 @@
                 display: flex;
                 padding: var(--padding);
             }
+            .Filters .list-title:hover {
+                background-color: rgba(var(--Global-color-5), .1);
+                transition: .2s;
+            }
                 .Filters .list-title .icon-arrow-dropdown {
                     transform: rotate(-90deg);
                     transition: .2s;
@@ -51,9 +56,10 @@
 
             /*  list parent
             ========================================================================================================= */
-            .Filters .list-parent {
-                /*display: none;      !*  show when group active  *!*/
-            }
+            /*done via the CSSTransition now*/
+            /*.InputTags .list-parent {*/
+            /*    display: none;      !*  show when group active  *!*/
+            /*}*/
                     .Filters .list-group.active .icon-arrow-dropdown {
                         transform: rotate(0deg);
                     }
@@ -61,15 +67,33 @@
                 /*  each child "<li>"
                 ===================================================================================================== */
                 .Filters .list-child {
+                    align-items: center;
+                    display: flex;
                     list-style-type: none;
-                    padding: var(--padding);
+                    padding: var(--padding) 1.5rem;
+                    transition: .3s;
+                }
+                .Filters .list-child:hover,
+                .Filters .list-child.active {
+                    background-color: rgba(var(--Global-color-5), .1);
+                    transition: .2s;
                 }
                     /*  some children want a pointer (not all, as can be component passed in)    */
                     .Filters li.list-child,
                     .Filters .list-child label {
                         cursor: pointer;
                     }
-
+                    /*  edge case, sort some of the possible children used */
+                    .Filters .list-child label,
+                    .Filters input[type="text"] {
+                        flex-grow: 1;
+                    }
+                    .Filters input[type="radio"] {
+                        margin: 0 .5rem 0 0;
+                    }
+                    .Filters .tags-container {
+                        max-width: 300px;
+                    }
 
 
 

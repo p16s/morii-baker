@@ -1,6 +1,7 @@
 import BakerExample from "../../../../helpers/bakerExample";
 import Filters from "../filters";
 import FormInput from "../../../atoms/formInput/formInput";
+import InputTags from "../../inputTags/inputTags";
 
 
 class FiltersExample extends BakerExample {
@@ -63,27 +64,27 @@ class FiltersExample extends BakerExample {
             {
                 "list_title": "List 3",
                 "children": [
-
-                    <FormInput
-                        onChange={(e) => {
-                            console.log("FormInput on change ", e);
-                        }}
-                        onEnter={() => {
-                            console.log("FormInput onEnter");
-                        }}
-                    />
+                    // <FormInput
+                    //     onChange={(e) => {
+                    //         console.log("FormInput on change ", e);
+                    //     }}
+                    //     onEnter={() => {
+                    //         console.log("FormInput onEnter");
+                    //     }}
+                    // />,
+                    <InputTags />,
                 ]
             },
         ]
 
 
         return this.render_exampleComponent(
-            "Filters/Normal",
+            "InputTags/Normal",
             <Filters
                 className={"example-class"}
                 options={fakeOptions}
-                onChildClick={(e) => {
-                    console.log("Filters onChildClick", e);
+                onChildClick={(e, index) => {
+                    console.log("InputTags onChildClick", e, index);
                 }}
             />,
             "Each filter list can be any component passed in via the array.  This component just handles the list presentation/logic"

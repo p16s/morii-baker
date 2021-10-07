@@ -14,7 +14,8 @@ class Filters extends BasicAtom {
         super(props);
         this.state = {
             areFiltersVisible: false,
-            parentVisible: -1
+            parentVisible: -1,
+            childActive: -1
         };
     }
 
@@ -117,9 +118,12 @@ class Filters extends BasicAtom {
             opt ?? []).map((opt, index) => {
                 return (
                     <li
-                        className="list-child"
-                        onClick={(opt) => {
-                            this.props.onChildClick(opt);
+                        className={
+                            "list-child"
+                            //  TODO make an active based on...
+                        }
+                        onClick={(opt, index) => {
+                            this.props.onChildClick(opt, index);
                         }}
                         key={"item-" + index}
                     >
@@ -131,12 +135,13 @@ class Filters extends BasicAtom {
     }
 
 
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+    /**
+     * show the entire set of filters
+     */
     toggleShowFilters() {
         this.setState({
             areFiltersVisible: !this.state.areFiltersVisible
@@ -144,6 +149,10 @@ class Filters extends BasicAtom {
     }
 
 
+    /**
+     * toggle each "parent" filter (show the nested children)
+     * @param index
+     */
     toggleShowParent(index) {
         if (index !== this.state.parentVisible) {
             this.setState({
@@ -156,23 +165,6 @@ class Filters extends BasicAtom {
 
         }
     }
-
-
-    handleOnClick(e) {
-        console.log("handleOnClick", e);
-    }
-
-
-    // /**
-    //  * Callback to pass value up
-    //  *
-    //  * @param {KeyboardEvent} e
-    //  */
-    // handleOnChange(e) {
-    //     let theValue = e.target.value;
-    //
-    //     this.callbackOr(this.props.onChange)(theValue);
-    // }
 }
 
 
