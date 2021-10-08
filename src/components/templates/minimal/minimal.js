@@ -19,23 +19,16 @@ class TemplateMinimal extends BasicAtom {
                     + this.getClassNameString()
                 }
             >
-                {
-                    this.props.isLoginScreen
-                        ?
-                            <h1>initial login</h1>
-                        :
-                            <header className="header">
-                                <IconPurposefulLogo />
+                <header className="header">
+                    <IconPurposefulLogo />
 
-                                <a
-                                    href="mailto:support@p16s.co?subject=Account issue"
-                                    title="Contact support"
-                                >
-                                    Contact support
-                                </a>
-                            </header>
-
-                }
+                    <a
+                        href="mailto:support@p16s.co?subject=Account issue"
+                        title="Contact support"
+                    >
+                        Contact support
+                    </a>
+                </header>
 
                 <main className="main">
                     {this.props.children}

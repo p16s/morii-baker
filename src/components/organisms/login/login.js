@@ -10,6 +10,7 @@ import { withRouter } from 'react-router';
 import moriiApp from "../../../../../MoriiApp";
 import React from "react";
 import Toast from "../../molecules/toast/toast";
+import MoriiApp from "../../../../../MoriiApp";
 
 
 class LoginAtom extends BasicAtom {
@@ -27,6 +28,10 @@ class LoginAtom extends BasicAtom {
     }
 
 
+    /**
+     * default prop values
+     * @type {{isStage: number}}
+     */
     static defaultProps = {
         isStage: 1
     }
@@ -44,20 +49,33 @@ class LoginAtom extends BasicAtom {
                 "Login"
                 + this.getClassNameString()}
             >
-                    <CSSTransition
-                        in={true}
-                        classNames={"fade-in"}
-                        appear
-                        timeout={200}
-                    >
-                        <div className="main-content">
-                            {this.render_sso()}
+                <CSSTransition
+                    in={true}
+                    classNames={"fade-in"}
+                    appear
+                    timeout={200}
+                >
+                    <div className="main-content">
+                        {this.render_sso()}
 
-                            {this.render_email()}
+                        {this.render_email()}
 
-                            {this.render_identity()}
-                        </div>
-                    </CSSTransition>
+                        {this.render_identity()}
+                    </div>
+                </CSSTransition>
+
+                <Toast
+                    isVisible={this.state.isToastShowing}
+                    type={"error"}
+                    stoppedShowing={(e) => {
+                        this.setState({
+                            isToastShowing: false,
+                            toastMessage: ""
+                        });
+                    }}
+                >
+                    {this.state.toastMessage}
+                </Toast>
             </div>
         );
     }
@@ -68,15 +86,36 @@ class LoginAtom extends BasicAtom {
      * @returns {JSX.Element}
      */
     render_sso() {
-        return (
-            <div>
-                <h1>Sign in to Messages</h1>
+        if (this.state.isStage === 1) {
+            return (
+                <div>
+                    <h1>Sign in to Messages</h1>
 
-                <div id="googleLogin" />
+                    <div id="googleLogin"/>
 
-                <p className="alternatively">Alternatively you can also sign in with your email address</p>
-            </div>
-        );
+                    <Button
+                        className="ms-login"
+                        onClick={() => {
+                            MoriiApp.auth.loginRequestMs().then(
+                                (response) => {
+                                    console.log('request', response);
+                                    if (response?.redirect) {
+                                        window.location = response.redirect;
+                                    } else {
+                                        console.log('ERROR: problem getting MS redirect URL');
+                                    }
+                                }
+                            );
+                        }}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><title>MS-SymbolLockup</title><rect x="1" y="1" width="9" height="9" fill="#f25022"/><rect x="1" y="11" width="9" height="9" fill="#00a4ef"/><rect x="11" y="1" width="9" height="9" fill="#7fba00"/><rect x="11" y="11" width="9" height="9" fill="#ffb900"/></svg>
+                        Sign in with Microsoft
+                    </Button>
+
+                    <p className="alternatively">Alternatively you can also sign in with your email address</p>
+                </div>
+            );
+        }
     }
 
 
@@ -101,19 +140,6 @@ class LoginAtom extends BasicAtom {
                     />
 
                     {this.render_email_cta()}
-
-                    <Toast
-                        isVisible={this.state.isToastShowing}
-                        type={"error"}
-                        stoppedShowing={(e) => {
-                            this.setState({
-                                isToastShowing: false,
-                                toastMessage: ""
-                            });
-                        }}
-                    >
-                        {this.state.toastMessage}
-                    </Toast>
                 </>
             );
         }
@@ -125,29 +151,23 @@ class LoginAtom extends BasicAtom {
      * @returns {JSX.Element}
      */
     render_email_cta() {
-        if (this.isLoading) {
-            return (
-                <Button
-                    className="email-cta"
-                    disabled={true}
-                >
-                    Sign in with Email
-                    <IconSpinner />
-                </Button>
-            );
-        } else {
-            return (
-                <Button
-                    className="email-cta"
-                    disabled={!this.state.canGetUser}
-                    onClick={
-                        () => this.getUser()
-                    }
-                >
-                    Sign in with Email
-                </Button>
-            );
-        }
+        return (
+            <Button
+                className="email-cta"
+                disabled={this.isLoading || !this.state.canGetUser}
+                onClick={
+                    () => this.getUser()
+                }
+            >
+                Sign in with Email
+                {
+                    this.isLoading
+                        ?
+                        <IconSpinner />
+                        : ''
+                }
+            </Button>
+        );
     }
 
 
@@ -181,7 +201,19 @@ class LoginAtom extends BasicAtom {
                         }}
                     />
 
-                    {this.render_verify_cta()}
+                    <aside className="main-cta-container">
+                        {/*<Button*/}
+                        {/*    className="outline"*/}
+                        {/*    onClick={() => {*/}
+                        {/*        this.setState({*/}
+                        {/*            isStage: 1*/}
+                        {/*        })*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    Back*/}
+                        {/*</Button>*/}
+                        {this.render_verify_cta()}
+                    </aside>
                 </>
             );
         }
@@ -193,27 +225,22 @@ class LoginAtom extends BasicAtom {
      * @returns {JSX.Element}
      */
     render_verify_cta() {
-        if (this.isLoading) {
-            return (
-                <Button
-                    disabled={true}
-                >
-                    Enter
-                    <IconSpinner />
-                </Button>
-            );
-        } else {
-            return (
-                <Button
-                    disabled={this.state.userPin.length < 4 || this.state.verificationCode.length < 6}
-                    onClick={
-                        () => this.validateUser()
-                    }
-                >
-                    Enter
-                </Button>
-            );
-        }
+        return (
+            <Button
+                disabled={this.isLoading || this.state.userPin.length < 4 || this.state.verificationCode.length < 6}
+                onClick={
+                    () => this.validateUser()
+                }
+            >
+                Enter
+                {
+                    this.isLoading
+                    ?
+                        <IconSpinner />
+                    : ''
+                }
+            </Button>
+        );
     }
 
 
@@ -244,10 +271,6 @@ class LoginAtom extends BasicAtom {
             .finally(() => {
                 this.isLoading = false;
             });
-
-
-        console.log("pass to parent");
-        this.callbackOr(this.props.noLongerInitialLoginScreen)("some");
     }
 
 
@@ -261,7 +284,7 @@ class LoginAtom extends BasicAtom {
             userEmail: e
         });
 
-        //  pass data out
+        //  pass data out TODO not working since moving to a HOC
         this.callbackOr(this.props.userEmail)(e);
     }
 
@@ -276,7 +299,7 @@ class LoginAtom extends BasicAtom {
             userPin: e
         });
 
-        //  pass data out
+        //  pass data out TODO not working since moving to a HOC
         this.callbackOr(this.props.userPin)(e);
     }
 
@@ -290,7 +313,7 @@ class LoginAtom extends BasicAtom {
             verificationCode: e
         });
 
-        //  pass data out
+        //  pass data out TODO not working since moving to a HOC
         this.callbackOr(this.props.verificationCode)(e);
     }
 
@@ -308,11 +331,15 @@ class LoginAtom extends BasicAtom {
             this.state.userPin,
             this.state.verificationCode
         ).catch((error) => {
-            alert('Invalid PIN or verification code');
+            this.setState({
+                isToastShowing: true,
+                toastMessage: "Invalid PIN or verification code"
+            });
 
             this.isLoading = false;
             return Promise.reject(error);
         }).then((val) => {
+            //  TODO not working since moving to a HOC
             this.callbackOr(this.props.onLogin)(val);
         });
     }
