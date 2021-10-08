@@ -65,3 +65,43 @@
         .Login .Button {
             margin-top: 1.5rem;
         }
+
+
+
+
+
+.page-login h1 {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+    .page-login h1 {
+        font-size: 2.25rem;
+    }
+}
+
+.page-login p {
+    padding: 0;
+}
+
+.page-login input,
+.page-login button {
+    width: 100%;
+}
+
+
+/*  separator
+================================================================================================================= */
+.page-login .alternatively {
+    border-top: 1px solid rgba(var(--Global-color-5), .2);
+    color: #727B9B;
+    margin-top: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+/*  google SSO login
+================================================================================================================= */
+.page-login #googleLogin {
+    display: flex;
+    justify-content: center;
+}

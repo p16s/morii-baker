@@ -3,12 +3,13 @@ import './login.css';
 import FormInput from "../../atoms/formInput/formInput";
 import Button from "../../atoms/button/button";
 import Pin from "../../molecules/pin/pin";
-import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {useHistory} from "react-router-dom";
 import { withRouter } from 'react-router';
 import moriiApp from "../../../../../MoriiApp";
+import React from "react";
+import Toast from "../../molecules/toast/toast";
 
 
 class LoginAtom extends BasicAtom {
@@ -19,7 +20,9 @@ class LoginAtom extends BasicAtom {
             userEmail: "",
             userEmailError: false,
             userPin: '',
-            verificationCode: ''
+            verificationCode: '',
+            isToastShowing: false,
+            toastMessage: ""
         });
     }
 
@@ -41,20 +44,37 @@ class LoginAtom extends BasicAtom {
                 "Login"
                 + this.getClassNameString()}
             >
-                <TransitionGroup>
                     <CSSTransition
+                        in={true}
                         classNames={"fade-in"}
                         appear
                         timeout={200}
-                        key={"1"}
                     >
                         <div className="main-content">
+                            {this.render_sso()}
+
                             {this.render_email()}
 
                             {this.render_identity()}
                         </div>
                     </CSSTransition>
-                </TransitionGroup>
+            </div>
+        );
+    }
+
+
+    /**
+     * allow users to use other accounts
+     * @returns {JSX.Element}
+     */
+    render_sso() {
+        return (
+            <div>
+                <h1>Sign in to Messages</h1>
+
+                <div id="googleLogin" />
+
+                <p className="alternatively">Alternatively you can also sign in with your email address</p>
             </div>
         );
     }
@@ -80,10 +100,52 @@ class LoginAtom extends BasicAtom {
                         }}
                     />
 
-                    {this.render_email_validation()}
-
                     {this.render_email_cta()}
+
+                    <Toast
+                        isVisible={this.state.isToastShowing}
+                        type={"error"}
+                        stoppedShowing={(e) => {
+                            this.setState({
+                                isToastShowing: false,
+                                toastMessage: ""
+                            });
+                        }}
+                    >
+                        {this.state.toastMessage}
+                    </Toast>
                 </>
+            );
+        }
+    }
+
+
+    /**
+     * render the stage 1, email CTA, different UI based on state
+     * @returns {JSX.Element}
+     */
+    render_email_cta() {
+        if (this.isLoading) {
+            return (
+                <Button
+                    className="email-cta"
+                    disabled={true}
+                >
+                    Sign in with Email
+                    <IconSpinner />
+                </Button>
+            );
+        } else {
+            return (
+                <Button
+                    className="email-cta"
+                    disabled={!this.state.canGetUser}
+                    onClick={
+                        () => this.getUser()
+                    }
+                >
+                    Sign in with Email
+                </Button>
             );
         }
     }
@@ -125,50 +187,6 @@ class LoginAtom extends BasicAtom {
         }
     }
 
-    /**
-     * render any validation UI
-     * @returns {JSX.Element}
-     */
-    render_email_validation() {
-        if (this.state.userEmailError) {
-            return (
-                <ValidationMessage
-                    className="error"
-                    message={"[Dummy message]"}
-                />
-            );
-        }
-    }
-
-    /**
-     * render the stage 1, email CTA, different UI based on state
-     * @returns {JSX.Element}
-     */
-    render_email_cta() {
-        if (this.isLoading) {
-            return (
-                <Button
-                    className="email-cta"
-                    disabled={true}
-                >
-                    Sign in with Email
-                    <IconSpinner />
-                </Button>
-            );
-        } else {
-            return (
-                <Button
-                    className="email-cta"
-                    disabled={!this.state.canGetUser}
-                    onClick={
-                        () => this.getUser()
-                    }
-                >
-                    Sign in with Email
-                </Button>
-            );
-        }
-    }
 
     /**
      * render the stage 2, verify CTA, different UI based on state
@@ -217,12 +235,19 @@ class LoginAtom extends BasicAtom {
                         isStage: 2
                     });
                 } else {
-                    alert('Problem logging in. Please check the email address');
+                    this.setState({
+                        isToastShowing: true,
+                        toastMessage: "Problem logging in. Please check the email address"
+                    });
                 }
              })
             .finally(() => {
                 this.isLoading = false;
             });
+
+
+        console.log("pass to parent");
+        this.callbackOr(this.props.noLongerInitialLoginScreen)("some");
     }
 
 
