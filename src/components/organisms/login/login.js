@@ -154,7 +154,7 @@ class LoginAtom extends BasicAtom {
         return (
             <Button
                 className="email-cta"
-                disabled={this.isLoading || !this.state.canGetUser}
+                disabled={this.isLoading || !this.state.canGetUser || !this.state.userEmail.length}
                 onClick={
                     () => this.getUser()
                 }
