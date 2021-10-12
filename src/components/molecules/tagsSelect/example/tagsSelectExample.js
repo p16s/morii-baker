@@ -44,10 +44,10 @@ class TagsSelectExample extends BakerExample {
             <TagsSelect
                 availableTags={fakeTags}
                 onTagsUpdate={(e) => {
-                    console.log("TagsSelect onTagsUpdate", e, " (api post etc)");
+                    console.log("TagsSelect onTagsUpdate", e, " (api post/array sort etc)");
                 }}
             />,
-            "Select (add) tags to a collecton when clicked"
+            "Select (add) tags to a collection when clicked"
         );
     }
 

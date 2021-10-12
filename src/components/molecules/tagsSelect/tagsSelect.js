@@ -2,6 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import "./tagsSelect.css";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
+import TagFilter from "../../atoms/tagFilter/tagFilter";
 
 
 class TagsSelect extends BasicAtom {
@@ -64,8 +65,8 @@ class TagsSelect extends BasicAtom {
                     classNames="fade-in"
                     key={"selected-tag-" + tag.name}
                 >
-                    <span
-                        className="Filter-tag added"
+                    <TagFilter
+                        className="added"
                         onClick={(e) => {
                             this.removeTag(index);
                         }}
@@ -73,7 +74,7 @@ class TagsSelect extends BasicAtom {
                         {tag.name}
 
                         <IconClose />
-                    </span>
+                    </TagFilter>
                 </CSSTransition>
             );
         });
@@ -91,19 +92,15 @@ class TagsSelect extends BasicAtom {
                     classNames="fade-in"
                     key={"available-tag-" + tag.name}
                 >
-                    <span
-                        className={
-                            "Filter-tag"
-                            +
-                            (this.alreadyExists(tag.name) ? " hidden" : '')
-                        }
+                    <TagFilter
+                        className={(this.alreadyExists(tag.name) ? " hidden" : '')}
                         onClick={() => {
                             this.addTagToSelected(tag.name);
                         }}
                         key={"tag-" + tag.name}
                     >
                         {tag.name}
-                    </span>
+                    </TagFilter>
                 </CSSTransition>
             );
         });
@@ -183,7 +180,7 @@ class TagsSelect extends BasicAtom {
             selectedTags: copyTags
         }, () => {
             //  pass (emit) prop
-            this.callbackOr(this.props.onTagsUpdate)(this.state.tags);
+            this.callbackOr(this.props.onTagsUpdate)(this.state.selectedTags);
         });
     }
 }

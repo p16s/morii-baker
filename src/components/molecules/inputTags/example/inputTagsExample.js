@@ -6,9 +6,7 @@ class InputTagsExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>
-                    Input Tags
-                </h1>
+                <h1>Input Tags</h1>
 
                 {this.render_normal()}
             </section>
@@ -46,7 +44,7 @@ class InputTagsExample extends BakerExample {
                     console.log("TagsSelect onTagsUpdate", e, " (api post etc)");
                 }}
             />,
-            "Input and Tag components used in combination to create an array of tags"
+            "Input and TagFilterExample components used in combination to create an array of tags"
         );
     }
 
