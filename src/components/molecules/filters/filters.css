@@ -1,4 +1,4 @@
-/*  title:  InputTags
+/*  title:  TagsSelect
     notes:  molecule styles
             "children" can be passed as any node type (text/component)
 ===================================================================================================================== */
@@ -34,7 +34,7 @@
             border: none;
         }
             /*done via the CSSTransition now*/
-            /*.InputTags .list-group.active .list-parent {*/
+            /*.TagsSelect .list-group.active .list-parent {*/
             /*    display: inherit;*/
             /*}*/
             /*  list title
@@ -57,7 +57,7 @@
             /*  list parent
             ========================================================================================================= */
             /*done via the CSSTransition now*/
-            /*.InputTags .list-parent {*/
+            /*.TagsSelect .list-parent {*/
             /*    display: none;      !*  show when group active  *!*/
             /*}*/
                     .Filters .list-group.active .icon-arrow-dropdown {

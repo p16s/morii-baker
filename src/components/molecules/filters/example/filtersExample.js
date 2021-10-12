@@ -79,12 +79,12 @@ class FiltersExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "InputTags/Normal",
+            "TagsSelect/Normal",
             <Filters
                 className={"example-class"}
                 options={fakeOptions}
                 onChildClick={(e, index) => {
-                    console.log("InputTags onChildClick", e, index);
+                    console.log("TagsSelect onChildClick", e, index);
                 }}
             />,
             "Each filter list can be any component passed in via the array.  This component just handles the list presentation/logic"

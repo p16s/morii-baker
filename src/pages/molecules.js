@@ -20,11 +20,13 @@ import ToastExample from "../components/molecules/toast/example/toastExample";
 import NoDataMessageExample from "../components/molecules/noDataMessage/example/noDataMessageExample";
 import FiltersExample from "../components/molecules/filters/example/filtersExample";
 import InputTagsExample from "../components/molecules/inputTags/example/inputTagsExample";
+import TagsSelectExample from "../components/molecules/tagsSelect/example/tagsSelectExample";
 
 
 const PageMolecules = () => {
     return (
         <div className="figma-like">
+            <TagsSelectExample />
                 <InputTagsExample />
                 <FiltersExample />
             <InputExample />

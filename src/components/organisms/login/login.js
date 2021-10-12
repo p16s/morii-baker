@@ -8,7 +8,7 @@ import IconSpinner from "../../atoms/icons/spinner";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {useHistory} from "react-router-dom";
 import { withRouter } from 'react-router';
-import moriiApp from "../../../../../MoriiApp";
+// import moriiApp from "../../../../../MoriiApp";
 
 
 class LoginAtom extends BasicAtom {
@@ -41,20 +41,20 @@ class LoginAtom extends BasicAtom {
                 "Login"
                 + this.getClassNameString()}
             >
-                <TransitionGroup>
-                    <CSSTransition
-                        classNames={"fade-in"}
-                        appear
-                        timeout={200}
-                        key={"1"}
-                    >
-                        <div className="main-content">
-                            {this.render_email()}
+                {/*<TransitionGroup>*/}
+                {/*    <CSSTransition*/}
+                {/*        classNames={"fade-in"}*/}
+                {/*        appear*/}
+                {/*        timeout={200}*/}
+                {/*        key={"1"}*/}
+                {/*    >*/}
+                {/*        <div className="main-content">*/}
+                {/*            {this.render_email()}*/}
 
-                            {this.render_identity()}
-                        </div>
-                    </CSSTransition>
-                </TransitionGroup>
+                {/*            {this.render_identity()}*/}
+                {/*        </div>*/}
+                {/*    </CSSTransition>*/}
+                {/*</TransitionGroup>*/}
             </div>
         );
     }

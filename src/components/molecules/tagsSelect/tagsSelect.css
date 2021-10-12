@@ -1,6 +1,6 @@
 /*  title:  TagsSelect
     notes:  molecule styles
-            input and tags, adding/removing
+            select a tag from an existing list/array
 ===================================================================================================================== */
 
 
@@ -8,14 +8,42 @@
 
 /*  TagsSelect component
 ===================================================================================================================== */
-.Input-tags {
+.Tags-select {
 
+   --Tags-select-border: 1px solid var(--Tags-select-border-color);
+   --Tags-select-border-color: rgb(var(--Global-form-border-color, 170 176 195));
+   --Tags-select-border-radius: var(--Global-form-border-radius, 5px);
+   --Tags-select-font-size: var(--Global-base-font-size, 16px);
+   --Tags-select-padding: 0 .75rem;
 }
+
+
+/*  this is the upper, tags have been added, container
+===================================================================================================================== */
+.Tags-select .selected-tags-container {
+    align-items: center;
+    border: var(--Tags-select-border);
+    border-radius: var(--Tags-select-border-radius);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--Tags-select-font-size);
+    line-height: 1;
+    min-height: 44px;
+    outline: none;      /* poor accessability */
+    padding: var(--Tags-select-padding);
+}
+    .Tags-select .selected-tags-container .Filter-tag {
+        margin: 3px;
+    }
+
+
+
+
 
 
     /*  tags added container
     ================================================================================================================= */
-    .Input-tags .tags-container {
+    .Tags-select .tags-container {
         margin-top: .25rem;
     }
 
@@ -44,6 +72,7 @@
         background-color: rgba(var(--Global-form-border-color, 170 176 195), .2);
         transition: .2s;
     }
+        /*  for removing    */
         .Filter-tag:hover .icon-close {
             transform: rotate(-90deg);
             transition: .2s;
@@ -62,6 +91,23 @@
             animation-duration: 3s, .75s;
             animation-timing-function: ease-in-out;
         }
+        /*  added tags (selected from a pre-existing list)  */
+        .Filter-tag.added {
+            background-color: rgb(var(--Global-color-1, 78 50 251));
+            color: #fff;
+            fill: #fff;
+        }
+        /*  hidden tags (used when selecting from a pre-existing list) */
+        .Filter-tag.hidden {
+            margin: 0;
+            opacity: 0;
+            padding: 0;
+            pointer-events: none;
+            width: 0;
+        }
+
+
+
 
 
 @keyframes colorChange {
