@@ -2,7 +2,6 @@ import BakerExample from "../../../../helpers/bakerExample";
 import Filters from "../filters";
 import FormInput from "../../../atoms/formInput/formInput";
 import InputTags from "../../inputTags/inputTags";
-import SelectTags from "../../selectTags/selectTags";
 
 
 class FiltersExample extends BakerExample {
@@ -14,7 +13,6 @@ class FiltersExample extends BakerExample {
                 </h1>
 
                 {this.render_normal()}
-                {this.render_default_open()}
             </section>
         );
     }
@@ -25,27 +23,6 @@ class FiltersExample extends BakerExample {
      * @returns {JSX.Element}
      */
     render_normal() {
-        const fakeTags = [
-            {
-                "name": "label 1"
-            },
-            {
-                "name": "label 2"
-            },
-            {
-                "name": "label 3"
-            },
-            {
-                "name": "label 4"
-            },
-            {
-                "name": "label 5"
-            },
-            {
-                "name": "label 6"
-            }
-        ]
-
         const fakeOptions = [
             {
                 "list_title": "List 1",
@@ -87,85 +64,33 @@ class FiltersExample extends BakerExample {
             {
                 "list_title": "List 3",
                 "children": [
-                    <SelectTags
-                        availableTags={fakeTags}
-                        onTagsUpdate={(e) => {
-                            console.log("Tags being selected from filtersExample", e, " (api post/array sort etc)");
-                        }}
-                    />,
+                    // <FormInput
+                    //     onChange={(e) => {
+                    //         console.log("FormInput on change ", e);
+                    //     }}
+                    //     onEnter={() => {
+                    //         console.log("FormInput onEnter");
+                    //     }}
+                    // />,
+                    <InputTags />,
                 ]
             },
         ]
 
 
         return this.render_exampleComponent(
-            "SelectTags/Normal",
+            "InputTags/Normal",
             <Filters
                 className={"example-class"}
                 options={fakeOptions}
                 onChildClick={(e, index) => {
-                    console.log("SelectTags onChildClick", e, index);
+                    console.log("InputTags onChildClick", e, index);
                 }}
             />,
             "Each filter list can be any component passed in via the array.  This component just handles the list presentation/logic"
         );
     }
 
-
-    /**
-     * render_default_open (example)
-     * @returns {JSX.Element}
-     */
-    render_default_open() {
-        const fakeTags = [
-            {
-                "name": "label 1"
-            },
-            {
-                "name": "label 2"
-            },
-            {
-                "name": "label 3"
-            },
-            {
-                "name": "label 4"
-            },
-            {
-                "name": "label 5"
-            },
-            {
-                "name": "label 6"
-            }
-        ]
-
-        const fakeOptions = [
-            {
-                "list_title": "Filter by label(s)",
-                "children": [
-                    <SelectTags
-                        availableTags={fakeTags}
-                        onTagsUpdate={(e) => {
-                            console.log("Tags being selected from filtersExample", e, " (api post/array sort etc)");
-                        }}
-                    />
-                ]
-            },
-        ]
-
-
-        return this.render_exampleComponent(
-            "SelectTags/Normal",
-            <Filters
-                preSelectedParent={0}
-                options={fakeOptions}
-                ctaText={"Filter by label"}
-                onChildClick={(e, index) => {
-                    console.log("SelectTags onChildClick", e, index);
-                }}
-            />,
-            "Shows a single child (via prop) with a pre-selected parent (with the main CTA text changed via prop)"
-        );
-    }
 }
 
 
