@@ -1,9 +1,10 @@
 import BasicAtom from "../../atoms/basicAtom";
 import "./inputTags.css";
 import FormInput from "../../atoms/formInput/formInput";
-import Tag from "../../atoms/tag/tag";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
+import TagFilter from "../../atoms/tagFilter/tagFilter";
+import IconAdd from "../../atoms/icons/add";
 
 
 class InputTags extends BasicAtom {
@@ -41,8 +42,10 @@ class InputTags extends BasicAtom {
                     placeholder="Add a tag"
                     value={this.state.newTag}
                     onChange={(e) => {
+                        let keepNewTagLower = e.toLowerCase();
+
                         this.setState({
-                            newTag: e,
+                            newTag: keepNewTagLower,
                             highlight: -1
                         });
                     }}
@@ -50,6 +53,9 @@ class InputTags extends BasicAtom {
                         this.addNewTag();
                     }}
                 />
+                {/*<span className="add-tag-cta">*/}
+                {/*    <IconAdd />*/}
+                {/*</span>*/}
 
                 <aside className="tags-container">
                     <TransitionGroup>
@@ -73,11 +79,8 @@ class InputTags extends BasicAtom {
                     classNames="fade-in"
                     key={"tag-" + tag.name}
                 >
-                    <span
-                        className={
-                            "Filter-tag"
-                            + (this.state.highlight == index ? ' highlight' : '')
-                        }
+                    <TagFilter
+                        className={(this.state.highlight == index ? ' highlight' : '')}
                         onClick={(e) => {
                             this.removeTag(index);
                         }}
@@ -85,8 +88,7 @@ class InputTags extends BasicAtom {
                         {tag.name}
 
                         <IconClose />
-                    </span>
-                    {/*<Tag>{tag.name}</Tag>*/}
+                    </TagFilter>
                 </CSSTransition>
             );
         });
@@ -96,7 +98,6 @@ class InputTags extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
     /**
      * add new tag, clear local state, pass prop for parent to consume
@@ -115,7 +116,6 @@ class InputTags extends BasicAtom {
             this.setState({
                 highlight: highlightIndex
             });
-
         }
 
         if (this.state.newTag.length && !isPresent) {
@@ -127,7 +127,7 @@ class InputTags extends BasicAtom {
                 }
             ];
 
-            //  then update state/clear down/prop for api
+            //  then update state/clear down/prop
             this.setState({
                 tags: copyTags
             }, () => {
