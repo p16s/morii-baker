@@ -3,12 +3,14 @@ import './login.css';
 import FormInput from "../../atoms/formInput/formInput";
 import Button from "../../atoms/button/button";
 import Pin from "../../molecules/pin/pin";
-import ValidationMessage from "../../atoms/validationMessage/validationMessage";
 import IconSpinner from "../../atoms/icons/spinner";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {useHistory} from "react-router-dom";
 import { withRouter } from 'react-router';
 import moriiApp from "../../../../../MoriiApp";
+import React from "react";
+import Toast from "../../molecules/toast/toast";
+import MoriiApp from "../../../../../MoriiApp";
 
 
 class LoginAtom extends BasicAtom {
@@ -19,11 +21,17 @@ class LoginAtom extends BasicAtom {
             userEmail: "",
             userEmailError: false,
             userPin: '',
-            verificationCode: ''
+            verificationCode: '',
+            isToastShowing: false,
+            toastMessage: ""
         });
     }
 
 
+    /**
+     * default prop values
+     * @type {{isStage: number}}
+     */
     static defaultProps = {
         isStage: 1
     }
@@ -41,22 +49,73 @@ class LoginAtom extends BasicAtom {
                 "Login"
                 + this.getClassNameString()}
             >
-                <TransitionGroup>
-                    <CSSTransition
-                        classNames={"fade-in"}
-                        appear
-                        timeout={200}
-                        key={"1"}
-                    >
-                        <div className="main-content">
-                            {this.render_email()}
+                <CSSTransition
+                    in={true}
+                    classNames={"fade-in"}
+                    appear
+                    timeout={200}
+                >
+                    <div className="main-content">
+                        {this.render_sso()}
 
-                            {this.render_identity()}
-                        </div>
-                    </CSSTransition>
-                </TransitionGroup>
+                        {this.render_email()}
+
+                        {this.render_identity()}
+                    </div>
+                </CSSTransition>
+
+                <Toast
+                    isVisible={this.state.isToastShowing}
+                    type={"error"}
+                    stoppedShowing={(e) => {
+                        this.setState({
+                            isToastShowing: false,
+                            toastMessage: ""
+                        });
+                    }}
+                >
+                    {this.state.toastMessage}
+                </Toast>
             </div>
         );
+    }
+
+
+    /**
+     * allow users to use other accounts
+     * @returns {JSX.Element}
+     */
+    render_sso() {
+        if (this.state.isStage === 1) {
+            return (
+                <div>
+                    <h1>Sign in to Messages</h1>
+
+                    <div id="googleLogin"/>
+
+                    <Button
+                        className="ms-login"
+                        onClick={() => {
+                            MoriiApp.auth.loginRequestMs().then(
+                                (response) => {
+                                    console.log('request', response);
+                                    if (response?.redirect) {
+                                        window.location = response.redirect;
+                                    } else {
+                                        console.log('ERROR: problem getting MS redirect URL');
+                                    }
+                                }
+                            );
+                        }}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><title>MS-SymbolLockup</title><rect x="1" y="1" width="9" height="9" fill="#f25022"/><rect x="1" y="11" width="9" height="9" fill="#00a4ef"/><rect x="11" y="1" width="9" height="9" fill="#7fba00"/><rect x="11" y="11" width="9" height="9" fill="#ffb900"/></svg>
+                        Sign in with Microsoft
+                    </Button>
+
+                    <p className="alternatively">Alternatively you can also sign in with your email address</p>
+                </div>
+            );
+        }
     }
 
 
@@ -68,8 +127,6 @@ class LoginAtom extends BasicAtom {
         if (this.state.isStage === 1) {
             return (
                 <>
-                    <h1>Log in</h1>
-
                     <FormInput
                         type="email"
                         placeholder="Enter your email"
@@ -82,12 +139,35 @@ class LoginAtom extends BasicAtom {
                         }}
                     />
 
-                    {this.render_email_validation()}
-
                     {this.render_email_cta()}
                 </>
             );
         }
+    }
+
+
+    /**
+     * render the stage 1, email CTA, different UI based on state
+     * @returns {JSX.Element}
+     */
+    render_email_cta() {
+        return (
+            <Button
+                className="email-cta"
+                disabled={this.isLoading || !this.state.canGetUser || !this.state.userEmail.length}
+                onClick={
+                    () => this.getUser()
+                }
+            >
+                Sign in with Email
+                {
+                    this.isLoading
+                        ?
+                        <IconSpinner />
+                        : ''
+                }
+            </Button>
+        );
     }
 
 
@@ -121,83 +201,46 @@ class LoginAtom extends BasicAtom {
                         }}
                     />
 
-                    {this.render_verify_cta()}
+                    <aside className="main-cta-container">
+                        {/*<Button*/}
+                        {/*    className="outline"*/}
+                        {/*    onClick={() => {*/}
+                        {/*        this.setState({*/}
+                        {/*            isStage: 1*/}
+                        {/*        })*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    Back*/}
+                        {/*</Button>*/}
+                        {this.render_verify_cta()}
+                    </aside>
                 </>
             );
         }
     }
 
-    /**
-     * render any validation UI
-     * @returns {JSX.Element}
-     */
-    render_email_validation() {
-        if (this.state.userEmailError) {
-            return (
-                <ValidationMessage
-                    className="error"
-                    message={"[Dummy message]"}
-                />
-            );
-        }
-    }
-
-    /**
-     * render the stage 1, email CTA, different UI based on state
-     * @returns {JSX.Element}
-     */
-    render_email_cta() {
-        if (this.isLoading) {
-            return (
-                <Button
-                    className="email-cta"
-                    disabled={true}
-                >
-                    Login
-                    <IconSpinner />
-                </Button>
-            );
-        } else {
-            return (
-                <Button
-                    className="email-cta"
-                    disabled={!this.state.canGetUser}
-                    onClick={
-                        () => this.getUser()
-                    }
-                >
-                    Login
-                </Button>
-            );
-        }
-    }
 
     /**
      * render the stage 2, verify CTA, different UI based on state
      * @returns {JSX.Element}
      */
     render_verify_cta() {
-        if (this.isLoading) {
-            return (
-                <Button
-                    disabled={true}
-                >
-                    Enter
-                    <IconSpinner />
-                </Button>
-            );
-        } else {
-            return (
-                <Button
-                    disabled={this.state.userPin.length < 4 || this.state.verificationCode.length < 6}
-                    onClick={
-                        () => this.validateUser()
-                    }
-                >
-                    Enter
-                </Button>
-            );
-        }
+        return (
+            <Button
+                disabled={this.isLoading || this.state.userPin.length < 4 || this.state.verificationCode.length < 6}
+                onClick={
+                    () => this.validateUser()
+                }
+            >
+                Enter
+                {
+                    this.isLoading
+                    ?
+                        <IconSpinner />
+                    : ''
+                }
+            </Button>
+        );
     }
 
 
@@ -210,7 +253,6 @@ class LoginAtom extends BasicAtom {
      *
      */
     getUser() {
-        // alert("getUser clicked TODO integrate");
         this.isLoading = true;
 
         moriiApp.auth.loginRequest(this.state.userEmail)
@@ -220,7 +262,10 @@ class LoginAtom extends BasicAtom {
                         isStage: 2
                     });
                 } else {
-                    alert('Problem logging in. Please check the email address');
+                    this.setState({
+                        isToastShowing: true,
+                        toastMessage: "Problem logging in. Please check the email address"
+                    });
                 }
              })
             .finally(() => {
@@ -239,7 +284,7 @@ class LoginAtom extends BasicAtom {
             userEmail: e
         });
 
-        //  pass data out
+        //  pass data out TODO not working since moving to a HOC
         this.callbackOr(this.props.userEmail)(e);
     }
 
@@ -254,7 +299,7 @@ class LoginAtom extends BasicAtom {
             userPin: e
         });
 
-        //  pass data out
+        //  pass data out TODO not working since moving to a HOC
         this.callbackOr(this.props.userPin)(e);
     }
 
@@ -268,7 +313,7 @@ class LoginAtom extends BasicAtom {
             verificationCode: e
         });
 
-        //  pass data out
+        //  pass data out TODO not working since moving to a HOC
         this.callbackOr(this.props.verificationCode)(e);
     }
 
@@ -286,11 +331,15 @@ class LoginAtom extends BasicAtom {
             this.state.userPin,
             this.state.verificationCode
         ).catch((error) => {
-            alert('Invalid PIN or verification code');
+            this.setState({
+                isToastShowing: true,
+                toastMessage: "Invalid PIN or verification code"
+            });
 
             this.isLoading = false;
             return Promise.reject(error);
         }).then((val) => {
+            //  TODO not working since moving to a HOC
             this.callbackOr(this.props.onLogin)(val);
         });
     }

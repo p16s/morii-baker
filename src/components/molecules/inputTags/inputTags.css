@@ -1,4 +1,4 @@
-/*  title:  SelectTags
+/*  title:  InputTags
     notes:  molecule styles
             input and tags, adding/removing
 ===================================================================================================================== */
@@ -6,7 +6,7 @@
 
 
 
-/*  SelectTags component
+/*  InputTags component
 ===================================================================================================================== */
 .Input-tags {
 
@@ -18,3 +18,70 @@
     .Input-tags .tags-container {
         margin-top: .25rem;
     }
+
+    /*  tags (TODO need to speak to Jose about existing tags as style not consistent, so adding here for now)
+    ================================================================================================================= */
+    .Filter-tag {
+        --border: 1px solid var(--border-color);
+        --border-color: rgb(var(--Global-form-border-color, 170 176 195));
+        --border-radius: var(--Global-form-border-radius, 5px);
+        --height: 25px;
+
+        align-items: center;
+        border: var(--border);
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        display: inline-flex;
+        font-size: .875rem;
+        height: var(--height);
+        line-height: 1;
+        margin: .25rem .5rem 0 0;
+        padding: 0 .5rem;
+        text-transform: capitalize;
+        transition: .3s;
+    }
+    .Filter-tag:hover {
+        background-color: rgba(var(--Global-form-border-color, 170 176 195), .2);
+        transition: .2s;
+    }
+        .Filter-tag:hover .icon-close {
+            transform: rotate(-90deg);
+            transition: .2s;
+        }
+        /*  the icon    */
+        .Filter-tag .icon-close {
+            height: 14px;
+            margin-left: .25rem;
+            transform: rotate(0deg);
+            transition: .2s;
+            width: auto;
+        }
+        /*  if trying to add a tag that already exists, highlight to the user   */
+        .Filter-tag.highlight {
+            animation-name: colorChange, heartBeat;
+            animation-duration: 3s, .75s;
+            animation-timing-function: ease-in-out;
+        }
+
+
+@keyframes colorChange {
+    0% {
+        border-color: red;
+        color: red;
+        fill: red;
+    }
+    100% {
+        border-color: inherit;
+        color: inherit;
+        fill: inherit;
+    }
+}
+
+@keyframes heartBeat {
+    0%, 28%, 70% {
+        transform: scale(1);
+    }
+    14%, 42% {
+        transform: scale(1.1);
+    }
+}
