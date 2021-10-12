@@ -3,6 +3,7 @@ import "./filters.css";
 import Button from "../../atoms/button/button";
 import IconArrowDropdown from "../../atoms/icons/arrow-dropdown";
 import {CSSTransition} from "react-transition-group";
+import IconCheck from "../../atoms/icons/check";
 
 
 class Filters extends BasicAtom {
@@ -19,8 +20,10 @@ class Filters extends BasicAtom {
         };
     }
 
-
-
+    /**
+     * set some default props that we might want to change
+     * @type {{preSelectedParent: number, ctaText: string}}
+     */
     static defaultProps = {
         preSelectedParent: -1,
         ctaText: "Filters"
@@ -42,6 +45,7 @@ class Filters extends BasicAtom {
                 className={
                     "Filters"
                     + this.padIfString(className)
+                    + (this.state.areFiltersVisible ? " active " : '')
                 }
             >
                 <Button
@@ -128,14 +132,22 @@ class Filters extends BasicAtom {
                     <li
                         className={
                             "list-child"
-                            //  TODO make an active based on...
+                            +
+                            (opt == this.props.activeFilters ? " active" : '')
                         }
-                        onClick={(opt, index) => {
+                        onClick={() => {
                             this.props.onChildClick(opt, index);
                         }}
                         key={"item-" + index}
                     >
                         {opt}
+
+                        {
+                            opt == this.props.activeFilters
+                                ?
+                                    <IconCheck />
+                                : ''
+                        }
                     </li>
                 );
             }
@@ -151,9 +163,20 @@ class Filters extends BasicAtom {
      * show the entire set of filters
      */
     toggleShowFilters() {
-        this.setState({
-            areFiltersVisible: !this.state.areFiltersVisible
-        })
+        //  first, check to see if we want to default show a parent then either show it or "rest" them closed every time
+        if (this.props.preSelectedParent !== -1) {
+            this.setState({
+                areFiltersVisible: !this.state.areFiltersVisible
+            })
+        } else {
+            this.setState({
+                areFiltersVisible: !this.state.areFiltersVisible,
+                parentVisible: -1,
+            })
+        }
+
+
+
     }
 
 

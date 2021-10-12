@@ -39,11 +39,58 @@
 
         /*  heading / text
         ============================================================================================================= */
-        .Login .main-content h1 {
-            padding-bottom: 1rem;
+        .Login h1 {
+            font-size: 1.875rem;
+            margin-bottom: 1.5rem;
         }
-            .Login .main-content p {
-                padding: 0 0 2rem 0;
+        @media screen and (min-width: 768px) {
+            .Login h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .Login p {
+            padding: 0;
+        }
+
+        /*  separator
+        ============================================================================================================= */
+        .Login .alternatively {
+            border-top: 1px solid rgba(var(--Global-color-5), .2);
+            color: #727B9B;
+            margin-top: 1.5rem;
+            padding: 1.5rem 0;
+        }
+
+        /*  google SSO login
+        ============================================================================================================= */
+        .Login #googleLogin {
+            display: flex;
+            justify-content: center;
+        }
+
+        /*  ms SSO login
+        ============================================================================================================= */
+        .page-login .Button.ms-login {
+            background-color: transparent;
+            border: 1px solid #8c8c8c;
+            border-radius: 0;
+            color: #5e5e5e;
+            font-family: "Segoe UI";
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-left: 0;
+            padding: .5625rem 1.5rem;
+            width: 314px;
+        }
+        @media screen and (min-width: 768px) {
+            .page-login .Button.ms-login {
+                margin-left: 28px;
+            }
+        }
+            .page-login .Button.ms-login svg {
+                margin-right: 12px;
             }
 
         /*  stage 1 (email)
@@ -53,15 +100,29 @@
             display: flex;
         }
 
-        /*  loading spinner
-        ============================================================================================================= */
-        .Login .icon-spinner {
-            fill: #fff;
-            height: 1em;
-        }
 
-        /*  main CTA
+        /*  button has consistent margin
         ============================================================================================================= */
         .Login .Button {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
+            /*  loading spinner
+            ========================================================================================================= */
+            .Login .icon-spinner {
+                fill: #fff;
+                height: 1em;
+            }
+
+        /*  shared: */
+        .Login input,
+        .Login button {
+            width: 100%;
+        }
+
+        .Login .main-cta-container {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+        }
+
+
