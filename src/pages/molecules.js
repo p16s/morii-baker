@@ -27,8 +27,8 @@ const PageMolecules = () => {
     return (
         <div className="figma-like">
             <TagsSelectExample />
-                <InputTagsExample />
-                <FiltersExample />
+            <InputTagsExample />
+            <FiltersExample />
             <InputExample />
             <InputPhoneExample />
             <TextareaExample />
@@ -39,7 +39,6 @@ const PageMolecules = () => {
             <IconBarExample />
             <BreadcrumbsExample />
             <TableExample />
-            <FiltersExample />
             <SlideOutExample />
             <FileListExample />
             <RandomExample />
