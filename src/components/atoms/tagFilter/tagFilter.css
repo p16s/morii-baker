@@ -26,7 +26,7 @@
     font-size: .875rem;
     height: var(--Tag-filter-height);
     line-height: 1;
-    margin: .25rem .5rem 0 0;
+    margin: .25rem .5rem .25rem 0;
     padding: 0 .5rem;
     text-transform: capitalize;
     transition: .3s;

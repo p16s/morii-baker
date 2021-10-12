@@ -2,6 +2,7 @@ import BakerExample from "../../../../helpers/bakerExample";
 import Filters from "../filters";
 import FormInput from "../../../atoms/formInput/formInput";
 import InputTags from "../../inputTags/inputTags";
+import TagsSelect from "../../tagsSelect/tagsSelect";
 
 
 class FiltersExample extends BakerExample {
@@ -13,6 +14,7 @@ class FiltersExample extends BakerExample {
                 </h1>
 
                 {this.render_normal()}
+                {this.render_default_open()}
             </section>
         );
     }
@@ -23,6 +25,27 @@ class FiltersExample extends BakerExample {
      * @returns {JSX.Element}
      */
     render_normal() {
+        const fakeTags = [
+            {
+                "name": "label 1"
+            },
+            {
+                "name": "label 2"
+            },
+            {
+                "name": "label 3"
+            },
+            {
+                "name": "label 4"
+            },
+            {
+                "name": "label 5"
+            },
+            {
+                "name": "label 6"
+            }
+        ]
+
         const fakeOptions = [
             {
                 "list_title": "List 1",
@@ -64,15 +87,12 @@ class FiltersExample extends BakerExample {
             {
                 "list_title": "List 3",
                 "children": [
-                    // <FormInput
-                    //     onChange={(e) => {
-                    //         console.log("FormInput on change ", e);
-                    //     }}
-                    //     onEnter={() => {
-                    //         console.log("FormInput onEnter");
-                    //     }}
-                    // />,
-                    <InputTags />,
+                    <TagsSelect
+                        availableTags={fakeTags}
+                        onTagsUpdate={(e) => {
+                            console.log("Tags being selected from filtersExample", e, " (api post/array sort etc)");
+                        }}
+                    />,
                 ]
             },
         ]
@@ -91,6 +111,61 @@ class FiltersExample extends BakerExample {
         );
     }
 
+
+    /**
+     * render_default_open (example)
+     * @returns {JSX.Element}
+     */
+    render_default_open() {
+        const fakeTags = [
+            {
+                "name": "label 1"
+            },
+            {
+                "name": "label 2"
+            },
+            {
+                "name": "label 3"
+            },
+            {
+                "name": "label 4"
+            },
+            {
+                "name": "label 5"
+            },
+            {
+                "name": "label 6"
+            }
+        ]
+
+        const fakeOptions = [
+            {
+                "list_title": "Filter by label(s)",
+                "children": [
+                    <TagsSelect
+                        availableTags={fakeTags}
+                        onTagsUpdate={(e) => {
+                            console.log("Tags being selected from filtersExample", e, " (api post/array sort etc)");
+                        }}
+                    />
+                ]
+            },
+        ]
+
+
+        return this.render_exampleComponent(
+            "TagsSelect/Normal",
+            <Filters
+                preSelectedParent={0}
+                options={fakeOptions}
+                ctaText={"Filter by label"}
+                onChildClick={(e, index) => {
+                    console.log("TagsSelect onChildClick", e, index);
+                }}
+            />,
+            "Shows a single child (via prop) with a pre-selected parent (with the main CTA text changed via prop)"
+        );
+    }
 }
 
 

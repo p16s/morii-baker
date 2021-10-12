@@ -14,9 +14,16 @@ class Filters extends BasicAtom {
         super(props);
         this.state = {
             areFiltersVisible: false,
-            parentVisible: -1,
+            parentVisible: this.props.preSelectedParent,
             childActive: -1
         };
+    }
+
+
+
+    static defaultProps = {
+        preSelectedParent: -1,
+        ctaText: "Filters"
     }
 
 
@@ -28,6 +35,7 @@ class Filters extends BasicAtom {
          * deconstruct some props
          */
         let { className } = this.props;
+        let { ctaText } = this.props;
 
         return (
             <div
@@ -40,7 +48,7 @@ class Filters extends BasicAtom {
                     className={this.state.areFiltersVisible ? "primary" : "outline"}
                     onClick={() => this.toggleShowFilters()}
                 >
-                    Filters
+                    {ctaText}
                 </Button>
 
                 <CSSTransition

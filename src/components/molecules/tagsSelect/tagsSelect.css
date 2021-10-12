@@ -9,12 +9,11 @@
 /*  TagsSelect component
 ===================================================================================================================== */
 .Tags-select {
-
    --Tags-select-border: 1px solid var(--Tags-select-border-color);
    --Tags-select-border-color: rgb(var(--Global-form-border-color, 170 176 195));
    --Tags-select-border-radius: var(--Global-form-border-radius, 5px);
    --Tags-select-font-size: var(--Global-base-font-size, 16px);
-   --Tags-select-padding: 0 .75rem;
+   --Tags-select-padding: .25rem .75rem;
 }
 
 
@@ -31,14 +30,12 @@
     min-height: 44px;
     outline: none;      /* poor accessability */
     padding: var(--Tags-select-padding);
+
+    width: 300px;   /*  TODO leaving here to ponder */
 }
     .Tags-select .selected-tags-container .Filter-tag {
         margin: 3px;
     }
-
-
-
-
 
 
     /*  tags added container

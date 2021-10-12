@@ -38,6 +38,13 @@ class TagsSelect extends BasicAtom {
                 <div className="selected-tags-container">
                     <TransitionGroup>
                         {this.render_selected_tags()}
+
+                        {
+                            this.state.selectedTags.length === 0
+                                ?
+                                    "Nothing selected"
+                                : ''
+                        }
                     </TransitionGroup>
                 </div>
 
