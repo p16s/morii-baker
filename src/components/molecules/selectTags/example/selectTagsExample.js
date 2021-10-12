@@ -1,12 +1,12 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import InputTags from "../inputTags";
+import SelectTags from "../selectTags";
 
 
-class InputTagsExample extends BakerExample {
+class SelectTagsExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Input Tags</h1>
+                <h1>Select tages</h1>
 
                 {this.render_normal()}
             </section>
@@ -31,24 +31,27 @@ class InputTagsExample extends BakerExample {
             {
                 "name": "tag3",
                 "date_added": "?"
+            },
+            {
+                "name": "tag4",
+                "date_added": "?"
             }
         ]
 
 
         return this.render_exampleComponent(
-            "InputTags/Normal",
-            <InputTags
-                className={"example-class"}
-                existingTags={fakeTags}
+            "SelectTags/Normal",
+            <SelectTags
+                availableTags={fakeTags}
                 onTagsUpdate={(e) => {
-                    console.log("SelectTags onTagsUpdate", e, " (api post etc)");
+                    console.log("SelectTags onTagsUpdate", e, " (api post/array sort etc)");
                 }}
             />,
-            "Used in combination with FilterTags to create an array of tags (shown with some already added)"
+            "Select (add) tags to a collection when clicked"
         );
     }
 
 }
 
 
-export default InputTagsExample;
+export default SelectTagsExample;

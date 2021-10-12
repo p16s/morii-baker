@@ -20,32 +20,33 @@ import ToastExample from "../components/molecules/toast/example/toastExample";
 import NoDataMessageExample from "../components/molecules/noDataMessage/example/noDataMessageExample";
 import FiltersExample from "../components/molecules/filters/example/filtersExample";
 import InputTagsExample from "../components/molecules/inputTags/example/inputTagsExample";
+import SelectTagsExample from "../components/molecules/selectTags/example/selectTagsExample";
 
 
 const PageMolecules = () => {
     return (
         <div className="figma-like">
+                <SelectTagsExample />
                 <InputTagsExample />
                 <FiltersExample />
-            <InputExample />
-            <InputPhoneExample />
-            <TextareaExample />
-            <PinExample />
-            <FileUploadExample />
-            <ListExample />
-            <TitleBarExample />
-            <IconBarExample />
-            <BreadcrumbsExample />
-            <TableExample />
-            <FiltersExample />
-            <SlideOutExample />
-            <FileListExample />
-            <RandomExample />
-            <ModalCenterExample />
-            <TabBarExample />
-            <ContactPreferencesExample />
-            <ToastExample />
-            <NoDataMessageExample />
+                <NoDataMessageExample />
+                <ToastExample />
+                <ContactPreferencesExample />
+                <TabBarExample />
+                <ModalCenterExample />
+                <RandomExample />
+                <FileListExample />
+                <SlideOutExample />
+                <TableExample />
+                <BreadcrumbsExample />
+                <IconBarExample />
+                <TitleBarExample />
+                <ListExample />
+                <FileUploadExample />
+                <PinExample />
+                <TextareaExample />
+                <InputPhoneExample />
+                <InputExample />
         </div>
     );
 }
