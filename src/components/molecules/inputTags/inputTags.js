@@ -43,7 +43,7 @@ class InputTags extends BasicAtom {
                     value={this.state.newTag}
                     onChange={(e) => {
                         let keepNewTagLower = e.toLowerCase();
-                        
+
                         this.setState({
                             newTag: keepNewTagLower,
                             highlight: -1
