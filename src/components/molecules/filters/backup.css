@@ -1,0 +1,168 @@
+/*  title:  InputTags
+    notes:  molecule styles
+            "children" can be passed as any node type (text/component)
+===================================================================================================================== */
+
+
+
+
+/*  filters component
+===================================================================================================================== */
+.Filters {
+    --border-color: #EFEFEF;
+    --padding: 1rem;
+
+    position: relative;
+}
+/*  when active class, give the button pseudo the screen, with the container over it, so can click anywhere to trigger close    */
+.Filters.active button:before {
+    content: "";
+    inset: 0;
+    position: fixed;
+}
+
+/*  all the lists container
+================================================================================================================= */
+.Filters .lists-container {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+    position: absolute;
+    right: 0;
+    top: calc(100% + 1rem);      /*  move away from the button   */
+    z-index: 99;
+}
+/*  drop shadow */
+.Filters .lists-container:after {
+    bottom: 0px;
+    border-radius: 100%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .4);
+    content: "";
+    height: 20%;
+    left: 10%;
+    position: absolute;
+    right: 10%;
+    width: 80%;
+    z-index: -1;
+}
+/*  each container / individual list group
+============================================================================================================= */
+.Filters .list-group {
+    background-color: #fff;     /*  needed as the drop-shadow would be visible  */
+    border-bottom: 1px solid var(--border-color);
+    min-width: 300px;
+}
+.Filters .list-group:last-of-type {
+    border: none;
+}
+/*  list title
+========================================================================================================= */
+.Filters .list-title {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: var(--padding);
+}
+.Filters .list-title:hover {
+    background-color: rgba(var(--Global-color-5), .1);
+    transition: .2s;
+}
+.Filters .list-title .icon-arrow-dropdown {
+    transform: rotate(-90deg);
+    transition: .2s;
+}
+
+/*  icon on active
+========================================================================================================= */
+.Filters .list-group.active .icon-arrow-dropdown {
+    transform: rotate(0deg);
+}
+
+/*  each child "<li>"
+===================================================================================================== */
+.Filters .list-child {
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+    padding: var(--padding) 1.5rem;
+    transition: .3s;
+}
+.Filters .list-child:hover {
+    background-color: rgba(var(--Global-color-5), .1);
+    transition: .2s;
+}
+.Filters .list-child.active {
+    color: rgb(var(--Global-color-1, 78 50 251));
+}
+.Filters .list-child.active .icon-check {
+    fill: rgb(var(--Global-color-1, 78 50 251));
+    height: auto;
+    margin-left: auto;
+    width: 1.2rem;
+}
+
+/*  some children want a pointer (not all, as can be component passed in)    */
+.Filters li.list-child,
+.Filters .list-child label {
+    cursor: pointer;
+}
+/*  edge case, sort some of the possible children used */
+.Filters .list-child label,
+.Filters .list-child span,
+.Filters input[type="text"] {
+    flex-grow: 1;
+}
+.Filters input[type="radio"] {
+    margin: 0 .5rem 0 0;
+}
+.Filters .tags-container {
+    max-width: 300px;
+}
+
+
+
+/*  special animation for this component
+===================================================================================================================== */
+.Filters .fade-and-slide-in-appear,
+.Filters .fade-and-slide-in-enter {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.Filters .fade-and-slide-in-appear-active,
+.Filters .fade-and-slide-in-enter-active {
+    opacity: 1;
+    transition: .2s;
+    transform: translateY(0);
+}
+
+.Filters .fade-and-slide-in-exit {
+    opacity: 1;
+}
+.Filters .fade-and-slide-in-exit-active {
+    opacity: 0;
+    transition: .2s;
+    transform: translateY(50px);
+}
+
+
+
+.Filters .parent-animation-appear,
+.Filters .parent-animation-enter {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.Filters .parent-animation-appear-active,
+.Filters .parent-animation-enter-active {
+    opacity: 1;
+    transition: .2s;
+    transform: translateY(0);
+}
+
+.Filters .parent-animation-exit {
+    opacity: 1;
+}
+.Filters .parent-animation-exit-active {
+    opacity: 0;
+    transition: .1s;
+    transform: translateY(50px);
+}

@@ -236,7 +236,7 @@ class LoginAtom extends BasicAtom {
                 {
                     this.isLoading
                         ?
-                        <IconSpinner />
+                            <IconSpinner />
                         : ''
                 }
             </Button>
