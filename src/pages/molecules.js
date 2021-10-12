@@ -26,27 +26,27 @@ import TagsSelectExample from "../components/molecules/tagsSelect/example/tagsSe
 const PageMolecules = () => {
     return (
         <div className="figma-like">
-            <TagsSelectExample />
-            <InputTagsExample />
-            <FiltersExample />
-            <InputExample />
-            <InputPhoneExample />
-            <TextareaExample />
-            <PinExample />
-            <FileUploadExample />
-            <ListExample />
-            <TitleBarExample />
-            <IconBarExample />
-            <BreadcrumbsExample />
-            <TableExample />
-            <SlideOutExample />
-            <FileListExample />
-            <RandomExample />
-            <ModalCenterExample />
-            <TabBarExample />
-            <ContactPreferencesExample />
-            <ToastExample />
-            <NoDataMessageExample />
+                <TagsSelectExample />
+                <InputTagsExample />
+                <FiltersExample />
+                <NoDataMessageExample />
+                <ToastExample />
+                <ContactPreferencesExample />
+                <TabBarExample />
+                <ModalCenterExample />
+                <RandomExample />
+                <FileListExample />
+                <SlideOutExample />
+                <TableExample />
+                <BreadcrumbsExample />
+                <IconBarExample />
+                <TitleBarExample />
+                <ListExample />
+                <FileUploadExample />
+                <PinExample />
+                <TextareaExample />
+                <InputPhoneExample />
+                <InputExample />
         </div>
     );
 }
