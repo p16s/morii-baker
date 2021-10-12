@@ -2,7 +2,7 @@ import BakerExample from "../../../../helpers/bakerExample";
 import Filters from "../filters";
 import FormInput from "../../../atoms/formInput/formInput";
 import InputTags from "../../inputTags/inputTags";
-import TagsSelect from "../../tagsSelect/tagsSelect";
+import SelectTags from "../../selectTags/selectTags";
 
 
 class FiltersExample extends BakerExample {
@@ -87,7 +87,7 @@ class FiltersExample extends BakerExample {
             {
                 "list_title": "List 3",
                 "children": [
-                    <TagsSelect
+                    <SelectTags
                         availableTags={fakeTags}
                         onTagsUpdate={(e) => {
                             console.log("Tags being selected from filtersExample", e, " (api post/array sort etc)");
@@ -99,12 +99,12 @@ class FiltersExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "TagsSelect/Normal",
+            "SelectTags/Normal",
             <Filters
                 className={"example-class"}
                 options={fakeOptions}
                 onChildClick={(e, index) => {
-                    console.log("TagsSelect onChildClick", e, index);
+                    console.log("SelectTags onChildClick", e, index);
                 }}
             />,
             "Each filter list can be any component passed in via the array.  This component just handles the list presentation/logic"
@@ -142,7 +142,7 @@ class FiltersExample extends BakerExample {
             {
                 "list_title": "Filter by label(s)",
                 "children": [
-                    <TagsSelect
+                    <SelectTags
                         availableTags={fakeTags}
                         onTagsUpdate={(e) => {
                             console.log("Tags being selected from filtersExample", e, " (api post/array sort etc)");
@@ -154,13 +154,13 @@ class FiltersExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "TagsSelect/Normal",
+            "SelectTags/Normal",
             <Filters
                 preSelectedParent={0}
                 options={fakeOptions}
                 ctaText={"Filter by label"}
                 onChildClick={(e, index) => {
-                    console.log("TagsSelect onChildClick", e, index);
+                    console.log("SelectTags onChildClick", e, index);
                 }}
             />,
             "Shows a single child (via prop) with a pre-selected parent (with the main CTA text changed via prop)"

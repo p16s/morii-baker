@@ -1,12 +1,12 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import TagsSelect from "../tagsSelect";
+import SelectTags from "../selectTags";
 
 
-class TagsSelectExample extends BakerExample {
+class SelectTagsExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Tags Select</h1>
+                <h1>Select tages</h1>
 
                 {this.render_normal()}
             </section>
@@ -40,11 +40,11 @@ class TagsSelectExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "TagsSelect/Normal",
-            <TagsSelect
+            "SelectTags/Normal",
+            <SelectTags
                 availableTags={fakeTags}
                 onTagsUpdate={(e) => {
-                    console.log("TagsSelect onTagsUpdate", e, " (api post/array sort etc)");
+                    console.log("SelectTags onTagsUpdate", e, " (api post/array sort etc)");
                 }}
             />,
             "Select (add) tags to a collection when clicked"
@@ -54,4 +54,4 @@ class TagsSelectExample extends BakerExample {
 }
 
 
-export default TagsSelectExample;
+export default SelectTagsExample;

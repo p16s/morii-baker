@@ -1,11 +1,11 @@
 import BasicAtom from "../../atoms/basicAtom";
-import "./tagsSelect.css";
+import "./selectTags.css";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import TagFilter from "../../atoms/tagFilter/tagFilter";
 
 
-class TagsSelect extends BasicAtom {
+class SelectTags extends BasicAtom {
     /**
      * local state
      * @param props
@@ -31,7 +31,7 @@ class TagsSelect extends BasicAtom {
         return (
             <div
                 className={
-                    "Tags-select"
+                    "Select-tags"
                     + this.padIfString(className)
                 }
             >
@@ -193,4 +193,4 @@ class TagsSelect extends BasicAtom {
 }
 
 
-export default TagsSelect;
+export default SelectTags;

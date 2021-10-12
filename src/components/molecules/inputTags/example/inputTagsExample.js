@@ -36,15 +36,15 @@ class InputTagsExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "TagsSelect/Normal",
+            "InputTags/Normal",
             <InputTags
                 className={"example-class"}
                 existingTags={fakeTags}
                 onTagsUpdate={(e) => {
-                    console.log("TagsSelect onTagsUpdate", e, " (api post etc)");
+                    console.log("SelectTags onTagsUpdate", e, " (api post etc)");
                 }}
             />,
-            "Input and TagFilterExample components used in combination to create an array of tags"
+            "Used in combination with FilterTags to create an array of tags (shown with some already added)"
         );
     }
 
