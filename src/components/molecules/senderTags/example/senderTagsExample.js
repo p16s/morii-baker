@@ -1,12 +1,12 @@
-import BakerExample from "../../../../helpers/bakerExample";
-import SelectTags from "../selectTags";
+ import BakerExample from "../../../../helpers/bakerExample";
+import SenderTags from "../senderTags";
 
 
-class SelectTagsExample extends BakerExample {
+class SenderTagsExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Select tags</h1>
+                <h1>Sender tags</h1>
 
                 {this.render_normal()}
             </section>
@@ -19,39 +19,35 @@ class SelectTagsExample extends BakerExample {
      * @returns {JSX.Element}
      */
     render_normal() {
-        const fakeTags = [
+        const availableTags = [
             {
-                "name": "tag1",
-                "date_added": "?"
+                "name": "a_available_tag1"
             },
             {
-                "name": "tag2",
-                "date_added": "?"
+                "name": "a_available_tag2"
             },
             {
-                "name": "tag3",
-                "date_added": "?"
+                "name": "b_available_tag1"
             },
             {
-                "name": "tag4",
-                "date_added": "?"
+                "name": "c_available_tag1"
             }
         ]
 
 
         return this.render_exampleComponent(
             "SenderTags/Normal",
-            <SelectTags
-                availableTags={fakeTags}
+            <SenderTags
+                availableTags={availableTags}
                 onTagsUpdate={(e) => {
                     console.log("SenderTags onTagsUpdate", e, " (api post/array sort etc)");
                 }}
             />,
-            "Select (add) tags to a collection when clicked"
+            "User types, gets available tags, adds"
         );
     }
 
 }
 
 
-export default SelectTagsExample;
+export default SenderTagsExample;

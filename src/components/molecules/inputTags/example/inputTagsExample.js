@@ -41,7 +41,7 @@ class InputTagsExample extends BakerExample {
                 className={"example-class"}
                 existingTags={fakeTags}
                 onTagsUpdate={(e) => {
-                    console.log("SelectTags onTagsUpdate", e, " (api post etc)");
+                    console.log("SenderTags onTagsUpdate", e, " (api post etc)");
                 }}
             />,
             "Used in combination with FilterTags to create an array of tags (shown with some already added)"

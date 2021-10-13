@@ -31,7 +31,7 @@ class SelectTags extends BasicAtom {
         return (
             <div
                 className={
-                    "Select-tags"
+                    "Sender-tags"
                     + this.padIfString(className)
                 }
             >

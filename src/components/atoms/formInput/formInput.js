@@ -92,6 +92,12 @@ class FormInput extends BasicAtom {
                 type={this.props.type ?? 'text'}
                 placeholder={this.props.placeholder}
                 value={this.props.value}
+                onFocus={(e) => {
+                    this.handleFocus(e);
+                }}
+                onBlur={(e) => {
+                    this.handleBlur(e);
+                }}
                 onClick={(e) => {
                     this.handleClick(e);
                 }}
@@ -139,6 +145,24 @@ class FormInput extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Handlers
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Handle focus
+     *
+     * @param {MouseEvent} e
+     */
+    handleFocus(e) {
+        this.callbackOr(this.props.onFocus)(e);
+    }
+
+    /**
+     * Handle blur
+     *
+     * @param {MouseEvent} e
+     */
+    handleBlur(e) {
+        this.callbackOr(this.props.onBlur)(e);
+    }
 
     /**
      * Handle click
