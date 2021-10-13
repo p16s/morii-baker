@@ -15,6 +15,7 @@ class InputTags extends BasicAtom {
     constructor(props) {
         super(props);
         this.state = {
+            availableTags: props.availableTags ?? [],
             tags: props.existingTags ?? [],
             newTag: '',
             highlight: -1
@@ -62,9 +63,35 @@ class InputTags extends BasicAtom {
                         {this.render_added_tags()}
                     </TransitionGroup>
                 </aside>
+
+                <div>
+                    <p>[TODO] availableTags, passed in as a prop, will only show when a user start typing matching the characters</p>
+                    {this.available_tags()}
+                </div>
             </div>
         );
     }
+
+
+    /**
+     * already existing tags
+     * @returns {unknown[]}
+     */
+    available_tags() {
+        return (this.state.availableTags ?? []).map((tag, index) => {
+            return (
+                <CSSTransition
+                    timeout={100}
+                    classNames="fade-in"
+                    key={"available-tag-" + tag.name}
+                >
+                        {/*TODO make appear as a list as you type*/}
+                       <span>{tag.name}, </span>
+                </CSSTransition>
+            );
+        });
+    }
+
 
 
     /**
