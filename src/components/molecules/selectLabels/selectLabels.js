@@ -13,8 +13,8 @@ class SelectLabels extends BasicAtom {
     constructor(props) {
         super(props);
         this.state = {
-            availableTags: props.availableTags ?? [],
-            selectedTags: [],
+            availableLabels: props.availableLabels ?? [],
+            selectedLabels: [],
         };
     }
 
@@ -31,16 +31,16 @@ class SelectLabels extends BasicAtom {
         return (
             <div
                 className={
-                    "Sender-tags"
+                    "Select-labels"
                     + this.padIfString(className)
                 }
             >
-                <div className="selected-tags-container">
+                <div className="selected-container">
                     <TransitionGroup>
-                        {this.render_selected_tags()}
+                        {this.render_selected_labels()}
 
                         {
-                            this.state.selectedTags.length === 0
+                            this.state.selectedLabels.length === 0
                                 ?
                                     "No labels selected"
                                 : ''
@@ -48,9 +48,9 @@ class SelectLabels extends BasicAtom {
                     </TransitionGroup>
                 </div>
 
-                <aside className="tags-container">
+                <aside className="labels-container">
                     <TransitionGroup>
-                        {this.render_available_tags()}
+                        {this.render_available_labels()}
                     </TransitionGroup>
                 </aside>
             </div>
@@ -64,8 +64,8 @@ class SelectLabels extends BasicAtom {
      * render the tags in the array
      * @returns {unknown[]}
      */
-    render_selected_tags() {
-        return (this.state.selectedTags ?? []).map((tag, index) => {
+    render_selected_labels() {
+        return (this.state.selectedLabels ?? []).map((tag, index) => {
             return (
                 <CSSTransition
                     timeout={100}
@@ -91,8 +91,8 @@ class SelectLabels extends BasicAtom {
      * show the existing tags a user can add
      * @returns {unknown[]}
      */
-    render_available_tags() {
-        return (this.state.availableTags ?? []).map((tag, index) => {
+    render_available_labels() {
+        return (this.state.availableLabels ?? []).map((tag, index) => {
             return (
                 <CSSTransition
                     timeout={100}
@@ -102,7 +102,7 @@ class SelectLabels extends BasicAtom {
                     <TagFilter
                         className={(this.alreadyExists(tag.name) ? " hidden" : '')}
                         onClick={() => {
-                            this.addTagToSelected(tag.name);
+                            this.addLabelToSelected(tag.name);
                         }}
                         key={"tag-" + tag.name}
                     >
@@ -122,17 +122,17 @@ class SelectLabels extends BasicAtom {
      * add an existing tag to the selected
      * @param toAdd
      */
-    addTagToSelected(toAdd) {
+    addLabelToSelected(toAdd) {
         //  check the tag doesn't already exist in the array
-        let isPresent = this.state.selectedTags.some((e) => {
+        let isPresent = this.state.selectedLabels.some((e) => {
             return e.name === toAdd
         });
 
         //  make sure can only be added once (UI will prevent this from happening, but safer)
         if (!isPresent) {
             // make sure we clone the existing before updating state array
-            let copyTags = [
-                ...this.state.selectedTags,
+            let copyLabels = [
+                ...this.state.selectedLabels,
                 {
                     'name': toAdd
                 }
@@ -140,20 +140,20 @@ class SelectLabels extends BasicAtom {
 
             //  then update both selected and available and callback for api
             this.setState({
-                selectedTags: copyTags
+                selectedLabels: copyLabels
             }, () => {
                 //  following will remove the requested tag from the available array (but putting back will re-index)
-                // let indexInAvailable = this.state.availableTags.findIndex(tag => tag.name === toAdd);
+                // let indexInAvailable = this.state.availableLabels.findIndex(tag => tag.name === toAdd);
                 // console.log("avail tag index, ", indexInAvailable);
                 //
-                // let removeFromExisting = [...this.state.availableTags];
+                // let removeFromExisting = [...this.state.availableLabels];
                 // removeFromExisting.splice(indexInAvailable, 1);
                 // this.setState({
-                //     availableTags: removeFromExisting
+                //     availableLabels: removeFromExisting
                 // })
 
                 //  pass (emit) prop
-                this.callbackOr(this.props.onTagsUpdate)(this.state.selectedTags);
+                this.callbackOr(this.props.onTagsUpdate)(this.state.selectedLabels);
             });
         }
     }
@@ -161,13 +161,13 @@ class SelectLabels extends BasicAtom {
 
     /** check to see if tag has been added, if so a class will be applied to hide
      *
-     * @param tagName
+     * @param filterName
      * @returns {boolean}
      */
-    alreadyExists(tagName) {
+    alreadyExists(filterName) {
         //  check the tag doesn't already exist in the array
-        let alreadyAdded = this.state.selectedTags.some((e) => {
-            return e.name === tagName
+        let alreadyAdded = this.state.selectedLabels.some((e) => {
+            return e.name === filterName
         });
 
         return alreadyAdded;
@@ -179,15 +179,15 @@ class SelectLabels extends BasicAtom {
      * @param toRemove
      */
     removeTag(toRemove) {
-        let copyTags = [...this.state.selectedTags];
+        let copyLabels = [...this.state.selectedLabels];
 
-        copyTags.splice(toRemove, 1);
+        copyLabels.splice(toRemove, 1);
 
         this.setState({
-            selectedTags: copyTags
+            selectedLabels: copyLabels
         }, () => {
             //  pass (emit) prop
-            this.callbackOr(this.props.onTagsUpdate)(this.state.selectedTags);
+            this.callbackOr(this.props.onTagsUpdate)(this.state.selectedLabels);
         });
     }
 }

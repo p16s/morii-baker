@@ -2,7 +2,6 @@ import BasicAtom from "../../atoms/basicAtom";
 import "./selectTags.css";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import TagFilter from "../../atoms/tagFilter/tagFilter";
 import TagMessage from "../../atoms/tagMessage/tagMessage";
 
 
@@ -32,12 +31,12 @@ class SelectTags extends BasicAtom {
         return (
             <div
                 className={
-                    "Sender-tags"
+                    "Select-tags"
                     + this.padIfString(className)
                 }
             >
                 <div className="selected-tags-container">
-                    <TransitionGroup>
+                    <TransitionGroup component={null}>
                         {this.render_selected_tags()}
 
                         {
@@ -50,7 +49,7 @@ class SelectTags extends BasicAtom {
                 </div>
 
                 <aside className="tags-container">
-                    <TransitionGroup>
+                    <TransitionGroup component={null}>
                         {this.render_available_tags()}
                     </TransitionGroup>
                 </aside>

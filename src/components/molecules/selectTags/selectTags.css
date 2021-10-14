@@ -6,41 +6,41 @@
 
 
 
-/*  SenderTags component
+/*  main component
 ===================================================================================================================== */
-.Sender-tags {
-   --Sender-tags-border: 1px solid var(--Sender-tags-border-color);
-   --Sender-tags-border-color: rgb(var(--Global-form-border-color, 170 176 195));
-   --Sender-tags-border-radius: var(--Global-form-border-radius, 5px);
-   --Sender-tags-font-size: var(--Global-base-font-size, 16px);
-   --Sender-tags-padding: .25rem .75rem;
+.Select-tags {
+   --Select-tags-border: 1px solid var(--Select-tags-border-color);
+   --Select-tags-border-color: rgb(var(--Global-form-border-color, 170 176 195));
+   --Select-tags-border-radius: var(--Global-form-border-radius, 5px);
+   --Select-tags-font-size: var(--Global-base-font-size, 16px);
+   --Select-tags-padding: .25rem .75rem;
+
+    width: 100%;
 }
 
 
 /*  this is the upper, tags have been added, container
 ===================================================================================================================== */
-.Sender-tags .selected-tags-container {
+.Select-tags .selected-tags-container {
     align-items: center;
-    border: var(--Sender-tags-border);
-    border-radius: var(--Sender-tags-border-radius);
+    border: var(--Select-tags-border);
+    border-radius: var(--Select-tags-border-radius);
     display: flex;
     flex-wrap: wrap;
-    font-size: var(--Sender-tags-font-size);
+    font-size: var(--Select-tags-font-size);
     line-height: 1;
     min-height: 44px;
     outline: none;      /* poor accessability */
-    padding: var(--Sender-tags-padding);
-
-    /*width: 300px;   !*  TODO leaving here to ponder *!*/
+    padding: var(--Select-tags-padding);
 }
-    .Sender-tags .selected-tags-container .Filter-tag {
+    .Select-tags .selected-tags-container .Filter-tag {
         margin: 3px;
     }
 
 
     /*  tags added container
     ================================================================================================================= */
-    .Sender-tags .tags-container {
+    .Select-tags .tags-container {
         margin-top: .25rem;
     }
 

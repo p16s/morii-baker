@@ -197,7 +197,7 @@ class SenderTags extends BasicAtom {
 
             //  then update both selected and available and callback for api
             this.setState({
-                isAvailableTagsVisible: false,
+                isAvailableTagsVisible: true,
                 addedTags: copyTags,
                 newTag: ''
             }, () => {
