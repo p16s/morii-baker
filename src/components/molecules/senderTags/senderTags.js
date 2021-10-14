@@ -3,6 +3,7 @@ import "./senderTags.css";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import FormInput from "../../atoms/formInput/formInput";
+import TagMessage from "../../atoms/tagMessage/tagMessage";
 
 
 class SenderTags extends BasicAtom {
@@ -69,11 +70,8 @@ class SenderTags extends BasicAtom {
                     classNames="fade-in"
                     key={"added-tag-" + tag.name}
                 >
-                    <span
-                        className={
-                            "tag"
-                            + (this.state.highlight == index ? ' highlight' : '')
-                        }
+                    <TagMessage
+                        className={this.state.highlight == index ? ' highlight' : ''}
                         onClick={() => {
                             this.removeTag(index);
                         }}
@@ -82,7 +80,7 @@ class SenderTags extends BasicAtom {
                         {tag.name}
 
                         <IconClose />
-                    </span>
+                    </TagMessage>
                 </CSSTransition>
             );
         });
@@ -251,7 +249,7 @@ class SenderTags extends BasicAtom {
             addedTags: copyTags
         }, () => {
             //  pass (emit) prop
-            // this.callbackOr(this.props.onTagsUpdate)(this.state.addedTags);
+            this.callbackOr(this.props.onTagsUpdate)(this.state.addedTags);
         });
     }
 }

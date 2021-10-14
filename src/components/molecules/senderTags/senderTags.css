@@ -93,94 +93,94 @@
 
 
 
-/*  added tag
-===================================================================================================================== */
-.Select-tags .tag {
-    align-items: center;
-    border-radius: var(--Global-border-radius, 5px);
-    cursor: pointer;
-    display: inline-flex;
-    font-size: .875rem;
-    line-height: 1;
-    margin: .25rem .25rem .25rem 0;
-    padding: .25rem .5rem;
-    text-transform: capitalize;
-    transition: .3s;
+/*!*  added tag*/
+/*===================================================================================================================== *!*/
+/*.Select-tags .tag {*/
+/*    align-items: center;*/
+/*    border-radius: var(--Global-border-radius, 5px);*/
+/*    cursor: pointer;*/
+/*    display: inline-flex;*/
+/*    font-size: .875rem;*/
+/*    line-height: 1;*/
+/*    margin: .25rem .25rem .25rem 0;*/
+/*    padding: .25rem .5rem;*/
+/*    text-transform: lowercase;      !*  is toLower anyway in js *!*/
+/*    transition: .3s;*/
 
-}
-    .Select-tags .tag:hover {
-        background-color: rgba(var(--Global-form-border-color, 170 176 195), .1);
-        transition: .2s;
-    }
-        /*  for removing    */
-        .Select-tags .tag:hover .icon-close {
-            transform: rotate(-90deg);
-            transition: .2s;
-        }
+/*}*/
+/*    .Select-tags .tag:hover {*/
+/*        background-color: rgba(var(--Global-form-border-color, 170 176 195), .1);*/
+/*        transition: .2s;*/
+/*    }*/
+/*        !*  for removing    *!*/
+/*        .Select-tags .tag:hover .icon-close {*/
+/*            transform: rotate(-90deg);*/
+/*            transition: .2s;*/
+/*        }*/
 
-    /*  close icon, used when removing
-    ================================================================================================================= */
-    .Select-tags .tag .icon-close {
-        height: 14px;
-        margin-left: .25rem;
-        transform: rotate(0deg);
-        transition: .2s;
-        width: auto;
-    }
+/*    !*  close icon, used when removing*/
+/*    ================================================================================================================= *!*/
+/*    .Select-tags .tag .icon-close {*/
+/*        height: 14px;*/
+/*        margin-left: .25rem;*/
+/*        transform: rotate(0deg);*/
+/*        transition: .2s;*/
+/*        width: auto;*/
+/*    }*/
 
-    /*  if trying to add (create) a tag that already exists, highlight to the user
-    ================================================================================================================= */
-    .Select-tags .tag.highlight {
-        animation-name: colorChange, heartBeat;
-        animation-duration: 3s, .75s;
-        animation-timing-function: ease-in-out;
-    }
-
-
+/*    !*  if trying to add (create) a tag that already exists, highlight to the user*/
+/*    ================================================================================================================= *!*/
+/*    .Select-tags .tag.highlight {*/
+/*        animation-name: colorChange, heartBeat;*/
+/*        animation-duration: 3s, .75s;*/
+/*        animation-timing-function: ease-in-out;*/
+/*    }*/
 
 
-/*  animations
-===================================================================================================================== */
-.Select-tags .fade-and-slide-in-appear,
-.Select-tags .fade-and-slide-in-enter {
-    opacity: 0;
-    transform: translateY(50px);
-}
-.Select-tags .fade-and-slide-in-appear-active,
-.Select-tags .fade-and-slide-in-enter-active {
-    opacity: 1;
-    transition: .2s;
-    transform: translateY(0);
-}
 
-.Select-tags .fade-and-slide-in-exit {
-    opacity: 1;
-}
-.Select-tags .fade-and-slide-in-exit-active {
-    opacity: 0;
-    transition: .2s;
-    transform: translateY(50px);
-}
 
-/*  used when highlighting the tag has already been added, when adding tags to a list/array */
-@keyframes colorChange {
-    0% {
-        border-color: rgb(var(--Global-color-success, 5 195 150));
-        color: rgb(var(--Global-color-success, 5 195 150));
-        fill: rgb(var(--Global-color-success, 5 195 150));
-    }
-    100% {
-        border-color: inherit;
-        color: inherit;
-        fill: inherit;
-    }
-}
-/*  used in conjunction with the colorChange    */
-@keyframes heartBeat {
-    0%, 28%, 70% {
-        transform: scale(1);
-    }
-    14%, 42% {
-        transform: scale(1.1);
-    }
-}
+/*!*  animations*/
+/*===================================================================================================================== *!*/
+/*.Select-tags .fade-and-slide-in-appear,*/
+/*.Select-tags .fade-and-slide-in-enter {*/
+/*    opacity: 0;*/
+/*    transform: translateY(50px);*/
+/*}*/
+/*.Select-tags .fade-and-slide-in-appear-active,*/
+/*.Select-tags .fade-and-slide-in-enter-active {*/
+/*    opacity: 1;*/
+/*    transition: .2s;*/
+/*    transform: translateY(0);*/
+/*}*/
+
+/*.Select-tags .fade-and-slide-in-exit {*/
+/*    opacity: 1;*/
+/*}*/
+/*.Select-tags .fade-and-slide-in-exit-active {*/
+/*    opacity: 0;*/
+/*    transition: .2s;*/
+/*    transform: translateY(50px);*/
+/*}*/
+
+/*!*  used when highlighting the tag has already been added, when adding tags to a list/array *!*/
+/*@keyframes colorChange {*/
+/*    0% {*/
+/*        border-color: rgb(var(--Global-color-success, 5 195 150));*/
+/*        color: rgb(var(--Global-color-success, 5 195 150));*/
+/*        fill: rgb(var(--Global-color-success, 5 195 150));*/
+/*    }*/
+/*    100% {*/
+/*        border-color: inherit;*/
+/*        color: inherit;*/
+/*        fill: inherit;*/
+/*    }*/
+/*}*/
+/*!*  used in conjunction with the colorChange    *!*/
+/*@keyframes heartBeat {*/
+/*    0%, 28%, 70% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*    14%, 42% {*/
+/*        transform: scale(1.1);*/
+/*    }*/
+/*}*/
