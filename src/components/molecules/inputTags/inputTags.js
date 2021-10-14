@@ -85,8 +85,8 @@ class InputTags extends BasicAtom {
                     classNames="fade-in"
                     key={"available-tag-" + tag.name}
                 >
-                        {/*TODO make appear as a list as you type*/}
-                       <span>{tag.name}, </span>
+                    {/*TODO make appear as a list as you type*/}
+                   <span>{tag.name}, </span>
                 </CSSTransition>
             );
         });
