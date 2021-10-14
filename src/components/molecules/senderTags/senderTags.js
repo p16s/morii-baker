@@ -139,22 +139,24 @@ class SenderTags extends BasicAtom {
         );
     }
 
-
     /**
      * show the existing tags a user can add
      * @returns {unknown[]}
      */
     render_available_tags() {
         return (this.state.availableTags ?? []).map((tag, index) => {
-            return (
-                <span
-                    onClick={() => {
-                        this.addTag(tag.name);
-                    }}
-                >
+            if (tag.name.substr(0, (this.state.newTag.length)) === this.state.newTag) {
+                return (
+                    <span
+                        onClick={() => {
+                            this.addTag(tag.name);
+                        }}
+                    >
                     {tag.name}
                 </span>
-            );
+                );
+            }
+            return '';
         });
     }
 
@@ -196,7 +198,7 @@ class SenderTags extends BasicAtom {
         }
 
         //  make sure can only be added once (UI will prevent this from happening, but safer)
-        if (!isPresent && this.state.newTag.length) {
+        if (!isPresent) {
             // make sure we clone the existing before updating state array
             let copyTags = [
                 ...this.state.addedTags,
