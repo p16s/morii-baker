@@ -166,19 +166,6 @@ class SenderTags extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * filter the available tags as user types
-     * @param e
-     */
-    startFiltering(e) {
-        this.setState({
-            isAvailableTagsVisible: true
-        });
-
-        //  TODO not clear on how to filter/sort
-    }
-
-
-    /**
      * add tag to available tags
      * @param toAdd
      */
@@ -198,7 +185,7 @@ class SenderTags extends BasicAtom {
         }
 
         //  make sure can only be added once (UI will prevent this from happening, but safer)
-        if (!isPresent) {
+        if (!isPresent && toAdd.length) {
             // make sure we clone the existing before updating state array
             let copyTags = [
                 ...this.state.addedTags,
