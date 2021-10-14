@@ -1,0 +1,46 @@
+/*  title:  selectTags
+    notes:  molecule styles
+            select a tag from an existing list/array
+===================================================================================================================== */
+
+
+
+
+/*  SenderTags component
+===================================================================================================================== */
+.Sender-tags {
+   --Sender-tags-border: 1px solid var(--Sender-tags-border-color);
+   --Sender-tags-border-color: rgb(var(--Global-form-border-color, 170 176 195));
+   --Sender-tags-border-radius: var(--Global-form-border-radius, 5px);
+   --Sender-tags-font-size: var(--Global-base-font-size, 16px);
+   --Sender-tags-padding: .25rem .75rem;
+}
+
+
+/*  this is the upper, tags have been added, container
+===================================================================================================================== */
+.Sender-tags .selected-tags-container {
+    align-items: center;
+    border: var(--Sender-tags-border);
+    border-radius: var(--Sender-tags-border-radius);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--Sender-tags-font-size);
+    line-height: 1;
+    min-height: 44px;
+    outline: none;      /* poor accessability */
+    padding: var(--Sender-tags-padding);
+
+    width: 300px;   /*  TODO leaving here to ponder */
+}
+    .Sender-tags .selected-tags-container .Filter-tag {
+        margin: 3px;
+    }
+
+
+    /*  tags added container
+    ================================================================================================================= */
+    .Sender-tags .tags-container {
+        margin-top: .25rem;
+    }
+

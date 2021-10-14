@@ -1,12 +1,11 @@
 import BasicAtom from "../../atoms/basicAtom";
-import "./selectTags.css";
+import "./selectLabels.css";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import TagFilter from "../../atoms/tagFilter/tagFilter";
-import TagMessage from "../../atoms/tagMessage/tagMessage";
 
 
-class SelectTags extends BasicAtom {
+class SelectLabels extends BasicAtom {
     /**
      * local state
      * @param props
@@ -43,7 +42,7 @@ class SelectTags extends BasicAtom {
                         {
                             this.state.selectedTags.length === 0
                                 ?
-                                    "No tags selected"
+                                    "No labels selected"
                                 : ''
                         }
                     </TransitionGroup>
@@ -73,7 +72,7 @@ class SelectTags extends BasicAtom {
                     classNames="fade-in"
                     key={"selected-tag-" + tag.name}
                 >
-                    <TagMessage
+                    <TagFilter
                         className="added"
                         onClick={(e) => {
                             this.removeTag(index);
@@ -82,7 +81,7 @@ class SelectTags extends BasicAtom {
                         {tag.name}
 
                         <IconClose />
-                    </TagMessage>
+                    </TagFilter>
                 </CSSTransition>
             );
         });
@@ -100,7 +99,7 @@ class SelectTags extends BasicAtom {
                     classNames="fade-in"
                     key={"available-tag-" + tag.name}
                 >
-                    <TagMessage
+                    <TagFilter
                         className={(this.alreadyExists(tag.name) ? " hidden" : '')}
                         onClick={() => {
                             this.addTagToSelected(tag.name);
@@ -108,7 +107,7 @@ class SelectTags extends BasicAtom {
                         key={"tag-" + tag.name}
                     >
                         {tag.name}
-                    </TagMessage>
+                    </TagFilter>
                 </CSSTransition>
             );
         });
@@ -194,4 +193,4 @@ class SelectTags extends BasicAtom {
 }
 
 
-export default SelectTags;
+export default SelectLabels;

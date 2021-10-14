@@ -22,6 +22,7 @@ import FiltersExample from "../components/molecules/filters/example/filtersExamp
 import InputTagsExample from "../components/molecules/inputTags/example/inputTagsExample";
 import SelectTagsExample from "../components/molecules/selectTags/example/selectTagsExample";
 import SenderTagsExample from "../components/molecules/senderTags/example/senderTagsExample";
+import SelectLabelsExample from "../components/molecules/selectLabels/example/selectLabelsExample";
 
 
 const PageMolecules = () => {
@@ -29,6 +30,7 @@ const PageMolecules = () => {
         <div className="figma-like">
             <SenderTagsExample />
             <SelectTagsExample />
+            <SelectLabelsExample />
             <InputTagsExample />
             <FiltersExample />
             <NoDataMessageExample />

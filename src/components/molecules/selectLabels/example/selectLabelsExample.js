@@ -1,12 +1,12 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import SelectTags from "../selectTags";
+import SelectLabels from "../selectLabels";
 
 
-class SelectTagsExample extends BakerExample {
+class SelectLabelsExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Select tags</h1>
+                <h1>Select labels</h1>
 
                 {this.render_normal()}
             </section>
@@ -21,33 +21,33 @@ class SelectTagsExample extends BakerExample {
     render_normal() {
         const fakeTags = [
             {
-                "name": "tag1"
+                "name": "label1"
             },
             {
-                "name": "tag2"
+                "name": "label2"
             },
             {
-                "name": "tag3"
+                "name": "label3"
             },
             {
-                "name": "tag4"
+                "name": "label4"
             }
         ]
 
 
         return this.render_exampleComponent(
-            "SelectTags/Normal",
-            <SelectTags
+            "SelectLabels/Normal",
+            <SelectLabels
                 availableTags={fakeTags}
                 onTagsUpdate={(e) => {
-                    console.log("SelectTags onTagsUpdate", e, " (api post/array sort etc)");
+                    console.log("SelectLabels onTagsUpdate", e, " (api post/array sort etc)");
                 }}
             />,
-            "Select (add) tags to a collection when clicked"
+            "Select (add) labels to a collection when clicked"
         );
     }
 
 }
 
 
-export default SelectTagsExample;
+export default SelectLabelsExample;
