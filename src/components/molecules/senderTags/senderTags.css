@@ -62,6 +62,14 @@
         position: absolute;
         top: 100%;
     }
+    /*  white bg, hide the elipse on the shadow*/
+    .Select-tags .available-container:before {
+        background-color: #fff;
+        content: "";
+        inset: 0;
+        position: absolute;
+        z-index: 1;
+    }
     /*  drop shadow */
     .Select-tags .available-container:after {
         bottom: 0px;
