@@ -17,14 +17,7 @@ class SenderTags extends BasicAtom {
             availableTags: props.availableTags ?? [],
             isAvailableTagsVisible: false,
             newTag: '',
-            addedTags: [
-                {
-                    "name": "added_tag1"
-                },
-                {
-                    "name": "added_tag2"
-                }
-            ],
+            addedTags: props.alreadyAddedTags ?? [],
             highlight: -1
         };
     }
@@ -120,9 +113,13 @@ class SenderTags extends BasicAtom {
                         });
                     }}
                     onKeyPress={(e) => {
-                        this.startFiltering(e.target.value);
+                        console.log("onKey", e)
 
-                        e.key === 'Enter' || e.key === ','? this.addTag(e.target.value) : ''
+                        if (e.key === "Enter" || e.key === ',') {
+                            this.addTag(e.target.value);
+                        }
+
+                        // e.key === 'Enter' || e.key === ',' ? this.addTag(e.target.value) : ''
                     }}
                 />
 
@@ -199,7 +196,7 @@ class SenderTags extends BasicAtom {
         }
 
         //  make sure can only be added once (UI will prevent this from happening, but safer)
-        if (!isPresent) {
+        if (!isPresent && this.state.newTag.length) {
             // make sure we clone the existing before updating state array
             let copyTags = [
                 ...this.state.addedTags,
