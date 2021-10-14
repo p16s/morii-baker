@@ -31,7 +31,7 @@
     outline: none;      /* poor accessability */
     padding: var(--Sender-tags-padding);
 
-    width: 300px;   /*  TODO leaving here to ponder */
+    /*width: 300px;   !*  TODO leaving here to ponder *!*/
 }
     .Sender-tags .selected-tags-container .Filter-tag {
         margin: 3px;
