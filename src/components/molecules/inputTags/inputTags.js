@@ -65,7 +65,6 @@ class InputTags extends BasicAtom {
                 </aside>
 
                 <div>
-                    <p>[TODO] availableTags, passed in as a prop, will only show when a user start typing matching the characters</p>
                     {this.available_tags()}
                 </div>
             </div>

@@ -38,8 +38,8 @@ class SelectLabelsExample extends BakerExample {
         return this.render_exampleComponent(
             "SelectLabels/Normal",
             <SelectLabels
-                availableTags={fakeTags}
-                onTagsUpdate={(e) => {
+                availableLabels={fakeTags}
+                onLabelsUpdate={(e) => {
                     console.log("SelectLabels onTagsUpdate", e, " (api post/array sort etc)");
                 }}
             />,

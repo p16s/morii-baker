@@ -21,16 +21,13 @@ class InputTagsExample extends BakerExample {
     render_normal() {
         const fakeTags = [
             {
-                "name": "tag1",
-                "date_added": "?"
+                "name": "tag1"
             },
             {
-                "name": "tag2",
-                "date_added": "?"
+                "name": "tag2"
             },
             {
-                "name": "tag3",
-                "date_added": "?"
+                "name": "tag3"
             }
         ]
 
@@ -44,7 +41,7 @@ class InputTagsExample extends BakerExample {
                     console.log("SenderTags onTagsUpdate", e, " (api post etc)");
                 }}
             />,
-            "Used in combination with FilterTags to create an array of tags (shown with some already added)"
+            "Used to create an array of tags"
         );
     }
 
