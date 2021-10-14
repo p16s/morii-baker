@@ -50,6 +50,11 @@
         box-shadow: none;
     }
 
+    /*  if no tags added the padding on the input looks off when up hard left   */
+    .Select-tags .Form-input.empty {
+        padding-left: 0;
+    }
+
     /*  available (dropdown style)  */
     .Select-tags .available-container {
         background-color: #fff;

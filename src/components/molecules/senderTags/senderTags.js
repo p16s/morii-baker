@@ -88,7 +88,8 @@ class SenderTags extends BasicAtom {
         return (
             <div className="adding-container">
                 <FormInput
-                    placeholder="Type your tag here"
+                    className={!this.state.addedTags.length ? 'empty' : ''}
+                    placeholder="Add tags here"
                     value={this.state.newTag}
                     onFocus={() => {
                         this.setState({
