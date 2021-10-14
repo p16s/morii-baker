@@ -15,7 +15,7 @@ import ListItemExample from "../components/atoms/listItem/example/listItemExampl
 import IconExample from "../components/atoms/icon/example/iconExample";
 import IconsExample from "../components/atoms/icons/example/iconsExample";
 import UploadedFileExample from "../components/atoms/file/example/uploadedFileExample";
-import TagFilterExample from "../components/atoms/tagFilter/example/tagFilterExample";
+import TagLabelExample from "../components/atoms/tagLabel/example/tagLabelExample";
 import TagMessageExample from "../components/atoms/tagMessage/example/tagMessageExample";
 
 
@@ -23,7 +23,7 @@ const PageAtoms = () => {
     return (
         <div className="figma-like">
             <TagMessageExample />
-            <TagFilterExample />
+            <TagLabelExample />
             <UploadedFileExample />
             <IconExample />
             <IconsExample />

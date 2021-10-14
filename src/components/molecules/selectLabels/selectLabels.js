@@ -2,7 +2,7 @@ import BasicAtom from "../../atoms/basicAtom";
 import "./selectLabels.css";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import TagFilter from "../../atoms/tagFilter/tagFilter";
+import TagLabel from "../../atoms/tagLabel/tagLabel";
 
 
 class SelectLabels extends BasicAtom {
@@ -72,7 +72,7 @@ class SelectLabels extends BasicAtom {
                     classNames="fade-in"
                     key={"selected-tag-" + tag.name}
                 >
-                    <TagFilter
+                    <TagLabel
                         className="added"
                         onClick={(e) => {
                             this.removeTag(index);
@@ -81,7 +81,7 @@ class SelectLabels extends BasicAtom {
                         {tag.name}
 
                         <IconClose />
-                    </TagFilter>
+                    </TagLabel>
                 </CSSTransition>
             );
         });
@@ -99,7 +99,7 @@ class SelectLabels extends BasicAtom {
                     classNames="fade-in"
                     key={"available-tag-" + tag.name}
                 >
-                    <TagFilter
+                    <TagLabel
                         className={(this.alreadyExists(tag.name) ? " hidden" : '')}
                         onClick={() => {
                             this.addLabelToSelected(tag.name);
@@ -107,7 +107,7 @@ class SelectLabels extends BasicAtom {
                         key={"tag-" + tag.name}
                     >
                         {tag.name}
-                    </TagFilter>
+                    </TagLabel>
                 </CSSTransition>
             );
         });

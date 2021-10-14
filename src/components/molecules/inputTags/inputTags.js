@@ -3,7 +3,7 @@ import "./inputTags.css";
 import FormInput from "../../atoms/formInput/formInput";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import TagFilter from "../../atoms/tagFilter/tagFilter";
+import TagLabel from "../../atoms/tagLabel/tagLabel";
 import IconAdd from "../../atoms/icons/add";
 
 
@@ -106,7 +106,7 @@ class InputTags extends BasicAtom {
                     classNames="fade-in"
                     key={"tag-" + tag.name}
                 >
-                    <TagFilter
+                    <TagLabel
                         className={(this.state.highlight == index ? ' highlight' : '')}
                         onClick={(e) => {
                             this.removeTag(index);
@@ -115,7 +115,7 @@ class InputTags extends BasicAtom {
                         {tag.name}
 
                         <IconClose />
-                    </TagFilter>
+                    </TagLabel>
                 </CSSTransition>
             );
         });

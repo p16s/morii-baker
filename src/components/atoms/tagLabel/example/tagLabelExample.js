@@ -1,13 +1,13 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import TagFilter from "../tagFilter";
+import TagLabel from "../tagLabel";
 import IconClose from "../../icons/close";
 
 
-class TagFilterExample extends BakerExample {
+class TagLabelExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Filter Tags</h1>
+                <h1>Label Tags</h1>
 
                 {this.render_basic()}
                 {this.render_with_remove()}
@@ -24,8 +24,8 @@ class TagFilterExample extends BakerExample {
     render_basic() {
         return this.render_exampleComponent(
             'Primary / Basic',
-            <TagFilter>Tag name</TagFilter>,
-            'Basic tag, used on filtering'
+            <TagLabel>Tag name</TagLabel>,
+            'Label tag, used as labels to sort and filter messages'
         );
     }
 
@@ -37,15 +37,15 @@ class TagFilterExample extends BakerExample {
     render_with_remove() {
         return this.render_exampleComponent(
             'With remove',
-            <TagFilter
+            <TagLabel
                 onClick={() => {
-                    console.log("TagMessage clicked: render_with_remove");
+                    console.log("TagLabel clicked: render_with_remove");
                 }}
             >
                 Tag name
 
                 <IconClose />
-            </TagFilter>,
+            </TagLabel>,
             'Icon passed as child prop (no action on this example). Used when adding (creating) to a list'
         );
     }
@@ -58,20 +58,20 @@ class TagFilterExample extends BakerExample {
     render_added_example() {
         return this.render_exampleComponent(
             'Added example',
-            <TagFilter
+            <TagLabel
                 className="added"
                 onClick={() => {
-                    console.log("TagMessage clicked: render_added_example");
+                    console.log("TagLabel clicked: render_added_example");
                 }}
             >
                 Tag name
 
                 <IconClose />
-            </TagFilter>,
+            </TagLabel>,
             'Has been added to a "selected" filters array/list'
         );
     }
 }
 
 
-export default TagFilterExample;
+export default TagLabelExample;

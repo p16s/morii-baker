@@ -1,13 +1,13 @@
 import BasicAtom from "../basicAtom";
-import './tagFilter.css';
+import './tagLabel.css';
 
 
-class TagFilter extends BasicAtom {
+class TagLabel extends BasicAtom {
     render(className, props) {
         return (
             <span
                 className={
-                    "Tag-filter"
+                    "Tag-label"
                     + this.padIfString(className)
                     + this.getClassNameString()
                 }
@@ -36,4 +36,4 @@ class TagFilter extends BasicAtom {
 }
 
 
-export default TagFilter;
+export default TagLabel;
