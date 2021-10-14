@@ -14,7 +14,7 @@ class SelectTags extends BasicAtom {
         super(props);
         this.state = {
             availableTags: props.availableTags ?? [],
-            selectedTags: [],
+            selectedTags: props.selectedTags ?? [],
         };
     }
 

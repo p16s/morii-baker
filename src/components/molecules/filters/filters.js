@@ -135,9 +135,10 @@ class Filters extends BasicAtom {
                             +
                             (opt == this.props.activeFilters ? " active" : '')
                         }
-                        onClick={() => {
-                            this.props.onChildClick(opt, index);
-                        }}
+                        //  not sure this is needed as clic events are handled on the prop.children passed in
+                        // onClick={() => {
+                        //     this.props.onChildClick(opt, index);
+                        // }}
                         key={"item-" + index}
                     >
                         {opt}

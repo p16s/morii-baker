@@ -14,7 +14,7 @@ class SelectLabels extends BasicAtom {
         super(props);
         this.state = {
             availableLabels: props.availableLabels ?? [],
-            selectedLabels: [],
+            selectedLabels: props.selectedLabels ?? [],
         };
     }
 
@@ -153,7 +153,7 @@ class SelectLabels extends BasicAtom {
                 // })
 
                 //  pass (emit) prop
-                this.callbackOr(this.props.onTagsUpdate)(this.state.selectedLabels);
+                this.callbackOr(this.props.onLabelsUpdate)(this.state.selectedLabels);
             });
         }
     }
@@ -187,7 +187,7 @@ class SelectLabels extends BasicAtom {
             selectedLabels: copyLabels
         }, () => {
             //  pass (emit) prop
-            this.callbackOr(this.props.onTagsUpdate)(this.state.selectedLabels);
+            this.callbackOr(this.props.onLabelsUpdate)(this.state.selectedLabels);
         });
     }
 }
