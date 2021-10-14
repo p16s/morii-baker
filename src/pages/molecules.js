@@ -21,32 +21,34 @@ import NoDataMessageExample from "../components/molecules/noDataMessage/example/
 import FiltersExample from "../components/molecules/filters/example/filtersExample";
 import InputTagsExample from "../components/molecules/inputTags/example/inputTagsExample";
 import SelectTagsExample from "../components/molecules/selectTags/example/selectTagsExample";
+import SenderTagsExample from "../components/molecules/senderTags/example/senderTagsExample";
 
 
 const PageMolecules = () => {
     return (
         <div className="figma-like">
-                <SelectTagsExample />
-                <InputTagsExample />
-                <FiltersExample />
-                <NoDataMessageExample />
-                <ToastExample />
-                <ContactPreferencesExample />
-                <TabBarExample />
-                <ModalCenterExample />
-                <RandomExample />
-                <FileListExample />
-                <SlideOutExample />
-                <TableExample />
-                <BreadcrumbsExample />
-                <IconBarExample />
-                <TitleBarExample />
-                <ListExample />
-                <FileUploadExample />
-                <PinExample />
-                <TextareaExample />
-                <InputPhoneExample />
-                <InputExample />
+            <SenderTagsExample />
+            <SelectTagsExample />
+            <InputTagsExample />
+            <FiltersExample />
+            <NoDataMessageExample />
+            <ToastExample />
+            <ContactPreferencesExample />
+            <TabBarExample />
+            <ModalCenterExample />
+            <RandomExample />
+            <FileListExample />
+            <SlideOutExample />
+            <TableExample />
+            <BreadcrumbsExample />
+            <IconBarExample />
+            <TitleBarExample />
+            <ListExample />
+            <FileUploadExample />
+            <PinExample />
+            <TextareaExample />
+            <InputPhoneExample />
+            <InputExample />
         </div>
     );
 }

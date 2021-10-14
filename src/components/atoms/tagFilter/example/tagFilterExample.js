@@ -39,7 +39,7 @@ class TagFilterExample extends BakerExample {
             'With remove',
             <TagFilter
                 onClick={() => {
-                    console.log("TagFilter clicked: render_with_remove");
+                    console.log("TagMessage clicked: render_with_remove");
                 }}
             >
                 Tag name
@@ -61,7 +61,7 @@ class TagFilterExample extends BakerExample {
             <TagFilter
                 className="added"
                 onClick={() => {
-                    console.log("TagFilter clicked: render_added_example");
+                    console.log("TagMessage clicked: render_added_example");
                 }}
             >
                 Tag name

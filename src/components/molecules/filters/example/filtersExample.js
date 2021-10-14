@@ -99,12 +99,12 @@ class FiltersExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "SelectTags/Normal",
+            "SenderTags/Normal",
             <Filters
                 className={"example-class"}
                 options={fakeOptions}
                 onChildClick={(e, index) => {
-                    console.log("SelectTags onChildClick", e, index);
+                    console.log("SenderTags onChildClick", e, index);
                 }}
             />,
             "Each filter list can be any component passed in via the array.  This component just handles the list presentation/logic"
@@ -154,13 +154,13 @@ class FiltersExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "SelectTags/Normal",
+            "SenderTags/Normal",
             <Filters
                 preSelectedParent={0} 
                 options={fakeOptions}
                 ctaText={"Filter by label"}
                 onChildClick={(e, index) => {
-                    console.log("SelectTags onChildClick", e, index);
+                    console.log("SenderTags onChildClick", e, index);
                 }}
             />,
             "Shows a single child (via prop) with a pre-selected parent (with the main CTA text changed via prop)"

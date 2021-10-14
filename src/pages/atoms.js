@@ -16,11 +16,13 @@ import IconExample from "../components/atoms/icon/example/iconExample";
 import IconsExample from "../components/atoms/icons/example/iconsExample";
 import UploadedFileExample from "../components/atoms/file/example/uploadedFileExample";
 import TagFilterExample from "../components/atoms/tagFilter/example/tagFilterExample";
+import TagMessageExample from "../components/atoms/tagMessage/example/tagMessageExample";
 
 
 const PageAtoms = () => {
     return (
         <div className="figma-like">
+            <TagMessageExample />
             <TagFilterExample />
             <UploadedFileExample />
             <IconExample />
