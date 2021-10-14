@@ -89,7 +89,7 @@ class LoginAtom extends BasicAtom {
         if (this.state.isStage === 1) {
             return (
                 <div>
-                    <h1>Sign in to Messages</h1>
+                    <h1>Sign in to Purposeful</h1>
 
                     <div id="googleLogin"/>
 
