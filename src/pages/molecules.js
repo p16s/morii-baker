@@ -23,11 +23,13 @@ import InputTagsExample from "../components/molecules/inputTags/example/inputTag
 import SelectTagsExample from "../components/molecules/selectTags/example/selectTagsExample";
 import SenderTagsExample from "../components/molecules/senderTags/example/senderTagsExample";
 import SelectLabelsExample from "../components/molecules/selectLabels/example/selectLabelsExample";
+import MessageLabelsExample from "../components/molecules/messageLabels/example/messageLabelsExample";
 
 
 const PageMolecules = () => {
     return (
         <div className="figma-like">
+            <MessageLabelsExample />
             <SenderTagsExample />
             <SelectTagsExample />
             <SelectLabelsExample />

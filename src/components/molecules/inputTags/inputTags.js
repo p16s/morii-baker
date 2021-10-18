@@ -4,6 +4,7 @@ import FormInput from "../../atoms/formInput/formInput";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import TagLabel from "../../atoms/tagLabel/tagLabel";
+import TagMessage from "../../atoms/tagMessage/tagMessage";
 
 
 class InputTags extends BasicAtom {
@@ -83,8 +84,7 @@ class InputTags extends BasicAtom {
                     classNames="fade-in"
                     key={"available-tag-" + tag.name}
                 >
-                    {/*TODO make appear as a list as you type*/}
-                   <span>{tag.name}, </span>
+                    <TagMessage>{tag.name}, </TagMessage>
                 </CSSTransition>
             );
         });
@@ -104,7 +104,7 @@ class InputTags extends BasicAtom {
                     classNames="fade-in"
                     key={"tag-" + tag.name}
                 >
-                    <TagLabel
+                    <TagMessage
                         className={(this.state.highlight == index ? ' highlight' : '')}
                         onClick={(e) => {
                             this.removeTag(index);
@@ -113,7 +113,7 @@ class InputTags extends BasicAtom {
                         {tag.name}
 
                         <IconClose />
-                    </TagLabel>
+                    </TagMessage>
                 </CSSTransition>
             );
         });

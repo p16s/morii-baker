@@ -36,11 +36,11 @@ class SenderTagsExample extends BakerExample {
 
 
         return this.render_exampleComponent(
-            "SenderTags/Normal",
+            "senderTags/Normal",
             <SenderTags
                 availableTags={availableTags}
                 onTagsUpdate={(e) => {
-                    console.log("SenderTags onTagsUpdate", e, " (api post/array sort etc)");
+                    console.log("senderTags onTagsUpdate", e, " (api post/array sort etc)");
                 }}
             />,
             "User types, gets available tags, adds"

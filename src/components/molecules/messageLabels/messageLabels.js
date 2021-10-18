@@ -1,12 +1,13 @@
 import BasicAtom from "../../atoms/basicAtom";
-import "./senderTags.css";
+import "./messageLabels.css";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import FormInput from "../../atoms/formInput/formInput";
 import TagMessage from "../../atoms/tagMessage/tagMessage";
+import TagLabel from "../../atoms/tagLabel/tagLabel";
 
 
-class SenderTags extends BasicAtom {
+class MessageLabels extends BasicAtom {
     /**
      * local state
      * @param props
@@ -14,10 +15,10 @@ class SenderTags extends BasicAtom {
     constructor(props) {
         super(props);
         this.state = {
-            availableTags: props.availableTags ?? [],
-            isAvailableTagsVisible: false,
-            newTag: '',
-            addedTags: props.alreadyAddedTags ?? [],
+            availableLabels: props.availableLabels ?? [],
+            isAvailableVisible: false,
+            newLabel: '',
+            addedLabels: props.alreadyAddedLabels ?? [],
             highlight: -1
         };
     }
@@ -35,16 +36,16 @@ class SenderTags extends BasicAtom {
         return (
             <div
                 className={
-                    "Select-tags"
+                    "Message-labels"
                     + this.padIfString(className)
                 }
             >
-                <div className="tags-container">
+                <div className="labels-container">
                     <TransitionGroup component={null}>
-                        {this.render_added_tags()}
+                        {this.render_added_labels()}
                     </TransitionGroup>
 
-                    {this.render_adding_tag()}
+                    {this.render_adding_label()}
                 </div>
             </div>
         );
@@ -52,28 +53,28 @@ class SenderTags extends BasicAtom {
 
 
     /**
-     * already added tags
+     * already added labels
      * @returns {unknown[]}
      */
-    render_added_tags() {
-        return (this.state.addedTags ?? []).map((tag, index) => {
+    render_added_labels() {
+        return (this.state.addedLabels ?? []).map((label, index) => {
             return (
                 <CSSTransition
                     timeout={100}
                     classNames="fade-in"
-                    key={"added-tag-" + tag.name}
+                    key={"added-label-" + label.name}
                 >
-                    <TagMessage
+                    <TagLabel
                         className={this.state.highlight == index ? ' highlight' : ''}
                         onClick={() => {
                             this.removeTag(index);
                         }}
-                        key={"tag-" + tag.name}
+                        key={"label-" + label.name}
                     >
-                        {tag.name}
+                        {label.name}
 
                         <IconClose />
-                    </TagMessage>
+                    </TagLabel>
                 </CSSTransition>
             );
         });
@@ -81,54 +82,54 @@ class SenderTags extends BasicAtom {
 
 
     /**
-     * tags that are available to add from pre-existing list
+     * labels that are available to add from pre-existing list
      * @returns {JSX.Element}
      */
-    render_adding_tag() {
+    render_adding_label() {
         return (
             <div className="adding-container">
                 <FormInput
-                    className={!this.state.addedTags.length ? 'empty' : ''}
-                    placeholder="Add tags here"
-                    value={this.state.newTag}
+                    className={!this.state.addedLabels.length ? 'empty' : ''}
+                    placeholder="Add labels here"
+                    value={this.state.newLabel}
                     onFocus={() => {
                         this.setState({
-                            isAvailableTagsVisible: true
+                            isAvailableVisible: true
                         })
                     }}
                     onBlur={() => {
                         this.setState({
-                            newTag: ''
+                            newLabel: ''
                         })
 
                         //  without timeout the click event on the option doesn't fire
                         setTimeout(() => {
                             this.setState({
-                                isAvailableTagsVisible: false
+                                isAvailableVisible: false
                             })
                         }, 100)
                 }}
                     onChange={(e) => {
                         this.setState({
-                            newTag: e
+                            newLabel: e
                         });
                     }}
                     onKeyPress={(e) => {
                         if (e.key === "Enter" || e.key === ',') {
-                            this.addTag(e.target.value);
+                            this.addLabel(e.target.value);
                         }
                     }}
                 />
 
                 <CSSTransition
-                    in={this.state.isAvailableTagsVisible}
+                    in={this.state.isAvailableVisible}
                     timeout={100}
                     classNames="fade-and-slide-in"
-                    key={"available-tag-sdasdas"}
+                    key={"available-label-sdasdas"}
                     unmountOnExit
                 >
                     <aside className="available-container">
-                        {this.render_available_tags()}
+                        {this.render_available_labels()}
                     </aside>
                 </CSSTransition>
 
@@ -137,20 +138,20 @@ class SenderTags extends BasicAtom {
     }
 
     /**
-     * show the existing tags a user can add
+     * show the existing labels a user can add
      * @returns {unknown[]}
      */
-    render_available_tags() {
-        return (this.state.availableTags ?? []).map((tag, index) => {
-            if (tag.name.substr(0, (this.state.newTag.length)) === this.state.newTag) {
+    render_available_labels() {
+        return (this.state.availableLabels ?? []).map((label, index) => {
+            if (label.name.substr(0, (this.state.newLabel.length)) === this.state.newLabel) {
                 return (
                     <span
                         onClick={() => {
-                            this.addTag(tag.name);
+                            this.addLabel(label.name);
                         }}
-                        key={tag.name}
+                        key={label.name}
                     >
-                    {tag.name}
+                    {label.name}
                 </span>
                 );
             }
@@ -164,18 +165,18 @@ class SenderTags extends BasicAtom {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * add tag to available tags
+     * add label to available labels
      * @param toAdd
      */
-    addTag(toAdd) {
-        //  check the tag doesn't already exist in the array
-        let isPresent = this.state.addedTags.some((e) => {
+    addLabel(toAdd) {
+        //  check the label doesn't already exist in the array
+        let isPresent = this.state.addedLabels.some((e) => {
             return e.name === toAdd
         });
 
         //  if present set the index for UI
         if (isPresent) {
-            let highlightIndex = this.state.addedTags.findIndex(tag => tag.name === toAdd);
+            let highlightIndex = this.state.addedLabels.findIndex(label => label.name === toAdd);
 
             this.setState({
                 highlight: highlightIndex
@@ -186,7 +187,7 @@ class SenderTags extends BasicAtom {
         if (!isPresent && toAdd.length) {
             // make sure we clone the existing before updating state array
             let copyTags = [
-                ...this.state.addedTags,
+                ...this.state.addedLabels,
                 {
                     'name': toAdd
                 }
@@ -194,26 +195,26 @@ class SenderTags extends BasicAtom {
 
             //  then update both selected and available and callback for api
             this.setState({
-                isAvailableTagsVisible: true,
-                addedTags: copyTags,
-                newTag: ''
+                isAvailableVisible: true,
+                addedLabels: copyTags,
+                newLabel: ''
             }, () => {
                 //  pass (emit) prop
-                this.callbackOr(this.props.onTagsUpdate)(this.state.addedTags);
+                this.callbackOr(this.props.onLabelsUpdate)(this.state.addedLabels);
             });
         }
     }
 
 
-    /** check to see if tag has been added
+    /** check to see if label has been added
      *
-     * @param tagName
+     * @param labelName
      * @returns {boolean}
      */
-    alreadyExists(tagName) {
-        //  check the tag doesn't already exist in the array
-        let alreadyAdded = this.state.addedTags.some((e) => {
-            return e.name === tagName
+    alreadyExists(labelName) {
+        //  check the label doesn't already exist in the array
+        let alreadyAdded = this.state.addedLabels.some((e) => {
+            return e.name === labelName
         });
 
         return alreadyAdded;
@@ -221,22 +222,22 @@ class SenderTags extends BasicAtom {
 
 
     /**
-     * remove tag from what's been added
+     * remove label from what's been added
      * @param toRemove
      */
     removeTag(toRemove) {
-        let copyTags = [...this.state.addedTags];
+        let copyTags = [...this.state.addedLabels];
 
         copyTags.splice(toRemove, 1);
 
         this.setState({
-            addedTags: copyTags
+            addedLabels: copyTags
         }, () => {
             //  pass (emit) prop
-            this.callbackOr(this.props.onTagsUpdate)(this.state.addedTags);
+            this.callbackOr(this.props.onLabelsUpdate)(this.state.addedLabels);
         });
     }
 }
 
 
-export default SenderTags;
+export default MessageLabels;
