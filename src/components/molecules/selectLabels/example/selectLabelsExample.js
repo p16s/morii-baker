@@ -19,7 +19,7 @@ class SelectLabelsExample extends BakerExample {
      * @returns {JSX.Element}
      */
     render_normal() {
-        const fakeTags = [
+        const fakeLabels = [
             {
                 "name": "label1"
             },
@@ -38,7 +38,7 @@ class SelectLabelsExample extends BakerExample {
         return this.render_exampleComponent(
             "SelectLabels/Normal",
             <SelectLabels
-                availableLabels={fakeTags}
+                availableLabels={fakeLabels}
                 onLabelsUpdate={(e) => {
                     console.log("SelectLabels onTagsUpdate", e, " (api post/array sort etc)");
                 }}
