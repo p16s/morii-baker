@@ -1,12 +1,12 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import InputTags from "../inputTags";
+import InputLabels from "../inputLabels";
 
 
-class InputTagsExample extends BakerExample {
+class InputLabelsExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
-                <h1>Input Tags</h1>
+                <h1>Input Labels</h1>
 
                 {this.render_normal()}
             </section>
@@ -19,33 +19,33 @@ class InputTagsExample extends BakerExample {
      * @returns {JSX.Element}
      */
     render_normal() {
-        const fakeTags = [
+        const fakeLabels = [
             {
-                "name": "tag1"
+                "name": "label1"
             },
             {
-                "name": "tag2"
+                "name": "label2"
             },
             {
-                "name": "tag3"
+                "name": "label3"
             }
         ]
 
 
         return this.render_exampleComponent(
             "InputLabels/Normal",
-            <InputTags
+            <InputLabels
                 className={"example-class"}
-                existingTags={fakeTags}
+                existingTags={fakeLabels}
                 onTagsUpdate={(e) => {
                     console.log("SenderTags onTagsUpdate", e, " (api post etc)");
                 }}
             />,
-            "Used to create an array of tags"
+            "Used to create an array of labels"
         );
     }
 
 }
 
 
-export default InputTagsExample;
+export default InputLabelsExample;

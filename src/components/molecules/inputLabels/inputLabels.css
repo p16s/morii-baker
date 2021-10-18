@@ -1,18 +1,18 @@
-/*  title:  Input-tags
+/*  title:  Input-labels
     notes:  molecule styles
-            input tags, adding/removing
+            input and tags, adding/removing
 ===================================================================================================================== */
 
 
 
 
-/*  SenderTags component
+/*  component styles
 ===================================================================================================================== */
-.Input-tags {
+.Input-labels {
 }
 
-    /*  tags added container
+    /*  labels added container
     ================================================================================================================= */
-    .Input-tags .tags-container {
+    .Input-labels .labels-container {
         margin-top: .25rem;
     }

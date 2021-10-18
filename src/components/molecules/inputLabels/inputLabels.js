@@ -1,12 +1,12 @@
 import BasicAtom from "../../atoms/basicAtom";
-import "./inputTags.css";
+import "./inputLabels.css";
 import FormInput from "../../atoms/formInput/formInput";
 import IconClose from "../../atoms/icons/close";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import TagLabel from "../../atoms/tagLabel/tagLabel";
 
 
-class InputTags extends BasicAtom {
+class InputLabels extends BasicAtom {
     /**
      * local state
      * @param props
@@ -15,8 +15,8 @@ class InputTags extends BasicAtom {
         super(props);
         this.state = {
             availableTags: props.availableTags ?? [],
-            tags: props.existingTags ?? [],
-            newTag: '',
+            labels: props.existingTags ?? [],
+            newLabel: '',
             highlight: -1
         };
     }
@@ -34,18 +34,18 @@ class InputTags extends BasicAtom {
         return (
             <div
                 className={
-                    "Input-tags"
+                    "Input-labels"
                     + this.padIfString(className)
                 }
             >
                 <FormInput
-                    placeholder="Add a tag"
-                    value={this.state.newTag}
+                    placeholder="Add a label"
+                    value={this.state.newLabel}
                     onChange={(e) => {
-                        let keepNewTagLower = e.toLowerCase();
+                        let keepNewLower = e.toLowerCase();
 
                         this.setState({
-                            newTag: keepNewTagLower,
+                            newLabel: keepNewLower,
                             highlight: -1
                         });
                     }}
@@ -57,14 +57,14 @@ class InputTags extends BasicAtom {
                 {/*    <IconAdd />*/}
                 {/*</span>*/}
 
-                <aside className="tags-container">
+                <aside className="labels-container">
                     <TransitionGroup>
-                        {this.render_added_tags()}
+                        {this.render_added_labels()}
                     </TransitionGroup>
                 </aside>
 
                 <div>
-                    {this.available_tags()}
+                    {this.available_labels()}
                 </div>
             </div>
         );
@@ -72,10 +72,10 @@ class InputTags extends BasicAtom {
 
 
     /**
-     * already existing tags
+     * already existing labels
      * @returns {unknown[]}
      */
-    available_tags() {
+    available_labels() {
         return (this.state.availableTags ?? []).map((tag, index) => {
             return (
                 <CSSTransition
@@ -93,11 +93,11 @@ class InputTags extends BasicAtom {
 
 
     /**
-     * render the tags in the array
+     * render the labels in the array
      * @returns {unknown[]}
      */
-    render_added_tags() {
-        return (this.state.tags ?? []).map((tag, index) => {
+    render_added_labels() {
+        return (this.state.labels ?? []).map((tag, index) => {
             return (
                 <CSSTransition
                     timeout={100}
@@ -129,40 +129,40 @@ class InputTags extends BasicAtom {
      */
     addNewTag() {
         //  check the tag doesn't already exist in the array
-        let isPresent = this.state.tags.some((e) => {
-            return e.name === this.state.newTag
+        let isPresent = this.state.labels.some((e) => {
+            return e.name === this.state.newLabel
         });
 
 
         //  if already exists, change UI to show user, this is reset onChange of the input
         if (isPresent) {
-            let highlightIndex = this.state.tags.findIndex(tag => tag.name === this.state.newTag);
+            let highlightIndex = this.state.labels.findIndex(tag => tag.name === this.state.newLabel);
 
             this.setState({
                 highlight: highlightIndex
             });
         }
 
-        if (this.state.newTag.length && !isPresent) {
+        if (this.state.newLabel.length && !isPresent) {
             // make sure we clone the existing before updating state array
             let copyTags = [
-                ...this.state.tags,
+                ...this.state.labels,
                 {
-                    'name': this.state.newTag
+                    'name': this.state.newLabel
                 }
             ];
 
             //  then update state/clear down/prop
             this.setState({
-                tags: copyTags
+                labels: copyTags
             }, () => {
                 //  clear the new tag/input
                 this.setState({
-                    newTag: ''
+                    newLabel: ''
                 });
 
                 //  pass (emit) prop
-                this.callbackOr(this.props.onTagsUpdate)(this.state.tags);
+                this.callbackOr(this.props.onTagsUpdate)(this.state.labels);
             });
         }
     }
@@ -173,19 +173,19 @@ class InputTags extends BasicAtom {
      * @param toRemove
      */
     removeTag(toRemove) {
-        let copyTags = [...this.state.tags];
+        let copyTags = [...this.state.labels];
 
         copyTags.splice(toRemove, 1);
 
         this.setState({
-            tags: copyTags
+            labels: copyTags
         }, () => {
             //  pass (emit) prop
-            this.callbackOr(this.props.onTagsUpdate)(this.state.tags);
+            this.callbackOr(this.props.onTagsUpdate)(this.state.labels);
         });
     }
 
 }
 
 
-export default InputTags;
+export default InputLabels;
