@@ -17,7 +17,9 @@ class IconBar extends BasicAtom {
                 >
                     <IconHome />
                 </Icon>
+
                 {this.render_icons()}
+
                 {this.props.children}
 
                 <aside className={"footer"}>

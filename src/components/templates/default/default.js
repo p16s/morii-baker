@@ -60,7 +60,6 @@ class TemplateDefault extends BasicAtom {
                 }
             >
                 <SideBar
-                    // className={(this.state.isActive ? 'active' : '')}
                     className={(this.props.isMobileNavActive ? 'active' : '')}
 
                     icons={this.props.sideBarData.icons}

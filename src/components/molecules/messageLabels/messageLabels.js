@@ -123,9 +123,9 @@ class MessageLabels extends BasicAtom {
 
                 <CSSTransition
                     in={this.state.isAvailableVisible}
-                    timeout={100}
                     classNames="fade-and-slide-in"
-                    key={"available-label-sdasdas"}
+                    timeout={100}
+                    key={"message-label"}
                     unmountOnExit
                 >
                     <aside className="available-container">

@@ -21,8 +21,6 @@
 ===================================================================================================================== */
 .Message-labels .labels-container {
     align-items: center;
-    /*border: var(--Message-labels-border);*/
-    /*border-radius: var(--Message-labels-border-radius);*/
     display: flex;
     font-size: var(--Message-labels-font-size);
     line-height: 1;
@@ -51,9 +49,9 @@
     }
 
     /*  if no tags added the padding on the input looks off when up hard left   */
-    .Message-labels .Form-input.empty {
-        padding-left: 0;
-    }
+    /*.Message-labels .Form-input.empty {*/
+    /*    padding-left: 0;*/
+    /*}*/
 
     /*  available (dropdown style)  */
     .Message-labels .available-container {
@@ -66,7 +64,7 @@
         position: absolute;
         top: 100%;
     }
-    /*  white bg, hide the elipse on the shadow*/
+    /*  white bg, hide the ellipse on the shadow*/
     .Message-labels .available-container:before {
         background-color: #fff;
         content: "";
