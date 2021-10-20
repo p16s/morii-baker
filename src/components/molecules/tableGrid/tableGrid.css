@@ -1,0 +1,162 @@
+/*  title:  Table-grid
+    notes:  component styles
+ ==================================================================================================================== */
+
+
+
+
+/*  component styles
+===================================================================================================================== */
+.Table-grid svg:not(.icon-arrow-dropdown) {
+    height: 1rem;
+    margin: 0 .25em;
+    width: auto;
+}
+
+
+.Table-grid .row {
+    align-items: flex-start;
+    border-bottom: 1px solid #EFEFEF;
+    display: grid;
+    margin: 0;
+    padding: .5rem;
+    transition: .3s;
+}
+    .Table-grid .row:hover {
+        background-color: rgba(var(--Table-td-hover-color), .1);
+        transition: .2s;
+    }
+    .Table-grid .row.active .icon-arrow-dropdown {
+        transform: rotate(180deg);
+        transition: .2s;
+    }
+
+    .Table-grid [class^='th-'],
+    .Table-grid [class^='td-'] {
+        align-items: center;
+        display: flex;
+        line-height: 1.4;
+        padding: .75rem 0;
+    }
+
+    /*  all th- */
+    .Table-grid [class^='th-'] {
+        color: rba(var(--Table-th-color));
+        font-weight: 600;
+        font-size: .625rem;
+        line-height: .875rem;
+        text-align: left;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+    @media screen and (min-width: 1440px) {
+        .Table-grid [class^='th-'] {
+            border-bottom: 1px solid #e3e3e3;
+        }
+    }
+
+    /*  all td- */
+    .Table-grid [class^='td-'] {
+        font-family: Nunito Sans, sans-serif;
+        font-size: .875rem;
+
+        /*  testing:    */
+        display: flex;
+        height: 100%;
+    }
+
+
+    /*  give each "cell" a grid-area to target (should be done in SaSS loop with $i passed in as a var)    */
+    .Table-grid .th-1 {
+        grid-area: th-1;
+    }
+    .Table-grid .th-1 {
+        grid-area: th-1;
+    }
+    .Table-grid .th-2 {
+        grid-area: th-2;
+    }
+    .Table-grid .th-3 {
+        grid-area: th-3;
+    }
+    .Table-grid .th-4 {
+        grid-area: th-4;
+    }
+    .Table-grid .th-5 {
+        grid-area: th-5;
+    }
+    .Table-grid .th-6 {
+        grid-area: th-6;
+    }
+    .Table-grid .th-7 {
+        grid-area: th-7;
+    }
+    .Table-grid .th-8 {
+        grid-area: th-8;
+    }
+    .Table-grid .th-9 {
+        grid-area: th-9;
+    }
+    .Table-grid .th-10 {
+        grid-area: th-10;
+    }
+    .Table-grid .th-11 {
+        grid-area: th-11;
+    }
+
+    .Table-grid .td-1 {
+        grid-area: td-1;
+    }
+    .Table-grid .td-2 {
+        grid-area: td-2;
+    }
+    .Table-grid .td-3 {
+        grid-area: td-3;
+    }
+    .Table-grid .td-4 {
+        grid-area: td-4;
+    }
+    .Table-grid .td-5 {
+        grid-area: td-5;
+    }
+    .Table-grid .td-6 {
+        grid-area: td-6;
+    }
+    .Table-grid .td-7 {
+        grid-area: td-7;
+    }
+    .Table-grid .td-8 {
+        grid-area: td-8;
+    }
+    .Table-grid .td-9 {
+        grid-area: td-9;
+    }
+    .Table-grid .td-10 {
+        grid-area: td-10;
+    }
+    .Table-grid .td-11 {
+        grid-area: td-11
+    }
+
+
+
+        /*!*  default non-styled tables to take a standard full width table appearance    *!*/
+        /*!*  TODO can't do this without SaSS and mixins  *!*/
+        /*.Table-grid .row {*/
+        /*    grid-template-areas:*/
+        /*        "th-1 th-2 th-3 th-4"*/
+        /*        "td-1 td-2 td-3 td-4"*/
+        /*    ;*/
+        /*    grid-template-columns: 2fr .5fr 1fr 1fr;*/
+        /*}*/
+
+        /*!*  only show the first th...  *!*/
+        /*.Table-grid .row:nth-of-type(n+2) [class^='th-'] {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*!*  ...and don't show the actions col   *!*/
+        /*.Table-grid .row .th-5,*/
+        /*.Table-grid .row .td-5 {*/
+        /*    display: none;*/
+        /*}*/

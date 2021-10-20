@@ -1,9 +1,9 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import Table from "../table";
+import TableGrid from "../tableGrid";
 import Tag from "../../../atoms/tag/tag";
 
 
-class TableExample extends BakerExample {
+class TableGridExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
@@ -27,7 +27,7 @@ class TableExample extends BakerExample {
     render_normal() {
         return this.render_exampleComponent(
             "TableGrid/Normal",
-            <Table
+            <TableGrid
                 className={"example"}
                 thead={[
                     "Name",
@@ -62,4 +62,4 @@ class TableExample extends BakerExample {
 }
 
 
-export default TableExample;
+export default TableGridExample;

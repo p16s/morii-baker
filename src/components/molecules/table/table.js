@@ -7,7 +7,7 @@ class Table extends BasicAtom {
         return (
             <table
                 className={
-                    "Table "
+                    "Table"
                     + this.padIfString(className)
                     + this.getClassNameString()
                 }

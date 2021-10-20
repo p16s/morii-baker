@@ -162,7 +162,12 @@
 
     /*  button with icon
     ============================================================================================================= */
-    .Button .icon {
+    .Button.icon {
+        height: 2rem;
+        padding: 0;
+        width: 2rem;
+    }
+    .Button:not(.outline).icon {
         fill: #fff;
         height: 1em;
     }
