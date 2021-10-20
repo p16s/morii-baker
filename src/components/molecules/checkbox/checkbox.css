@@ -1,0 +1,20 @@
+/*  title:  Checkbox
+    notes:  molecule styles
+
+===================================================================================================================== */
+
+
+
+
+/*  component
+===================================================================================================================== */
+.Checkbox {
+    align-items: center;
+    display: flex;
+}
+    .Checkbox .Form-checkbox {
+        margin-right: .5rem;
+    }
+    .Checkbox .Label:not(.disabled) {
+        cursor: pointer;
+    }

@@ -19,6 +19,10 @@
     display: block;
     font-weight: 700;
 }
+    .Label.disabled {
+        cursor: not-allowed;
+        opacity: .5;
+    }
     /*  when used in a form there will be more than 1 "group" of inputs, so will need margin
     ================================================================================================================= */
     form .Label:not(:first-of-type) {

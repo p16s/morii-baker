@@ -24,6 +24,7 @@ import SelectTagsExample from "../components/molecules/selectTags/example/select
 import SenderTagsExample from "../components/molecules/senderTags/example/senderTagsExample";
 import SelectLabelsExample from "../components/molecules/selectLabels/example/selectLabelsExample";
 import MessageLabelsExample from "../components/molecules/messageLabels/example/messageLabelsExample";
+import CheckboxExample from "../components/molecules/checkbox/example/checkboxExample";
 
 
 const PageMolecules = () => {
@@ -49,6 +50,7 @@ const PageMolecules = () => {
             <TitleBarExample />
             <ListExample />
             <FileUploadExample />
+            <CheckboxExample />
             <PinExample />
             <TextareaExample />
             <InputPhoneExample />

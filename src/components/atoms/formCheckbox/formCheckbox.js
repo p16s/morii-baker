@@ -1,9 +1,9 @@
 import React from "react";
 import OnOff from "../fundamentals/onOff";
-import './checkbox.css';
+import './formCheckbox.css';
 
 
-class Checkbox extends OnOff {
+class FormCheckbox extends OnOff {
     constructor(props, context) {
         super(props, context, 'selected');
     }
@@ -12,8 +12,9 @@ class Checkbox extends OnOff {
     render_element(className, props) {
         return React.cloneElement(
             <input
+                id={this.props.id}
                 className={
-                    "Checkbox"
+                    "Form-checkbox"
                     + this.padIfString(className)
                     + this.getClassNameString()
                     + (this.isOn ? ' selected' : '')
@@ -31,4 +32,4 @@ class Checkbox extends OnOff {
 }
 
 
-export default Checkbox;
+export default FormCheckbox;

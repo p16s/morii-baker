@@ -1,8 +1,8 @@
 import BakerExample from "../../../../helpers/bakerExample";
-import Checkbox from "../checkbox";
+import FormCheckbox from "../formCheckbox";
 
 
-class CheckboxExample extends BakerExample {
+class FormCheckboxExample extends BakerExample {
     render() {
         return (
             <section className={"examples"}>
@@ -28,65 +28,65 @@ class CheckboxExample extends BakerExample {
 
     render_basic() {
         return this.render_exampleComponent(
-            'Checkbox / Normal / Normal',
+            'FormCheckbox / Normal / Normal',
             <form>
-                <Checkbox
-                    onClick={() => {console.log('clicked Checkbox');}}
+                <FormCheckbox
+                    onClick={() => {console.log('clicked FormCheckbox');}}
                 />
             </form>,
-            'Test checkbox.  With click event.'
+            'Test formCheckbox.  With click event.'
         );
     }
 
 
     render_basic_checked() {
         return this.render_exampleComponent(
-            'Checkbox / Normal / Checked',
+            'FormCheckbox / Normal / Checked',
             <form>
-                <Checkbox
+                <FormCheckbox
                     selected={true}
                     onClick={(e) => {
-                        console.log('clicked Checkbox')
+                        console.log('clicked FormCheckbox')
                     }}
                 />
             </form>,
-            'Test checkbox.  With click event.'
+            'Test formCheckbox.  With click event.'
         );
     }
 
 
     render_large() {
         return this.render_exampleComponent(
-            'Checkbox / Big / Normal',
+            'FormCheckbox / Big / Normal',
             <form>
-                <Checkbox
+                <FormCheckbox
                     className={'large'}
                     onClick={() => {
-                        console.log('clicked Checkbox');
+                        console.log('clicked FormCheckbox');
                     }}
                 />
             </form>,
-            'Test checkbox.  With click event.'
+            'Test formCheckbox.  With click event.'
         );
     }
 
 
     render_large_checked() {
         return this.render_exampleComponent(
-            'Checkbox / Big / Checked',
+            'FormCheckbox / Big / Checked',
             <form>
-                <Checkbox
+                <FormCheckbox
                     selected={true}
                     className={'large'}
                     onClick={() => {
-                        console.log('clicked Checkbox');
+                        console.log('clicked FormCheckbox');
                     }}
                 />
             </form>,
-            'Test checkbox.  With click event.'
+            'Test formCheckbox.  With click event.'
         );
     }
 }
 
 
-export default CheckboxExample;
+export default FormCheckboxExample;

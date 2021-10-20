@@ -8,7 +8,7 @@ import FormTextareaExample from "../components/atoms/formTextarea/example/formTe
 import ButtonExample from "../components/atoms/button/example/buttonExample";
 import AlertExample from "../components/atoms/alert/example/alertExample";
 import TagExample from "../components/atoms/tag/example/tagExample";
-import CheckboxExample from "../components/atoms/checkbox/example/checkboxExample";
+import FormCheckboxExample from "../components/atoms/formCheckbox/example/formCheckboxExample";
 import ToggleExample from "../components/atoms/toggle/example/toggleExample";
 import TabExample from "../components/atoms/tab/example/tabExample";
 import ListItemExample from "../components/atoms/listItem/example/listItemExample";
@@ -34,7 +34,7 @@ const PageAtoms = () => {
             <AlertExample />
             <ButtonExample />
             <LabelExample />
-            <CheckboxExample />
+            <FormCheckboxExample />
             <FormTextareaExample />
             <FormPinExample />
             <FormInputPhoneExample />

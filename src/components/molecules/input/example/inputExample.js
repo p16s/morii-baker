@@ -27,7 +27,7 @@ class InputExample extends BakerExample {
 
     render_normal() {
         return this.render_exampleComponent(
-            "Input/Normal",
+            "Checkbox/Normal",
             <form>
                 <Input
                     for={"basic"}
@@ -38,14 +38,14 @@ class InputExample extends BakerExample {
                     placeholder={"Placeholder"}
                 />
             </form>,
-            "Label and Input atoms used together."
+            "Label and Checkbox atoms used together."
         );
     }
 
 
     render_success() {
         return this.render_exampleComponent(
-            "Input/Success",
+            "Checkbox/Success",
             <form>
                 <Input
                     for={"success"}
@@ -65,7 +65,7 @@ class InputExample extends BakerExample {
 
     render_error() {
         return this.render_exampleComponent(
-            "Input/Error",
+            "Checkbox/Error",
             <form>
                 <Input
                     for={"error"}

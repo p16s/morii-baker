@@ -35,7 +35,7 @@ class InputTags extends BasicAtom {
         return (
             <div
                 className={
-                    "Input-tags"
+                    "Checkbox-tags"
                     + this.padIfString(className)
                 }
             >
