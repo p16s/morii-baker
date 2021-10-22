@@ -7,6 +7,10 @@ import FormCheckbox from "../../atoms/formCheckbox/formCheckbox";
 
 class Checkbox extends BasicAtom {
 
+    static defaultProps = {
+        checked: false
+   };
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Render
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,9 +34,11 @@ class Checkbox extends BasicAtom {
                     className={this.props.inputClass}
                     value={this.props.value}
                     disabled={this.props.disabled}
+                    checked={this.props.checked}
                     onChange={(e) => {
                         this.handleOnChange(e);
                     }}
+
                 />
                 {this.render_label()}
             </div>

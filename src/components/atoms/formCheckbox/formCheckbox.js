@@ -1,15 +1,25 @@
 import React from "react";
-import OnOff from "../fundamentals/onOff";
+// import OnOff from "../fundamentals/onOff";
 import './formCheckbox.css';
+import BasicAtom from "../basicAtom";
 
 
-class FormCheckbox extends OnOff {
-    constructor(props, context) {
-        super(props, context, 'selected');
+class FormCheckbox extends BasicAtom {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isChecked: this.props.checked
+        }
     }
 
 
-    render_element(className, props) {
+    static defaultProps = {
+        checked: false
+    };
+
+
+    render(className, props) {
         return React.cloneElement(
             <input
                 id={this.props.id}
@@ -17,17 +27,39 @@ class FormCheckbox extends OnOff {
                     "Form-checkbox"
                     + this.padIfString(className)
                     + this.getClassNameString()
-                    + (this.isOn ? ' selected' : '')
+                    + (this.state.isChecked ? ' selected' : '')
                 }
                 type="checkbox"
-                onClick={(e) => {
-                    this.handleChange(e);
-                    this.callbackOr(this.props.onClick)();
-                }}
+                checked={this.state.isChecked}
                 disabled={this.props.disabled}
+                onChange={(e) => {
+                    this.handleOnChange(e);
+                }}
+                onClick={(e) => {
+                    this.handleOnChange(e);
+                    // this.callbackOr(this.props.onClick)();
+                }}
             />,
             props ?? {}
         );
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Handlers
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * handleChange
+     *
+     * @param {KeyboardEvent} e
+     */
+    handleOnChange(e) {
+        this.setState({
+            isChecked: !this.state.isChecked
+        });
+
+        this.callbackOr(this.props.onChange)(e);
     }
 }
 
