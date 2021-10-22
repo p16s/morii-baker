@@ -16,12 +16,21 @@
     display: inline-flex;
     font-size: .875rem;
     line-height: 1;
-    margin: .25rem .25rem .25rem 0;
-    padding: .25rem .5rem;
+    margin: .25rem .5rem .25rem 0;
     text-transform: lowercase;      /*  is toLower anyway in js */
     transition: .3s;
-
 }
+    /*.Tag-message::before {*/
+    /*    content: "#";*/
+    /*    display: block;*/
+    /*    position: relative;*/
+    /*}*/
+    .Tag-message:not(:last-of-type)::after {
+        content: ",";
+        display: block;
+        position: relative;
+    }
+
     .Tag-message:hover {
         background-color: rgba(var(--Global-form-border-color, 170 176 195), .1);
         color: rgb(var(--Global-color-4, 255 6 110));

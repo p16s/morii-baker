@@ -15,6 +15,10 @@
     .Checkbox .Form-checkbox {
         margin-right: .5rem;
     }
+    .Checkbox .Label {
+        display: block;
+        width: 100%;
+    }
     .Checkbox .Label:not(.disabled) {
         cursor: pointer;
     }
