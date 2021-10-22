@@ -38,7 +38,6 @@ class Checkbox extends BasicAtom {
                     onChange={(e) => {
                         this.handleOnChange(e);
                     }}
-
                 />
                 {this.render_label()}
             </div>
