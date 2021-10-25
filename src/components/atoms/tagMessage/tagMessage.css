@@ -20,11 +20,11 @@
     text-transform: lowercase;      /*  is toLower anyway in js */
     transition: .3s;
 }
-    /*.Tag-message::before {*/
-    /*    content: "#";*/
-    /*    display: block;*/
-    /*    position: relative;*/
-    /*}*/
+    .Tag-message::before {
+        content: "#";
+        display: block;
+        position: relative;
+    }
     .Tag-message:not(:last-of-type)::after {
         content: ",";
         display: block;
