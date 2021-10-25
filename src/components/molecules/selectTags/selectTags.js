@@ -70,7 +70,7 @@ class SelectTags extends BasicAtom {
                 <CSSTransition
                     timeout={100}
                     classNames="fade-in"
-                    key={"selected-tag-" + tag.name}
+                    key={"selected-tag-" + tag}
                 >
                     <TagMessage
                         className="added"
@@ -78,7 +78,7 @@ class SelectTags extends BasicAtom {
                             this.removeTag(index);
                         }}
                     >
-                        {tag.name}
+                        {tag}
 
                         <IconClose />
                     </TagMessage>
@@ -97,16 +97,16 @@ class SelectTags extends BasicAtom {
                 <CSSTransition
                     timeout={100}
                     classNames="fade-in"
-                    key={"available-tag-" + tag.name}
+                    key={"available-tag-" + tag}
                 >
                     <TagMessage
-                        className={(this.alreadyExists(tag.name) ? " hidden" : '')}
+                        className={(this.alreadyExists(tag) ? " hidden" : '')}
                         onClick={() => {
-                            this.addTagToSelected(tag.name);
+                            this.addTagToSelected(tag);
                         }}
-                        key={"tag-" + tag.name}
+                        key={"tag-" + tag}
                     >
-                        {tag.name}
+                        {tag}
                     </TagMessage>
                 </CSSTransition>
             );
@@ -125,7 +125,7 @@ class SelectTags extends BasicAtom {
     addTagToSelected(toAdd) {
         //  check the tag doesn't already exist in the array
         let isPresent = this.state.selectedTags.some((e) => {
-            return e.name === toAdd
+            return e === toAdd
         });
 
         //  make sure can only be added once (UI will prevent this from happening, but safer)
@@ -133,9 +133,7 @@ class SelectTags extends BasicAtom {
             // make sure we clone the existing before updating state array
             let copyTags = [
                 ...this.state.selectedTags,
-                {
-                    'name': toAdd
-                }
+                toAdd
             ];
 
             //  then update both selected and available and callback for api
@@ -143,7 +141,7 @@ class SelectTags extends BasicAtom {
                 selectedTags: copyTags
             }, () => {
                 //  following will remove the requested tag from the available array (but putting back will re-index)
-                // let indexInAvailable = this.state.availableTags.findIndex(tag => tag.name === toAdd);
+                // let indexInAvailable = this.state.availableTags.findIndex(tag => tag === toAdd);
                 // console.log("avail tag index, ", indexInAvailable);
                 //
                 // let removeFromExisting = [...this.state.availableTags];
@@ -167,7 +165,7 @@ class SelectTags extends BasicAtom {
     alreadyExists(tagName) {
         //  check the tag doesn't already exist in the array
         let alreadyAdded = this.state.selectedTags.some((e) => {
-            return e.name === tagName
+            return e === tagName
         });
 
         return alreadyAdded;

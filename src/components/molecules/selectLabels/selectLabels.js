@@ -70,7 +70,7 @@ class SelectLabels extends BasicAtom {
                 <CSSTransition
                     timeout={100}
                     classNames="fade-in"
-                    key={"selected-tag-" + tag.name}
+                    key={"selected-tag-" + tag}
                 >
                     <TagLabel
                         className="added"
@@ -78,7 +78,7 @@ class SelectLabels extends BasicAtom {
                             this.removeTag(index);
                         }}
                     >
-                        {tag.name}
+                        {tag}
 
                         <IconClose />
                     </TagLabel>
@@ -97,16 +97,16 @@ class SelectLabels extends BasicAtom {
                 <CSSTransition
                     timeout={100}
                     classNames="fade-in"
-                    key={"available-tag-" + tag.name}
+                    key={"available-tag-" + tag}
                 >
                     <TagLabel
-                        className={(this.alreadyExists(tag.name) ? " hidden" : '')}
+                        className={(this.alreadyExists(tag) ? " hidden" : '')}
                         onClick={() => {
-                            this.addLabelToSelected(tag.name);
+                            this.addLabelToSelected(tag);
                         }}
-                        key={"tag-" + tag.name}
+                        key={"tag-" + tag}
                     >
-                        {tag.name}
+                        {tag}
                     </TagLabel>
                 </CSSTransition>
             );
@@ -125,7 +125,7 @@ class SelectLabels extends BasicAtom {
     addLabelToSelected(toAdd) {
         //  check the tag doesn't already exist in the array
         let isPresent = this.state.selectedLabels.some((e) => {
-            return e.name === toAdd
+            return e === toAdd
         });
 
         //  make sure can only be added once (UI will prevent this from happening, but safer)
@@ -133,9 +133,7 @@ class SelectLabels extends BasicAtom {
             // make sure we clone the existing before updating state array
             let copyLabels = [
                 ...this.state.selectedLabels,
-                {
-                    'name': toAdd
-                }
+                toAdd
             ];
 
             //  then update both selected and available and callback for api
@@ -143,7 +141,7 @@ class SelectLabels extends BasicAtom {
                 selectedLabels: copyLabels
             }, () => {
                 //  following will remove the requested tag from the available array (but putting back will re-index)
-                // let indexInAvailable = this.state.availableLabels.findIndex(tag => tag.name === toAdd);
+                // let indexInAvailable = this.state.availableLabels.findIndex(tag => tag === toAdd);
                 // console.log("avail tag index, ", indexInAvailable);
                 //
                 // let removeFromExisting = [...this.state.availableLabels];
@@ -167,7 +165,7 @@ class SelectLabels extends BasicAtom {
     alreadyExists(filterName) {
         //  check the tag doesn't already exist in the array
         let alreadyAdded = this.state.selectedLabels.some((e) => {
-            return e.name === filterName
+            return e === filterName
         });
 
         return alreadyAdded;
