@@ -16,7 +16,7 @@
 /*  base
 ===================================================================================================================== */
 .Breadcrumbs {
-    border-bottom: 1px solid rgb(var(--Global-border-color, 70 176 195));
+    /*border-bottom: 1px solid rgb(var(--Global-border-color, 70 176 195));*/
     align-items: center;
     display: flex;
     padding: .8129rem 2rem .75rem 2rem;     /*  extreme padding is to match the sidebar header  */

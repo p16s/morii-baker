@@ -8,7 +8,6 @@ import {CSSTransition} from "react-transition-group";
 class NoDataMessage extends BasicAtom {
     render(className) {
         return (
-
             <CSSTransition
                 in={true}
                 classNames="fade-in"

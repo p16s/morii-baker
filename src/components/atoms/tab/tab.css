@@ -81,7 +81,7 @@
     .Tab:not(:disabled):focus-visible,
     .Tab:not(:disabled):focus-within,
     .Tab:not(:disabled).active {
-        border-bottom: 1px solid rgb(var(--Tab-border-color-active));
+        border-bottom: 2px solid rgb(var(--Tab-border-color-active));
         box-shadow: 0 1px rgb(var(--Tab-border-color-active));
         color: rgb(32, 43, 55);
     }

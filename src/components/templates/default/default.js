@@ -10,10 +10,10 @@ class TemplateDefault extends BasicAtom {
     // /**
     //  * inherit and set local state
     //  * @param props
-    //  * @param context
+    //  * @param store
     //  */
-    // constructor(props, context) {
-    //     super(props, context, {
+    // constructor(props, store) {
+    //     super(props, store, {
     //         isActive: props.isMobileNavActive
     //     });
     // }
@@ -80,6 +80,10 @@ class TemplateDefault extends BasicAtom {
                     options={this.props.sideBarData.options}
                     onListClick={(e, list, item) => {
                         this.handleListClick(e, list, item);
+                    }}
+
+                    onAddEntityClick={() => {
+                        this.handleAddEntityClick();
                     }}
 
                     footer={(
@@ -166,6 +170,14 @@ class TemplateDefault extends BasicAtom {
         // }));
 
         this.callbackOr(this.props.onToggleMobileNav)();
+    }
+
+
+    /**
+     * handle add entity click
+     */
+    handleAddEntityClick() {
+        this.callbackOr(this.props.onAddEntityClick)();
     }
 
 
