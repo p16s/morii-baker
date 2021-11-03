@@ -2,20 +2,25 @@ import BasicAtom from "../../atoms/basicAtom";
 import IconBar from "../../molecules/iconBar/iconBar";
 import List from "../../molecules/list/list";
 import './sideBar.css';
+// import Button from "../../atoms/button/button";
 
 
 class SideBar extends BasicAtom {
-    /**
-     * main render
-     * @returns {JSX.Element}
-     */
     render() {
+        /**
+         * for the icons
+         * @type {*[]}
+         */
         const icons = [];
 
         this.props.icons.forEach((val) => {
             icons.push(val.icon);
         });
 
+
+        /**
+         * main render
+         */
         return (
             <div className={"Side-bar" + this.getClassNameString()}>
                 <IconBar
@@ -24,7 +29,7 @@ class SideBar extends BasicAtom {
                     // footer={(
                     //     <Button
                     //         onClick={() => {
-                    //             this.handleAddOrgClick();
+                    //             this.handleAddEntityClick();
                     //         }}
                     //         className={"secondary round"}>
                     //         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,6 +140,13 @@ class SideBar extends BasicAtom {
         this.callbackOr(this.props.onIconClick)(e, index);
     }
 
+
+    /**
+     * add entity cta
+     */
+    handleAddEntityClick(e) {
+        this.callbackOr(this.props.onAddEntityClick)(e);
+    }
 
     /**
      * add org cta

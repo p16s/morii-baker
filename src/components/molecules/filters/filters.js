@@ -133,7 +133,7 @@ class Filters extends BasicAtom {
                         className={
                             "list-child"
                             +
-                            (opt == this.props.activeFilters ? " active" : '')
+                            (opt === this.props.activeFilters ? " active" : '')
                         }
                         //  not sure this is needed as clic events are handled on the prop.children passed in
                         // onClick={() => {

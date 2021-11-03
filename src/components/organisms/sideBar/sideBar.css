@@ -40,6 +40,7 @@
         background-color: rgb(var(--Side-bar-global-bg-color));
         display: flex;
         flex-direction: column;
+        overflow: auto;     /*  creates a scroll for the main content if too many groups for the viewport for example   */
         padding-bottom: 2rem;       /*  make this match on the Icon-bar */
         width: 210px;
     }
