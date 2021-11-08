@@ -1,0 +1,73 @@
+/*  title:  template-default
+    notes:  template styles, local for layout and overrides where needed for existing components
+===================================================================================================================== */
+
+
+
+/*  variables
+===================================================================================================================== */
+:root {
+
+}
+
+
+/*  base
+===================================================================================================================== */
+.Template-default {
+    align-items: stretch;       /*  only two main parents, side-col & main  */
+    display: flex;
+    justify-content: flex-start;
+}
+
+    .Template-default .content-container {
+        width: 100%;
+    }
+
+    .Template-default header,
+    .Template-default main {
+        width: 100%;
+    }
+
+    .Template-default main {
+        /*overflow: auto;*/
+        padding: 1rem 1rem 100px 1rem;
+    }
+    @media screen and (min-width: 768px) {
+        .Template-default main {
+            padding: 0 2rem 2rem 2rem;      /*  extra padding on mobile as we have the tab bar  */
+        }
+    }
+
+    /*  header TODO
+    ================================================================================================================= */
+    .Template-default .mobile-toggle {
+        cursor: pointer;
+        fill: #fff;
+        position: absolute;;
+        right: 1em;
+        top: 1em;
+    }
+    @media screen and (max-width: 767px) {
+        .Template-default header {
+            background-color: rgb(var(--Global-color-5-darker, 66 78 121));
+        }
+            .Template-default .Breadcrumbs .breadcrumb {
+                color: #fff;
+            }
+    }
+    @media screen and (min-width: 768px) {
+        .Template-default .mobile-toggle {
+            display: none;
+        }
+    }
+
+        /*  if tabbar used in header
+        ============================================================================================================= */
+        .Template-default .Tab-bar {
+            background-color: #fff;
+        }
+        @media screen and (min-width: 768px) {
+            .Template-default .Tab-bar {
+                padding-left: 2rem;
+            }
+        }
